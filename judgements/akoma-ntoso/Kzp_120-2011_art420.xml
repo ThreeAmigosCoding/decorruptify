@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-10-17/Kzp-120-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-10-17/Kzp-120-2011"/>
+          <FRBRdate date="2011-10-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-10-17/Kzp-120-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-10-17/Kzp-120-2011/srp@"/>
+          <FRBRdate date="2011-10-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-10-17/Kzp-120-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-10-17/Kzp-120-2011/srp@/.xml"/>
+          <FRBRdate date="2011-10-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudKotor" href="/ontology/organization/me/OsnovniSudKotor" showAs="Osnovni sud u Kotoru"/>
+        <TLCOrganization eId="visiSudPodgorica" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="odtKotor" href="/ontology/organization/me/OsnovnoDrzavnoTuzilastvoKotor" showAs="Osnovno državno tužilaštvo u Kotoru"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Kojović Radule"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Stanković Ivica"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Stojanović Petar"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Obradović Slađana"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzp.br.120/11</docketNumber>
+      <neutralCitation>Kzp.br.120/11</neutralCitation>
+      <docDate date="2011-10-17">17.10.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Kojović Radule</judge>
+      <judge refersTo="#judge2">Stanković Ivica</judge>
+      <judge refersTo="#judge3">Stojanović Petar</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Kojović Radula</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Stojanović Petra</judge>, kao članova vijeća, uz učešće službenika suda <judge refersTo="#clerk">Obradović Slađane</judge>, kao zapisničara, u krivičnom predmetu protiv osudjenog B.V., zbog produženog krivičnog djela prevara iz <ref href="/me/acts/2003/krivicni-zakonik#art_244_st3">čl.244 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_244_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika, odlučujući o zahtjevu branioca osudjenog za ispitivanje zakonitosti pravosnažne presude Osnovnog suda u Kotoru K.br.533/08 od 30.11.2010. godine i presude Višeg suda u Podgorici Kž.br.994/11 od 23.06.2011.godine, u sjednici vijeća održanoj dana 17.10.2011. godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Osnovnog suda u Kotoru K.br.533/08 od 30.11.2010.godine, B.V. oglašen je krivim zbog produženog krivičnog djela prevara iz <ref href="/me/acts/2003/krivicni-zakonik#art_244_st3">čl.244 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_244_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika i osudjen na kaznu zatvora u trajanju od tri mjeseca.</p>
+        <p>Viši sud u Podgorici, svojom presudom Kž.br.994/11 od 23.06.2011.godine, odbio je kao neosnovanu žalbu branioca optuženog B.V. i potvrdio presudu Osnovnog suda u Kotoru K.br.533/08 od 30.11.2010.godine.</p>
+        <p>Protiv navedenih presuda branilac osudjenog je podnio zahtjev za ispitivanje zakonitosti pravosnažne presude zbog povrede Krivičnog zakonika na štetu optuženog iz <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_377_tac1">čl.377 tač.1 ZKP</ref> i bitne povrede odredaba krivičnog postupka iz <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_376_st1_tac5">čl.376 st.1 tač.5 ZKP</ref> s predlogom da ovaj sud uvaži zahtjev, ukine presude nižestepenih sudova i predmet vrati prvostepenom sudu na ponovni postupak i odluku. U zahtjevu se u bitnom ističe da optuženi nije izvršio krivično djelo za koje je oglašen krivim i osudjen na kaznu zatvora u trajanju od tri mjeseca. Naprotiv, na osnovu izvedenih dokaza i njihove objektivne ocjene u konkretnom slučaju radi se samo o gradjansko pravnom odnosu, jer radnje koje je optuženi preduzeo nijesu bile sračunate na pribavljanje protivpravne imovinske koristi dovodjenjem ili pak održavanjem u zabludi oštećenih.</p>
+        <p>U zahtjevu se nadalje ističe da je na štetu optuženog učinjena bitna povreda odredaba krivičnog postupka iz <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_376_st1_tac5">čl.376 st.1 tač.5 ZKP</ref>. Naime, u konkretnoj krivičnoj stvari Osnovno državno tužilaštvo u Kotoru podnijelo je Osnovnom sudu u Kotoru zahtjev za sprovodjenje istrage protiv B.V. zbog postojanja osnovane sumnje da je izvršio krivično djelo pronevjera u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_420_st2">čl.420 st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_420_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika za koje je propisano da će se učinilac kazniti zatvorom od jedne do osam godina. Medjutim, nakon sprovedene istrage, Osnovno državno tužilaštvo u Kotoru protiv okrivljenog B.V. podiglo je optužnicu zbog izvršenja krivičnog djela prevara u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_244_st3">čl.244 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_244_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika, koje je zaprijećeno kaznom zatvora do osam godina. Odredbom <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_256">čl.256 ZKP</ref> je propisano da se istraga vodi samo u pogledu onog krivičnog djela i protiv onog okrivljenog na koje se odnosi rješenje o sprovodjenju istrage. Ograničenjem istrage na krivično djelo i okrivljenog na koje se odnosi rješenje o sprovodjenju istrage onemogućava se da u istrazi prevagnu inkvizitorski elementi. Upravo polazeći od takvog saznanja u praksi je izgradjeno shvatanje da se u istrazi mogu izvesti samo one istražne radnje koje se odnose na krivično djelo i njegove privilegovane ili kvalifikatorne oblike, te činjenice koje ukazuju na opravdanost blažeg ili strožijeg tretmana okrivljenog lica. Upravo zbog toga je <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_252">čl.252 ZKP</ref> dana mogućnost tužiocu da stavi predlog da se istraga ne sprovodi za krivično djelo ako prikupljeni podaci koji se odnose na krivično djelo i učinioca pružaju dovoljno osnova za podizanje neposredne optužnice, ali u tom slučaju, kako je to propisano stavom 2 istog člana, okrivljeni se mora ispitati na okolnosti krivičnog djela za koje će nadležni tužilac podići neposrednu optužnicu.</p>
+        <p>U konkretnom predmetu nema predloga državnog tužioca za podizanje neposredne optužnice niti zapisnika o saslušanju okrivljenog, iako je to zakonska obaveza niti pismene saglasnosti istražnog sudije za podizanje neposredne optužnice. Stanovište Višeg suda u Podgorici da u konkretnom slučaju protiv optuženog B.V. nije podignuta neposredna optužnica obzirom da je dogadjaj koji je obuhvaćen istom, odnosno činjenični osnov isti dogadjaj za koji je protiv istog lica vodjena istraga je neprihvatljiv, jer taj sud ne razlikuje činjenični osnov optužnice od životnog dogadjaja.</p>
+      </background>
+      <decision>
+        <p>Uvažava se zahtjev za ispitivanje zakonitosti pravosnažne presude branioca osudjenog B.V., pa se ukida presuda Osnovnog suda u Kotoru K.br.533/08 od 30.11.2010.godine i presuda Višeg suda u Podgorici Kž.br.994/2011 od 23.06.2011. godine i predmet vraća Osnovnom sudu u Kotoru na ponovno sudjenje.</p>
+      </decision>
+      <conclusions>
+        <p>Iz spisa predmeta proizilazi da je protiv okrivljenog B.V. vodjena istraga zbog osnovane sumnje da je izvršio krivično djelo pronevjera u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_420_st2">čl.420 st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_420_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika. Po završenoj istrazi, Osnovno državno tužilaštvo u Kotoru protiv okrivljenog B.V. je dana 03.10.2008. godine podiglo optužnicu Kt.br.5/07, zbog krivičnog djela prevara u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_244_st3">čl.244 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_244_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika za je koje optuženi oglašen krivim i osudjen pravosnažnim presudama nižestepenih sudova.</p>
+        <p>U odredbi <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_256_st1">čl.256 st.1 ZKP</ref> je propisano da se istraga vodi samo u pogledu onog krivičnog djela i protiv onog okrivljenog na koje se odnosi rješenje o sprovodjenju istrage, dok je u odredbi <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_252_st1">čl.252 st.1 ZKP</ref> navedeno da se istražni sudija može saglasiti sa predlogom državnog tužioca da se ne sprovodi istraga, ako prikupljeni podaci koji se odnose na krivično djelo i učinioca pružaju dovoljno osnova za podizanje optužnice.</p>
+        <p>U konkretnom slučaju istraga protiv okrivljenog B.V. je vodjena samo u odnosu na krivično djelo pronevjera u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_420_st2">čl.420 st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_420_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika, dok je optužnica podignuta za krivično djelo prevara u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_244_st3">čl.244 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_244_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika, za koje je propisana kazna zatvora u trajanju od jedne do osam godina. Dakle, podizanju optužnice protiv okrivljenog za krivično djelo u pitanju nije prethodila istraga, niti je državni tužilac u istrazi, saglasno odredbi <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_252_st1">čl.252 st.1 ZKP</ref>, od istražnog sudije zatražio saglasnost za podizanje neposredne optužnice. Prema tome, okrivljenom u toku istrage nije omogućeno da se izjasni na okolnosti krivičnog djela prevara u produženom trajanju iz <ref href="/me/acts/2003/krivicni-zakonik#art_244_st3">čl.244 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_244_st1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika za koje je oglašen krivim i pravosnažno osudjen presudama nižestepenih sudova, niti da u istrazi zahtijeva prikupljanje odredjenih dokaza i podataka, čime mu je povrijedjeno pravo na odbranu. Istraga za predmetno krivično djelo za koje je optuženi oglašen krivim je premještena u stadijum glavnog pretresa što je nedopušteno, jer sud na glavnom pretresu nije dužan da sprovodi istragu. Stoga, osnovano se u zahtjevu za ispitivanje zakonitosti pravosnažne presude branioca osudjenog B.V. ukazuje da su nižestepeni sudovi u svojim presudama učinili bitnu povredu odredaba krivičnog postupka iz <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_376_st1_tac5">čl.376 st.1 tač.5 ZKP</ref>, koja pobijane presude čini nezakonitim i predstavlja razlog za njihovo ukidanje.</p>
+        <p>U ponovnom postupku prvostepeni sud će otkloniti bitnu povredu postupka na koju je naprijed ukazano, nakon čega će biti u mogućnosti da donese pravilnu i zakonitu odluku.</p>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_440">čl.440</ref> u vezi <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_433">čl.433 ZKP</ref>, odlučeno je kao u izreci ove presude.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

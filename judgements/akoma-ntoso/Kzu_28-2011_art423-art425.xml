@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-06-06/Kzu-28-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-06-06/Kzu-28-2011"/>
+          <FRBRdate date="2011-06-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-06-06/Kzu-28-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-06-06/Kzu-28-2011/srp@"/>
+          <FRBRdate date="2011-06-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-06-06/Kzu-28-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-06-06/Kzu-28-2011/srp@/.xml"/>
+          <FRBRdate date="2011-06-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudKotor" href="/ontology/organization/me/OsnovniSudKotor" showAs="Osnovni sud u Kotoru"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/IvicaStankovic" showAs="Stanković Ivica"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Vučinić Stanka"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RaduleKojovic" showAs="Kojović Radule"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Obradović Slađana"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.28/11</docketNumber>
+      <neutralCitation>Kzu.br.28/11</neutralCitation>
+      <docDate date="2011-06-06">06.06.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Stanković Ivica</judge>
+      <judge refersTo="#judge2">Vučinić Stanka</judge>
+      <judge refersTo="#judge3">Kojović Radule</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Stanković Ivice, kao predsjednika vijeća, Vučinić Stanke i Kojović Radula, kao članova vijeća, uz učešće službenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv osudjenog B. R., zbog krivičnih djela protivpravno zauzimanje zemljišta iz <ref href="/me/acts/2003/krivicni-zakonik#art_254">čl.254 st.2 u vezi st.1 Krivičnog zakonika</ref>, četiri krivična djela prevara iz <ref href="/me/acts/2003/krivicni-zakonik#art_244">čl.244 st.3 u vezi st.1 Krivičnog zakonika</ref>, ugrožavanje javnog saobraćaja opasnom radnjom ili sredstvom iz <ref href="/me/acts/2003/krivicni-zakonik#art_340">čl.340 st.1 Krivičnog zakonika</ref> i ugrožavanje javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_339">čl.339 st.1 Krivičnog zakonika</ref>, rješavajući o zahtjevu branioca osudjenog za vanredno ublažavanje kazne izrečene pravosnažnom presudom Osnovnog suda u Kotoru K.br.194/03 od 27.04.2007.godine, u sjednici vijeća održanoj dana 06.06.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Pravosnažnom presudom Osnovnog suda u Kotoru K.br.194/03 od 27.04.2007.godine oglašen je krivim B. R., zbog krivičnih djela protivpravno zauzimanje zemljišta iz <ref href="/me/acts/2003/krivicni-zakonik#art_254">čl.254 st.2 u vezi st.1 Krivičnog zakonika</ref>, četiri krivična djela prevara iz <ref href="/me/acts/2003/krivicni-zakonik#art_244">čl.244 st.3 u vezi st.1 Krivičnog zakonika</ref>, ugrožavanje javnog saobraćaja opasnom radnjom ili sredstvom iz <ref href="/me/acts/2003/krivicni-zakonik#art_340">čl.340 st.1 Krivičnog zakonika</ref> i ugrožavanje javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_339">čl.339 st.1 Krivičnog zakonika</ref>, i osudjen na jedinstvenu kaznu zatvora u trajanju od 2 (dvije) godine.</p>
+        <p>Branilac osudjenog advokat D. S. M. iz P., podnio je ovom sudu zahtjev za vanredno ublažavanje kazne u kom navodi da je osudjeni nakon donošenja pravosnažne presude u cjelosti obeštetio oštećene, o čemu je priložio potrebnu dokumentaciju, pa stoga smatra da su ispunjeni zakonski uslovi da mu se izrečena kazna ublaži.</p>
+        <p>Prema odredbi <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Okolnost da je osudjeni u potpunosti obeštetio oštećene, po nalaženju ovog suda, jeste nova okolnost, ali ista nije takvog značaja da bi očigledno dovela do blaže osude, s obzirom na brojnost i težinu izvršenih krivičnih djela.</p>
+      </background>
+      <decision>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

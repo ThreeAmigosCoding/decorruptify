@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-02-24/Kr-19-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-02-24/Kr-19-2011"/>
+          <FRBRdate date="2011-02-24" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-02-24/Kr-19-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-02-24/Kr-19-2011/srp@"/>
+          <FRBRdate date="2011-02-24" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-02-24/Kr-19-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-02-24/Kr-19-2011/srp@/.xml"/>
+          <FRBRdate date="2011-02-24" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudPodgorica" href="/ontology/organization/me/OsnovniSudPodgorica" showAs="Osnovni sud u Podgorici"/>
+        <TLCOrganization eId="osnovniSudBijeloPolje" href="/ontology/organization/me/OsnovniSudBijeloPolje" showAs="Osnovni sud u Bijelom Polju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/AE" showAs="A. E."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr.br.19/11</docketNumber>
+      <neutralCitation>Kr.br.19/11</neutralCitation>
+      <docDate date="2011-02-24">24.02.2011.godine</docDate>
+      <judge refersTo="#judge1" role="presjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="članVijeća">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Kojović Radula</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Stojanović Petra</judge>, kao članova vijeća, uz učešće namještenika suda <judge refersTo="#clerk">Obradović Slađane</judge>, kao zapisničara, u krivičnom predmetu protiv okrivljene <party refersTo="#defendant" as="#defendant">A. E.</party>, zbog krivičnih djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, povreda ravnopravnosti iz <ref href="/me/acts/2003/krivicni-zakonik#art_159">čl.159 st.1 i 2 Krivičnog zakonika</ref>, neprijavljivanje krivičnog djela i učinioca iz <ref href="/me/acts/2003/krivicni-zakonik#art_386">čl.386 st.2 Krivičnog zakonika</ref>, pomoć učiniocu poslije izvršenog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_387">čl.387 st.1 i 2 Krivičnog zakonika</ref>, davanje lažnog iskaza iz <ref href="/me/acts/2003/krivicni-zakonik#art_389">čl.389 st.1 i 2 Krivičnog zakonika</ref> i sprječavanje dokazivanja iz <ref href="/me/acts/2003/krivicni-zakonik#art_390">čl.390 st.1 i 2 Krivičnog zakonika</ref>, rješavajući o predlogu istražnog sudije Osnovnog suda u Podgorici Ki.br.4/11 od 15.02.2011.godine za prenošenje mjesne nadležnosti, u sjednici vijeća održanoj 24.02.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Istražni sudija <organization refersTo="#osnovniSudPodgorica">Osnovnog suda u Podgorici</organization>, svojim predlogom Ki.br.4/11 od 15.02.2011.godine predložio je da Vrhovni sud Crne Gore za vodjenje krivičnog postupka protiv okrivljene <party refersTo="#defendant" as="#defendant">A. E.</party>, zbog krivičnih djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, povreda ravnopravnosti iz <ref href="/me/acts/2003/krivicni-zakonik#art_159">čl.159 st.1 i 2 Krivičnog zakonika</ref>, neprijavljivanje krivičnog djela i učinioca iz <ref href="/me/acts/2003/krivicni-zakonik#art_386">čl.386 st.2 Krivičnog zakonika</ref>, pomoć učiniocu poslije izvršenog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_387">čl.387 st.1 i 2 Krivičnog zakonika</ref>, davanje lažnog iskaza iz <ref href="/me/acts/2003/krivicni-zakonik#art_389">čl.389 st.1 i 2 Krivičnog zakonika</ref> i sprječavanje dokazivanja iz <ref href="/me/acts/2003/krivicni-zakonik#art_390">čl.390 st.1 i 2 Krivičnog zakonika</ref>, odredi neki drugi stvarno nadležan sud. Kao razloge navodi da je zahtjev za sprovodjenje istrage protiv okrivljene A. E., koja je sudija tog suda, podnio oštećeni kao tužilac B. B., što predstavlja važan razlog da se odredi drugi stvarno nadležan sud, kako bi se otklonila svaka sumnja u nepristrasnost vodjenja postupka kod Osnovnog suda u Podgorici.</p>
+        <p>Vrhovni sud je razmotrio spise ovog predmeta i navode iz podnijetog predloga pa je našao:</p>
+        <p>Predlog je osnovan.</p>
+        <p>Odredbom <ref href="/me/acts/2003/zakon-o-krivicnom-postupku#art_34">čl.34 st.1 ZKP</ref>, je pored ostalog predvidjeno da se za vodjenje krivičnog postupka može odrediti drugi stvarno nadležan sud, ako za to postoje drugi važni razlozi.</p>
+        <p>Imajući u vidu da je okrivljena A. E. sudija Osnovnog suda u Podgorici a da bi se izbjegla svaka sumnja u eventualnu nepristrasnost vodjenja krivičnog postupka kod tog suda, opravdano je bilo odrediti drugi stvarno nadležan sud.</p>
+      </background>
+      <decision>
+        <p>Za vodjenje postupka u krivičnom predmetu protiv okrivljene <party refersTo="#defendant" as="#defendant">A. E.</party>, zbog krivičnih djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, povreda ravnopravnosti iz <ref href="/me/acts/2003/krivicni-zakonik#art_159">čl.159 st.1 i 2 Krivičnog zakonika</ref>, neprijavljivanje krivičnog djela i učinioca iz <ref href="/me/acts/2003/krivicni-zakonik#art_386">čl.386 st.2 Krivičnog zakonika</ref>, pomoć učiniocu poslije izvršenog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_387">čl.387 st.1 i 2 Krivičnog zakonika</ref>, davanje lažnog iskaza iz <ref href="/me/acts/2003/krivicni-zakonik#art_389">čl.389 st.1 i 2 Krivičnog zakonika</ref> i sprječavanje dokazivanja iz <ref href="/me/acts/2003/krivicni-zakonik#art_390">čl.390 st.1 i 2 Krivičnog zakonika</ref>, odredjuje se <organization refersTo="#osnovniSudBijeloPolje">Osnovni sud u Bijelom Polju</organization>.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2003/zakon-o-krivicnom-postupku#art_34">čl.34 st.1 ZKP</ref>, odlučeno kao u izreci ovog rješenja.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 24.02.2011.godine</p>
+        <p>Zapisničar, <judge refersTo="#clerk">Slađana Obradović</judge> s.r.</p>
+        <p>Predsjednik vijeća, <judge refersTo="#judge1">Radule Kojović</judge> s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

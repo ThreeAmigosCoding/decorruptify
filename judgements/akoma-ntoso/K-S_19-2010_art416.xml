@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/vspg/2010-10-14/Ks-19-2010/main"/>
+          <FRBRuri value="/me/vspg/2010-10-14/Ks-19-2010"/>
+          <FRBRdate date="2010-10-14" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/vspg/2010-10-14/Ks-19-2010/srp@/main"/>
+          <FRBRuri value="/me/vspg/2010-10-14/Ks-19-2010/srp@"/>
+          <FRBRdate date="2010-10-14" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/vspg/2010-10-14/Ks-19-2010/srp@/main.xml"/>
+          <FRBRuri value="/me/vspg/2010-10-14/Ks-19-2010/srp@/.xml"/>
+          <FRBRdate date="2010-10-14" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="prosecution" href="/ontology/organization/me/OsnovnoDrzavnoTuzilastvoBar" showAs="Osnovno državno tužilaštvo iz Bara"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/CupicRatko" showAs="Ćupić Ratko"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/TodorovicSlavica" showAs="Todorović Slavica"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RadevicRadenko" showAs="Radević Radenko"/>
+        <TLCPerson eId="prosecutor1" href="/ontology/person/me/RaspopovicMarija" showAs="Raspopović Marija"/>
+        <TLCPerson eId="clerk1" href="/ontology/person/me/AlibalicEmina" showAs="Alibalić Emina"/>
+        <TLCPerson eId="defendant1" href="/ontology/person/me/VN" showAs="V. N."/>
+        <TLCPerson eId="victim1" href="/ontology/person/me/KD" showAs="K. D."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Viši sud u Podgorici</courtType>
+      <docketNumber>Ks.br. 19/10</docketNumber>
+      <neutralCitation>Ks.br. 19/10</neutralCitation>
+      <docDate date="2010-10-14">14.10.2010. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Ćupić Ratko</judge>
+      <judge refersTo="#judge2" role="sudijaporotnik">Todorović Slavica</judge>
+      <judge refersTo="#judge3" role="sudijaporotnik">Radević Radenko</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VIŠI SUD U PODGORICI, kao prvostepeni krivični u vijeću sastavljenom od sudije Ćupić Ratka kao predsjednika vijeća i sudija porotnika Todorović Slavice i Radević Radenka kao članova vijeća, uz učešće namještenika Alibalić Emine kao zapisničara, u krivičnom predmetu protiv optuženog V. N. zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl. 416 st. 3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st. 1 KZ-a</ref>, po optužnici Osnovnog državnog tužilaštva iz Bara Kt.br. 416/08 od 10.02.2010. godine koju je na glavnom pretresu zastupala Raspopović Marija zamjenik specijalnog tužioca, nakon održanog glavnog javnog pretresa dana 14.10.2010. godine, donio je i istog dana i javno objavio</p>
+      </introduction>
+      <background>
+        <p>Prema optuženom:</p>
+        <p>V. N., rodjen godine u D., stalno nastanjen u B., Ul. R. L. br. 12, po zanimanju geodeta, udovac, pismen, srednjeg imovnog stanja,</p>
+        <p>Na osnovu <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_362_tac_1">čl. 362 tač. 1 ZKP-a</ref></p>
+        <p>ODBIJA SE OPTUŽBA</p>
+        <p>Kojom je predstavljeno da je:</p>
+        <p>Dana 15.07.2004. godine, kao službeno lice – načelnik Uprave za nekretnine PJ Bar u svojstvu donosioca akta iskorišćavanja svog službenog položaja i prekoračenjem granice svog službenog ovlašćenja teže povrijedio pravo oštećenog - K. D., na način što je donio rješenje koje je predhodno sastavio obradjivač, sada pok. Š. D., br. 954 – 216/1 – 01 od 15.07.2004. godine kojim je izvršen upis prava svojine u dijelu 1/1 na katastarskim parcelama 1118/2, 1118/3 i 1118/4, ukupne površine 342 m2 upisane u KO Mišići LN 950 u korist M. O., a na osnovu ugovora o kupoprodaji ov.br. 3254/95 koji je sa M. zaključio S. B., iako je u listu nepokretnosti predhodno bilo upisano pravo susvojine sa dijelom ½ u korist S. S. i K. D., a da oštećeni K. D. nije učestvovao u zaključenju tog ugovora i tako teže povrijedio svojinska prava oštećenog i nanio mu štetu u iznosu od 48.600,00 eura.</p>
+        <p>- čime bi izvršio krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl. 416 st. 3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st. 1 KZ</ref>.</p>
+      </background>
+      <decision>
+        <p>ODBIJA SE OPTUŽBA prema optuženom V. N. za krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl. 416 st. 3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st. 1 KZ-a</ref>.</p>
+        <p>Troškovi krivičnog postupka padaju na teret budžetskih sredstava suda.</p>
+      </decision>
+      <conclusions>
+        <p>Optužnicom Osnovnog državnog tužilaštva iz Bara Kt.br. 416/08 od 10.02.2010. godine optuženom V. N. stavljeno je na teret da je izvršio krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl. 416 st. 3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st. 1 Krivičnog zakonika</ref>, koje je činjenično bliže opisano u izreci presude.</p>
+        <p>Nakon sprovedenog dokaznog postupka na glavnom pretresu, zastupnik optužbe je izjavio da odustaje od krivičnog gonjenja prema optuženom jer nema dokaza da je učinio krivično djelo za koje ga tereti optužnica.</p>
+        <p>Imajući u vidu prednje navedeno a na osnovu <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_362_tac_1">čl. 362 tač. 1</ref> sud je prema optuženom donio presudu kojom se optužba odbija.</p>
+        <p>Odluka o troškovima zasnovana je na <ref href="/me/acts/2001/zakonik-o-krivicnom-postupku#art_203_st_1">čl. 203 st. 1 ZKP-a</ref>.</p>
+        <p>PRAVNA POUKA: Protiv ove presude može se izjaviti žalba Apelacionom sudu CG u roku od 15 dana prijema preko ovog suda.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

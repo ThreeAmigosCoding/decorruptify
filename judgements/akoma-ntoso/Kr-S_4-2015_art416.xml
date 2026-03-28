@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rjesenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2015-11-26/Kr-S.4-2015/main"/>
+          <FRBRuri value="/me/cgvs/2015-11-26/Kr-S.4-2015"/>
+          <FRBRdate date="2015-11-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2015-11-26/Kr-S.4-2015/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2015-11-26/Kr-S.4-2015/srp@"/>
+          <FRBRdate date="2015-11-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2015-11-26/Kr-S.4-2015/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2015-11-26/Kr-S.4-2015/srp@/.xml"/>
+          <FRBRdate date="2015-11-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/MirasRadovic" showAs="Miraš Radović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-s.br.4/15</docketNumber>
+      <neutralCitation>Kr-s.br.4/15</neutralCitation>
+      <docDate date="2015-11-26">26.11.2015. godine</docDate>
+      <judge refersTo="#judge1" role="presjednikVijeca">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="clanVijeca">Miraš Radović</judge>
+      <judge refersTo="#judge3" role="clanVijeca">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Radula Kojovića, kao predsjednika vijeća, Miraša Radovića i Petra Stojanovića, kao članova vijeća, uz učešće samostalnog referenta Ljiljane Košarac, kao zapisničara, u krivičnom predmetu protiv okrivljenog D.M., zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl. 416 st. 3 u vezi st.1</ref> putem pomaganja u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl. 25</ref> Krivičnog zakonika Crne Gore, koje krivično djelo je izvršeno na organizovani način u vezi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_22">čl.22 tačka 8 ZKP</ref> i krivičnog djela utaja poreza i doprinosa iz <ref href="/me/acts/2003/krivicni-zakonik#art_264">čl. 264 st.3 u vezi st. 1</ref> Krivičnog zakonika Crne Gore, odlučujući o predlogu Specijalnog državnog tužilaštva u Podgorici Kti-S.br.3/15 od 26.11.2015.godine za produženje pritvora protiv okrivljenog, u sjednici vijeća održanoj dana 26.11.2015. godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Naredbom o proširenju istrage Specijalnog državnog tužilaštva u Podgorici Kt-S.br.3/15 od 25.08.2015. godine, određeno je sprovođenje istrage protiv okrivljenog D.M. zbog osnovane sumnje da je izvršio krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl. 416 st. 3 u vezi st.1</ref> putem pomaganja u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl. 25</ref> Krivičnog zakonika Crne Gore, koje krivično djelo je izvršeno na organizovani način u vezi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_22">čl.22 tačka 8 ZKP</ref> i krivičnog djela utaja poreza i doprinosa iz <ref href="/me/acts/2003/krivicni-zakonik#art_264">čl. 264 st.3 u vezi st. 1</ref> Krivičnog zakonika Crne Gore.</p>
+        <p>Okrivljeni se nalazi u pritvoru koji je određen rješenjem vijeća Višeg suda u Podgorici Kvs.br.96/14 od 27.08.2015.godine, a produžen rješenjem vijeća tog suda Kvs.br. 108/15 od 25.09.2015.godine, tako da po ovom poslednjem rješenju pritvor okrivljenom može trajati do 27.11.2015.godine do 18,30 časova.</p>
+        <p>Prije isteka pritvora Specijalno državno tužilaštvo stavilo je ovom sudu predlog da se pritvor protiv okrivljenog produži za još dva mjeseca po pritvorskim osnovu iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač. 2 i 4 ZKP</ref>.</p>
+        <p>Po razmatranja spisa predmeta i ocjene navoda stavljenog predloga, Vrhovni sud Crne Gore je našao da je predlog osnovan.</p>
+        <p>Iz spisa predmeta se utvrđuje da postoji osnovana sumnja da je okrivljeni izvršio krivična djela stavljena mu na teret (saslušani svjedoci, pribavljeni nalazi angažovanih vještaka), te da istraga u dosadašnjem toku trajanja pritvora nije završena iz objektivnih razloga.</p>
+        <p>U daljem toku istrage potrebno je saslušati svjedoka Savić Branislava i druga lica za čijim se saslušanjem ukaže potreba, za koja je vjerovatno da će moći da daju obavještenja o krivičnim djelima koja se okrivljenom stavljaju na teret i o drugim važnim okolnostima. Ovo kod činjenice da je svjedok B.S., vlasnik preduzeća "G.c.", a okrivljeni D.M. izvršni direktor iz čega proizilazi da su isti bili u poslovnim i drugim vezama i koji se sa okrivljenim dobro poznaje, to ovaj sud nalazi da stoji pritvorski osnov iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.2 ZKP</ref>, jer sve navedeno predstavlja okolnost koja ukazuje da postoji opravdana bojazan da bi okrivljeni puštanjem na slobodu ometao postupak uticanjem na svjedoke.</p>
+        <p>Imajući u vidu da je okrivljeni D.M. osnovano sumnjiv da je, između ostalog, izvršio krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.3 u vezi st.1</ref> putem pomaganja u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore, koje krivično djelo je izvršeno na organizovani način u vezi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_22">čl.22 tač. 8 ZKP</ref>, za koje je propisana kazna zatvora od dvije do deset godina, način izvršenja krivičnog djela, nastala posledica - višemilionska šteta za imovinu Opštine B., prema okrivljenom pritvor treba produžiti i po osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.4 ZKP</ref>, kako se to i osnovano navodi u stavljenom predlogu Specijalnog državnog tužilaštva u Podgorici.</p>
+      </background>
+      <decision>
+        <p>Pritvor protiv okrivljenog D.M., određen rješenjem vijeća Višeg suda u Podgorici Kvs.br.96/14 od 27.08.2015.godine, a produžen rješenjem vijeća tog suda Kvs.br. 108/15 od 25.09.2015.godine, produžava se za još dva mjeseca, tako da isti po ovom rješenju može trajati do 27.01.2016. godine do 18,30 časova.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_177">čl.177 st. 3 ZKP</ref>, odlučeno je kao u izreci ovog rješenja.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

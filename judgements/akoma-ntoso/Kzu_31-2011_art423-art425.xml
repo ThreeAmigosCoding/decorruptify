@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-06-27/Kzu-31-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-06-27/Kzu-31-2011"/>
+          <FRBRdate date="2011-06-27" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-06-27/Kzu-31-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-06-27/Kzu-31-2011/srp@"/>
+          <FRBRdate date="2011-06-27" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-06-27/Kzu-31-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-06-27/Kzu-31-2011/srp@/.xml"/>
+          <FRBRdate date="2011-06-27" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudBP" href="/ontology/organization/me/OsnovniSudBijeloPolje" showAs="Osnovni sud u Bijelom Polju"/>
+        <TLCOrganization eId="visiSudBP" href="/ontology/organization/me/VisiSudBijeloPolje" showAs="Viši sud u Bijelom Polju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant1" href="/ontology/person/me/IM" showAs="I. M."/>
+        <TLCPerson eId="defendant2" href="/ontology/person/me/IB1" showAs="I. B.1"/>
+        <TLCPerson eId="defendant3" href="/ontology/person/me/IB2" showAs="I. B.2"/>
+        <TLCPerson eId="lawyer1" href="/ontology/person/me/NBM" showAs="N. B. M."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.31/11</docketNumber>
+      <neutralCitation>Kzu.br.31/11</neutralCitation>
+      <docDate date="2011-06-27">27.06.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="član vijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="član vijeća">Radule Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stojanović Petra</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Kojović Radula</judge>, kao članova vijeća, uz učešće službenika suda <judge refersTo="#clerk">Obradović Slađane</judge>, kao zapisničara, u krivičnom predmetu protiv osudjenih <party refersTo="#defendant1" as="#defendant">I. M.</party> i <party refersTo="#defendant2" as="#defendant">I. B.1</party>, zbog produženog krivičnog djela kleveta iz <ref href="/me/acts/2003/krivicni-zakonik#art_196">čl.196 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika i <party refersTo="#defendant3" as="#defendant">I. B.2</party>, zbog krivičnog djela kleveta iz <ref href="/me/acts/2003/krivicni-zakonik#art_196">čl.196 st.1</ref> Krivičnog zakonika, rješavajući o zahtjevu branioca osudjenih za vanredno ublažavanje kazne izrečene pravosnažnom presudom Višeg suda u Bijelom Polju Kž.br.84/11 od 09.03.2011.godine, u sjednici vijeća održanoj dana 27.06.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Osnovnog suda u Bijelom Polju K.br.10/10 od 21.09.2010.godine, oglašeni su krivim <party refersTo="#defendant1" as="#defendant">I. M.</party> i <party refersTo="#defendant2" as="#defendant">I. B.1</party>, zbog produženog krivičnog djela kleveta iz <ref href="/me/acts/2003/krivicni-zakonik#art_196">čl.196 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49</ref> Krivičnog zakonika, a <party refersTo="#defendant3" as="#defendant">I. B.2</party>, zbog krivičnog djela kleveta iz <ref href="/me/acts/2003/krivicni-zakonik#art_196">čl.196 st.1</ref> Krivičnog zakonika i osudjeni na novčanu kaznu u iznosu od po 1.000 (hiljadu) eura.</p>
+        <p>Viši sud u Bijelom Polju, kao drugostepeni, presudom Kž.br.84/11 od 09.03.2011.godine, uvažio je žalbu branioca okrivljenih u dijelu odluke o visini izrečene kazne i preinačio presudu Osnovnog suda u Bijelom Polju K.br.10/10 od 21.09.2010.godine, tako što je <party refersTo="#defendant1" as="#defendant">I. M.</party>, <party refersTo="#defendant2" as="#defendant">I. B.1</party> i <party refersTo="#defendant3" as="#defendant">I. B.2</party>, zbog tog krivičnog djela, osudio na novčanu kaznu u iznosu od po 600 (šest stotina) eura.</p>
+        <p>Branilac osudjenih, advokat <lawyer refersTo="#lawyer1">N. B. M.</lawyer> iz P., podnio je zahtjev za vanredno ublažavanje kazne u kom navodi da se osudjeni nalaze u teškoj materijalnoj situaciji, da su korisnici materijalnog obezbedjenja od po 100,00 eura u prosjeku, o čemu je priložio potrebnu dokumentaciju, pa nijesu u mogućnosti platiti novčanu kaznu, a u slučaju zamjene kaznom zatvora njihove porodice ostale bi bez prihoda koje ostvaruju kao fizički radnici. Kako se radi o novim okolnostima, koje nijesu bile poznate sudu u vrijeme izricanja presude, predložio je da se iz razloga pravičnosti prema osudjenim izrečena kazna ublaži.</p>
+      </background>
+      <arguments>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Bijelom Polju i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Iz spisa predmeta se utvrdjuje da su <party refersTo="#defendant1" as="#defendant">I. M.</party>, <party refersTo="#defendant2" as="#defendant">I. B.1</party> i <party refersTo="#defendant3" as="#defendant">I. B.2</party>, za navedeno krivično djelo osudjeni na najmanju mjeru novčane kazne, uz primjenu odredaba o ublažavanju kazne iz <ref href="/me/acts/2003/krivicni-zakonik#art_45">čl.45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46</ref> Krivičnog zakonika, tako da dalje ublažavanje kazne po zakonu nije moguće.</p>
+      </arguments>
+      <decision>
+        <p>RJEŠENJE</p>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, zahtjev branioca osudjenih odbio kao neosnovan.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 27.06.2011.godine</p>
+        <p>Zapisničar, <judge refersTo="#clerk">Slađana Obradović</judge> s.r.</p>
+        <p>Predsjednik vijeća, <judge refersTo="#judge1">Petar Stojanović</judge> s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

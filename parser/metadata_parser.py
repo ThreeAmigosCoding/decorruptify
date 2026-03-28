@@ -1,6 +1,7 @@
 import subprocess
 from pathlib import Path
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Load all Java model classes so the LLM knows the exact field names and types
 java_models_dir = Path("../backend/src/main/java/com/decorruptify/backend/model/")
@@ -57,6 +58,11 @@ def process_file(text: str, file_path: Path) -> None:
     print(f"Saved → {output_path}")
 
 
+def _process_xml(xml_file: Path) -> None:
+    """Wrapper for ThreadPoolExecutor."""
+    process_file(xml_file.read_text(encoding="utf-8"), xml_file)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Extract metadata from Akoma Ntoso judgment XMLs into CSV"
@@ -66,6 +72,10 @@ def main():
         help="Input file or directory (omit to process all XMLs in ../judgements/akoma-ntoso/)",
         type=Path,
     )
+    parser.add_argument(
+        "-w", "--workers", type=int, default=5,
+        help="Number of parallel workers (default: 5)",
+    )
     args = parser.parse_args()
 
     input_path: Path = args.i if args.i else Path("../judgements/akoma-ntoso/")
@@ -74,9 +84,13 @@ def main():
         process_file(input_path.read_text(encoding="utf-8"), input_path)
     else:
         xml_files = sorted(input_path.rglob("*.xml"))
-        print(f"Found {len(xml_files)} XML files.")
-        for xml_file in xml_files:
-            process_file(xml_file.read_text(encoding="utf-8"), xml_file)
+        print(f"Found {len(xml_files)} XML files. Using {args.workers} workers.")
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            futures = {executor.submit(_process_xml, xf): xf for xf in xml_files}
+            for future in as_completed(futures):
+                exc = future.exception()
+                if exc:
+                    print(f"Error on {futures[future].name}: {exc}")
 
 
 if __name__ == "__main__":

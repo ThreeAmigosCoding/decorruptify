@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-09-06/Kr-77-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-06/Kr-77-2011"/>
+          <FRBRdate date="2011-09-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-09-06/Kr-77-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-06/Kr-77-2011/srp@"/>
+          <FRBRdate date="2011-09-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-09-06/Kr-77-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-09-06/Kr-77-2011/srp@/.xml"/>
+          <FRBRdate date="2011-09-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudBar" href="/ontology/organization/me/OsnovniSudBar" showAs="Osnovni sud u Baru"/>
+        <TLCOrganization eId="osnovniSudUlcinj" href="/ontology/organization/me/OsnovniSudUlcinj" showAs="Osnovni sud u Ulcinju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/JLJ" showAs="J.LJ."/>
+      </references>
+    </meta>
+    <header>
+      <courtType refersTo="#court">Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr.br.77/11</docketNumber>
+      <neutralCitation>Kr.br.77/11</neutralCitation>
+      <docDate date="2011-09-06">06.09.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Stanka Vučinić</judge>
+      <judge refersTo="#judge3" role="članVijeća">Ivica Stanković</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Stojanović Petra, kao predsjednika vijeća, Vučinić Stanke i Stanković Ivice, kao članova vijeća, uz učešće namještenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv okrivljene <party refersTo="#defendant" as="#defendant">J.LJ.</party>, zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, rješavajući o predlogu sudije pojedinca <organization refersTo="#osnovniSudBar">Osnovnog suda u Baru</organization> K.br.230/11 od 18.07.2011.godine, za prenošenje mjesne nadležnosti, u sjednici vijeća održanoj 06.09.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Sudija pojedinac <organization refersTo="#osnovniSudBar">Osnovnog suda u Baru</organization>, stavio je predlog K.br.230/11 od 18.07.2011.godine, da Vrhovni sud Crne Gore za vodjenje krivičnog postupka protiv okrivljene <party refersTo="#defendant" as="#defendant">J.LJ.</party>, zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, odredi neki drugi stvarno nadležan sud.</p>
+        <p>Kao razloge navodi da su oštećeni kao tužioci K.O. i K.J., preko svog punomoćnika T.M., advokata iz M, <organization refersTo="#osnovniSudBar">Osnovnom sudu u Baru</organization>, podnijeli optužni predlog protiv okrivljene <party refersTo="#defendant" as="#defendant">J.LJ.</party>, sudije <organization refersTo="#osnovniSudBar">Osnovnog suda u Baru</organization>, zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, te da ovo predstavlja važan razlog da se za vodjenje krivičnog postupka odredi drugi stvarno nadležan sud.</p>
+        <p>Po razmatranju spisa predmeta i predloga za prenošenje mjesne nadležnosti, ovaj sud je našao:</p>
+        <p>Predlog je osnovan.</p>
+        <p>Odredbom <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_34">čl.34 st.1 ZKP</ref>, je pored ostalog, predvidjeno da se za vodjenje krivičnog postupka može odrediti drugi stvarno nadležan sud, ako za to postoje drugi važni razlozi.</p>
+        <p>Imajući u vidu da je okrivljena <party refersTo="#defendant" as="#defendant">J.LJ.</party>, sudija <organization refersTo="#osnovniSudBar">Osnovnog suda u Baru</organization>, to je da bi se izbjegla svaka sumnja u eventualnu nepristrasnost vodjenja krivičnog postupka kod tog suda, bilo opravdano odrediti da u ovom predmetu umjesto <organization refersTo="#osnovniSudBar">Osnovnog suda u Baru</organization>, postupa drugi stvarno nadležan sud i to <organization refersTo="#osnovniSudUlcinj">Osnovni sud u Ulcinju</organization>.</p>
+      </background>
+      <decision>
+        <p>Za vodjenje postupka u krivičnom predmetu protiv okrivljene <party refersTo="#defendant" as="#defendant">J.LJ.</party>, zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417">čl.417 st.1 Krivičnog zakonika</ref>, odredjuje se <organization refersTo="#osnovniSudUlcinj">Osnovni sud u Ulcinju</organization>.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_34">čl.34 st.1 ZKP</ref>, odlučeno kao u izreci ovog rješenja.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

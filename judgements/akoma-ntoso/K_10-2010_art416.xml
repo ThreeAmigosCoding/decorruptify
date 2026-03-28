@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/osp/2010-09-28/K.10-2010/main"/>
+          <FRBRuri value="/me/osp/2010-09-28/K.10-2010"/>
+          <FRBRdate date="2010-09-28" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/osp/2010-09-28/K.10-2010/srp@/main"/>
+          <FRBRuri value="/me/osp/2010-09-28/K.10-2010/srp@"/>
+          <FRBRdate date="2010-09-28" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/osp/2010-09-28/K.10-2010/srp@/main.xml"/>
+          <FRBRuri value="/me/osp/2010-09-28/K.10-2010/srp@/.xml"/>
+          <FRBRdate date="2010-09-28" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/OsnovniSudPljevlja" showAs="Osnovni sud u Pljevljima"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/LjiljanaPopovic" showAs="Ljiljana Popović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/DamjanovicVukadin" showAs="Damjanović Vukadin"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/UnkovicMilo" showAs="Unković Milo"/>
+        <TLCPerson eId="prosecutor" href="/ontology/person/me/DjurovicVeljko" showAs="Đurović Veljko"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/ZoraLekovic" showAs="Zora Leković"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Osnovni sud u Pljevljima</courtType>
+      <docketNumber>K.br.10/10</docketNumber>
+      <neutralCitation>K.br.10/10</neutralCitation>
+      <docDate date="2010-09-28">28.09.2010.godine</docDate>
+      <judge refersTo="#judge1">Ljiljana Popović</judge>
+      <judge refersTo="#judge2">Damjanović Vukadin</judge>
+      <judge refersTo="#judge3">Unković Milo</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>U IME NARODA</p>
+        <p>Osnovni sud u Pljevljima, kao prvostepeni krivični sud, po sudiji Ljiljani Popović, kao predsjedniku vijeća i sudija porotnika Damjanović Vukadina i Unković Mila, kao članova vijeća, uz sudjelovanje zapisničara Zore Leković, u krivičnom predmetu protiv optuženih R. R., T.R. i K.A. svi iz P., koje brani advokat G.M. iz P., zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 Krivičnog zakonika CG</ref>, po optužnici ODT Pljevlja Kt.br.147/08 od 19.06.2008.godine, nakon održanog glavnog i javnog pretresa, u prisustvu zamjenika ODT Pljevlja, Djurović Veljka, optuženih R. R., T.R., K.A. i njihovog branioca advokata G. M., dana 28.09.2010.godine donio je a dana 30.09.2010.godine i javno objavio</p>
+        <p>PRESUDU</p>
+      </introduction>
+      <background>
+        <p>Optuženi R. R. zvani Z., od oca R. i majke R. rodjene V., rodjen u selu P., Opština P., sa prebivalištem u P. ul. O., državljanin CG, oženjen, otac 4.djece, po zanimanju profesor istorije, carinik Uprave carina CG, pismen, završio za profesora istorije, vojsku služio 1993/94 u P., vodi se u VE, dobrog imovnog stanja, neosudjivan.</p>
+        <p>Optuženi T.R. zvani T., od oca M. i majke S. rodjene Č., rodjen u P., sa prebivalištem u P., ul.S. K., državljanin CG, neoženjen, bez djece, policajac, pismen, završio srednju mašinsku školu, vojsku služio 1989/90 u P., vodi se u VE, neosudjivan i</p>
+        <p>Optuženi K. A., od oca I. i majke N. rodjene R., rodjen u P., sa prebivalištem u P. ul.S. K., državljanin CG, oženjen, otac jednog djeteta, pismen, završio III.stepen KV automehaničar, vojsku služio 1993/94 u V., vodi se u VE, neosudjivan.</p>
+        <p>Da su dana 14.05.2008.godine u vremenskom periodu od 09,00 -10,15 časova na GP „R.", Opština P., radeći kao službena lica i to optuženi R. R. kao carinik Uprave Carina CG, optuženi T. R. radeći kao vodja patrole ovlašćenih policijskih službenika UP – IGP, a optuženi K. A. radeći kao član patrole UP – IGP, iskorišćavanjem svog službenog položaja pribavili korist B. Z. iz Požege na način što su i pored zabrane fitopatologa Č.Lj. o uvozu robe zbog neposjedovanja odgovarajuće dokumentacije dozvolili da B. sa vozilima i robom udje u C.G. a koja roba se nalazila u TMV „M." reg.br. UE i priključnom vozilu UE, u kojima se nalazilo 228 paketa balkonskog i baštenskog cvijeća kojim vozilom je upravljao B. Z. i TMV marke „M." reg.oznake UE sa priključnim vozilom UE u kojom se nalazio 81 paket balkonskog i baštinskog cvijeća a kojim vozilom je upravljao O.M. kojeg je angažovao B.Z. za vršenja prevoza ove robe, te na graničnom prelazu optuženi T.R. i optuženi K.A., suprotno odredbama čl.198 st.3 Pravilnika o načinu obavljanja odredjenih policijskih poslova i primjeni ovlašćenja u obavljanju tih poslova, nisu izvršili kontrolu pomenutih vozila i lica niti ih registrovali u postojeće evidencije prema zadacima datim u patrolnom listu a optuženi R. R. rekao B. Z. da prodje sa vozilom i robom u C. G. bez adekvatne dokumentacije i izmirenja obaveza za rasadno bilje te su B.Z. i O.M. naznačenim vozilima ušli u C.G. gdje su u selu O., u mjestu zvanom K., na regionalnom putu P.-B.P. zatečeni od strane ovlašćenih policijskih službenika i privedeni u UP PJ Pljevlja od kojih je, uz izdate potvrde, oduzeta naznačena vozila i roba,</p>
+        <p>čime bi izvršili krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 Krivičnog zakonika CG</ref>,</p>
+      </background>
+      <decision>
+        <p>Na osnovu <ref href="/me/acts/2003/zkp#art_363">čl. 363 st.1 tačka 3 Zakona o krivičnom postupku</ref>,</p>
+        <p>OSLOBADJAJU SE OD OPTUŽBE</p>
+        <p>jer u postupku nije utvrdjeno da su optuženi izvršili krivično djelo koje im je stavljeno na teret.</p>
+        <p>Troškovi krivičnog postupka padaju na teret budžetskih sredstava ovog suda.</p>
+      </decision>
+      <conclusions>
+        <p>Obrazloženje</p>
+        <p>Osnovno državno tužilaštvo u Pljevljima optužnicom Kt.br.147/08 od 19.06.2008.godine optužilo je R.R., T. R. i K. A. svi iz P., da su izvršili krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 Krivičnog zakonika CG</ref>, a na način, mjesto i vrijeme bliže opisano u izreci ove presude i u završnoj riječi zamjenik ODT Pljevlja ističući da u cjelosti ostaje pri podignutoj optužnici i završnoj riječi datoj na glavnom pretresu od 26.12.2008.godine, te da dodaje da izvedenim dokazima na sasvim jasan i pouzdan način utvrdjeno je da su vozilima B. i O. naišli na granični prelaz "R." da ih policija nije evidentirala, da su odmah iza policije prostorije carine i da je carina postupala odnosno optuženi R. a ne vidi se na osnovu čega kad prethodno nisu od policije evidentirani.</p>
+        <p>Optuženi R.R. u svojoj odbrani datoj u UP PJ Pljevlja u prisustvu branioca navodi da je dana 14.05.2008.godine radio u redovnoj smjeni na GP „R." sa kolegama L.M. i R.I., kao i šefom prelaza R. R. u vremenskom periodu od 08,00 do 20,00 časova i po prijemu smjene, izmedju 08,00 i 08,30 časova u kancelariju je ušla fitopatolog Č.Lj. i obavijestila ga da su na GP došle dvije pošiljke cvijeća i pokazala odredjenu dokumentaciju koju su vozači njoj prezentirali. Č. je naredila vlasniku robe da otvori vozilo da izvrši pregled što je i on učinio i nakon konstatacije Č. da po Uredbi o prometu poljoprivrednih proizvoda fizička lica ne mogu biti uvoznici poljoprivrednih proizvoda i sadnog materijala u CG. Vlasnik robe je pokušao da zamoli da mu se omogući plaćanje dažbina i ulazak u CG a Č. je bila izričita da bez dozvole Ministarstva poljoprivrede, šumarstva i vodoprivrede odnosno Poljoprivredne inspekcije ne može biti uvezeno. Optuženi R. navodi da je u tom trenutku saopštio vlasniku te robe da se vrati u pravcu S. što je isti učinio.</p>
+        <p>Optuženi T. R. u svojoj odbrani navodi da je dana 14.05.2008.godine u vremenu od 07,00 do 19,30 časova obavljao poslove policajca na graničnom prelazu „R." kao vodja patrole policije. Tokom čitave smjene nije mu poznato za ta kombi vozila da ih je vidio i tvrdi da ih nije vidio niti su prošla graničnu liniju GP „R.". Negdje oko 11,00 časova pozvala ih je njihova dežurna služba pa su izvršili provjeru kroz evidenciju i saopštili da dva vozila sa prikolicama natovarena cvijećem nijesu prešla GP niti su ih evidentirali.</p>
+        <p>Optuženi K.A. u svojoj odbrani navodi da je dana 14.05.2008.godine u vremenu od 07,00 do 19,00 časova obavljao poslove policajca na GP „R.". Dok je vršio kontrolu vozila nije primijetio okretanje dva kombija sa prikolicama na proširenju na GP. Ta dva kombi vozila toga jutra nije primijetio, bila je gužva, kamioni Užice puteva sa gradjevinskim materijalom su bili na ulasku u CG.</p>
+        <p>Branilac optuženih u završnoj riječi je istakao da svim izvedenim dokazima potpuno jasno i nedvosmisleno je utvrdjeno da okrivljeni nijesu počinili krivično djelo za koje su optuženi. Niko od saslušanih svjedoka, pribavljene dokumentacije kao i materijalnih dokaza u toku postupka nije potvrdio da su B. i O. kritičnog dana prešli granični punkt "R.". O. i B. su zaobišli zvanični državni prelaz "R." i takvim svojim postupanjem napravili krivično djelo krijumčarenje za koje nažalost nijesu optuženi već se u toku cjelokupnog ovog postupka pojavljuju kao zaštićeni svjedoci tužilaštva.</p>
+        <p>U dokaznom postupku sud je saslušao svjedoke L.M., P.Z., B. M., R. R., M. V., C.B., Đ.P., G. D., R.I., K.E., G.V., G.M., Č.Lj., G. Ž., P. M., Z. E., G. S., G.Lj., pročitao iskaze svjedoka R.M., I.V., Š.Z., B.Z. i O. M., izvršio uviđaj lica mjesta, pročitao relevantnu dokumentaciju uključujući akt Promonte, akt M-Tel DOO sa listinzima, akt T-kom sa listinzima, službenu zabilješku UP – IGP Pljevlja broj 051/08-723 od 14.05.2008.godine, potvrde UP PJ Pljevlja o privremenom oduzimanju vozila i robe, zapisnik o izvršenom inspekcijskom pregledu Republičkog poljoprivrednog inspektora, rješenje o zabrani uvoza pošiljke bilja, patrolni list UP IGP Pljevlja, Pravilnik o načinu obavljanja odredjenih policijskih poslova, fotoelaborat UP PJ Pljevlja i evidenciju o prelasku državne granice na GP „R." za dan 14.05.2008.godine.</p>
+        <p>Nakon provedenog dokaznog postupka i ocjene izvedenih dokaza i to kako svakog pojedinačno, tako i u medjusobnoj povezanosti a pri tom imajući u vidu odbrane optuženih R., T. i K., ovaj sud nije mogao na pouzdan način utvrditi da su optuženi izvršili krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 Krivičnog zakonika CG</ref>, a na način, mjesto i vrijeme kako im je to javnom optužbom stavljeno na teret pa ih je sud primjenom <ref href="/me/acts/2003/zkp#art_363">čl.363 st.1 tačka 3 ZKP-a</ref> i oslobodio od optužbe.</p>
+        <p>Nesporna je činjenica da je optuženi R.R. kao carinik Uprave carina radio na graničnom prelazu „R." dana 14.05.2008.godine u radnom vremenu od 08,00 do 20,00 časova. Takodje je nesporna činjenica da su optuženi T. i K. kao ovlašćeni policijski službenici UP IGP radili na graničnom prelazu „R." dana 14.05.2008.godine u periodu od 07,30 do 19,30 časova. Nesporna je činjenica da su B. Z. i O.M. sa dva TMV marke „M." zatečeni u kamenolomu u O. na putnom pravcu P.-B.P. prilikom pretovara robe. Nesporna je i činjenica da je Republički poljoprivredni inspektor Č. Lj. B.Z. rješenjem zabranila uvoz robe – cvijeća u C.G. zbog neposjedovanja odgovarajuće dokumentacije.</p>
+        <p>Sporna je medjutim činjenica da li su optuženi iskorišćavanjem svog službenog položaja pribavili korist B. Z. tako što su i pored zabrane fitopatologa dozvolili B. da sa vozilima i robom udje u C.G.</p>
+        <p>Svjedokinja Č. Lj. je izjavila da je zaposlena kao poljoprivredni inspektor i da je dana 14.05.2008.godine oko 08,10 časova B.Z. pozvao na mobilni telefon, da je na GP „R." došla oko 09,00 časova, izvršila pregled robe i konstatovala da je roba zdravstveno ispravna ali da nema potpunu dokumentaciju te donijela rješenje o zabrani uvoza robe u CG. Primjerak rješenja dostavila cariniku R. R. i vlasniku robe B.Z. te oko 09,30 do 09,45 časova krenula za P..</p>
+        <p>Svjedokinja L.M. je izjavila da je zaposlena u Upravi carina C.G. u ispostavi „R." kao vodja smjene i da je dana 14.05.2008.godine fitopatolog Č. Lj. saopštila im da dva kombi vozila sa prikolicama koji prevoze cvijeće ne mogu ući u C. G. zato što ne posjeduju odgovarajuću dokumentaciju. Carinik R. je izašao da vidi o kakvoj se robi radi i vratio se rekavši da ta roba ni po carinskom osnovu ne može da udje u C.G. i to konstatovao u knjigu dežurstva. Svjedokinja L. je tvrdila da ta vozila nijesu prošla preko punkta u pravcu P..</p>
+        <p>Svjedoci M.V. i Dj.P. su posvjedočili da su dana 14.05.2008.godine radili na GP „R." i nijesu primijetili nikakva kombi vozila sa prikolicama na graničnom prelazu. Svjedok Dj. je kroz računar izvršio provjeru i utvrdio da ta vozila toga dana nisu evidentirana na graničnom prelazu.</p>
+        <p>Svjedokinje P.Z. i G.M., zaposlene u špediciji na graničnom prelazu „R.", su posvjedočile da su negdje oko 08,15 časova iz pravca P. došla dva kombi vozila sa prikolicama i stala na proširenje. Obje su vidjele kada su se kombi vozila okrenula ispred špediterskih kućica i otišla u pravcu P.. Tvrdile su da vozila nijesu prešla granični ni carinski ni policijski punkt.</p>
+        <p>Svjedok R. R. šef carinske ispostave „R." je posvjedočio da je dana 14.05.2008.godine došao na posao negdje oko 09,30 časova i bio informisan da je cvijeće vraćeno za S. jer inspektor Č. Lj. nije dala rješenje o dozvoli uvoza. Lično se uvjerio u knjigu dežurstva toga dana gdje je upisano da su kombiji sa cvijećem vraćeni u pravcu P..</p>
+        <p>Sud je cijenio iskaze svjedoka Č.Lj., L. M., G.M., R.R., Dj. P., P. Z., R.I. i M.V. i stekao ubjedjenje da su ovi svjedoci veoma detaljno i krajnje istinito posvjedočili sve što im je lično poznato. U prilog ovakvog zaključka suda ide i fotokopija knjige dnevnog dežurstva carinske ispostave „R." iz koje se na nesumnjiv način utvrdjuje da je za ovaj dan konstatovano da su vozila koja su bila utovarena cvijećem vraćena u pravcu S. zbog neposjedovanja odgovarajuće dokumentacije. Iskaz svjedoka Č.Lj. potvrđen je listingom T-koma za broj telefona svjedokinje Č. iz koga se utvrđuje da je B. Z. pozivao broj telefona svjedokinje Č. dana 14.05.2008.godine u 08,10 časova.</p>
+        <p>Svjedoci B.Z. i O. M. su medjutim kategorični da su kritičnog dana u C.G. sa vozilima utovarenim cvijećem prešli preko graničnog prelaza „R.". Svjedok B. je posvjedočio da mu je carinik R. mahnuo rukom da sa vozilom predje preko punkta. Svjedok O. je kazao da je B. u jednom momentu rekao „kad ja krenem ti kreni za mnom" pa kad je B. krenuo i on nastavio put prema P..</p>
+        <p>Svjedoci P.M. i Z.E. iz Granične policije su posvjedočili da su u kamenolomu u O. oko 10,30 časova zatekli vozila u pretovaru cvijeća i da su im lica iz S. rekla da su zaobišla granični prelaz, da su došla nekim makadamskim putem ali kako ne poznaju dobro teren nijesu znala da objasne kuda su prošla.</p>
+        <p>Svjedok C.B., policajac na prijavnici UP PJ Pljevlja, je izjavio da je negdje oko 11,00 ili 11,30 časova vozač bijelog kombija rekao „privode nas inspektori policije zato što smo zaobišli punkt sa robom".</p>
+        <p>Svjedok G. Ž. je izjavio da živi u selu V. i da je jedne prilike maja mjeseca sa sporednog puta sa „R." pojavila su se izmedju njegove kuće i gatera dva kombija sa prikolicama koji su pitali kuda da izadju na glavni put. Svjedok G. D. je posvjedočio da je bio na gateru kod G.Ž. i da je negdje oko 10,00 ili 11,00 časova iz pravca R. došla dva kombija sa prikolicama. Svjedoci G. S. i G. Lj. su takodje potvrdili dolazak kombija na gater u vremenu između 09,00 i 10,00 časova.</p>
+        <p>Uviđajem lica mjesta sud je utvrdio da na oko 100 metara prije GP R. postoji skretanje u lijevo koje se ne vidi sa GP R. i kojim pravcem se ispod objekata špedicije i fitosanitarne inspekcije može doći do kuće i gatera G. Ž.. Od kuće G. Ž. vodi makadamski put koji se na oko 150 metara uključuje na regionalni put P. - P. ispod GP R., a to mjesto uključenja se ne vidi sa GP R. niti se sa tog mjesta vidi GP R.. Od GP R. do kamenoloma u O. potrebno je oko 20 minuta vožnje, što je utvrđeno neposrednim mjerenjem prilikom uviđaja.</p>
+        <p>Sud je cijenio iskaze svjedoka B. i O. ali iste nije mogao prihvatiti kao istinite. Iskazi ova dva svjedoka su neubjedljivi, nejasni i nelogični a i negirani su u cjelosti ostalim dokazima u postupku. Obzirom da im je oduzeto cvijeće kao i jedno kombi vozilo ovim svjedocima je u interesu da drugačije prikazuju činjenice nego što su se zaista dogodile.</p>
+        <p>Izvedenim dokazima u postupku je utvrđeno da su B. i O. sa kombi vozilima i prikolicama došli na GP R. kritičnog dana oko 08,10 ili 08,15 časova. Svjedok Č. je na GP R. došla oko 09,00 časova, izvršila pregled i izdala rješenje o zabrani. Č.Lj. je GP R. napustila oko 09,25 časova. Svjedokinje P. i G. su potvrdile da su se kombi vozila okrenula na GP R. i vratila u pravcu P.. Iskazima svjedoka G., G., G. i G. utvrđeno je da su B. i O. sa kombijima i prikolicama u vremenu između 10,00 i 11,00 časova došli livadom do kuće G. Ž. gdje su pitali da im pokaže kako da se uključe na glavni put. Svjedoci P. i Z. su ih zatekli u pretovaru cvijeća u kamenolomu O. oko 10,30 časova, a jedan od S. je rekao da su zaobišli granični prelaz i pokazao da su došli iz pravca sela V..</p>
+        <p>Na osnovu ovako utvrdjenih činjenica ne može se na pouzdan način utvrditi da su optuženi R. R., T.R. i K.A. izvršili krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 Krivičnog zakonika CG</ref> kako im se to javnom optužbom stavlja na teret pa ih je sud primjenom <ref href="/me/acts/2003/zkp#art_363">čl.363 st.1 tačka 3 Zakona o krivičnom postupku</ref> oslobodio od optužbe.</p>
+        <p>Pošto je sud optužene oslobodio od optužbe to je u smislu <ref href="/me/acts/2003/zkp#art_203">čl.203 st.1 Zakona o krivičnom postupku</ref> sud odlučio da troškovi krivičnog postupka padaju na teret budžetskih sredstava ovog suda a o istim će biti odlučeno posebnim rješenjem shodno <ref href="/me/acts/2003/zkp#art_200">čl.200 Zakona o krivičnom postupku</ref>.</p>
+        <p>OSNOVNI SUD U PLJEVLJIMA, dana 30.09.2010.godine.</p>
+        <p>Zapisničar: Zora Leković</p>
+        <p>Predsjednik vijeća - sudija: Ljiljana Popović</p>
+        <p>PRAVNA POUKA: Protiv ove presude dozvoljena je žalba u roku od 15 dana po prijemu iste Višem sudu Bijelo Polje, a preko ovog suda.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

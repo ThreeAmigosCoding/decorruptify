@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-02-21/Kzu.1-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-02-21/Kzu.1-2011"/>
+          <FRBRdate date="2011-02-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-02-21/Kzu.1-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-02-21/Kzu.1-2011/srp@"/>
+          <FRBRdate date="2011-02-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-02-21/Kzu.1-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-02-21/Kzu.1-2011/srp@/.xml"/>
+          <FRBRdate date="2011-02-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="court_osnovni_berane" href="/ontology/organization/me/OsnovniSudUBeranama" showAs="Osnovni sud u Beranama"/>
+        <TLCOrganization eId="court_visi_bp" href="/ontology/organization/me/VisiSudUBijelomPolju" showAs="Viši sud u Bijelom Polju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/SE" showAs="Š. E."/>
+        <TLCPerson eId="defense_attorney" href="/ontology/person/me/StankoJelic" showAs="Stanko Jelić"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.1/11</docketNumber>
+      <neutralCitation>Kzu.br.1/11</neutralCitation>
+      <docDate date="2011-02-21">21.02.2011. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="član vijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="član vijeća">Radule Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stojanović Petra</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Kojović Radula</judge>, kao članova vijeća, uz učešće službenika suda <judge refersTo="#clerk">Obradović Slađane</judge>, kao zapisničara, u krivičnom predmetu protiv osudjenog Š. E., zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_5">čl.416 st.5</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_4">st.4</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">1</ref> Krivičnog zakonika, rješavajući o zahtjevu branioca osudjenog za vanredno ublažavanje kazne, izrečene pravosnažnom presudom Višeg suda u Bijelom Polju Kž.br.1021/09 od 17.12.2009. godine, u sjednici vijeća održanoj dana 21.02.2011. godine donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Osnovnog suda u Beranama K.br.326/08 od 09.06.2009. godine Š. E. oglašen je krivim, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_4">čl.416. st.4.</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st.1.</ref> Krivičnog zakonika u produženom trajanju i osudjen na kaznu zatvora u trajanju od 2 (dvije) godine.</p>
+        <p>Viši sud u Bijelom Polju, kao drugostepeni, presudom Kž.br.1021/09 od 17.12.2009. godine uvažio je žalbu branioca optuženog i preinačio presudu Osnovnog suda u Beranama K.br.326/08 od 09.06.2009. godine samo u pogledu pravne kvalifikacije djela, tako što je optuženog Š. E. oglasio krivim, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_5">čl.416. st.5.</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_4">st.4.</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">1.</ref> Krivičnog zakonika i osudio na kaznu zatvora u trajanju od 2 (dvije) godine.</p>
+        <p>Branilac osudjenog, advokat <lawyer refersTo="#defense_attorney">Stanko Jelić</lawyer> iz Bijelog Polja, podnio je ovom sudu zahtjev za vanredno ublažavanje kazne u kom navodi da je osudjenom uračunljivost u vrijeme izvršenja krivičnog djela bila bitno smanjena, da je liječen od bolesti zavisnosti i karcinoma testisa, da je kliničko-neurološki nalaz u pogoršanju, da se nalazi u stanju nepovoljne kliničke slike sa posttraumatskim stresnim sindromom i oboljenjem srca, o čemu je priložio medicinsku dokumentaciju, te da bi boravkom u zatvoru mogla nastupiti smrt. Predložio je da se osudjenom izrečena kazna uslovi.</p>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Beranama i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev je osnovan.</p>
+      </background>
+      <arguments>
+        <p>Prema odredbi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Iz priložene medicinske dokumentacije se utvrdjuje da je osudjeni operisan od tumora desnog testisa, da se nalazi u stanju psihomotorne usporenosti, pojačane nesigurnosti i potrebe psihološko-psihijatrijskog praćenja i podrške, koja okolnost je takvog značaja da očigledno opravdava blažu osudu od izrečene.</p>
+      </arguments>
+      <decision>
+        <p>Usvaja se zahtjev branioca osudjenog Š. E., za vanredno ublažavanje kazne, pa se pravosnažna presuda Višeg suda u Bijelom Polju Kž.br.1021/09 od 17.12.2009. godine preinačava u pogledu odluke o kazni, tako što se Š. E., zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_5">čl.416 st.5</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_4">st.4</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">1</ref> Krivičnog zakonika, primjenom <ref href="/me/acts/2003/krivicni-zakonik#art_45">čl.45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46</ref> Krivičnog zakonika, osudjuje na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci.</p>
+      </decision>
+      <conclusions>
+        <p>Sa izloženog, ovaj sud je usvojio zahtjev za vanredno ublažavanje kazne i na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_425_st_6">čl.425 st.6 ZKP</ref>, odlučio kao u izreci ove presude.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 21.02.2011. godine</p>
+        <p>Zapisničar, <judge refersTo="#clerk">Slađana Obradović</judge> s.r.</p>
+        <p>Predsjednik vijeća, <judge refersTo="#judge1">Petar Stojanović</judge> s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>
