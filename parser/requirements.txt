@@ -1,3 +1,6 @@
-# No pip dependencies needed.
-# Both scripts call the local `claude` CLI (Claude Code) via subprocess.
+# text_to_akoma_ntoso.py and metadata_parser.py have no pip dependencies.
+# Both call the local `claude` CLI (Claude Code) via subprocess.
 # Make sure `claude` is on your PATH (it is if Claude Code is installed).
+
+# law_to_akoma_ntoso.py additionally needs PyPDF2 for PDF text extraction:
+PyPDF2
