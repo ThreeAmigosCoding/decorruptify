@@ -4,9 +4,9 @@ law_to_akoma_ntoso.py — Convert Criminal Code articles to Akoma Ntoso 3.0 XML.
 Pipeline:
   1. Extract text of Chapter 34 (Articles 416–425) from the Criminal Code PDF
      using PyPDF2 (search pages for "GLAVA TRIDESET ČETVRTA")
-  2. Send the extracted text to GPT-4o with a structured prompt and Akoma Ntoso
-     formatting rules
-  3. GPT-4o returns valid Akoma Ntoso 3.0 XML with proper <act>, <chapter>,
+  2. Send the extracted text to Claude (via Claude Code CLI) with a structured
+     prompt and Akoma Ntoso formatting rules
+  3. Claude returns valid Akoma Ntoso 3.0 XML with proper <act>, <chapter>,
      <article>, <paragraph> hierarchy
   4. Save to legal-texts/akoma-ntoso/
 
@@ -22,13 +22,8 @@ Usage:
 
 import argparse
 import re
+import subprocess
 from pathlib import Path
-
-from dotenv import load_dotenv
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
-
-load_dotenv()
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PDF_PATH = PROJECT_ROOT / "data" / "laws" / "krivicni_zakonik.pdf"
@@ -86,44 +81,40 @@ AKOMA_NTOSO_EXAMPLE = """\
 
 
 def convert_to_akoma_ntoso(chapter_text: str) -> str:
-    """Use GPT-4o to convert extracted chapter text to Akoma Ntoso 3.0 XML."""
-    llm = ChatOpenAI(model="gpt-4o", temperature=0)
+    """Use Claude (via Claude Code CLI) to convert extracted chapter text to Akoma Ntoso 3.0 XML."""
+    prompt = (
+        "Ti si stručnjak za pravnu informatiku. Konvertuješ tekst zakona u "
+        "Akoma Ntoso 3.0 XML format.\n\n"
+        "Pravila:\n"
+        "- Koristi namespace: http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17\n"
+        "- Struktura: <akomaNtoso><act><meta>...</meta><body><chapter><article>...\n"
+        "- Svaki član (article) ima eId='art_NNN', <num>Član NNN</num>, <heading>\n"
+        "- Stavovi koriste <paragraph> sa eId='art_NNN_para_N'\n"
+        "- Članovi bez stavova koriste <content><p> direktno\n"
+        "- Za članove sa oznakom 'a' (npr. 421a), koristi eId='art_421a'\n"
+        "- Brisani članovi se označavaju sa <content><p>(brisano)</p></content>\n"
+        "- Meta sekcija treba sadržati FRBRWork sa country='me', publication info, "
+        "i references\n\n"
+        f"Primjer strukture članova:\n\n{AKOMA_NTOSO_EXAMPLE}\n\n"
+        "Vrati isključivo validan XML dokument, ništa drugo.\n\n"
+        "Konvertuj sljedeći tekst Glave 34 Krivičnog zakonika Crne Gore u "
+        f"Akoma Ntoso 3.0 XML:\n\n{chapter_text}"
+    )
 
-    prompt = ChatPromptTemplate.from_messages([
-        (
-            "system",
-            "Ti si stručnjak za pravnu informatiku. Konvertuješ tekst zakona u "
-            "Akoma Ntoso 3.0 XML format.\n\n"
-            "Pravila:\n"
-            "- Koristi namespace: http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17\n"
-            "- Struktura: <akomaNtoso><act><meta>...</meta><body><chapter><article>...\n"
-            "- Svaki član (article) ima eId='art_NNN', <num>Član NNN</num>, <heading>\n"
-            "- Stavovi koriste <paragraph> sa eId='art_NNN_para_N'\n"
-            "- Članovi bez stavova koriste <content><p> direktno\n"
-            "- Za članove sa oznakom 'a' (npr. 421a), koristi eId='art_421a'\n"
-            "- Brisani članovi se označavaju sa <content><p>(brisano)</p></content>\n"
-            "- Meta sekcija treba sadržati FRBRWork sa country='me', publication info, "
-            "i references\n\n"
-            "Primjer strukture članova:\n\n"
-            "{example}\n\n"
-            "Vrati isključivo validan XML dokument, ništa drugo.",
-        ),
-        (
-            "user",
-            "Konvertuj sljedeći tekst Glave 34 Krivičnog zakonika Crne Gore u "
-            "Akoma Ntoso 3.0 XML:\n\n{chapter_text}",
-        ),
-    ])
+    result = subprocess.run(
+        ["claude", "--print", "--output-format", "text"],
+        input=prompt,
+        capture_output=True,
+        text=True,
+    )
 
-    chain = prompt | llm
-    response = chain.invoke({
-        "chapter_text": chapter_text,
-        "example": AKOMA_NTOSO_EXAMPLE,
-    })
+    if result.returncode != 0:
+        raise RuntimeError(f"Claude CLI failed: {result.stderr}")
 
-    xml_content = response.content
+    xml_content = result.stdout.strip()
     # Strip markdown code fences if present
     xml_content = re.sub(r"^```xml\s*", "", xml_content)
+    xml_content = re.sub(r"^```\s*", "", xml_content)
     xml_content = re.sub(r"\s*```$", "", xml_content)
 
     return xml_content.strip()
@@ -165,7 +156,7 @@ def main():
         return
 
     # Step 2: Convert to Akoma Ntoso via LLM
-    print("Converting to Akoma Ntoso XML via GPT-4o...")
+    print("Converting to Akoma Ntoso XML via Claude...")
     xml_content = convert_to_akoma_ntoso(chapter_text)
 
     # Step 3: Save

@@ -69,7 +69,7 @@ def strip_css_artifacts(text: str) -> str:
     """Remove CSS/HTML styling artifacts that appear at the top of scraped texts."""
     lines = text.splitlines()
     for i, line in enumerate(lines):
-        if re.match(r'Kr-S\.br\.|VRHOVNI SUD|Vrhovni sud', line.strip()):
+        if re.match(r'Kr-S\.br\.|Kr\.br\.|Ks?\.\s*br\.|Ksž\s*\.?\s*br\.|Kž|K\.br\.|VRHOVNI SUD|Vrhovni sud|VIŠI SUD|Viši sud|APELACIONI SUD|Apelacioni sud|U IME NARODA', line.strip()):
             return '\n'.join(lines[i:])
     return text
 
