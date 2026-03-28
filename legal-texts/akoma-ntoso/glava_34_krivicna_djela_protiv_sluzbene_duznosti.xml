@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd">
+	<act id="krivicni_zakonik_glava_34" name="Krivicni zakonik Crne Gore - Glava XXXIV">
+		<meta>
+			<identification source="#decorruptify">
+				<FRBRWork>
+					<FRBRthis value="/akn/me/act/krivicni_zakonik/glava_34/!main"/>
+					<FRBRuri value="/akn/me/act/krivicni_zakonik/glava_34"/>
+					<FRBRdate date="2003-11-28" name="Enactment"/>
+					<FRBRauthor href="#parliament" as="#author"/>
+					<FRBRcountry value="me"/>
+					<FRBRname value="krivicniZakonikCrneGoreGlava34"/>
+					<FRBRprescriptive value="true"/>
+					<FRBRauthoritative value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value="/akn/me/act/krivicni_zakonik/glava_34/!main/srp"/>
+					<FRBRuri value="/akn/me/act/krivicni_zakonik/glava_34/srp"/>
+					<FRBRdate date="2026-03-28" name="Generation"/>
+					<FRBRauthor href="#decorruptify" as="#editor"/>
+					<FRBRlanguage language="srp"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value="/akn/me/act/krivicni_zakonik/glava_34/!main.xml"/>
+					<FRBRuri value="/akn/me/act/krivicni_zakonik/glava_34.xml"/>
+					<FRBRdate date="2026-03-28" name="Generation"/>
+					<FRBRauthor href="#decorruptify" as="#editor"/>
+					<FRBRformat value="xml"/>
+				</FRBRManifestation>
+			</identification>
+			<publication name="sl" date="2003-11-28" showAs="Službeni list Republike Crne Gore" number="70/2003"/>
+			<references source="#decorruptify">
+				<TLCOrganization eId="parliament" href="/ontology/organization/crnagora.parliament" showAs="Skupština Crne Gore"/>
+				<TLCOrganization eId="decorruptify" href="/ontology/organization/decorruptify" showAs="Decorruptify Project"/>
+			</references>
+		</meta>
+		<body>
+			<chapter eId="chp_34">
+				<num>GLAVA TRIDESET ČETVRTA</num>
+				<heading>KRIVIČNA DJELA PROTIV SLUŽBENE DUŽNOSTI</heading>
+
+				<article eId="art_416">
+					<num>Član 416</num>
+					<heading>Zloupotreba službenog položaja</heading>
+					<paragraph eId="art_416_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Službeno lice koje protivpravnim iskorišćavanjem svog službenog položaja ili ovlašćenja, prekoračenjem granica svog službenog ovlašćenja ili nevršenjem svoje službene dužnosti pribavi sebi ili drugom korist, drugom nanese štetu ili teže povrijedi prava drugog, kazniće se zatvorom od šest mjeseci do pet godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_416_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ako je izvršenjem djela iz stava 1 ovog člana pribavljena imovinska korist u iznosu preko tri hiljade eura, učinilac će se kazniti zatvorom od jedne do osam godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_416_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Ako vrijednost pribavljene imovinske koristi prelazi iznos od trideset hiljada eura, učinilac će se kazniti zatvorom od dvije do dvanaest godina.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_417">
+					<num>Član 417</num>
+					<heading>Nesavjestan rad u službi</heading>
+					<paragraph eId="art_417_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Službeno lice koje kršenjem zakona ili drugih propisa ili opštih akata, propuštanjem dužnosti nadzora ili na drugi način očigledno nesavjesno postupa u vršenju službe, iako je bilo svjesno ili je bilo dužno i moglo biti svjesno da usljed toga može nastupiti teža povreda prava drugog ili imovinska šteta, pa takva povreda, odnosno šteta u iznosu koji prelazi tri hiljade eura i nastupi, kazniće se novčanom kaznom ili zatvorom do tri godine.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_417_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ako je usljed djela iz stava 1 ovog člana došlo do teške povrede prava drugog ili je nastupila imovinska šteta u iznosu koji prelazi trideset hiljada eura, učinilac će se kazniti zatvorom od šest mjeseci do pet godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_417_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Odgovorno lice u ustanovi ili drugom subjektu, osim onih koje se bave privrednom djelatnošću, koje učini djelo iz st. 1 i 2 ovog člana, kazniće se kaznom propisanom za to djelo.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_418">
+					<num>Član 418</num>
+					<heading>Protivzakonita naplata i isplata</heading>
+					<content>
+						<p>Službeno lice koje od nekog naplati nešto što ovaj nije dužan da plati ili naplati više nego što je dužan da plati ili koje pri isplati ili predaji kakvih stvari manje isplati, odnosno preda, kazniće se novčanom kaznom ili zatvorom do tri godine.</p>
+					</content>
+				</article>
+
+				<article eId="art_419">
+					<num>Član 419</num>
+					<heading>Prevara u službi</heading>
+					<paragraph eId="art_419_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Službeno lice koje u vršenju službe u namjeri da sebi ili drugom pribavi protivpravnu imovinsku korist podnošenjem lažnih obračuna ili na drugi način dovede u zabludu ovlašćeno lice da izvrši nezakonitu isplatu, kazniće se zatvorom od šest mjeseci do pet godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_419_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ako je djelom iz stava 1 ovog člana pribavljena imovinska korist u iznosu koji prelazi tri hiljade eura, učinilac će se kazniti zatvorom od jedne do osam godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_419_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Ako je djelom iz stava 1 ovog člana pribavljena imovinska korist u iznosu koji prelazi trideset hiljada eura, učinilac će se kazniti zatvorom od dvije do deset godina.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_420">
+					<num>Član 420</num>
+					<heading>Pronevjera</heading>
+					<paragraph eId="art_420_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Ko u namjeri da sebi ili drugom pribavi protivpravnu imovinsku korist prisvoji novac, hartije od vrijednosti ili druge stvari koje su mu povjerene u službi ili na radu u državnom organu, ustanovi ili drugom subjektu koji se ne bavi privrednim poslovanjem, kazniće se zatvorom od šest mjeseci do pet godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_420_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ako je djelom iz stava 1 ovog člana pribavljena imovinska korist u iznosu koji prelazi tri hiljade eura, učinilac će se kazniti zatvorom od jedne do osam godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_420_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Ako je djelom iz stava 1 ovog člana pribavljena imovinska korist u iznosu koji prelazi trideset hiljada eura, učinilac će se kazniti zatvorom od dvije do deset godina.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_421">
+					<num>Član 421</num>
+					<heading>Posluga</heading>
+					<content>
+						<p>Ko se naovlašćeno posluži novcem, hartijom od vrijednosti ili drugim stvarima koje su mu povjerene u službi ili na radu u državnom organu, privrednom društvu, ustanovi ili drugom subjektu ili radnji ili ove stvari drugom neovlašćeno da na poslugu, kazniće se zatvorom od tri mjeseca do tri godine.</p>
+					</content>
+				</article>
+
+				<article eId="art_421a">
+					<num>Član 421a</num>
+					<heading>Sitna prevara u službi, pronevjera i posluga</heading>
+					<paragraph eId="art_421a_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Ko učini sitnu prevaru u službi, pronevjeru ili poslugu, kazniće se novčanom kaznom ili zatvorom do jedne godine.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_421a_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Prevara u službi, pronevjera i posluga smatraju se sitnim ako visina nezakonite isplate, vrijednost pribavljene protivpravne imovinske koristi ili vrijednost pronevjerenih stvari ili stvari kojom se učinilac poslužio ne prelazi iznos od stopedeset eura, a u namjeri da pribavi malu imovinsku korist.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_422">
+					<num>Član 422</num>
+					<heading>Protivzakoniti uticaj</heading>
+					<paragraph eId="art_422_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Ko neposredno ili preko trećeg lica zahtijeva ili primi mito ili prihvati obećanje mita za sebe ili drugog da korišćenjem svog službenog ili društvenog položaja ili stvarnog ili pretpostavljenog uticaja posreduje da se izvrši ili ne izvrši neka službena radnja, kazniće se zatvorom od tri mjeseca do tri godine.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_422_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ko koristeći svoj službeni ili društveni položaj ili stvarni ili pretpostavljeni uticaj posreduje ili se obaveže da će posredovati da se izvrši službena radnja koja se ne bi smjela izvršiti ili da se ne izvrši službena radnja koja bi se morala izvršiti, kazniće se zatvorom od šest mjeseci do pet godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_422_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Ako je za posredovanje iz stava 2 ovog člana primljeno mito, učinilac će se kazniti zatvorom od jedne do osam godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_422_para_4">
+						<num>(4)</num>
+						<content>
+							<p>Primljeno mito oduzeće se.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_422a">
+					<num>Član 422a</num>
+					<heading>Navođenje na protivzakoniti uticaj</heading>
+					<paragraph eId="art_422a_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Ko neposredno ili preko trećeg lica službenom ili drugom licu da, ponudi ili obeća poklon ili drugu korist za sebe ili drugog da korišćenjem svog službenog ili društvenog položaja ili stvarnog ili pretpostavljenog uticaja posreduje da se izvrši ili ne izvrši neka službena radnja, kazniće se zatvorom do dvije godine.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_422a_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ko neposredno ili preko trećeg lica službenom ili drugom licu da, ponudi ili obeća poklon ili drugu korist za sebe ili drugog da korišćenjem svog službenog ili društvenog položaja ili stvarnog ili pretpostavljenog uticaja posreduje da se izvrši službena radnja koja se ne bi smjela izvršiti ili da se ne izvrši službena radnja koja bi se morala izvršiti, kazniće se zatvorom od tri mjeseca do tri godine.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_422a_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Učinilac djela iz st. 1 i 2 ovog člana koji je prijavio djelo prije nego što je saznao da je ono otkriveno može se osloboditi od kazne.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_422a_para_4">
+						<num>(4)</num>
+						<content>
+							<p>Primljeni poklon i druga korist oduzeće se.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_423">
+					<num>Član 423</num>
+					<heading>Primanje mita</heading>
+					<paragraph eId="art_423_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Službeno lice koje neposredno ili posredno zahtijeva ili primi mito ili koje prihvati obećanje mita za sebe ili drugog da izvrši službenu ili drugu radnju koju ne bi smjelo izvršiti ili da ne izvrši službenu ili drugu radnju koju bi moralo izvršiti, kazniće se zatvorom od dvije do dvanaest godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_423_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Službeno lice koje neposredno ili posredno zahtijeva ili primi mito ili koje prihvati obećanje mita za sebe ili drugog da izvrši službenu ili drugu radnju koju bi moralo izvršiti ili da ne izvrši službenu ili drugu radnju koju ne bi smjelo izvršiti, kazniće se zatvorom od dvije do osam godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_423_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Službeno lice koje izvrši djelo iz st. 1 ili 2 ovog člana u vezi sa otkrivanjem krivičnog djela, pokretanjem ili vođenjem krivičnog postupka, izricanjem ili izvršenjem krivične sankcije, kazniće se zatvorom od tri do petnaest godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_423_para_4">
+						<num>(4)</num>
+						<content>
+							<p>Službeno lice koje poslije izvršenja, odnosno neizvršenja službene ili druge radnje iz st. 1, 2 i 3 ovog člana, a u vezi sa njom, zahtijeva ili primi mito, kazniće se zatvorom od tri mjeseca do tri godine.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_423_para_5">
+						<num>(5)</num>
+						<content>
+							<p>Ako odgovorno ili drugo lice u ustanovi ili drugom subjektu koji se ne bavi privrednim poslovanjem učini djelo iz st. 1, 2 i 4 ovog člana, kazniće se kaznom propisanom za to djelo.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_423_para_6">
+						<num>(6)</num>
+						<content>
+							<p>Primljeno mito oduzeće se.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_424">
+					<num>Član 424</num>
+					<heading>Davanje mita</heading>
+					<paragraph eId="art_424_para_1">
+						<num>(1)</num>
+						<content>
+							<p>Ko službenom licu neposredno ili posredno da, ponudi ili obeća mito za njega ili drugog da službeno lice izvrši službenu ili drugu radnju koju ne bi smjelo izvršiti ili da ne izvrši službenu ili drugu radnju koju bi moralo izvršiti ili ko posreduje u ovakvom davanju mita službenom licu, kazniće se zatvorom od jedne do osam godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_424_para_2">
+						<num>(2)</num>
+						<content>
+							<p>Ko službenom licu neposredno ili posredno da, ponudi ili obeća mito za njega ili drugog da službeno lice izvrši službenu ili drugu radnju koju bi moralo izvršiti ili da ne izvrši službenu ili drugu radnju koju ne bi smjelo izvršiti ili ko posreduje u ovakvom davanju mita službenom licu, kazniće se zatvorom od šest mjeseci do pet godina.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_424_para_3">
+						<num>(3)</num>
+						<content>
+							<p>Učinilac djela iz st. 1 i 2 ovog člana koji je prijavio djelo prije nego što je saznao da je ono otkriveno može se osloboditi od kazne.</p>
+						</content>
+					</paragraph>
+					<paragraph eId="art_424_para_4">
+						<num>(4)</num>
+						<content>
+							<p>Odredbe st. 1, 2 i 3 ovog člana primjenjuju se i kad je mito dato, ponuđeno ili obećano odgovornom ili drugom licu u ustanovi ili drugom subjektu koji se ne bavi privrednim poslovanjem.</p>
+						</content>
+					</paragraph>
+				</article>
+
+				<article eId="art_425">
+					<num>Član 425</num>
+					<heading>Odavanje službene tajne</heading>
+					<content>
+						<p>(brisano)</p>
+					</content>
+				</article>
+
+			</chapter>
+		</body>
+	</act>
+</akomaNtoso>
