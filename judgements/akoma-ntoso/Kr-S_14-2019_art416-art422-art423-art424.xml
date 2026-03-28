@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rjesenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2019-12-18/Kr-S.14-2019/main"/>
+          <FRBRuri value="/me/cgvs/2019-12-18/Kr-S.14-2019"/>
+          <FRBRdate date="2019-12-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2019-12-18/Kr-S.14-2019/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2019-12-18/Kr-S.14-2019/srp@"/>
+          <FRBRdate date="2019-12-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2019-12-18/Kr-S.14-2019/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2019-12-18/Kr-S.14-2019/srp@/.xml"/>
+          <FRBRdate date="2019-12-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="sdt" href="/ontology/organization/me/SpecijalnoDrzavnoTuzilastvo" showAs="Specijalno državno tužilaštvo Crne Gore"/>
+        <TLCOrganization eId="visiSudPodgorica" href="/ontology/organization/me/VisiSudUPodgorici" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/MirasRadovic" showAs="Miraš Radović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/LjiljanaKosarac" showAs="Ljiljana Košarac"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/NV" showAs="N.V."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-S.br.14/19</docketNumber>
+      <neutralCitation>Kr-S.br.14/19</neutralCitation>
+      <docDate date="2019-12-18">18.12.2019.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednica vijeća">Stanka Vučinić</judge>
+      <judge refersTo="#judge2" role="član vijeća">Miraš Radović</judge>
+      <judge refersTo="#judge3" role="član vijeća">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stanke Vučinić</judge>, kao predsjednice vijeća, <judge refersTo="#judge2">Miraša Radovića</judge> i <judge refersTo="#judge3">Petra Stojanovića</judge>, kao članova vijeća, uz učešće samostalnog referenta <judge refersTo="#recorder">Ljiljane Košarac</judge>, kao zapisničara, u krivičnom predmetu protiv okrivljenog <party refersTo="#defendant" as="#defendant">N.V.</party>, zbog krivičnog djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.1 i 6 Krivičnog zakonika Crne Gore</ref>, odlučujući o predlogu Specijalnog državnog tužilaštva Crne Gore Kti-S.br.1/19 od 18.12.2019.godine za produženje pritvora okrivljenom, u sjednici vijeća održanoj dana 18.12.2019.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Naredbom o proširenju istrage Specijalnog državnog tužilaštva Crne Gore Kti-S.br.1/19 od 22.09.2019.godine određeno je sprovođenje istrage protiv okrivljenog N.V., zbog osnovane sumnje da je izvršio krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.1 i 6 Krivičnog zakonika Crne Gore</ref>.</p>
+        <p>Okrivljeni N.V. se nalazi u pritvoru koji je određen rješenjem sudije za istragu Višeg suda u Podgorici Kri-S.br.4/19 od 22.09.2019.godine, a produžen rješenjem vijeća tog suda Kvs.br.332/19 od 18.10.2019.godine, tako da po ovom rješenju pritvor okrivljenom može trajati do 20.12.2019.godine do 09,15 časova.</p>
+        <p>Prije isteka pritvora, Specijalno državno tužilaštvo stavilo je ovom sudu predlog da se pritvor protiv okrivljenog produži još za još mjesec dana po pritvorskom osnovu iz čl.175 st.1 tač.1 ZKP.</p>
+        <p>Odlučujući o predlogu Specijalnog državnog tužilaštva, Vrhovni sud je našao da je predlog osnovan.</p>
+        <p>Iz spisa predmeta Specijalnog državnog tužilaštva Crne Gore Kti-S.br.1/19 utvrđuje se da postoji osnovana sumnja da je okrivljeni N.V. u junu 2018.godine postao pripadnik kriminalne organizacije koju je na teritoriji Crne Gore u drugoj polovini 2010.godine organizovao okrivljeni D.K., koja kriminalna organizacija za cilj ima vršenje krivičnih djela <ref href="/me/acts/2003/krivicni-zakonik#art_268">pranja novca iz čl.268 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_264">utaja poreza i doprinosa iz čl.264 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_422">protivzakoniti uticaj iz čl.422 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_423">primanje mita iz čl.423 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_424">davanje mita iz čl.424 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_416">zloupotreba službenog položaja iz čl.416 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_276">zloupotreba ovlašćenja u privredi iz čl.276 Krivičnog zakonika Crne Gore</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_414">falsifikovanje službene isprave iz čl.414 Krivičnog zakonika Crne Gore</ref> i drugih krivičnih djela, pa je okrivljeni N.V., kao pripadnik te kriminalne organizacije, osnovano sumnjiv da je radi realizacije kriminalnog plana prihvatio da kao sekretar Vrhovnog državnog tužilaštva Crne Gore, postupajući po uputstvima okrivljenog D.K., koristeći svoj službeni položaj stupa u kontakt sa tužiocima i službenicima tužilaštva, prikuplja podakte i saznanje da li su protiv pripadnika kriminalne organizacije i organizatora D.K. pokrenuti izviđajni postupci u vezi krivičnih djela za koja je formirana kriminalna organizacija, a posebno u vezi aktivnosti koje se odnose na e-commerc servis A.B. AD P., utaje poreza i doprinosa i pranje novca, te da u slučaju da takvi postupci postoje vrbuje tužioce, nudi im mito i druga sredstva radi usmjeravanja njihovog nezakonitog djelovanja i da na njih vrši protivzakoniti uticaj u pogledu nepreduzimanja službenih radnji, te da obavještava organizatora i druge pripadnike kriminalne organizacije o dokaznim radnjama koje preduzimaju postupajući tužioci i prenosi sadržinu dokaza koje tužioci prikupljaju.</p>
+        <p>Osnovana sumnja da je okrivljeni N.V. izvršio krivično djelo stavljeno mu na teret proizilazi iz rezultata dobijenih primjenom mjera tajnog nadzora, razgovora koji je dana 19.06.2018.godine okrivljeni N.V. obavio sa okrivljenim D.K. i kojeg obavještava da je bio u Specijalnom državnom tužilaštvu, da je stupio u kontakt sa određenim licima koji postupaju u predmetu e-commerce (Kti-S.br.22/18), da je došao do određenih podataka u tom predmetu i da će u vezi tog predmeta stupiti u kontakt i sa drugim licima, te da je dobio uputstvo od organizatora kriminalne organizacije da nastavi sa izvršenjem kriminalnog plana, službene zabilješke sačinjene od strane postupajućeg tužioca u predmetu Ktr-S.br.127/18 od 12.11.2018.godine u kojoj je konstatovano da je okrivljeni Nenad Vujošević putem telefona pozvao postupajućeg tužioca u tom predmetu i interesovao se da li u tom predmetu još traje privremena blokada novčanih sredstava koja je određena po zahtjevu tužilaštva za veći broj pravnih lica i da li će ista biti produžena, službene zabilješke Kt-S.br.122/19 od 23.08.2019.godine iz koje proizilazi da je dana 22.08.2019.godine okrivljeni N.V. u pauzama saslušanja osumnjičenih lica u predmetu Kt-S.br.122/19 ušao u prostoriju Istražnog tima kod Specijalnog tužioca navodeći da dolazi u ime Vrhovnog državnog tužioca I.S. interesujući se da li postoji mogućnost da se lice koje je Specijalni tužilac prethodno zadržao donoseći rješenje o zadržavanju pusti na slobodu, odnosno da se istom ne odredi pritvor, da bi sljedećeg dana u kancelariji Specijalnog tužilaštva saopštio Glavnom specijalnom tužiocu da ga Vrhovni državni tužilac I.S. nije uputio kod postupajućeg tužioca, već da je došao samoinicijativno i da je intervenisao da se zadržanom licu ne odredio pritvor.</p>
+        <p>Takođe, osnovana sumnja proizilazi iz iskaza svjedoka saradnika V.R. da se okrivljeni V. dana 29.11.2016.godine sastao u hotelu "Z." sa okrivljenim D.K., koji je bio vozač i obezbjeđenje D.K., rekao da fotografiše V., što je ovaj i učinio (koja fotografija na kojoj se nalazi N.V. je pronađena preresom telefona R.), da je naložio R. da pripremi iznos od 10.000,00 €, novac stavi u koverat i na istoj napiše "E-c..." i da mu je donese u hotel "Z.", što je R. učinio i ponio novac K., iz čega proizlazi da je taj novac upravo dat N.V., koje činjenice se utvrđuju i iz poruka razmijenjenih između svjedoka saradnika V.R. i D.V., koji je takođe bio u obezbjeđenju K. i njegov vozač. Nadalje, osnovana sumnja proizilazi i iz do sada prikupljenih materijalnih dokaza, zapisnika o primopredaji ključeva od 02.08.2017.godine, poruka razmijenjenih između V.R. i D.V., iskaza svjedoka saradnika V.R. iz kojih proizilazi da je okrivljeni N.V. u toku 2017.godine, pa nadalje, ostvario redovnu komunikaciju sa organizatorom kriminalne organizacije okrivljenim D.K., periodično po pozivu dolazio kod njega u stan Pod G., kada navedena lica koji su bili vozači i obezbjeđene okrivljenog K., nijesu smjeli znati ko kod okrivljenog K. dolazi, jer ih je uvijek udaljavao iz stana u periodima kada je kod njega trebao da dođe okrivljeni N.V. radi dostavljanja informacija, te da je koristio stanove na S.S. i u B. od avgusta 2017.godine, vlasništvo okrivljenog D.K..</p>
+        <p>Istraga u dosadašnjem toku trajanja pritvora nije završena iz objektivnih razloga. U daljem toku istrage potrebno je saslušati svjedoke D.V. i I.S., pribaviti izvještaj po vještaku ekonomsko finansijske struke određen naredbom Specijanog državnog tužioca Kti-S.br.1/19 od 31.10.2019.godine, te izvršiti analizu podataka pronađenih pretresom računara okrivljenog N.V..</p>
+        <p>Za krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.1 i 6 Krivičnog zakonika Crne Gore</ref> zakonom je propisna kazna zatvora od jedne do osam godina.</p>
+        <p>Cijeneći težinu krivičnog djela stavljenog na teret okrivljenom izraženu kroz visinu zakonom propisane kazne za isto, ovaj sud nalazi da okrivljeni za slučaj da bude oglašen krivim može očekivati relativno visoku kaznu zatvora koja činjenica ga ne može ostaviti ravnodušnim u odnosu na dostupnost sudu. Kako iz spisa predmeta proizilazi da je okrivljeni N.V. nakon datih izjava u medijima od strane okrivljenog D.K. u kojima u bitnom navodi "da će objaviti kompromitujuće snimke za korupciju u Vrhovnom državnom tužilaštvu, da postoji zaštićeni svjedok - insajder iz tužilaštva, koji će to objelodaniti, te da se traži samo pogodan momenat jer će nakon toga biti na udaru", a što je objavljeno u medijima dana 08.09.2019.godine, dao u bjekstvo napuštajući teritoriju Crne Gore dana 13.09.2019.godine, u kasnim večernjim satima u 03:44:25 h, kada je evidentiran na graničnom prelazu "D.", sa pmv BMW, reg.oznake PG HH 794, kojom prilikom je bio sam u vozilu, po ocjeni ovog suda naprijed navedene činjenice u svojoj ukupnosti ukazuju da postoji opravdana bojazan da bi se okrivljeni boravkom na slobodi dao u bjekstvo, pa je opravdano produženje pritvora po pritvorskom osnovu iz čl.175 st.1 tač.1 ZKP, kako se to i osnovano navodi u predlogu Specijalnog državnog tužilaštva Crne Gore.</p>
+        <p>Poštujući potrebu da se prilikom produženja pritvora vodi računa o principu supsidijarnosti i proporcijalnosti, ovaj sud je ocijenio da gore navedeni razlozi ukazuju da je u ovoj fazi postupka neophodno produženje pritvora i da se cilj pritvora ne može ostvariti nekom blažom mjerom za obezbjeđenje prisustva okrivljenog u krivičnom postupku.</p>
+        <p>Ovo i sa razloga, što ovaj sud ukazuje da se predmetni slučaj odnosi na ozbiljna krivična djela, naime na organizovanje kriminalne grupe čiji je pripadnik kako se to osnovano sumnja postao okrivljeni N.V., a koja kriminalna organizacija po definiciji stvara više poteškoća za organe nadležene za sprovođenje istrage, a kasnije i za sudove prilikom utvrđivanja činjenica i stepena odgovornosti svakog člana grupe. Očigledno je da u predmetima ove vrste, stalna kontrola i ograničenje mogućnosti okrivljenih da međusobno kontaktiraju, kao i da kontaktiraju sa drugim pojedincima može biti od suštinskog značaja da se izbjegne njihovo bjekstvo, prikrivanje dokaza i kao najvažnije, uticaj na ili čak prijetnja svjedocima. Prema tome duži periodi pritvora nego u drugim slučajevima mogu biti razumni, kako je to zaključio Evropski sud u presudi Luković protiv Srbije od 26.03.2013.godine pod tačkom 46 (predstavka br.43808/07).</p>
+      </background>
+      <decision>
+        <p>Pritvor protiv okrivljenog <party refersTo="#defendant" as="#defendant">N.V.</party>, određen rješenjem sudije za istragu Višeg suda u Podgorici Kri-S.br.4/19 od 22.09.2019.godine, a produžen rješenjem vijeća tog suda Kvs.br.332/19 od 18.10.2019.godine, produžava se za još mjesec dana, tako da po ovom rješenju može trajati do 20.01.2020.godine do 09,15 časova.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu čl.177 st.3 ZKP, odlučeno je kao u izreci ovog rješenja.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 18.12.2019.godine</p>
+        <p>Zapisničar, <judge refersTo="#recorder">Ljiljana Košarac</judge>, s.r.</p>
+        <p>Predsjednica vijeća - sudija, <judge refersTo="#judge1">Stanka Vučinić</judge>, s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

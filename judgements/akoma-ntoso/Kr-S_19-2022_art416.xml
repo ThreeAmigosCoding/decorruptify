@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rjesenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2022-10-17/Kr-S.19-2022/main"/>
+          <FRBRuri value="/me/cgvs/2022-10-17/Kr-S.19-2022"/>
+          <FRBRdate date="2022-10-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2022-10-17/Kr-S.19-2022/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2022-10-17/Kr-S.19-2022/srp@"/>
+          <FRBRdate date="2022-10-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2022-10-17/Kr-S.19-2022/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2022-10-17/Kr-S.19-2022/srp@/.xml"/>
+          <FRBRdate date="2022-10-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="visiSudPodgorica" href="/ontology/organization/me/VisiSudUPodgorici" showAs="Vi&#x161;i sud u Podgorici"/>
+        <TLCOrganization eId="sdt" href="/ontology/organization/me/SpecijalnoDrzavnoTuzilastvo" showAs="Specijalno dr&#x17E;avno tu&#x17E;ila&#x161;tvo Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/MirasRadovic" showAs="Mira&#x161; Radovi&#x107;"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/VesnaVuckovic" showAs="dr Vesna Vu&#x10D;kovi&#x107;"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/SekaPiletic" showAs="Seka Pileti&#x107;"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/LjiljanaKosarac" showAs="Ljiljana Ko&#x161;arac"/>
+        <TLCPerson eId="defendant1" href="/ontology/person/me/PL" showAs="P.L."/>
+        <TLCPerson eId="defendant2" href="/ontology/person/me/RP" showAs="R.P."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-S.br.19/22</docketNumber>
+      <neutralCitation>Kr-S.br.19/22</neutralCitation>
+      <docDate date="2022-10-17">17.10.2022.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Mira&#x161; Radovi&#x107;</judge>
+      <judge refersTo="#judge2" role="&#x10D;lan vijeća">dr Vesna Vu&#x10D;kovi&#x107;</judge>
+      <judge refersTo="#judge3" role="&#x10D;lan vijeća">Seka Pileti&#x107;</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Miraša Radovića</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">dr Vesne Vučković</judge> i <judge refersTo="#judge3">Seke Piletić</judge>, kao članova vijeća, uz učešće samostalnog referenta <judge refersTo="#recorder">Ljiljane Košarac</judge>, kao zapisničara, u krivičnom predmetu protiv okrivljenih P.L. i R.P. i dr., zbog osnovane sumnje da su izvršili krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.1 i 6 Krivičnog zakonika Crne Gore</ref> i druga krivična djela, odlučujući o predlogu Specijalnog državnog tužilaštva Crne Gore Kti-S.br.12/22 od 14.10.2022.godine, za produženje pritvora protiv okrivljenih P.L. i R.P., u sjednici vijeća održanoj dana 17.10.2022.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Naredbom Specijalnog državnog tužilaštva Crne Gore Kti-S.br.12/22 od 20.07.2022.godine, određeno je sprovođenje istrage protiv više okrivljenih, između ostalih i protiv okrivljenog P.L. zbog osnovane sumnje da je izvršio krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.6 Krivičnog zakonika Crne Gore</ref>, produženo krivično djelo neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 i 4 u vezi st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>, produženo krivično djelo krijumčarenje iz <ref href="/me/acts/2003/krivicni-zakonik#art_265">čl.265 st.3 u vezi čl.23 st.2 i čl.49 Krivičnog zakonika Crne Gore</ref>, produženo krivično djelo nedozvoljeno držanje oružja i eksplozivnih materija iz <ref href="/me/acts/2003/krivicni-zakonik#art_403">čl.403 st.3 u vezi st.1 u vezi čl.23 st.2 i čl.49 Krivičnog zakonika Crne Gore</ref>, te produženo krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>, te i protiv okrivljenog R.P., zbog osnovane sumnje da je izvršio krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.6 Krivičnog zakonika Crne Gore</ref> i produženo krivično djelo neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 u vezi st.1 u vezi čl.23 i čl.49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Okrivljenima P.L. i R.P. određen je pritvor rješenjem sudije za istragu Višeg suda u Podgorici Kri-S.br.64/22 od 20.07.2022.godine, a produžen rješenjem vijeća istog suda Kvs.br.362/22 od 17.08.2022.godine i po ovom zadnjem rješenju može trajati najduže i to okrivljenom P.L. do 18.10.2022.godine do 10,37 časova, a okrivljenom R.P. do 19.10.2022.godine do 12,15 časova.</p>
+
+        <p>Prije isteka pritvora Specijalno državno tužilaštvo Crne Gore dostavilo je ovom sudu predlog da se pritvor protiv okrivljenih P.L. i R.P. produži za još tri mjeseca, po pritvorskim osnovima iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.1 i 2 Zakonika o krivičnom postupku</ref>.</p>
+
+        <p>Branilac okrivljenog P.L. dana 14.10.2022.godine dostavio je podnesak kojim osporava pritvorske osnove iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.1 i 2 Zakonika o krivičnom postupku</ref> navodeći da imenovani nije imao ogrešenje o zakonu, bilo prekršajno ili pak krivično-pravno, da je njegov dosadašnji život isključivo posvećen poštenom radu i da je svojim zalaganjem ostvario zaradu i tako pored sebe izdražvao suprugu i dvoje malodobne djece, ta da je profesionalno vezan za P., gdje je imao do sada uspiješnu profesionalnu karijeru. Posebo je ukazao da se imenovani svaki put, čak i na telefonski poziv od ovlašenog tužioca uredno odazivao pozivu, te da je znao da je pokretnut krivični postupak protiv njega, pa je mogao nesmetano pobijeći što mu nije bilo ni u primisli, koje okonosti ukazuju da ne postoji opasnost od njegovog bjekstva, a s tim u vezi ni produženje pritvora po tom pritvorskom osnovu.</p>
+
+        <p>Po razmatranju spisa predmeta i predloga Specijalog državnog tužilaštva Crne Gore, Vrhovni sud Crne Gore je našao da je predlog osnovan i da pritvor treba produžiti za još tri mjeseca.</p>
+
+        <p>Iz spisa predmeta se utvrđuje da postoji osnovana sumnja da su okrivljeni P.L. i R.P. izvršili krivična djela koja su im naredbom za sprovođenje istrage stavljena na teret.</p>
+
+        <p>Prije svega, postoji osnovana sumnja da je okrivljeni P.L. tokom druge polovine 2020.godine, postao pripadnik kriminalne organizacije, koju je u drugoj polovini 2020.godine na teritoriji Crne Gore, Južne Amerike, Afrike, Evrope, Azije i Australije stvorio okrivljeni R.Z., koja kriminalna organizacija za cilj je imala vršenje krivičnih djela za koja se po zakonu može izreći kazna zatvora u trajanju od četiri godine ili teža kazna, radi sticanja nezakonite dobiti i moći, pri čemu je svaki član kriminalne organizacije imao unaprijed određen zadatak i ulogu, a djelovanje kriminalne organizacije je planirano na neograničeni vremenski period i u međunarodnim razmjerama, uz primjenu tačno određenih pravila unutrašnje kontrole i discipline članova i uz primjenu nasilja i zastrašivanja, pa je organizator kriminalne organizacije okrivljeni R.Z. u pravcu realizacije kriminalnog plana i vršenja neodređenog broja krivičnih djela neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 u vezi st.1 Krivičnog zakonika Crne Gore</ref>, nedozvoljeno držanje oružja i eksplozivnih materija iz <ref href="/me/acts/2003/krivicni-zakonik#art_403">čl.403 st.3 u vezi st.1 Krivičnog zakonika Crne Gore</ref>, krijumčarenje iz <ref href="/me/acts/2003/krivicni-zakonik#art_265">čl.265 st.3 Krivičnog zakonika Crne Gore</ref>, ubistvo iz <ref href="/me/acts/2003/krivicni-zakonik#art_143">čl.143 Krivičnog zakonika Crne Gore</ref>, teško ubistvo iz <ref href="/me/acts/2003/krivicni-zakonik#art_144">čl.144 Krivičnog zakonika Crne Gore</ref> i zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 Krivičnog zakonika</ref>, za sebe odredio da sam ili preko drugih lica vrbuje pripadnike kriminalne organizacije, da planira izvršenje pojedinih krivičnih djela u budućnosti, da obezbjeđuje materijalna sredstva – novac za izvršenje krivičnih djela, da vrši kontrolu pripadnika kriminalne organizacije i da daje uputstva o načinu izvršenja pojedinih krivičnih djela dok je pripadnik kriminalne organizacije:</p>
+
+        <p>- okrivljeni P.L., kao službenik Agencije na nacionalnu bezbjednost na radu u Upravi policije Crne Gore, prihvatio da postupa po uputstvima organizatora kriminalne organizacije - okrivljenog R.Z. da na teritoriji Crne Gore, Republike Hrvatske i država zapadne Evrope, Skandinavije, Južne Amerike, Afrike i Australije radi prodaje kupuje, drži, prenosi i posreduje u prodaji velikih količina opojnih droga kokaina i hašiša, da se bavi prodajom, rasturanjem i prikrivanjem neocarinjene robe-cigareta, da za potrebe kriminalne organizacije neovlašćeno nabavlja vatreno oružje, da prati pripadnike suprotstavljene kriminalne organizacije i da iskorišćavanjem svog službenog položaja i ovlašćenja pribavlja korist organizatoru kriminalne organizacije u vidu dostavljanja informacija o planiranim službenim mjerama i radnjama Uprave policije Crne Gore kako u odnosu na pripadnike njegove, tako i suprostavljene kriminalne organizacije, kao i da preduzima druge radnje koje odredi i naredi organizator,</p>
+
+        <p>- okrivljeni R.P., koji je prihvatio da postupa po uputstvima organizatora kriminalne organizacije - okrivljenog R.Z. da na teritoriji Crne Gore, Republike Hrvatske i zapadne Evrope i Južne Amerike radi prodaje kupuje, drži, prenosi i posreduje u prodaji velike količine opojnih droga kokaina i hašiša, kao i da preduzima druge radnje koje odredi i naredi organizator.</p>
+
+        <p>Prema tome, postoji osnovana sumnja da su okrivljeni izvršili krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.6 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Nadalje iz spisa predmeta se utvrđuje da postoji osnovana sumnja da je okrivljeni P.L. u periodu između septembra 2020.godine i početka marta 2021.godine, posredstvom telefona sa zaštićenom aplikacijom SKY ECC, sa šifrom DN3GOV i kodnim imenima "J." i "K.ex.j.", ostvarivao komunikaciju sa organizatorom kriminalne organizacije R.Z. koji je na zaštićenoj aplikaciji SKY ECC koristio šifru 8MA869 i kodna imena "B." i "K.", te međusobnu i komunikaciju sa drugim, za sada neidentifikovanim članovima kriminalne organizacije, u kojim komunikacijama je od organizatora R.Z., postupajući kao dio mreže preprodavaca i posrednika u prodaji opojne droge koju je okrivljeni R.Z. organizovao, dobijao instrukcije o količinama, pakovanjima, načinu prevoza i rutama za prevoz opojnih droga kokaina i hašiša sa teritorija Ekvadora, Kolumbije, Brazila i drugih država Južne Amerike i Afrike, na teritoriju Zapadne Evrope, Skandinavije i Australije, te iznosima i načinima plaćanja novčanih sredstava koje je dobavljačima u navedenim područjima potrebno isplatiti na ime nabavke kokaina i hašiša, kao i instrukcije o cijenama kokaina po jednom kilogramu prilikom preprodaje na krajnjim odredištima u Crnoj Gori, Zapadnoj Evropi, Skandinaviji i Australiji, načinu podjele novca od zarade prodajom kokaina i hašiša, o čemu je osim tekstualnih poruka, sa organizatorom - okrivljenim R.Z., međusobno i sa drugim za sada neidentifikovanim članovima kriminalne organizacije razmjenjivao i slikovne poruke sa fotografijama na kojima se vide izgledi pakovanja kokaina i mape pomorskih ruta kojima je kokain dopreman brodovima do krajnjih odredišta u Crnu Goru, Zapadnu Evropu, Skandinaviju i Australiju.</p>
+
+        <p>Dakle, postoji osnovana sumnja da je okrivljeni P.L. izvršio produženo krivično djelo neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 i 4 u vezi st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Dalje, iz spisa predmeta se utvrđuje da postoji osnovana sumnja da okrivljeni P.L. u periodu između druge polovine novembra 2020. godine i kraja februara 2021. godine posredstvom telefona sa zaštićenom aplikacijom SKY ECC i to okrivljeni Lj.M. sa šiframa 7B83PJ i 5S7GLO i kodnim imenima "Z.p." i "O.", a okrivljeni P.L. sa šifrom DN3GOV i kodnim imenima "J." i "K.ex.j.", ostvarivali komunikaciju sa za sada neidentifikovanim članovima kriminalne organizacije čiji je organizator okrivljeni R.Z., u kojim komunikacijama su dogovarali nabavku velike količine neocarinjene robe - cigareta, zatim njihovu preprodaju na teritoriji Crne Gore, Bosne i Hercegovine i Republike Hrvatske, te način podjele novca od tako ostvarene zarade.</p>
+
+        <p>Prema tome, postoji osnovana sumnja da je okrivljeni P.L. kao saizvršilac sa okrivljenim Lj.M., izvršio produženo krivično djelo krijumčarenje iz <ref href="/me/acts/2003/krivicni-zakonik#art_265">čl.265 st.3 u vezi čl.23 st.2 i čl.49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Iz spisa predmeta takođe proizilazi osnovana sumnja da su okrivljeni R.Z., Lj.M. i P.L. i za sada neidentifikovani pripadnik kriminalne organizacije, u vremenu između kraja novembra 2020. godine i početka marta 2021.godine, posredstvom telefona sa zaštićenom aplikacijom SKY ECC, ostvarivali komunikaciju u kojoj su dogovarali da za potrebe kriminalne organizacije, na teritoriji Ukrajine, Bosne i Hercegovine i drugih za sada neutvrđenih država, neovlašćeno nabavljaju veću količinu vatrenog oružja čije je držanje građanima zabranjeno.</p>
+
+        <p>Dakle, postoji osnovana sumnja da je okrivljeni P.L. izvršio produženo krivično djelo nedozvoljeno držanje oružja i eksplozivnih materija iz <ref href="/me/acts/2003/krivicni-zakonik#art_403">čl.403 st.3 u vezi st.1 u vezi čl.23 st.2 i čl.49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Nadalje, postoji osnovana sumnja i da je okrivljeni P.L. u periodu između druge polovine novembra 2020.godine i druge polovine februara 2021.godine, protivpravnim iskorišćavanjem svog službenog položaja i ovlašćenja drugom pribavljao korist, na način što je posredstvom telefona sa zaštićenom aplikacijom SKY ECC sa šifrom DN3GOV i kodnim imenima "J." i "K.ex.j.", ostvarivao komunikaciju sa organizatorom kriminalne organizacije - okrivljenim R.Z. koji je na zaštićenoj aplikaciji SKY ECC koristio šifru 8MA869 i kodna imena "B." i "K." i tom prilikom mu prenosio informacije o službenim aktivnostima koje je Uprava policije Crne Gore preduzimala u odnosu na pripadnike kako njegove, tako i suprotstavljene kriminalne organizacije, odnosno okrivljeni P.L. je osnovano sumnjiv da je izvršio produženo krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Imajući u vidu gore navedeno postoji osnovana sumnja da je okrivljeni P.L. izvršio produženo krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Iz spisa predmeta se utvrđuje da postoji osnovana sumnja da je okrivljeni R.P., kao pripadnik kriminalne organizacije okrivljenog R.Z., u periodu između druge polovine decembra 2020.godine i prve polovine marta 2021.godine ostvarivao komunikaciju sa organizatorom kriminalne organizacije - okrivljenim R.Z. posredstvom aplikacije SKY ECC, postupajući kao dio mreže preprodavaca i posrednika u prodaji opojne droge, kojom prilikom je od okrivljenog R.Z. dobijao uputstva da za potrebe kriminalne organizacije vrši kupoprodaju dogovara cijenu i mjesto primopredaje droge kokaina.</p>
+
+        <p>Dakle, postoji osnovana sumnja da je okrivljeni R.P. izvršio produženo krivično djelo neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 u vezi st.1 u vezi čl.23 i 49 Krivičnog zakonika Crne Gore</ref>.</p>
+
+        <p>Osnovana sumnja da su okrivljeni P.L. i R.P. izvršili radnje koje im se stavljaju na teret proizilazi iz prikupljenih materijalnih i personalnih dokaza u postupku, a posebno iz sadržine međusobnih presretnutih komunikacija okrivljenih, koje su u opisanom periodu ostvarivali posredstvom zaštićene aplikacije SKY ECC pod prethodno navedenim korisničkim šiframa i kodnim imenima, a koji transkripti su pribavljeni posredstvom državnih organa Republike Francuske, kojom prilikom su okrivljeni P.L. i R.P., između ostalih lica, identifikovani kao korisnici pomenutih šifri i kodnih imena.</p>
+
+        <p>Osim toga osnovana sumnja da je okrivljeni P.L. izvršio krivična djela koja mu se stavljaju na teret proizilazi i iz dopisa Uprave policije Crne Gore T broj 03-352/21-605/22 od 24.05.2022.godine, u kome je navedeno da sadašnji menadžment Uprave policije nije imao saznanja o kontaktima koje su službenici Lj.M. i P.L. ostvarivali sa članovima kriminalnih grupa i da imenovani od strane Sektora za borbu protiv kriminala, odnosno sadašnjeg menadžmenta Uprave policije, a na osnovu bilo kakvih pisanih odluka ili drugih akata, kao ni usmenih naloga, nijesu imali službena ovlašćenja da ostvaruju komunikaciju sa članovima kriminalnih grupa u Crnoj Gori.</p>
+
+        <p>Kod navedenih razloga, postoji osnovana sumnja da su okrivljeni P.L. i R.P. izvršili krivična djela koja su im stavljena na teret, a koja osnovna sumnja je preduslov da bi se prema nekom licu odredio, a samim tim i produžio pritvor, dok će činjenica da li su okrivljeni zaista izvršili krivična djela koja im se stavljaju na teret, biti utvrđena u daljem toku krivičnog postupka.</p>
+
+        <p>U dosadašnjem toku trajanja pritvora okrivljenim P.L. i R.P. istraga nije mogla biti završena iz objektivnih razloga. Ovo zbog toga što se protiv ovih okrivljenih vodi i finansijska istraga, pa je naređen pretres računara i mobilnih telefona ovih okrivljenih koja dokazna radnja je provedena 25.08.2022. godine, pri čemu zapisnici o pretresanju računara i mobilnih telefona, kao i analiza u njima pronađenih sadržaja još uvijek nijesu dostavljeni državnom tužilaštvu. Osim toga, nadležni pravosudni organi Republike Francuske još uvijek nije postupilo po zamolnicama od 19.05.2022.godine i 02.06.2022.godine, kojim se traži dostavljanje dokaza u formi u kojoj se mogu koristiti pred krivičnim sudom.</p>
+      </background>
+      <decision>
+        <p>R J E Š E NJ E</p>
+        <p>Pritvor protiv okrivljenih P.L. i R.P., određen rješenjem sudije za istragu Višeg suda u Podgorici Kri-S br.64/22 od 20.07.2022.godine, a produžen rješenjem vijeća tog suda Kvs.br.362/22 od 17.08.2022.godine, produžava se za još tri mjeseca tako da po ovom rješenju može najdalje trajati okrivljenom P.L. do 18.01.2023.godine do 10,37 časova, a okrivljenom R.P. do 19.01.2023.godine do 12,15 časova.</p>
+      </decision>
+      <conclusions>
+        <p>U predlogu za produženje pritvora osnovano se ukazuje da u odnosu na okrivljene P.L. i R.P. postoje razlozi za produženje pritvora po pritvorskim osnovima iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.1 Zakonika o krivičnom postupku</ref>.</p>
+
+        <p>Naime, okrivljeni P.L. je osnovano sumnjiv da je izvršio krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.6 Krivičnog zakonika Crne Gore</ref>, za koje je propisana kazna zatvora u trajanju od 1 (jedne) do 8 (osam) godina, produženo krivično djelo neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 i 4 u vezi st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>, za koje je propisana kazna zatvora u trajanju od 3 (tri) do 15 (petnaest) godina, produženo krivično djelo krijumčarenje iz <ref href="/me/acts/2003/krivicni-zakonik#art_265">čl.265 st.3 u vezi čl.23 st.2 i čl.49 Krivičnog zakonika Crne Gore</ref>, za koje je propisana kazna zatvora u trajanju od 1 (jedne) do 8 (osam) godina, produženo krivično djelo nedozvoljeno držanje oružja i eksplozivnih materija iz <ref href="/me/acts/2003/krivicni-zakonik#art_403">čl.403 st.3 u vezi st.1 u vezi čl.23 st.2 i čl.49 Krivičnog zakonika Crne Gore</ref>, za koje je propisana kazna zatvora u trajanju od 1 (jedne) do 8 (osam) godina, te produženo krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1 u vezi čl.49 Krivičnog zakonika Crne Gore</ref>, za koje je propisana kazna zatvora u trajanju od 6 (šest) mjeseci do 5 (pet) godina, a okrivljeni R.P. je osnovano sumnjiv da je izvršio krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.1 i 6 Krivičnog zakonika Crne Gore</ref>, za koje je propisana kazna zatvora u trajanju od 1 (jedne) do 8 (osam) godina i produženo krivično djelo neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.3 u vezi st.1 i čl.49 Krivičnog zakonika Crne Gore</ref> za koje je propisana kazna zatvora u trajanju od 3 (tri) do 15 (petnaest) godina.</p>
+
+        <p>Cijeneći težinu krivičnih djela, koja se okrivljenima stavljaju na teret izraženu kroz visinu zakonom propisane kazne, ovaj sud nalazi da okrivljeni za slučaj da budu oglašeni krivim, mogu očekivati visoke kazne zatvora, koja činjenica ih nemože ostvariti ravnodušnim u odnosu na dostupnost tužilaštvu i sudu. Uz to, iz spisa predmeta se utvrđuje da se osnovano sumnjivi organizator kao i pojedini pripadnici kriminalne organizacije nalaze u bjekstvu, sa velikom vjerovatnoćom da se neki od njih nalaza van područija Crne Gore i da su za sada nedostupni državnim organima, od kojih bi okrivljeni P.L. i R.P. mogli očekivati pomoć za slučaj da se nađu na slobodi.</p>
+
+        <p>Naprijed navedene činjenice upućuju da postoje okolnosti koje ukazuju na opasnost od bjekstva okrivljenih, za slučaj da se nađu na slobodi, a time i da postoji pritvorski osnov iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.1 Zakonika o krivičnom postupku</ref>, na koje se osnovano ukazuje u predlogu za produženje pritvora.</p>
+
+        <p>U predlogu za produženje pritvora se ističe i da postoji pritvorski osnov iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.2 Zakonika o krivičnom postupku</ref> uz iznošenje stava da bi okrivljeni mogli uticati na dalji tok istrage. Ovaj sud smatra da odluku o produženju pritvora ne treba zasnivati i na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175">čl.175 st.1 tač.2 Zakonika o krivičnom postupku</ref>.</p>
+
+        <p>Poštujući potrebu da se prilikom produženja pritvora vodi računa o principu supsidijarnosti i proporcionalnosti, ovaj sud je ocijenio da je u ovoj početnoj fazi krivičnog postupka, odnosno istrazi protiv okrivljenih neophodno produžiti pritvor. S tim u vezi ovaj sud je zaključio da se nesmetano vođenje krivičnog postupka ne može obezbijediti drugom blažom mjerom, i da je s obzirom na krivična djela, za koja su okrivljeni osnovano sumnjivi, pretežniji javni interes da se obezbijede uslovi za nesmetano vođenje krivičnog postupka, od prava okrivljenih na slobodu.</p>
+
+        <p>Sa iznijetih razloga, a s pozivom na <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_177">član 177 st.3 Zakonika o krivičnom postupku</ref>, odlučeno je kao u izreci.</p>
+
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 17.10.2022.godine</p>
+        <p>Zapisničar: Ljiljana Košarac, s.r.</p>
+        <p>Predsjednik vijeća – sudija: Miraš Radović, s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

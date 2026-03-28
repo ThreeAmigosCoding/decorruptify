@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-03-17/Kzu-6-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-03-17/Kzu-6-2011"/>
+          <FRBRdate date="2011-03-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-03-17/Kzu-6-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-03-17/Kzu-6-2011/srp@"/>
+          <FRBRdate date="2011-03-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-03-17/Kzu-6-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-03-17/Kzu-6-2011/srp@/.xml"/>
+          <FRBRdate date="2011-03-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudUlcinj" href="/ontology/organization/me/OsnovniSudUUlcinju" showAs="Osnovni sud u Ulcinju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/BN" showAs="B. N."/>
+        <TLCPerson eId="defense" href="/ontology/person/me/MV" showAs="mr M. V."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.6/11</docketNumber>
+      <neutralCitation>Kzu.br.6/11</neutralCitation>
+      <docDate date="2011-03-17">17.03.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="članVijeća">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Kojović Radula</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Stojanović Petra</judge>, kao članova vijeća, uz učešće službenika suda <judge refersTo="#clerk">Obradović Slađane</judge>, kao zapisničara, u krivičnom predmetu protiv osudjenog <party refersTo="#defendant" as="#defendant">B. N.</party>, zbog dva produžena krivična djela teška kradja iz <ref href="/me/acts/2003/krivicni-zakonik#art_240">čl.240 st.1 tač.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49 Krivičnog zakonika</ref>, krivičnog djela teška kradja iz <ref href="/me/acts/2003/krivicni-zakonik#art_240">čl.240 st.1 tač.1 Krivičnog zakonika</ref> i ugrožavanje javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_339">čl.339 st.1 Krivičnog zakonika</ref>, rješavajući o zahtjevu branioca osudjenog za vanredno ublažavanje kazne izrečene pravosnažnom presudom Osnovnog suda u Ulcinju Kv.br.16/10 od 26.05.2010.godine, u sjednici vijeća održanoj dana 17.03.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Pravosnažnom presudom Osnovnog suda u Ulcinju Kv.br.16/10 od 26.05.2010.godine, u nepravom ponavljanju postupka preinačene su u dijelu odluke o kazni pravosnažne presude Osnovnog suda u Ulcinju i to: K.br.122/00 od 18.02.2009.godine, K.br.256/06 od 13.02.2009.godine, K.br.97/08 od 11.09.2008.godine i K.br.60/08 od 13.02.2009.godine, tako što je osudjeni <party refersTo="#defendant" as="#defendant">B. N.</party>, zbog dva produžena krivična djela teška kradja iz <ref href="/me/acts/2003/krivicni-zakonik#art_240">čl.240 st.1 tač.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">čl.49 Krivičnog zakonika</ref>, krivičnog djela teška kradja iz <ref href="/me/acts/2003/krivicni-zakonik#art_240">čl.240 st.1 tač.1 Krivičnog zakonika</ref> i ugrožavanje javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_339">čl.339 st.1 Krivičnog zakonika</ref>, osudjen na jedinstvenu kaznu zatvora u trajanju od 2 (dvije) godine i 10 (deset) mjeseci.</p>
+        <p>Branilac osudjenog, advokat <party refersTo="#defense" as="#defense">mr M. V.</party>, iz Bara, podnio je zahtjev za vanredno ublažavanje kazne u kome navodi da je prvostepeni sud, prilikom odmjeravanja izrečene kazne u presudama iz 2009.godine, cijenio kao olakšavajuću okolnost da je osudjeni oženjen, gubeći iz vida okolnost da se njegova supruga nalazila u poodmakloj trudnoći, dok prilikom izricanja presude iz 2010.godine nije uzeo u obzir da je osudjeni već roditelj osmomjesečne kćerke. Predložio je da mu ovaj sud izreče blažu kaznu.</p>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Ulcinju i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">čl.423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Okolnost da je osudjeni nakon donošenja presuda dobio dijete, po nalaženju ovog suda nije takvog značaja, da bi očigledno dovela do blaže osude, a ovo imajući u vidu težinu izvršenih krivičnih djela i stepen krivice osudjenog.</p>
+      </background>
+      <decision>
+        <p>RJEŠENJE</p>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

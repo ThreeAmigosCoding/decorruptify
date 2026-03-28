@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/vspg/2011-02-17/Kts-12-10-2/main"/>
+          <FRBRuri value="/me/vspg/2011-02-17/Kts-12-10-2"/>
+          <FRBRdate date="2011-02-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/vspg/2011-02-17/Kts-12-10-2/srp@/main"/>
+          <FRBRuri value="/me/vspg/2011-02-17/Kts-12-10-2/srp@"/>
+          <FRBRdate date="2011-02-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/vspg/2011-02-17/Kts-12-10-2/srp@/main.xml"/>
+          <FRBRuri value="/me/vspg/2011-02-17/Kts-12-10-2/srp@/.xml"/>
+          <FRBRdate date="2011-02-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VisiSudUPodgorici" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/ValentinaPavlicic" showAs="Valentina Pavličić"/>
+        <TLCPerson eId="recorder1" href="/ontology/person/me/SanjaRadosavovic" showAs="Sanja Radosavović"/>
+        <TLCPerson eId="prosecutor1" href="/ontology/person/me/LidijaVukcevic" showAs="Lidija Vukčević"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Viši sud u Podgorici</courtType>
+      <docketNumber>Kts.br.12/10-2</docketNumber>
+      <neutralCitation>Kts.br.12/10-2</neutralCitation>
+      <docDate date="2011-02-17">17.02.2011.godine</docDate>
+      <judge refersTo="#judge1">Valentina Pavličić</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VIŠI SUD U PODGORICI, kao prvostepeni krivični, po sudiji pojedincu Valentini Pavličić uz učešće Sanje Radosavović, kao zapisničara, u krivičnom predmetu protiv optuženog M. M. kojeg brani L. Š., advokat iz Nikšića, zbog krivičnog djela - davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">člana 424 stav 1. Krivičnog zakonika Crne Gore</ref>, po optužnom predlogu Vrhovnog Državnog tužioca - Odjeljenja za suzbijanje organizovanog kriminala, korupcije, terorizma i ratnih zločina Kts.br. 12/10-2 od 27.01.2011. godine, koju je na glavnom pretresu zastupala Lidija Vukčević - zamjenik Specijalnog tužioca, nakon održanog usmenog, glavnog i javnog pretresa dana 17.02.2011. godine u prisustvu zastupnika optužbe, optuženog i njegovog branioca, donio je i javno objavio dana 17.02.2011. godine</p>
+        <p>PRESUDU</p>
+        <p>Optuženi: M.M., rodjen u N., gdje i živi, državljanin Crne Gore, nezaposlen, neoženjen, završio srednju školu, lošeg imovnog stanja, kažnjavan presudom Osnovnog suda u Kotoru K.br. 188/06 od 09.02.2007. godine zbog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_339_par_3">člana 339 stav 3 KZCG</ref> na kaznu zatvora u trajanju od 3 mjeseca uslovno na jednu godinu.</p>
+      </introduction>
+      <background>
+        <p>Kriv je</p>
+        <p>Zato što je:</p>
+        <p>U noći 15.12.2010. godine oko 00,15 časova u Nikšiću, u Njegoševoj ulici, službenom licu V. D., ovlašćenom policijskom službeniku Uprave policije – Područne jedinice Nikšić dao poklon – novac da u okviru svog službenog ovlašćenja ne izvrši službenu radnju koju bi morao izvršiti, na način što je prilikom vršenja kontrole vozila i putnika od strane ovlašćenih policijskih službenika V. D. i S. B., a kada je V. D. nakon zaustavljanja putničkog vozila marke "Golf II" reg.br. NK AJ 518 kojim je upravljao optuženi M.M., predočio optuženom M. da će zbog počinjenog prekršaja – prolaska vozilom kroz raskrsnicu kada je na semaforu bilo upaljeno crveno svijetlo i upravljanja vozilom pod dejstvom alkohola, sačiniti zapisnik o izvršenoj kontroli, privesti ga u dežurnu službu Područne jedinice Nikšić radi podnošenja prijave zbog počinjenih prekršaja, optuženi M.M. je iz džepa od pantalona izvadio novčanicu od 50€ i stavio u prorez uniforme-jakne V. D. govoreći "možemo li to da riješimo na drugi, lakši način", kako V. i S. ne bi sačinili zapisnik o izvršenoj kontroli učesnika u saobraćaju i vozila i priveli ga u prostorije Područne jedinice Nikšić,</p>
+        <p>- čime je izvršio krivično djelo – davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">člana 424 stav 1 Krivičnog zakonika Crne Gore</ref>,</p>
+        <p>pa ga sud primjenom citiranih zakonskih odredbi, <ref href="/me/acts/2003/krivicni-zakonik#art_4_par_2">članova 4. st.2</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_32">32</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_42">42</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_45">45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46 Krivičnog zakonika Crne Gore</ref>, te <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_229">članova čl. 229</ref> i <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_374">čl. 374 Zakonika o krivičnom postupku Crne Gore</ref></p>
+      </background>
+      <decision>
+        <p>OSUDJUJE</p>
+        <p>Na kaznu zatvora u trajanju od 3 (tri) mjeseca.</p>
+        <p>Od optuženog se oduzima novčanica od 50 € serijskog broja V21330785155, kao predmet upotrijebljen za izvršenje krivičnog djela.</p>
+        <p>Optuženi je dužan na ime paušala platiti iznos od 50,00 € na žiro račun Višeg suda br.832-7113-04, u roku od 15 dana od dana pravosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+      </decision>
+      <conclusions>
+        <p>Optužnim predlogom Vrhovnog Državnog tužioca - Odjeljenja za suzbijanje organizovanog kriminala, korupcije, terorizma i ratnih zločina Kts.br. 12/10-2 od 27.01.2011. godine optuženom M.M. stavljeno je na teret da je izvršio krivično djelo - davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">člana 424 stav 1 Krivičnog zakonika Crne Gore</ref>, pri kojem optužnom predlogu je zastupnik optužbe ostao do kraja glavnog pretresa, predlažući da se optuženi oglasi krivim i osudi po zakonu.</p>
+        <p>Optuženi M.M. ne priznaje izvršenje krivičnog djela, pa u navodima svoje odbrane ističe da je tačno jedino da je upravljao u pijanom stanju vozilom marke "Golf 2" u noći izmedju 14/15. decembra 2010. godine, i na taj način napravio je više saobraćajnih prekršaja. Pošto je popio veću količinu alkohola nije bio u stanju da kontroliše svoje postupke niti da rekonstruiše dogadjaj, ali pretpostavlja da ga je te večeri policija pratila, jer ga je prethodno zaustavila ispred kuće gdje živi, da bi ga ponovo zaustavila i tražila od njega dokumenta.</p>
+        <p>Sud je u dokaznom postupku na glavnom pretresu proveo sledeće dokaze: nesporedno na glavnom pretresu saslušao svjedoke V. D. i S. B., pročitao dio službene zabilješke Uprave policije Područne jedinice Nikšić – Ekspoziture policije Ku.br.778, pročitao potvrdu o privremenom oduzimanju predmeta Uprave policije Područne jedinice Nikšić od 15.12.2010. godine, pročitao zapisnik-prijavu o izvršenoj kontroli učesnika u saobraćaju i vozila, pročitao potvrdu o privremenom oduzimanju vozačke dozvole, pročitao zapisnik o ispitivanju vozača da li ima alkohola u organizmu, pročitao prijavu za prekršaj, pročitao zahtjev za pokretanje prekršajnog postupka, izvršio uvid u oduzetu novčanicu u apoenu od 50€ serijskog broja V21330785155, pročitao izvod iz kaznene evidencije na ime optuženog M.M.</p>
+        <p>Cijeneći naprijed provedene dokaze, analizirajući svaki posebno, a zatim njihov medjusobni odnos i povezanost, odbranu optuženog M.M.a, ovaj sud je na nesumnjiv način utvrdio da je optuženi M.M. izvršio krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">člana 424 stav 1 Krivičnog zakonika Crne Gore</ref>.</p>
+        <p>Cijeneći psihički odnos optuženog prema počinjenom djelu sud je našao da je isti postupao sa direktnim umišljajem tj. bio je svjestan da službenom licu nudi novac kako isti ne bi u okviru svojih službenih ovlašćenja izvršio službenu radnju privodjenja u dežurnu službu Područne jedinice Nikšić radi podnošenja prijave zbog počinjenih prekršaja, a što je u konkrenom slučaju i htio.</p>
+        <p>Odlučujući o sankciji koju će izreći okrivljenom sud je u smislu <ref href="/me/acts/2003/krivicni-zakonik#art_42">člana 42 Krivičnog zakonika Crne Gore</ref> uzeo u obzir sve okolnosti da kazna bude manja ili veća, pa je na strani optuženog kao olakšavajuće okolnosti uzeo da se radi o mladjem licu, lošeg imovnog stanja, da je nezaposlen, do sada neporočnog vladanja, te primjenom <ref href="/me/acts/2003/krivicni-zakonik#art_45">člana 45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46 Krivičnog zakonika Crne Gore</ref> optuženom M.M. ublažio kaznu ispod propisanog minimuma i izrekao mu kaznu zatvora u trajanju od 3 mjeseca.</p>
+        <p>Osnovom <ref href="/me/acts/2003/krivicni-zakonik#art_75">člana 75. Krivičnog zakonika Crne Gore</ref>, od optuženog se oduzima novčanica od 50 € serijskog broja V21330785155, kao predmet upotrijebljen za izvršenje krivičnog djela.</p>
+        <p>Na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_229_par_1">člana 229 stav 1 Zakonika o krivičnom postupku Crne Gore</ref>, dužan je optuženi na ime paušala platiti iznos od 50,00 € na žiro račun Višeg suda br.832-7113-04, u roku od 15 dana od dana pravosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+        <p>PRAVNA POUKA: Protiv ove presude dozvoljena je žalba Apelacionom sudu Crne Gore u roku od 15 dana od dana prijema pismenog otpravka presude, a preko ovog suda.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

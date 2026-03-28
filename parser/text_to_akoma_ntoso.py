@@ -2,6 +2,7 @@ import pathlib
 import re
 import subprocess
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Minimal inline example of an Akoma Ntoso 3.0 judgment document.
 EXAMPLE_JUDGMENT = """<?xml version="1.0" encoding="UTF-8"?>
@@ -120,9 +121,16 @@ def process_text(text: str, file_path: pathlib.Path) -> None:
     print(f"Saved → {output_path}")
 
 
+def _process_file(text_file: pathlib.Path) -> None:
+    """Wrapper for ThreadPoolExecutor — reads the file and calls process_text."""
+    process_text(text_file.read_text(encoding="utf-8"), text_file)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Convert judgment texts to Akoma Ntoso 3.0 XML")
     parser.add_argument("-i", help="Input file (omit to process all files in ../judgements/text/)")
+    parser.add_argument("-w", "--workers", type=int, default=5,
+                        help="Number of parallel workers (default: 5)")
     args = parser.parse_args()
 
     if args.i:
@@ -130,9 +138,13 @@ def main():
         process_text(file_path.read_text(encoding="utf-8"), file_path)
     else:
         text_files = sorted(pathlib.Path("../judgements/text").rglob("*.txt"))
-        print(f"Found {len(text_files)} text files.")
-        for text_file in text_files:
-            process_text(text_file.read_text(encoding="utf-8"), text_file)
+        print(f"Found {len(text_files)} text files. Using {args.workers} workers.")
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            futures = {executor.submit(_process_file, tf): tf for tf in text_files}
+            for future in as_completed(futures):
+                exc = future.exception()
+                if exc:
+                    print(f"Error on {futures[future].name}: {exc}")
 
 
 if __name__ == "__main__":

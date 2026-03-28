@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2020-10-06/Kr-S.23-2020/main"/>
+          <FRBRuri value="/me/cgvs/2020-10-06/Kr-S.23-2020"/>
+          <FRBRdate date="2020-10-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2020-10-06/Kr-S.23-2020/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2020-10-06/Kr-S.23-2020/srp@"/>
+          <FRBRdate date="2020-10-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2020-10-06/Kr-S.23-2020/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2020-10-06/Kr-S.23-2020/srp@/.xml"/>
+          <FRBRdate date="2020-10-06" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="apelacioniSud" href="/ontology/organization/me/ApelacioniSudCrneGore" showAs="Apelacioni sud Crne Gore"/>
+        <TLCOrganization eId="visiSud" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/MirasRadovic" showAs="Miraš Radović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/SvetlanaVujanovic" showAs="Svetlana Vujanović"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/LjiljanaKosarac" showAs="Ljiljana Košarac"/>
+        <TLCPerson eId="defendant1" href="/ontology/person/me/StefanDjukic" showAs="Stefan Đukić"/>
+        <TLCPerson eId="defendant2" href="/ontology/person/me/HasipMuric" showAs="Hasip Murić"/>
+        <TLCPerson eId="defendant3" href="/ontology/person/me/AndrijaGlavicanin" showAs="Andrija Glavičanin"/>
+        <TLCPerson eId="defendant4" href="/ontology/person/me/VukLakicevic" showAs="Vuk Lakićević"/>
+        <TLCPerson eId="defendant5" href="/ontology/person/me/MarkoVujadinovic" showAs="Marko Vujadinović"/>
+        <TLCPerson eId="defendant6" href="/ontology/person/me/BojanVuksanovic" showAs="Bojan Vuksanović"/>
+        <TLCPerson eId="lawyer1" href="/ontology/person/me/DraganSNikolic" showAs="Dragan S. Nikolić"/>
+        <TLCRole eId="branilac" href="/ontology/role/branilac" showAs="branilac"/>
+      </references>
+    </meta>
+    <header>
+      <courtType refersTo="#court">Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-S.br.23/2020</docketNumber>
+      <neutralCitation>Kr-S.br.23/2020</neutralCitation>
+      <docDate date="2020-10-06">06.10.2020.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2">Miraš Radović</judge>
+      <judge refersTo="#judge3">Svetlana Vujanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sudija <judge refersTo="#judge1">Petra Stojanovića</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Miraša Radovića</judge> i <judge refersTo="#judge3">Svetlane Vujanović</judge>, kao članova vijeća, uz učešće zapisničara <judge refersTo="#recorder">Ljiljane Košarac</judge>, u predmetu protiv okrivljenog <party refersTo="#defendant1" as="#okrivljeni">Stefana Đukića</party> i dr., zbog krivičnog djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a">čl.401a st.2 u vezi st.1 i 6 Krivičnog zakonika Crne Gore (KZ CG)</ref>, odlučujući o žalbi branioca okrivljenog <party refersTo="#defendant2" as="#okrivljeni">Hasipa Murića</party>, advokata <lawyer refersTo="#lawyer1">Dragana S. Nikolića</lawyer> izjavljene protiv rješenja Apelacionog suda Crne Gore Kvsž.br.167/20 od 28.09.2020.godine u sjednici vijeća održanoj dana 06.10.2020.godine, donio je</p>
+      </introduction>
+      <background>
+        <blockList>
+          <listIntroduction>
+            <p>R J E Š E NJ E</p>
+          </listIntroduction>
+        </blockList>
+        <p>Rješenjem Apelacionog suda Crne Gore Kvsž.br.167/2020 od 25.09.2020.godine uvažena je žalba branioca okrivljenog Andrije Glavičanina i povodom te žalbe, a po službenoj dužnosti i u odnosu na okrivljene Vuka Lakićevića, Marka Vujadinovića, Hasipa Murića i Bojana Vuksanovića, ukinuto rješenje Višeg suda u Podgorici Kvs.br.311/20 od 29.07.2020.godine i predmet vraćen tom sudu na ponovno odlučivanje.</p>
+        <p>Rješenjem Apelacionog suda Kvsž.br.167/20 od 28.09.2020.godine izvršena je ispravka prethodno navedenog rješenja na način što je određeno da se ime "Hasip Murić" briše u dispozitivu rješenja kao i na strani tri u pretposlednjem pasusu i strani četiri u poslednjem pasusu.</p>
+        <p>Branilac okrivljenog Hasipa Murića, izjavio je žalbu protiv rješenje Apelacionog suda Crne Gore Kvsž.br.167/20 od 28.09.2020.godine iz "svih zakonom propisanih razloga". Predlaže da Vrhovni sud ukine to rješenje i vrati Apelacionom sudu na ponovno odlučivanje ili da navedeno rješenje preinači na način što će u dispozitivu rješenja ostati ime "Hasip Murić" kao i na strani tri u pretposlednjem i na strani četiri u poslednjem pasusu.</p>
+        <p>Odlučujući o žalbi a nakon uvida u spise predmeta Apelacionog suda Crne Gore Kvsž.br.167/20 i Višeg suda u Podgorici Kvs.br.311/20 i Kvs.br.396/20, Vrhovni sud je utvrdio;</p>
+        <p>- žalba nije osnovana.</p>
+        <p>Nasuprot žalbenim navodima Vrhovni sud konstatuje da je osporavanim rješenjem Apelacioni sud ispravio očiglednu grešku učinjenu prilikom pisane izrade rješenja Kvsž.br.167/20 od 25.09.2020.godine.</p>
+        <p>Naime, rješenje Višeg suda u Podgorici Kvs.br.311/20 od 29.07.2020.godine postalo je pravosnažno u odnosu na okrivljenog Hasipa Murića kada je Apelacioni sud rješenjem Kvsž.br.146/20 od 21.08.2020.godine, odbio kao neosnovanu žalbu njegovog branioca.</p>
+        <p>Dakle, u vrijeme kada je Apelacioni sud odlučivao o žalbama branilaca drugih okrivljenih izjavljenim na rješenje Višeg suda u Podgorici Kvs.br.311/20 od 29.07.2020.godine to rješenje je u odnosu na okrivljenog Hasipa Murića već bilo pravosnažno.</p>
+        <p>Iz navedenog nesumnjivo proizilazi da je Apelacioni sud donoseći rješenje Kvsž.br.167/20 od 25.09.2020.godine kojim je ukinuo rješenje Višeg suda u Podgorici Kvs.br.311/20 od 29.07.2020.godine, učinio očiglednu grešku u pisanju time što je uz imena ostalih okrivljenih u odnosu na koje je ukinuo rješenje o produženju pritvora naveo i ime okrivljenog Hasipa Murića u odnosu na kog je ranijim posebnim rješenjem odbijena kao neosnovana žalba njegovog branioca i time rješenje u odnosu na okrivljenog Hasipa Murića postalo pravosnažno.</p>
+        <p>Dakle pravilno je Apelacioni sud takvu očiglednu grešku u pisanju otklonio rješenjem o ispravci Kvsž.br.167/20 od 28.09.2020.godine, zbog čega se žalba branioca okrivljenog Hasipa Murića izjavljena na to rješenje pokazuje neosnovanom. Žalbeni navodi kojima se od strane branioca okrivljenog Hasipa Murića, u kontekstu ukidnih razloga odluke Apelacionog suda Kvsž.br.167/20 od 25.09.2020.godine, dovodi u pitanje zakonitost ranije odluke Apelacionog suda kojom je odbijena žalba branioca okrivljenog Hasipa Murića, bez uticaja su na drugačiju odluku ovog suda.</p>
+        <p>Konačno Vrhovni sud ukazuje da bilo kakva greška u pisanju sudske odluke ne može imati uticaja na već pravosnažnu odluku suda i niko ne može crpiti pravo iz očigledne greške učinjene prilikom pisane izrade sudske odluke.</p>
+      </background>
+      <decision>
+        <p>Žalba se odbija kao neosnovana.</p>
+      </decision>
+      <conclusions>
+        <p>Na osnovu izloženog, a osnovom <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_417">čl.417 st.1 ZKP</ref>-u odlučeno kao u dispozitivu rješenja.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-09-12/Kzp-108-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-12/Kzp-108-2011"/>
+          <FRBRdate date="2011-09-12" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-09-12/Kzp-108-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-12/Kzp-108-2011/srp@"/>
+          <FRBRdate date="2011-09-12" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-09-12/Kzp-108-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-09-12/Kzp-108-2011/srp@/.xml"/>
+          <FRBRdate date="2011-09-12" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudBP" href="/ontology/organization/me/OsnovniSudBijeloPolje" showAs="Osnovni sud u Bijelom Polju"/>
+        <TLCOrganization eId="visiSudBP" href="/ontology/organization/me/VisiSudBijeloPolje" showAs="Viši sud u Bijelom Polju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/AE" showAs="A.E."/>
+        <TLCPerson eId="prosecutor" href="/ontology/person/me/BB" showAs="B.B."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzp.br.108/11</docketNumber>
+      <neutralCitation>Kzp.br.108/11</neutralCitation>
+      <docDate date="2011-09-12">12.09.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="članVijeća">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija Kojović Radula, kao predsjednika vijeća, Stanković Ivice i Stojanović Petra, kao članova vijeća, uz učešće sudskog službenika Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv okrivljene <party refersTo="#defendant" as="#defendant">A.E.</party>, zbog krivičnih djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_1">čl.417 st.1 Krivičnog zakonika</ref> i povreda ravnopravnosti iz <ref href="/me/acts/2003/krivicni-zakonik#art_159_1">čl.159 st.1 Krivičnog zakonika</ref>, odlučujući o zahtjevu za ispitivanje zakonitosti pravosnažne presude oštećenog kao tužioca (supsidijarni tužilac) <party refersTo="#prosecutor" as="#prosecutor">B.B.</party>, podignutog protiv rješenja Višeg suda u Bijelom Polju Kž.br.640/11 od 22.06.2011.godine, u sjednici vijeća održanoj dana 12.09.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Rješenjem <organization refersTo="#osnovniSudBP">Osnovnog suda u Bijelom Polju</organization> Kv.br.218/01 od 17.05.2011.godine odbijen je kao neosnovan zahtjev za sprovodjenje istrage oštećenog kao tužioca (supsidijarni tužilac) B.B., iz P., podnijet protiv osumnjičene A.E., iz P., zbog krivičnih djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_1">čl.417 st.1</ref> i povreda ravnopravnosti iz <ref href="/me/acts/2003/krivicni-zakonik#art_159_1">čl.159 st.1 Krivičnog zakonika</ref>.</p>
+        <p>Rješenjem <organization refersTo="#visiSudBP">Višeg suda u Bijelom Polju</organization> Kž.br.640/11 od 22.06.2011.godine odbijena je kao neosnovana žalba oštećenog kao tužioca (supsidijarni tužilac) B.B. izjavljena protiv rješenja Osnovnog suda u Bijelom Polju Kv.br.218/11 od 17.05.2011.godine.</p>
+        <p>Protiv rješenja Višeg suda u Bijelom Polju Kž.br.640/11 od 22.06.2011.godine oštećeni kao tužilac (supsidijarni tužilac) B.B. podnio je zahtjev za ispitivanje zakonitosti pravosnažne presude, s predlogom da ovaj sud zahtjev uvaži, pobijano rješenje ukine i predmet vrati prvostepenom sudu na ponovni postupak i odlučivanje.</p>
+      </background>
+      <decision>
+        <p>Zahtjev se odbacuje kao nedozvoljen.</p>
+      </decision>
+      <conclusions>
+        <p>Po razmatranju spisa predmeta i navoda iz zahtjeva, Vrhovni sud je našao da je zahtjev nedozvoljen.</p>
+        <p>U <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_436_1">čl.436 st.1 ZKP</ref>, je odredjeno da okrivljeni koji je pravosnažno osudjen na bezuslovnu kaznu zatvora ili maloljetničkog zatvora, može podnijeti zahtjev za ispitivanje zakonitosti pravosnažne presude zbog povrede zakona u slučajevima predvidjenim ovim zakonikom, a <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_439_1">čl.439 st.1 ZKP</ref> je propisano da zahtjev za ispitivanje zakonitosti pravosnažne presude mogu podnijeti osudjeni i branilac.</p>
+        <p>Kako je zahtjev podnijet od strane oštećenog kao tužioca (supsidijarni tužilac) B.B., koji nije ovlašćen za podnošenje zahtjeva za ispitivanje zakonitosti pravosnažne presude, to je isti valjalo odbaciti kao nedozvoljen, shodno <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_439_3">čl.439 st.3 ZKP</ref>.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

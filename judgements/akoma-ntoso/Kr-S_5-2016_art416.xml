@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rjesenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2016-04-26/Kr-s.5-2016/main"/>
+          <FRBRuri value="/me/cgvs/2016-04-26/Kr-s.5-2016"/>
+          <FRBRdate date="2016-04-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2016-04-26/Kr-s.5-2016/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2016-04-26/Kr-s.5-2016/srp@"/>
+          <FRBRdate date="2016-04-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2016-04-26/Kr-s.5-2016/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2016-04-26/Kr-s.5-2016/srp@/.xml"/>
+          <FRBRdate date="2016-04-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="sdt" href="/ontology/organization/me/SpecijalnoDrzavnoTuzilastvo" showAs="Specijalno državno tužilaštvo u Podgorici"/>
+        <TLCOrganization eId="visi-sud-pg" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/MirasRadovic" showAs="Miraš Radović"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/LjiljanaKosarac" showAs="Ljiljana Košarac"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/DM" showAs="D.M."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-s.br.5/16</docketNumber>
+      <neutralCitation>Kr-s.br.5/16</neutralCitation>
+      <docDate date="2016-04-26">26.04.2016.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge3" role="članVijeća">Miraš Radović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Radula Kojovića</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Petra Stojanovića</judge> i <judge refersTo="#judge3">Miraša Radovića</judge>, kao članova vijeća, uz učešće samostalnog referenta <party refersTo="#recorder">Ljiljane Košarac</party>, kao zapisničara, u krivičnom predmetu protiv okrivljenog <party refersTo="#defendant" as="#defendant">D.M.</party>, zbog dva produžena krivična djela zloupotreba službenog položaja putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl.416 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_49">49</ref> Krivičnog zakonika Crne Gore, koja su izvršena na organizovani način, odlučujući o predlogu Specijalnog državnog tužilaštva u Podgorici Kti-S.br.1/16 od 25.04.2016.godine za produženje pritvora protiv okrivljenog, u sjednici vijeća održanoj dana 26.04.2016.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Naredbom Specijalnog državnog tužilaštva u Podgorici Kti-S.br.1/16 od 20.01.2016.godine određeno je sprovodjenje istrage protiv okrivljenog D.M., zbog osnovane sumnje da je izvršio dva produžena krivična djela zloupotreba službenog položaja putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl.416 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_49">49</ref> Krivičnog zakonika Crne Gore, koja su izvršena na organizovani način.</p>
+        <p>Okrivljeni se nalazi u pritvoru koji je određen rješenjem sudije za istragu Višeg suda u Podgorici Kri-s.br.2/16 od 28.01.2016.godine, a produžen rješenjem vijeća tog suda Kvs.br.28/16 od 26.02.2016.godine, tako da po tom rješenju može trajati do 27.04.2016.godine do 18,30 časova.</p>
+        <p>Prije isteka pritvora Specijalno državno tužilaštvo stavilo je ovom sudu predlog da se pritvor protiv okrivljenog D.M. produži za još tri mjeseca po pritvorskim osnovu iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_st_1_tac_4">čl.175 st.1 tač. 4 ZKP</ref>.</p>
+        <p>Nakon razmatranja spisa predmeta i ocjene navoda stavljenog predloga, ovaj sud je našao: - da je predlog osnovan.</p>
+        <p>Iz spisa predmeta se utvrđuje da postoji osnovana sumnja da je okrivljeni izvršio krivična djela koja su mu stavljena na teret. Osnovana sumnja proizilazi iz naredbe o sprovođenju istrage specijalnog državnog tužilaštva Kti-s.br.1/16 od 20.01.2016.godine, poslovne i finansijske dokumentacije Opštine B., preduzeća "G.C." DOO B., nalaza i mišljenja sudskih vještaka ekonomsko - finansijske struke i građevinske struke, te i iz personalnih dokaza koji su pribavljeni u toku dosadašnjeg trajanja istrage.</p>
+        <p>Istraga u dosadašnjem toku trajanja pritvora nije zavšena iz objektivnih razloga. Ovo zbog toga što se radi o veoma kompleksnom predmetu, u kome se krivični postupak vodi zbog krivičnih djela izvršenih u okviru kriminalne organizacije, pa je radi svestranog razjašnjenja predmetnog slučaja neophodno prikupiti brojne dokaze i podatke koji su potrebni državnom tužiocu radi donošenja odluke o podizanju optužnice ili o obustavi istrage.</p>
+        <p>U predlogu Specijalnog državnog tužilaštva za produženje pritvora osnovano se navodi da u odnosu na okrivljenog D.M. i dalje postoji pritvorski osnov iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_st_1_tac_4">čl.175 st.1 tač.4 Zakonika o krivičnom postupku</ref> na kome je utemeljeno i dosadašnje trajanje pritvora.</p>
+        <p>Naime, prema odredbi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_st_1_tac_4">čl.175 st.1 tač.4 Zakonika o krivičnom postupku</ref> pritvor se može odrediti ako je nužan radi nesmetanog vođenja postupka a u pitanju je krivično djelo za koje se po zakonu može izreći kazna zatvora od deset godina ili teža kazna, a koje je posebno teško zbog načina izvršenja ili posljedica.</p>
+        <p>Za krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl.416 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st.1 Krivičnog zakonika Crne Gore</ref>, zakonom je propisana kazna zatvora u trajanju od dvije do deset godina, čime je ispunjen prvi uslov za produženje pritvora po navedenom pritvorskom osnovu.</p>
+        <p>Nadalje, okrivljenom se stavlja na teret da je osnovano sumnjiv za izvršenje krivičnih djela izvršenih na organizovani način u okviru djelovanja kriminalne organizacije, što ukazuje da su djela osobito teška zbog načina izvršenja. Ta krivična djela su posebno teška i zbog njihovih posljedica. Ovo zbog toga što je, prema stanju u spisima predmeta, za Opštinu B. nastala višemilionska šteta koja, sa aspekta obilježja krivičnih djela za koja se vodi istraga, mnogostruko prevazilazi iznos potreban za postojanje tih krivičnih djela, a koja su kvalifikovana kao najteži oblik zloupotrebe službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_3">čl.416 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">st.1 Krivičnog zakonika Crne Gore</ref>.</p>
+        <p>Kod iznijetih razloga ispunjeni su svi uslovi za izvođenje zaključka o postojanju pritvorskog osnova iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_st_1_tac_4">čl.175 st.1 tač.4 ZKP</ref>, kako se to osnovano navodi u predlogu Specijalnog državnog tužilaštva.</p>
+        <p>Pri odlučivanju o daljem trajanju pritvora ovaj sud se rukovodio i prinicipima srazmjenosti i proporcionalnosti, koji se moraju cijeniti prilikom određivanja i produženja trajanja mjera neophodnih za uspješno vođenje krivičnog postupka i obezbjeđenje prisustva okrivljenog u toku tog postupka. S tim u vezi ovaj sud je imao u vidu da se okrivljeni D.M. nalazi u pritvoru od 27.01.2016.godine, pa je ocijenio da je mjera pritvora u toku istrage srazmjerna opisanoj težini krivičnih djela koja se okrivljenom stavljaju na teret za koja se, uzimajući u obzir težinu zaprijećene kazne i sve okolnosti konkretnog slučaja, može izreći visoka zatvorska kazna za slučaj da okrivljeni bude oglašen krivim u sudskom postupku. Uz to, ovaj sud je zaključio da je u konkretnom slučaju produženje pritvora nepohodno u toku istrage i da se svrha zbog koje se pritvor određuje ili produžava ne može postići nekom drugom mjerom, jer okolnosti da u obimnoj istrazi treba prikupiti obilje dokaza i podataka za krivična djela izvršena na organizovani način putem brojnih inkriminisanih radnji, ukazuje da zaštita javnog interesa, koji se ogleda u potrebi djelotvornog otkrivanja i gonjenja krivičnih djela organizovanog kriminala preteže nad pravom okrivljenog da se brani sa slobode u početnom dijelu krivičnog postupka, odnosno u fazi istrage. Zbog toga je pritvor i produžen za naredna tri mjeseca, u kome je Specijalno državno tužilaštvo dužno da okonča istragu i odluči o podizanju optužnice ili o obustavi istrage.</p>
+      </background>
+      <decision>
+        <p>Pritvor protiv okrivljenog <party refersTo="#defendant" as="#defendant">D.M.</party>, određen rješenjem sudije za istragu Višeg suda u Podgorici Kri-s.br.2/16 od 28.01.2016.godine, a produžen rješenjem tog suda Kvs.br. 28/16 od 26.02.2016.godine, produžava se za još tri mjeseca, tako da isti po ovom rješenju može trajati do 27.07.2016.godine do 18,30 časova.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_177_st_3">čl.177 st.3 ZKP</ref>, odlučeno je kao u izreci ovog rješenja.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 26.04.2016.godine</p>
+        <p>Zapisničar, <party refersTo="#recorder">Ljiljana Košarac</party>, s.r.</p>
+        <p>Predsjednik vijeća - sudija, <judge refersTo="#judge1">Radule Kojović</judge>, s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

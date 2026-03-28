@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-03-24/Kzu-12-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-03-24/Kzu-12-2011"/>
+          <FRBRdate date="2011-03-24" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-03-24/Kzu-12-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-03-24/Kzu-12-2011/srp@"/>
+          <FRBRdate date="2011-03-24" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-03-24/Kzu-12-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-03-24/Kzu-12-2011/srp@/.xml"/>
+          <FRBRdate date="2011-03-24" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudHN" href="/ontology/organization/me/OsnovniSudHercegNovi" showAs="Osnovni sud u Herceg Novom"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/EM" showAs="E. M."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.12/11</docketNumber>
+      <neutralCitation>Kzu.br.12/11</neutralCitation>
+      <docDate date="2011-03-24">24.03.2011. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="članVijeća">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Kojović Radula</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Stojanović Petra</judge>, kao članova vijeća, uz učešće namještenika suda <judge refersTo="#clerk">Obradović Slađane</judge>, kao zapisničara, u krivičnom predmetu protiv osudjenog <party refersTo="#defendant" as="#defendant">E. M.</party>, zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_177__para_4">čl.177 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_172__para_3">čl.172 st.3</ref> u vezi st.2 KZ RCG, odlučujući o zahtjevu osudjenog za vanredno ublažavanje kazne, izrečene pravosnažnom presudom Osnovnog suda u Herceg Novom K.br.140/05 od 19.01.2007.godine, u sjednici vijeća održanoj dana 24.03.2011. godine donio je</p>
+      </introduction>
+      <background>
+        <p>Pravosnažnom presudom Osnovnog suda u Herceg Novom K.br.140/05 od 19.01.2007.godine E. M. oglašen je krivim, zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_177__para_4">čl.177 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_172__para_3">čl.172 st.3</ref> u vezi st.2 KZ RCG i osudjen na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci.</p>
+        <p>Osudjeni je podnio ovom sudu zahtjev za vanredno ublažavanje kazne u kome navodi da se od kraja 2008.godine nalazi na programu dijalize koju obavlja tri puta nedjeljno, što je dovelo do povišenog krvnog pritiska i srčanih tegoba, o čemu je priložio medicinsku dokumentaciju, zbog čega mu je nakon stupanja na izdržavanje kazne više puta odobren prekid izdržavanja kazne.</p>
+        <p>Predložio je da mu ovaj sud izrečenu kaznu ublaži.</p>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Herceg Novom i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev je osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Iz priložene medicinske dokumentacije potkrijepljene su okolnosti koje se navode u zahtjevu i to da osudjeni boluje od oboljenja gubitka bubrežnih funkcija, da je liječen na urološkom odjeljenju Bolnice Kotor, od 07.07.2008. do 17.07.2008.godine i u Kliničkom centru Crne Gore u periodu od 28.05. do 07.07.2008.godine i od 22.07.2008.godine do 04.08.2008. godine, a prema izvještaju ljekara zdrastvene službe ZIKS-a od 08.02.2011. godine, proizilazi da se isti može liječiti jedino putem dijaliza i dužim prisustvom u odredjenim nefrološkim klinikama, jer i sama dijaliza ima svojih rizika pa mora biti pod strogom kontrolom nefrologa.</p>
+        <p>Po nalaženju ovog suda, slabo zdravstveno stanje osudjenog koji se nalazi na programu dijalize predstavlja novu okolnost, koja se pojavila po pravosnažnosti presude, a ista je od takvog značaja da očigledno opravdava blažu osudu od izrečene.</p>
+      </background>
+      <decision>
+        <p>Usvaja se zahtjev za vanredno ublažavanje kazne osudjenog <party refersTo="#defendant" as="#defendant">E. M.</party>, pa se pravosnažna presuda Osnovnog suda u Herceg Novom K.br.140/05 od 19.01.2007.godine preinačava u dijelu odluke o kazni, tako što se Erić Miladin, zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_177__para_4">čl.177 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_172__para_3">čl.172 st.3</ref> u vezi st.2 KZ RCG, osudjuje na kaznu zatvora u trajanju od 1 (jedne) godine.</p>
+      </decision>
+      <conclusions>
+        <p>Sa izloženog, ovaj sud je usvojio zahtjev za vanredno ublažavanje kazne i na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_425__para_6">čl.425 st.6 ZKP</ref>, odlučio kao u izreci ove presude.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 24.03.2011. godine</p>
+        <p>Zapisničar, <judge refersTo="#clerk">Slađana Obradović</judge> s.r.</p>
+        <p>Predsjednik vijeća, <judge refersTo="#judge1">Radule Kojović</judge> s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

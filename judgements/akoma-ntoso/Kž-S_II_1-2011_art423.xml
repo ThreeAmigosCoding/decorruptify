@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-06-23/Kzs-II-1-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-06-23/Kzs-II-1-2011"/>
+          <FRBRdate date="2011-06-23" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-06-23/Kzs-II-1-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-06-23/Kzs-II-1-2011/srp@"/>
+          <FRBRdate date="2011-06-23" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-06-23/Kzs-II-1-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-06-23/Kzs-II-1-2011/srp@/.xml"/>
+          <FRBRdate date="2011-06-23" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="vdt" href="/ontology/organization/me/VrhovnoDrzavnoTuzilastvo" showAs="Vrhovno državno tužilaštvo Crne Gore"/>
+        <TLCOrganization eId="visi_sud_pg" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="apelacioni_sud" href="/ontology/organization/me/ApelacioniSudCrneGore" showAs="Apelacioni sud Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/IndiraMuratovic" showAs="Indira Muratović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/JB" showAs="J. B."/>
+        <TLCPerson eId="defense_lawyer" href="/ontology/person/me/DjD" showAs="Dj. D."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kžs.II.br.1/11</docketNumber>
+      <neutralCitation>Kžs.II.br.1/11</neutralCitation>
+      <docDate date="2011-06-23">23.06.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="član vijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="član vijeća">Radule Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stojanović Petra</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge> i <judge refersTo="#judge3">Kojović Radula</judge>, kao članova vijeća, uz učešće namještenika suda <party refersTo="#clerk">Muratović Indire</party>, kao zapisničara, u krivičnom predmetu protiv osudjenog <party as="#defendant" refersTo="#defendant">J. B.</party>, iz Nikšića, zbog krivičnog djela primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_1">čl.423 st.1 Krivičnog zakonika</ref>, odlučujući o žalbi branioca osudjenog izjavljenoj protiv rješenja Vrhovnog državnog tužilaštva Crne Gore Ktz.br.13/11 od 6.04.2011.godine, u sjednici vijeća održanoj dana 23.06.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom <organization refersTo="#visi_sud_pg">Višeg suda u Podgorici</organization> Ks.br.19/09 od 17.02.2010.godine oglašen je krivim <party refersTo="#defendant">J. B.</party>, zbog krivičnog djela primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_1">čl.423 st.1 Krivičnog zakonika</ref> i osudjen na kaznu zatvora u trajanju od jedne godine.</p>
+        <p><organization refersTo="#apelacioni_sud">Apelacioni sud Crne Gore</organization>, kao drugostepeni, svojom presudom Ksž.br.19/10 od 9.12.2010.godine odbio je kao neosnovane žalbe <organization refersTo="#vdt">Vrhovnog državnog tužilaštva Crne Gore</organization> - Odjeljenje za suzbijanje organizovanog kriminala, korupcije, terorizma i ratnih zločina i branioca osudjenog <party refersTo="#defendant">J. B.</party> i u odnosu na ovog osudjenog potvrdio presudu Višeg suda u Podgorici Ks.br.19/09 od 17.02.2010.godine.</p>
+        <p>Branilac osudjenog <party refersTo="#defense_lawyer">Dj. D.</party>, advokat iz Podgorice, predlogom je tražio od <organization refersTo="#vdt">Vrhovnog državnog tužilaštva Crne Gore</organization> da podigne zahtjev za zaštitu zakonitosti protiv pravosnažne presude Višeg suda u Podgorici Ks.br.19/09 od 17.02.2010.godine. U predlogu se navodi da je u postupku, koji je prethodio donošenju pravosnažne presude, povrijedjena pretpostavka nevinosti i načelo in dubio pro reo, jer sud nije sa jednakom pažnjom cijenio dokaze koji optuženom idu u korist i oni koji ga terete, te da je donošenjem osudjujuće presude, na njegovu štetu, povrijedjen Krivični zakonik, s tim što se u predlogu bliže ne ukazuje o kojoj se povredi zakona radi.</p>
+        <p>Odlučujući po predlogu <organization refersTo="#vdt">Vrhovno državno tužilaštvo Crne Gore</organization> donijelo je rješenje Ktz.br.13/11 od 6.04.2011.godine kojim je odbačen predlog branioca osudjenog <party refersTo="#defendant">J. B.</party> za podizanje zahtjeva za zaštitu zakonitosti protiv pravosnažne presude Višeg suda u Podgorici Ks.br.19/09 od 17.02.2010.godine, jer nema razloga za podizanje zahtjeva za zaštitu zakonitosti.</p>
+        <p>Protiv ovog rješenja branilac osudjenog je izjavio žalbu iz svih zakonskih razloga, s predlogom da ovaj sud žalbu usvoji i da po istoj postupi kao da je podnijet zahtjev za zaštitu zakonitosti.</p>
+      </background>
+      <decision>
+        <p>Odbija se kao neosnovana žalba branioca osudjenog <party refersTo="#defendant">J. B.</party> i potvrdjuje rješenje <organization refersTo="#vdt">Vrhovnog državnog tužilaštva Crne Gore</organization> Ktz.br.13/11 od 6.04.2011.godine.</p>
+      </decision>
+      <conclusions>
+        <p>Po razmatranju pobijanog rješenja, navoda žalbe i svih spisa ovog predmeta, pazeći po službenoj dužnosti na odredbe <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_398">čl.398 ZKP</ref>, Vrhovni sud je našao da žalba nije osnovana.</p>
+        <p>U postupku donošenja pobijanog rješenja kao ni u samom rješenju nijesu učinjene bitne povrede odredaba krivičnog postupka na čije postojanje ovaj sud pazi po službenoj dužnosti, niti pak povreda na koju se ukazuje žalbom, jer su u pobijanom rješenju dati dovoljni i valjani razlozi o svim navodima iz predloga za podizanje zahtjeva za zaštitu zakonitosti. Stoga nije učinjena bitna povreda odredaba krivičnog postupka iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_386_st_1_tac_8">čl.386 st.1 tač.8 ZKP</ref>, kako se to u žalbi neosnovano ističe.</p>
+        <p>Takodje, nije osnovan žalbeni navod da je pravosnažnom presudom povrijedjen Krivični zakonik na štetu osudjenog. Nižestepeni sudovi su pravilno zaključili da radnja osudjenog, opisana u izreci prvostepene presude, sadrži sva obilježja bića krivičnog djela primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_1">čl.423 st.1 Krivičnog zakonika</ref>, jer na takav zaključak ukazuju izvedeni dokazi na glavnom pretresu i utvrdjene činjenice u postupku.</p>
+        <p>Kod tih činjenica, <organization refersTo="#vdt">Vrhovno državno tužilaštvo</organization> je pravilno odlučilo kada je, shodno <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_438_st_3">čl.438 st.3 ZKP</ref>, rješenjem odbacilo predlog branioca osudjenog <party refersTo="#defendant">J. B.</party>, jer nema razloga za podizanje zahtjeva za zaštitu zakonitosti.</p>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_438_st_5">čl.438 st.5 ZKP</ref>, odlučeno je kao u izreci ovog rješenja.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

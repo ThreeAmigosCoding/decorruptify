@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-04-18/Kr.br.40-11/main"/>
+          <FRBRuri value="/me/cgvs/2011-04-18/Kr.br.40-11"/>
+          <FRBRdate date="2011-04-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-04-18/Kr.br.40-11/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-04-18/Kr.br.40-11/srp@"/>
+          <FRBRdate date="2011-04-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-04-18/Kr.br.40-11/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-04-18/Kr.br.40-11/srp@/.xml"/>
+          <FRBRdate date="2011-04-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudPodgorica" href="/ontology/organization/me/OsnovniSudPodgorica" showAs="Osnovni sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCRole eId="predsjednikVijeca" href="/ontology/role/me/predsjednikVijeca" showAs="predsjednik vijeća"/>
+        <TLCRole eId="clanVijeca" href="/ontology/role/me/clanVijeca" showAs="član vijeća"/>
+        <TLCRole eId="zapisnicar" href="/ontology/role/me/zapisnicar" showAs="zapisničar"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr.br.40/11</docketNumber>
+      <neutralCitation>Kr.br.40/11</neutralCitation>
+      <docDate date="2011-04-18">18.04.2011.godine</docDate>
+      <judge refersTo="#judge1" as="#predsjednikVijeca">Radule Kojović</judge>
+      <judge refersTo="#judge2" as="#clanVijeca">Petar Stojanović</judge>
+      <judge refersTo="#judge3" as="#clanVijeca">Ivica Stanković</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Kojović Radula, kao predsjednika vijeća, Stojanović Petra i Stanković Ivice, kao članova vijeća, uz učešće namještenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv osumnjičenog D. M. i dr., zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">čl.416 st.1 Krivičnog zakonika</ref> i drugih krivičnih djela, rješavajući o predlogu oštećenih kao tužioca J. V., B. V. i B. D., od 07.02.2011.godine, za prenošenje mjesne nadležnosti, u sjednici vijeća održanoj 18.04.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Oštećeni kao tužioci J. V., B. V. i B. D., 07.02.2011.godine, podnijeli su Osnovnom sudu u Podgorici, zahtjev za sprovodjenje istrage, protiv osumnjičenog D. M. i dr., zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_st_1">čl.416 st.1 Krivičnog zakonika</ref> i drugih krivičnih djela, s predlogom da Vrhovni sud Crne Gore za postupanje u ovom predmetu, odredi neki drugi stvarno nadležan sud.</p>
+        <p>Po razmatranju spisa predmeta i predloga oštećenih kao tužilaca za prenošenje mjesne nadležnosti, ovaj sud je našao da predlog treba odbaciti kao nedozvoljen.</p>
+        <p>Odredbom čl.34 st.1 ZKP, je predvidjeno, da sud odredjen zakonom može za vodjenje postupka odrediti drugi stvarno nadležan sud na svom području, ako je očigledno da će se tako lakše sprovesti postupak ili ako postoje drugi važni razlozi, dok je u stavu 2 navedeno da rješenje u smislu stava 1 ovog člana sud može donijeti na predlog istražnog sudije, sudije pojedinca ili predsjednika vijeća ili na predlog nadležnog državnog tužioca.</p>
+      </background>
+      <decision>
+        <p>Predlog se odbacuje kao nedozvoljen.</p>
+      </decision>
+      <conclusions>
+        <p>Kako je predlog za prenošenje mjesne nadležnosti, podnijet od strane oštećenih kao tužilaca, a isti na to nijesu ovlašćeni u smislu čl.34 st.2 ZKP, to je predlog valjalo odbaciti kao nedozvoljen.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

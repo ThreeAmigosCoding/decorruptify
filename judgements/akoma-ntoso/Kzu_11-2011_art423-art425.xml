@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-03-01/Kzu-11-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-03-01/Kzu-11-2011"/>
+          <FRBRdate date="2011-03-01" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-03-01/Kzu-11-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-03-01/Kzu-11-2011/srp@"/>
+          <FRBRdate date="2011-03-01" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-03-01/Kzu-11-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-03-01/Kzu-11-2011/srp@/.xml"/>
+          <FRBRdate date="2011-03-01" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="visiSudBijeloPolje" href="/ontology/organization/me/VisiSudUBijelomPolju" showAs="Viši sud u Bijelom Polju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="clerk1" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/LZ" showAs="L. Z."/>
+        <TLCPerson eId="defense" href="/ontology/person/me/ORM" showAs="advokat O. R. M."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.11/11</docketNumber>
+      <neutralCitation>Kzu.br.11/11</neutralCitation>
+      <docDate date="2011-03-01">01.03.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge3" role="članVijeća">Ivica Stanković</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija Kojović Radula, kao predsjednika vijeća, Stojanović Petra i Stanković Ivice, kao članova vijeća, uz učešće namještenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu osudjenog L. Z., zbog krivičnog djela neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.1 Krivičnog zakonika</ref> i krivičnog djela sprečavanje službenog lica u vršenju službene radnje iz <ref href="/me/acts/2003/krivicni-zakonik#art_375">čl.375 st.3 u vezi st.2 i 1 Krivičnog zakonika</ref>, rješavajući o zahtjevu za vanredno ublažavanje kazne izrečene pravosnažnom presudom Višeg suda u Bijelom Polju K.br.6/10 od 13.04.2010.godine, koji je podnio branilac osudjenog, u sjednici vijeća održanoj dana 01.03.2011.godine, donio je</p>
+      </introduction>
+      <decision>
+        <p>R J E Š E NJ E</p>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <background>
+        <p>Pravosnažnom presudom Višeg suda u Bijelom Polju K.br.6/10 od 13.04.2010.godine oglašen je krivim L. Z., zbog krivičnog djela neovlašćena proizvodnja, držanje i stavljanje u promet opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_300">čl.300 st.1 Krivičnog zakonika</ref> i krivičnog djela sprečavanje službenog lica u vršenju službene radnje iz <ref href="/me/acts/2003/krivicni-zakonik#art_375">čl.375 st.3 u vezi st.2 i 1 Krivičnog zakonika</ref> i osudjen na jedinstvenu kaznu zatvora u trajanju od 4 (četiri) godine.</p>
+        <p>Branilac osudjenog, advokat O. R. M., iz Budve, podnio je ovom sudu zahtjev za vanredno ublažavanje kazne u kome navodi da drugostepeni sud nije u dovoljnoj mjeri cijenio činjenice na kojima je prvostepeni sud zasnovao svoju odluku, prihvatajući kazivanje svjedoka E. O., iako okrivljeni nije znao da je službeno lice. Ističe da je okrivljeni plašeći se za svoju i bezbjednost svoje porodice, dao lažan iskaz, da je djelo izvršio po nagovoru, da činjenično stanje nije na valjan način utvrdjeno, jer nijesu saslušana lica koja su učestvovala u lišenju slobode okrivljenog i da nije osudjivan za isto ili srodno krivično djelo a presuda kojom je osudjen za krivično djelo sitna kradja, trebala je biti brisana iz kaznene evdencije. Predložio je da se zahtjev usvoji i pravosnažna presuda preinači u pogledu odluke o kazni.</p>
+      </background>
+      <conclusions>
+        <p>Nakon razmatranja zahtjeva, predloga Višeg suda u Bijelom Polju i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_423">čl.423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Okolnosti koje se navode u zahtjevu za vanredno ublažavanje kazne, po nalaženju ovog suda, ne mogu biti osnov za vanredno ublažavanje kazne, u smislu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_423">čl.423 ZKP</ref>.</p>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2018-12-28/Kr-S.15-2018/main"/>
+          <FRBRuri value="/me/cgvs/2018-12-28/Kr-S.15-2018"/>
+          <FRBRdate date="2018-12-28" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2018-12-28/Kr-S.15-2018/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2018-12-28/Kr-S.15-2018/srp@"/>
+          <FRBRdate date="2018-12-28" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2018-12-28/Kr-S.15-2018/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2018-12-28/Kr-S.15-2018/srp@/.xml"/>
+          <FRBRdate date="2018-12-28" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="visiSudPodgorica" href="/ontology/organization/me/VisiSudUPodgorici" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="sdt" href="/ontology/organization/me/SpecijalnoDrzavnoTuzilastvo" showAs="Specijalno državno tužilaštvo"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RadulKojovic" showAs="Radul Kojović"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/MarukaUjkic" showAs="Maruka Ujkić"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/MM" showAs="M.M."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-S.br.15/18</docketNumber>
+      <neutralCitation>Kr-S.br.15/18</neutralCitation>
+      <docDate date="2018-12-28">28.12.2018.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="član vijeća">Stanka Vučinić</judge>
+      <judge refersTo="#judge3" role="član vijeća">Radul Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Petra Stojanovića</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanke Vučinić</judge> i <judge refersTo="#judge3">Radula Kojovića</judge>, kao članova vijeća, uz učešće samostalnog referenta <party refersTo="#recorder">Maruke Ujkić</party>, kao zapisničara, u krivičnom predmetu protiv okrivljenog <party as="#defendant" refersTo="#defendant">M.M.</party>, zbog kriv. djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_para_1">čl.401a st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_401a_para_6">st.6</ref> Krivičnog zakonika Crne Gore, zloupotreba službenog položaja putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_para_1">čl.416 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore, davanje mita putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_para_1">čl.424 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore i krijumčarenje putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_265_para_3">čl.265 st.3</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_265_para_1">1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore, odlučujući o predlogu Specijalnog državnog tužilaštva Kti-S.br.15/18 od 27.12.2018.godine za produženje pritvora protiv okrivljenog, u sjednici vijeća održanoj dana 28.12.2018.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Naredbom o proširenju istrage Specijalnog državnog tužilaštva Kti-S.br.15/18 od 31.08.2018.godine, određeno je sprovođenje istrage protiv okrivljenog M.M., zbog osnovane sumnje da je izvršio kriv. djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_para_1">čl.401a st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_401a_para_6">st.6</ref> Krivičnog zakonika Crne Gore, zloupotreba službenog položaja putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_para_1">čl.416 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore, davanje mita putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_para_1">čl.424 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore i krijumčarenje putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_265_para_3">čl.265 st.3</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_265_para_1">1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika Crne Gore.</p>
+        <p>Okrivljeni M.M. nalazi se u pritvoru koji je odredjen rješenjem sudije za istragu Višeg suda u Podgorici Kri-S.br.56/18 od 02.10.2018.godine, a produžen rješenjem vijeća tog suda Kvs.br.288/18 od 29.10.2018.godine, tako da po ovom poslednjem rješenju pritvor okrivljenom može trajati do 30.12.2018.godine do 01,00 časova.</p>
+        <p>Prije isteka pritvora Specijalno državno tužilaštvo podnijelo je ovom sudu predlog da se pritvor protiv okrivljenog produži još za tri mjeseca po pritvorskim osnovima iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_para_1_tac_1">čl.175 st.1 tač.1</ref> i <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_para_1_tac_2">2</ref> ZKP.</p>
+        <p>U sjednici vijeća razmotreni su cjelokupni spisi predmeta i ocijenjeni navodi podnijetog predloga, pa je vijeće našlo da je predlog osnovan.</p>
+        <p>Istraga do sada nije završena iz objektivnih razloga, imajući u vidu brojnost okrivljenih lica i potrebu da se u cilju rasvjetljavanja predmetne krivično pravne stvari prikupi izuzetno veliki broj dokaza i sprovedu brojne istražne radnje. Sagledavajući trenutno stanje iz spisa predmeta da se zaključiti da je u daljem toku istrage potrebno saslušati svjedoke D.T. i K.D., te da je potrebno nastaviti sa daljim prikupljanjem materijalnih dokaza i nakon toga sprovesti kompleksno vještačenje, s obzirom na složenost predmeta u konkretnom slučaju.</p>
+        <p>Iz spisa predmeta proizilazi osnovana sumnja da je okrivljeni M.M., tokom 2018.godine izvršio krivična djela koja mu se stavljaju na teret. Naime, tokom postupka je do sada utvrđeno da postoji osnovana sumnja da je okrivljeni M.M. bio zastupnik i ovlašćeno lice stranog preduzeća „C.A. LTD" iz D. i da je u ime tog preduzeća u slobodnoj carinskoj zoni Luke B. vršio kupovinu cigareta u količini od preko 43.000 paketa, te da su te cigarete prokrijumčarene iz slobodne carinske zone i prodavane na crnom tržištu, uz izbjegavanje plaćanja poreza, akciza i drugih dažbina. Prema obimnoj dokumentaciji koja je izuzeta iz Uprave carina, kao i iz slobodne carinske zone Luke B., cigarete su ostale u vlasništvu navedenog preduzeća, a prema zapisnicima o izvršenim pretresima magacinskih slobodnih prostora u slobodnoj carinskoj zoni Luke B. nijesu pronađene, niti je do sada utvrđeno da su bile predmet reeksporta, iz čega bi proizilazio podatak da su cigarete završile na crnom tržištu. Takođe postoji osnovana sumnja da je okrivljeni M.M., kao odgovorno lice navedenog preduzeća, davao ovlašćenja drugim licima za preduzimanje radnji pred carinskim organima, jer iz prikupljene dokumentacije se vidi da je izdato ovlašćenje špediterskoj službi DOO „L.š." iz B., te da postoji osnovana sumnja da je to preduzeće registrovano uz korišćenje falsifikovane dokumentacije, odnosno putne isprave koja glasi na ime P.L., navodno državljanina Republike Slovenije, pošto je utvrđeno da putna isprava koja glasi na navedeno lice nije izdata od državnih organa Republike Slovenije. Osnovana sumnja da su cigarete izašle iz slobodne carinske zone Luke B. mimo carinskog nadzora proizilazi ne samo iz prikupljene dokumentacije, već i iz drugih dokaza. S tim u vezi okrivljeni M.Š., koji je takođe obuhvaćen naredbom o proširenju istrage, u svom iskazu je naveo da je od okrivljenog G.L. primao novac, kako bi zloupotrijebio svoj službeni položaj, odnosno kako bi cigarete bile izvezene iz slobodne carinske zone Luke B. bez plaćanja poreza i drugih dažbina. Tu činjenicu u svojim odbranama su potvrdili i okrivljeni N.Č. i B.Č., koji su naveli da su bili angažovani od okrivljenog P.M. da nakon utovara cigarete izvoze iz slobodne carinske zone, što uz pomenutu činjenicu da je bilo dato ovlašćenje zaposlenima u L.Š. DOO, da obavlja špediciju za preduzeće „C.A. LTD" iz D. ukazuje na osnovanu sumnju da je okrivljeni M.M. izvršio krivična djela koja mu se stavljaju na teret. Osnovana sumnja naročito je podkrijepljena sadržajem dvije službene zabilješke Specijalnog policijskog odjeljenja od 03.08.2018.godine, potvrde o privremeno oduzetim predmetima Uprave policije 49/10 br.240/18-210/1067/2 od 02.08.2018.godine, izdate na ime D.Š., poslovne dokumentacije Uprave carina o prenosu vlasništva nad cigaretama i evidencija ulaska i utovara cigareta, te podataka dobijenih primjenom mjera tajnog nadzora.</p>
+        <p>Kod utvrđene osnovane sumnje da je okrivljeni izvršio krivična djela koja mu se stavljaju na teret, a koja predstavlja materijalni uslov za određivanje pritvora, ovaj sud je na osnovu podataka iz spisa predmeta zaključio da se predlogom za produženje pritvora osnovano ukazuje da u odnosu na okrivljenog postoje pritvorski osnovi iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_para_1_tac_1">čl.175 st.1 tač.1</ref> i <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_para_1_tac_2">2</ref> ZKP, zbog kojih je pritvor nužno produžiti.</p>
+        <p>Sud je imao u vidu okolnosti vezane za težinu krivičnih djela koja se okrivljenom M.M. stavljaju na teret izraženu kroz visinu zakonom zaprijećene kazne za ista, te količinu i vrijednost predmetnih cigareta, koje za slučaj da okrivljeni bude oglašen krivim ukazuju da on može očekivati visoku kaznu zatvora, te da ga ta činjenica svakako ne može ostaviti ravnodušnim u odnosu prema krivičnom postupku koji je u toku. Dovodeći u vezu navedene okolnosti sa činjenicama da je okrivljeni M.M. državljanin Republike Srbije, te da su radnje stavljene na teret okrivljenom sprovođene u međunarodnim razmjerama, ukazuje da okrivljeni ima razvijene socijalne i poslovne veze u instranstvu, ovaj sud nalazi da stoji pritvorski osnov iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_para_1_tac_1">čl.175 st.1 tač.1</ref> ZKP, kako se to osnovano ističe i u podnijetom predlogu. S tim u vezi, ovaj sud posebnu težinu pridaje činjenici da se radi o krivičnom djelu sa prekograničnim elementom. Naime, u ovoj fazi istrage nije sporno da predmetne cigarete imaju inostrano porijeklo, pri čemu se pojavljuje osnovana sumnja da li su one zaista bile vlasništvo "C.A. LTD" D., čiji izvršni direktor je prema stanju u spisima predmeta navodno bio M.M., državljanin Republike Srbije, te da takođe postoji osnovana sumnja da je krijumčarenje bilo praćeno dokumentacijom preduzeća „L.Š." DOO B. i da je registracija tog privrednog društva kod nadležnog organa u Crnoj Gori izvršena na osnovu falsifikovane dokumentacije koja potiče iz inostranstva. To su okolnosti na čijem rasvjetljavanju treba raditi i u daljem toku istrage.</p>
+        <p>U daljem toku istrage potrebno je saslušati gore navedene svjedoke, koji su prema stanju u spisima predmeta u prijateljskim odnosima sa okrivljenim, a koji trebaju da se izjasne na okolnosti na koje se okrivljeni pozivao u svojoj odbrani kada je tvrdio da je izgubio svoja lična dokumenta i na druge okolnosti koje su od značaja za ovu krivično pravnu stvar. Uz to, za sada još nije saslušan okrivljeni G.L., koji se nalazi u bjekstvu, a za koga postoji osnovana sumnja da je učestvovao u radnji izvršenja predmetnih krivičnih djela. Imajući u vidu složenost predmeta istrage, sasvim izvjesno se pojavljuje potreba da se prikupi dokumentacija koja se odnosi na porijeklo cigareta i druge okolnosti vezano za predmetni krivično pravni događaj. Stoji, zato, i pritvorski osnov iz <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_para_1_tac_2">čl.175 st.1 tač.2</ref> ZKP, jer bi okrivljeni boravkom na slobodi mogao ometati postupak uticanjem na svjedoke i sačesnika u pravcu prilagođavanja svog iskaza sa navodima odbrane saokrivljenog koji je u bjekstvu, kao i na prikupljanje drugih relevantnih dokaza.</p>
+        <p>Poštujući potrebu da se prilikom produženja pritvora vodi računa o principu supsidijarnosti i proporcijalnosti, ovaj sud je ocijenio da gore navedeni razlozi ukazuju da je u ovoj fazi postupka neophodno produženje pritvora i da se cilj pritvora ne može ostvariti nekom blažom mjerom za obezbjeđenje prisustva okrivljenog u krivičnom postupku. Uz to, kada se ima u vidu dosadašnji tok istrage i brojne dokazne radnje koje treba sprovesti u daljem toku istrage, ovaj sud smatra da postoje realni izgledi da istraga bude završena tek u naredna tri mjeseca za koje vrijeme je pritvor i produžen.</p>
+      </background>
+      <decision>
+        <p>Pritvor protiv okrivljenog M.M., određen rješenjem sudije za istragu Višeg suda u Podgorici Kri-S.br.56/18 od 02.10.2018.godine, a produžen rješenjem vijeća tog suda Kvs.br.288/18 od 29.10.2018.godine, produžava se još za tri mjeseca, tako da po ovom rješenju pritvor okrivljenom može trajati do 30.03.2019.godine do 01,00 časova.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_177_para_3">čl.177 st.3 ZKP</ref>, odlučeno je kao u izreci ovog rješenja.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 28.12.2018.godine</p>
+        <p>Zapisničar <party refersTo="#recorder">Maruka Ujkić</party>, s.r.</p>
+        <p>Predsjednik vijeća - sudija, <judge refersTo="#judge1">Petar Stojanović</judge>, s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgas/2009-10-21/Ksz-13-2009/main"/>
+          <FRBRuri value="/me/cgas/2009-10-21/Ksz-13-2009"/>
+          <FRBRdate date="2009-10-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgas/2009-10-21/Ksz-13-2009/srp@/main"/>
+          <FRBRuri value="/me/cgas/2009-10-21/Ksz-13-2009/srp@"/>
+          <FRBRdate date="2009-10-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgas/2009-10-21/Ksz-13-2009/srp@/main.xml"/>
+          <FRBRuri value="/me/cgas/2009-10-21/Ksz-13-2009/srp@/.xml"/>
+          <FRBRdate date="2009-10-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/ApelacioniSudCrneGore" showAs="Apelacioni sud Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/DragutinColakovic" showAs="Dragutin Čolaković"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/MilivojeKatnic" showAs="Milivoje Katnić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RadmilaMijuskovic" showAs="Radmila Mijušković"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Apelacioni sud Crne Gore</courtType>
+      <docketNumber>Ksž br. 13/09</docketNumber>
+      <neutralCitation>Ksž br. 13/09</neutralCitation>
+      <docDate date="2009-10-21">21.10.2009. godine</docDate>
+      <judge refersTo="#judge1" role="presjednikVijeća">Dragutin Čolaković</judge>
+      <judge refersTo="#judge2">Milivoje Katnić</judge>
+      <judge refersTo="#judge3">Radmila Mijušković</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>APELACIONI SUD CRNE GORE u vijeću sastavljenom od sudija Dragutina Čolakovića, kao predsjednika vijeća, Milivoja Katnića i Radmile Mijušković, kao članova vijeća, uz učešće službenika suda Slobodanke Vojvodić kao zapisničara, u krivičnom predmetu protiv optuženog Š. R., zbog kriv.djela primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_1">čl. 423. st. 1 Krivičnog zakonika</ref>, odlučujući o žalbi branioca optuženog, adv. V. Č. iz Podgorice, izjavljenoj na presudu Višeg suda u Podgorici Ks.br. 2/08 od 02.06.2009. godine, nakon javne sjednice održane dana 21.10.2009. godine, a nakon tajnog vijećanja i glasanja istog dana, donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Višeg suda u Podgorici, Ks.br. 2/08 od 02.06.2009. godine, optuženi Š. R., oglašen je krivim za kriv. djelo primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_1">čl. 423. st. 1 KZ-a</ref>, činjenično opisano kao u izreci te presude i primjenom odredbi <ref href="/me/acts/2003/krivicni-zakonik#art_45">čl. 45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46 Kz-a</ref>, osuđen na kaznu zatvora u trajanju od 1 (jedne) godine u koju kaznu mu je uračunato vrijeme provedeno u pritvoru od 06.08.2008. godine do 03.10.2008. godine.</p>
+        <p>Na osnovu <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_7">čl. 423. st. 7 Kz-a</ref>, od optuženog je oduzet novčani iznos od 100,00 eura, na ime pribavljene protivpravne imovinske koristi.</p>
+        <p>Istom presudom optuženi je obavezan da plati paušal od 100,00 eura, u roku od 15 dana po pravosnažnosti presude.</p>
+        <p>Protiv te presude žalbu je izjavio branilac optuženog, zbog bitne povrede odredaba krivičnog postupka, pogrešno i nepotpuno utvrđenog činjeničnog stanja i povrede Krivičnog zakona, s predlogom da ovaj sud uvaži žalbu i prvostepenu presudu ukine i predmet vrati na ponovno suđenje.</p>
+        <p>Vrhovno državno tužilaštvo CG je u smislu odredbe <ref href="/me/acts/2005/zakonik-o-krivicnom-postupku#art_382_st_1">čl. 382 stav. 1 Zakonika o krivičnom postupku</ref>, dostavilo podnesak Ktž br. 357/09 od 09. septembra 2009. godine, s predlogom da se žalba branioca optuženog odbije kao neosnovana a prvostepena presuda potvrdi.</p>
+        <p>Po razmatranju pobijane presude, žalbe i svih spisa ovog predmeta, pazeći po službenoj dužnosti na povrede zakona iz <ref href="/me/acts/2005/zakonik-o-krivicnom-postupku#art_388">čl. 388 ZKP-a</ref>, Apelacioni sud CG je utvrdio:</p>
+        <p>Žalba nije osnovana.</p>
+        <p>Prvostepeni sud je, u zakonito sprovedenom postupku, pri čemu nijesu učinjene bitne povrede odredaba krivičnog postupka na čije postojanje ovaj sud pazi po službenoj dužnosti niti pak one na koje se ukazuje žalbom branioca optuženog, potpuno i pravilno utvrdio sve odlučne činjenice i na utvrđeno činjenično stanje pravilno primijenio Krivični zakonik.</p>
+        <p>Nije u pravu branilac optuženog kada u žalbi ističe da je prvostepena presuda zasnovana na dokazima iz predkrivičnog postupka, pa da je time učinjena bitna povreda odredaba krivičnog postupka iz <ref href="/me/acts/2005/zakonik-o-krivicnom-postupku#art_376_st_1_tac_10">čl. 376. st. 1 tač. 10 ZKP-a</ref>. Naime, prvostepeni sud je pobijanu presudu zasnovao samo na činjenicama i dokazima koji su izvedeni na glavnom pretresu. Takav dokaz je svjedočki iskaz P. J. dat u prethodnom postupku, a kojem je prvostepeni sud poklonio punu vjeru, pri čemu je na glavnom pretresu zapisnik o prepoznavanju lica koji je sačinjen od strane UP Područne jedinice Podgorica br.1071/2008 od 06.08.2008. godine koristio kao mjeru za ocjenu vjerodostojnosti navedenog iskaza, u kom pravcu pobijana presuda sadrži valjano obrazloženje, sa kojih razloga su isticanja žalbe koja su u tom pravcu, bez osnova.</p>
+        <p>O svim odlučnim činjenicama u pobijanoj presudi dati su dovoljno jasni i sadržajni razlozi koji su međusobno saglasni i saglasni činjeničnom utvrđenju i zaključivanju do koga je prvostepeni sud došao na osnovu pravilne ocjene izvedenih dokaza, kao i pravilne ocjene odbrane optuženog, pa ne stoje žalbeni navodi da su razlozi o odlučnim činjenicama nejasni i protivrječni i da je time učinjena bitna povreda odredaba krivičnog postupka iz <ref href="/me/acts/2005/zakonik-o-krivicnom-postupku#art_376_st_1_tac_11">čl. 376. st. 1 tač. 11 ZKP-a</ref>.</p>
+        <p>U postupku je nesumnjivo utvrđeno i u pobijanoj presudi valjano obrazloženo da je optuženi u vrijeme i mjesto, kako je predstavljeno u izreci pobijane presude, u svojstvu službenog lica – policajca vršeći policijske poslove u IV pozorničkom reonu na autobuskoj stanici, zahtijevao i primio imovinsku korist za sebe da u okviru svog službenog ovlašćenja ne izvrši službenu radnju privođenja koju bi morao izvršiti, na način što je od oštećenih P. J. i A. M., koji su državljani Srbije, u postupku legitimisanja uzeo lične karte radi kontrole i nakon što je utvrdio da nemaju prijavljeno boravište od njih tražio novac za piće da ih zbog toga ne bi privodio nadležnom državnom organu, a zatim od njih primio po 50,00 eura, nakon čega im je vratio lične karte.</p>
+        <p>Optuženi ne spori da je 30.06.2008. godine kao policajac bio raspoređen u drugoj smjeni u vremenu od 14,00 do 22,00 časova na reonu autobuske stanice i da između ostalog službena dužnost njih policajaca bila je da legitimišu radnike koji su iz Srbije, Bosne i Makedonije, kao i da kontrolišu prijave njihovog boravka, te da nadležnom organu privode ona lica koja nemaju prijave boravka. Međutim, brani se da se u vrijeme kritičnog događaja nije nalazio na autobuskoj stanici i da nije legitimisao P. J. i A. M., te da stoga nije ni izvršio krivično djelo za koje je optužen koju odbranu, prvostepeni sud opravdano nije prihvatio pravilno nalazeći da je usmjerena na izbjegavanje krivice i obezvrijeđena izvedenim dokazima, a prije svega iskazom oštećenog P. J. datom u prethodnom postupku.</p>
+        <p>S tim u vezi neosnovano se žalbom branioca optuženog osporavaju činjenični zaključci do kojih je prvostepeni sud došao time što je prihvatio kao istinit iskaz oštećenog P. J. osnovom kojeg je izveo zaključak o postojanju krivičnog djela u pitanju i krivici optuženog za isto. Ovo stoga jer se ovaj svjedok na potpuno jasan i određen način izjasnio da je 30.06.2008. godine na autobuskoj stanici u Podgorici zajedno sa A. M. zaustavljen od strane optuženog radi vršenja kontrole. Kada je optuženi utvrdio da oni nijesu prijavili boravište tražio im je novac da ih zbog tog prekršaja ne bi privodio nadležnom državnom organu, pa su on i A. M. optuženom na njegov zahtjev dali po 50,00 eura, a zatim otputovali za Srbiju. Tog istog policajca vidio je i 05.07.2008. godine na autobuskoj stanici oko 08,00 časova ujutru kada se zajedno sa A. M. vratio iz Srbije u Crnu Goru. Nakon izlaska iz autobuske stanice, dok su čekali taksi A. mu je rekao »eno ga onaj isti policajac, bježimo opet će nam uzeti pare«, što u svom iskazu datom u prethodnom postupku potvrđuje i svjedok A. Na te riječi okrenuo se i vidio je onog istog policajca kojem su on i A. 30. juna iste godine dali pare, a koji je stajao sa još jednim civilom. Činjenicu da se optuženi 05.07.2008. godine, kao policajac nalazio na radu u reonu autobuske stanice u vremenu od 08,00 – 14,00 časova nije sporio ni optuženi, a isto je potvrđeno i sadržinom patrolnog lista za navedeni dan. Pored navedenog, svjedok P. je saopštio da je u prostorijama policije 06.08.2008. godine, kada je bio pozvan na prepoznavanje lica koje je kritične prilike od njega i A. M. tražilo i uzelo novac da ih ne bi priveo u prostorije policije zbog neprijavljenog boravišta, dao prvo opis tog lica, a zatim je izvršio prepoznavanje na način što je u grupi od pet lica postavljenih radi prepoznavanja pokazao na lice pod rednim brojem 4, (u zapisniku o prepoznavanju pod tim brojem označen je optuženi) kao lice koje je dana 30.06.2008. godine od njega i A.-a zahtijevalo i uzelo novac. I po ocjeni ovog suda nije bilo razloga da se ovom svjedoku ne pokloni vjera ovo tim prije jer je istinitost njegovog kazivanja iz istrage potvrđena sadržinom zapisnika o prepoznavanju lica sačinjenog od strane policije a osim toga iskaz ovog svjedoka nije doveden u sumnju ni jednim dokazom izvedenim na pretresu, kako pravilno nalazi i prvostepeni sud. Pored toga, ne postoji ni jedna objektivna činjenica ili okolnost koja bi ukazivala da je svjedok P. imao bilo kakvog razloga da optuženog neosnovano tereti za nešto ako to optuženi stvarno nije uradio tim prije što se nijesu ni poznavali, što oni i ne spore.</p>
+        <p>Izmijenjeni iskaz ovog svjedoka na glavnom pretresu, da optuženi nije lice koje je kritične prilike od njega i A. M. zahtijevalo i primilo novac, te da je prije radnje prepoznavanja u policiji komandir G. D., sa jednim svojim kolegom u kancelariji pokazao mu na kompjuteru fotografiju optuženog Š. R. i kazao mu »da je to za sigurno policajac kome su dali pare«, u kom pravcu se u bitnom izjašnjavao i svjedok A. M. na pretresu, prvostepeni sud opravdano nije prihvatio pri čemu je taj iskaz kao i iskaz svjedoka A. M. sa glavnog pretresa cijenio usmjerenim na pomaganje optuženom u izbjegavanju krivice, te obezvrijeđenim kazivanjem upravo svjedoka P. J. koji je dao pred istražnim sudijom u prethodnom postupku i kazivanjem svjedoka D. G., o čemu su u pobijanoj presudi dati dovoljno jasni i sadržajni razlozi za koje ovaj sud ne nalazi za potrebno da ih ponavlja već na njih upućuje.</p>
+        <p>Takođe je prvostepeni sud u pobijanoj presudi dao dovoljno jasne i valjane razloge o dokaznoj vrijednosti iskaza svjedoka A. M. iz prethodnog postupka kao i iskaza svjedoka G. D., koje razloge ovaj sud u svemu prihvata.</p>
+      </background>
+      <decision>
+        <p>U IME NARODA</p>
+        <p>Odbija se kao neosnovana žalba branioca optuženog Š. R. i presuda Višeg suda u Podgorici Ks.br. 2/08 od 02.06.2009. godine, p o t v r đ u j e.</p>
+      </decision>
+      <conclusions>
+        <p>Sledstveno prednjem pravilno zaključuje prvostepeni sud da je optuženi izvršio krivično djelo za koje je optužen na način, vrijeme i mjesto kako je predstavljeno u izreci pobijane presude, pa su isticanja žalbe da je činjenično stanje pogrešno i nepotpuno utvrđeno bez osnova.</p>
+        <p>Na osnovu objektivno utvrđenih činjenica i svih okolnosti konkretnog događaja, prvostepeni sud je izveo pravilan zaključak o subjektivnom odnosu optuženog Š. R. za kriv.djelo za koje je osuđen, o čemu pobijana presuda sadrži valjano obrazloženje.</p>
+        <p>Na potpuno i pravilno utvrđeno činjenično stanje prvostepeni sud je pravilno primijenio krivični zakon kada je radnje optuženog pravno cijenio kao kriv.djelo primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423_st_1">čl. 423. st. 1 Kz-a</ref>, pa ni krivični zakon nije povrijeđen na štetu optuženog, kada ga je sud oglasio krivim za predmetno krivično djelo, o čemu ovaj sud vodi računa po službenoj dužnosti, sa kojih razloga se žalbeni navodi koji su u tom pogledu, pokazuju bez osnova.</p>
+        <p>Kako je žalba branioca optuženog izjavljena zbog pogrešno i nepotpuno utvrđenog činjeničnog stanja, to je ovaj sud u smislu <ref href="/me/acts/2005/zakonik-o-krivicnom-postupku#art_391">čl. 391 ZKP-a</ref> ispitao pobijanu presudu i u dijelu odluke o kazni i utvrdio da je u tom dijelu žalba neosnovana. Prvostepeni sud je na strani optuženog kao olakšavajuće okolnosti pravilno cijenio njegovo dosadašnje neporočno vladanje, da je porodična osoba, otac troje mldb. djece i njegove loše materijalne prilike koje okolnosti, a u odsustvu otežavajućih okolnosti imaju karakter osobito olakšavajućih okolnosti koje su opravdavale primjenu instituta ublažavanja propisane kazne u smislu <ref href="/me/acts/2003/krivicni-zakonik#art_45">čl. 45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46 Kz-a</ref>, pa je izrečena kazna i po nalaženju ovog suda pravilno odmjerena i predstavlja onu mjeru koja je neophodna da bi se mogla ostvariti svrha kažnjavanja iz <ref href="/me/acts/2003/krivicni-zakonik#art_32">čl. 32 Kz-a</ref>.</p>
+        <p>Cijenjeni su i ostali žalbeni navodi ali oni po nalaženju ovog suda nijesu do takvog značaja da bi mogli dovesti do drugačije odluke u ovoj krivično pravnoj stvari.</p>
+        <p>Sa iznijetih razloga i razloga prvostepene presude a na osnovu <ref href="/me/acts/2005/zakonik-o-krivicnom-postupku#art_396">čl. 396 ZKP-a</ref>, odlučeno je kao u izreci ove presude.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

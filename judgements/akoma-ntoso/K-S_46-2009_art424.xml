@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/vspg/2010-02-01/Kts.52-2009/main"/>
+          <FRBRuri value="/me/vspg/2010-02-01/Kts.52-2009"/>
+          <FRBRdate date="2010-02-01" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/vspg/2010-02-01/Kts.52-2009/srp@/main"/>
+          <FRBRuri value="/me/vspg/2010-02-01/Kts.52-2009/srp@"/>
+          <FRBRdate date="2010-02-01" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/vspg/2010-02-01/Kts.52-2009/srp@/main.xml"/>
+          <FRBRuri value="/me/vspg/2010-02-01/Kts.52-2009/srp@/.xml"/>
+          <FRBRdate date="2010-02-01" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/ValentinaPavlicic" showAs="Valentina Pavličić"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/DraganRamovic" showAs="Dragan Ramović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/JovanDulovic" showAs="Jovan Dulović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Viši sud u Podgorici - Specijalizovano odjeljenje za organizovani kriminal, korupciju, terorizam i ratne zločine</courtType>
+      <docketNumber>Kts.br.52/09</docketNumber>
+      <neutralCitation>Kts.br.52/09</neutralCitation>
+      <docDate date="2010-02-01">01.02.2010.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Valentina Pavličić</judge>
+      <judge refersTo="#judge2" role="sudijaPorotnik">Dragan Ramović</judge>
+      <judge refersTo="#judge3" role="sudijaPorotnik">Jovan Dulović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VIŠI SUD U PODGORICI, kao sud prvog stepena u Specijalizovanom odjeljenju za organizovani kriminal, korupciju, terorizam i ratne zločine, u vijeću sastavljenom od sudije Valentine Pavličić, kao predsjednika vijeća i sudija porotnika Dragana Ramovića i Jovana Dulovića, kao članova vijeća, uz učešće Sanje Radosavović, kao zapisničara, u krivičnom predmetu protiv okrivljenog G. D., kojeg brani Borivoje Djukanović, advokat iz Podgorice, zbog krivičnog djela - davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">člana 424 stav 1. Krivičnog zakonika Crne Gore</ref>, po optužnici Vrhovnog Državnog tužioca - Odjeljenja za suzbijanje organizovanog kriminala, korupcije, terorizma i ratnih zločina Kts.br. 52/09 od 12.12.2009. godine, koju je na glavnom pretresu zastupao Dražen Burić - zamjenik Specijalnog tužioca, nakon održanog usmenog, glavnog i javnog pretresa dana 28.01.2010.godine u prisustvu zastupnika optužbe, okrivljenog i njegovog branioca, te tumača za rumunski jezik Gete Djukanović, nakon tajnog vijećanja i glasanja dana 01.02.2010. godine, donio je i javno objavio</p>
+        <p>PRESUDU</p>
+      </introduction>
+      <background>
+        <p>Okrivljeni G. D., broj pasoša izdat od strane nadležnog organa Rumunije, rodjen u mjestu R.-V., u Rumuniji, sa prebivalištem u R. S., K., državljanin Rumunije, trgovac, oženjen, otac troje djece, završio tri razreda osnovne škole, lošeg imovnog stanja, bio u pritvoru od 21.10.2009.godine do 12.11.2009.godine.</p>
+        <p>Kriv je zato što je:</p>
+        <p>Dana 21.10.2009.godine, u Podgorici, u ulici Oktobarske revolucije, službenom licu - policajcu Uprave policije - Područne jedinice Podgorica, Ekspoziture za javni red i mir, D. D. dao poklon – novac da u okviru svog službenog ovlašćenja ne izvrši službenu radnju koju bi morao da izvrši na način što je prilikom vršenja kontrole - legitimisanja lica G. J. i okrivljenog i uvida u njihove pasoše, policajac D. D. utvrdio da isti od 17.10.2009.godine nezakonito borave u Crnoj Gori bez prijave boravka i predočio im da će zbog počinjenog prekršaja biti privedeni kod inspektora za strance i da će protiv istih biti pokrenut prekršajni postupak, okrivljeni G. D. je u svoj pasoš, koji je prethodno zatražio od policajca D., stavio novčanicu od 50,00€ i vratio mu pasoš govoreći "ajde uzmi ti, evo imaš unutra, bratska kafa, nemoj nas sad privoditi", a kako isti ne bi sačinio zapisnik o izvršenoj kontroli i učinjenom prekršaju i predao ih ovlašćenom službeniku za pokretanje prekršajnog postupka, već im dozvolio da napuste lice mjesta bez evidentiranja počinjenog prekršaja,</p>
+        <p>- čime je izvršio krivično djelo – davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">člana 424 stav 1 Krivičnog zakonika Crne Gore</ref>,</p>
+        <p>pa ga sud primjenom citiranih zakonskih odredbi, <ref href="/me/acts/2003/krivicni-zakonik#art_2">članova 2</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_4">4</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_5">5</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_32">32</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_36">36</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_42">42</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_45">45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46 Krivičnog zakonika Crne Gore</ref>, te <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">članova 199</ref> i <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_364">364 Zakonika o krivičnom postupku Crne Gore</ref></p>
+      </background>
+      <decision>
+        <p>OSUDJUJE</p>
+        <p>Na kaznu zatvora u trajanju od 3 (tri) mjeseca, u koju kaznu mu se uračunava vrijeme provedeno u pritvoru od 21.10.2009.godine do 12.11.2009.godine.</p>
+        <p>Osnovom <ref href="/me/acts/2003/krivicni-zakonik#art_75">člana 75. Krivičnog zakonika Crne Gore</ref>, od optuženog se oduzima novčanica od 50 € serijskog broja X09183481391, kao predmet upotrijebljen za izvršenje krivičnog djela.</p>
+        <p>Dužan je optuženi na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">člana 199 ZKP-a</ref> platiti ovom sudu na ime troškova krivičnog postupka – paušala iznos od 100,00 € na žiro račun Višeg suda br.832-7113-04, a sve prednje u roku od 15 dana od dana pravosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+      </decision>
+      <conclusions>
+        <p>Optužnicom Vrhovnog Državnog tužioca - Odjeljenja za suzbijanje organizovanog kriminala, korupcije, terorizma i ratnih zločina Kts.br. 52/09 od 12.12.2009.godine, optuženom G. D. stavljeno je na teret da je izvršio krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">člana 424 stav 1 Krivičnog zakonika Crne Gore</ref>, pri kojoj optužnici je zastupnik optužbe ostao do kraja glavnog pretresa, predlažući sudu da se optuženi oglasi krivim i kazni po zakonu.</p>
+        <p>Optuženi G.D. ne priznaje izvršenje krivičnog djela, pa u navodima svoje odbrane ističe da je u Crnu Goru došao 17.oktobra prošle godine zajedno sa svojim bratom G. J., da je bio smješten u Baru i da mu je namjera bila da se brzo vrati u Srbiju. Prilikom povratka dana 21. oktobra imali su namjeru samo proći kroz Podgoricu, ali su svratili na pijacu da vide kako prolazi roba, pošto se on i brat bave trgovinom garderobe. Negdje oko 12 sati prišao im je policajac tražeći mu isprave, na što mu je on i predao pasoš. Policajac je uzeo pasoš i gledao neke podatke u njemu, pa mu je tražio prijavu boravka i on mu je rekao da neće da ostane nego će da ide. Pošto on slabo razumije srpski jezik brat koji je bio pored njega i koji dobro zna srpski jezik, rekao mu je da treba da se plati neka kazna i razumio je da treba da se plati neka velika kazna. Tražio je pasoš od policajca koji mu ga je dao i tada je u pasoš stavio novčanicu od 50€ da bi platio kaznu sa tih 50€, i da mu policajac izda neku potvrdu da bi jeftinije prošao zato što nije prijavio boravak.</p>
+        <p>Sud je u dokaznom postupku na glavnom pretresu proveo sledeće dokaze: neposredno na glavnom pretresu saslušao svjedoka D. D., pročitao službenu zabilješku Uprave policije - Područne jedinice Podgorica - Ekspoziture za javni red i mir od 21.10.2009.godine, pročitao potvrdu o privremeno oduzetim predmetima Uprave policije Područne jedinice Podgorica broj 17-13 od 21.10.2009.godine zajedno sa uvidom u novčanicu u apoenu od 50 € serijskog broja X09183481391, pročitao zahtjev za pokretanje prekršajnog postupka Uprave policije Područne jedinice Podgorica UP br.03/1-154 od 22.10.2009.godine.</p>
+        <p>Svjedok D.D. je istakao da je službenik PJ Podgorica, da se kritičnog dana nalazio na reonu kod autobuske stanice uniformisan, da je vidio dva čovjeka na parking prostoru ispred „Američkog centra" i s obzirom da je policijac koji poznaje taj kvart vidio je da ljudi nisu iz kvarta i u okviru njegovih ovlašćenja i obaveza prišao je da bi ih legitimisao. Tražio im je dokumenta i ovaj što je bio bliži autu daje mu pasoš koji je pogledao i vidio da nema prijavljeno boravište. Odlično se sjeća da ovaj što mu je dao pasoš, odlično razumije srpski jezik i da su se dobro sporazumijeli. Tada mu je rekao da je napravio prekršaj time što nije prijavio boravak. Okrivljeni mu traži putnu ispravu nazad koju mu daje, i on odlazi do vozila, vidi da nešto ubaca u nju, i vraća se do njega govoreći mu „evo pasoš" ali on govori „moraću da vas privedem nema ovdje plaćanja kazne", na šta mu on daje pasoš u ruku i govori „uzmi ti, evo imaš unutra". On otvara pasoš i na prvoj stranici vidi novčanicu od 50€. Okrivljeni mu je i dalje govorio „ajde uzmi ti, nećemo mi bla bla, bratska kafa, mi imamo veliku djecu nemoj nas privoditi", na što mu je bilo jasno da oni pokušavaju da ga podmite sa 50€. Dalje je naveo da je odmah obavijestio dežurnog starješinu koji mu je naredio da ih privede, što je učinio sa dežurnom patrolom sa reona.</p>
+        <p>Cijeneći naprijed provedene dokaze, analizirajući svaki posebno, a zatim njihov medjusobni odnos i povezanost, odbranu optuženog, ovaj sud je na nesumnjiv način utvrdio da je optuženi G.D. dana 21.10.2009.godine, u Podgorici, u ulici Oktobarske revolucije, službenom licu - policajcu Uprave policije - Područne jedinice Podgorica, Ekspoziture za javni red i mir, D.D. dao poklon – novac da u okviru svog službenog ovlašćenja ne izvrši službenu radnju koju bi morao da izvrši.</p>
+        <p>Krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">čl. 424 st.1. Krivičnog zakonika Crne Gore</ref> čini ono lice koje službenom licu ponudi ili obeća poklon ili drugu korist da u okviru svog službenog ovlašćenja izvrši službenu radnju koju ne bi smjelo izvršiti ili da ne izvrši službenu radnju koju bi moralo izvršiti, ili koje posreduje pri takvom podmićivanju službenog lica, pri čemu se pojam službenog lica odredjuje na osnovu <ref href="/me/acts/2003/krivicni-zakonik#art_142">člana 142 stav 3 tačka 1, 2, 3, 4 i 5 Krivičnog zakonika Crne Gore</ref>.</p>
+        <p>Imajući u vidu naprijed navedeno sud zaključuje da je optuženi svojim radnjama ostvario sva obilježja krivičnog djela davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">člana 424 stav 1 Krivičnog zakonika Crne Gore</ref>, obzirom da je u toku postupka nesumnjivo utvrdjeno da je službenom licu PJ Podgorica policajcu D.D. dao poklon – novac u iznosu od 50€, da u okviru svog službenog ovlašćenja ne bi evidentirao prekršaj i istog priveo kod inspektora za strance zbog izvršenog prekršaja - neposjedovanje prijave boravišta.</p>
+        <p>Cijeneći psihički odnos optuženog prema počinjenom djelu sud je našao da je isti postupao sa direktnim umišljajem tj. bio je svjestan da službenom licu nudi novac kako isti ne bi u okviru svog službenog ovlašćenja izvršio službenu radnju tj. priveo ga inspektoru za strance, a što je u konkretnom slučaju i htio.</p>
+        <p>Odlučujući o sankciji koju će izreći okrivljenom sud je u smislu <ref href="/me/acts/2003/krivicni-zakonik#art_42">člana 42 Krivičnog zakonika Crne Gore</ref> uzeo u ozbir sve okolnosti da kazna bude manja ili veća pa je na strani optuženog kao olakšavajuće okolnosti uzeo da se radi o porodičnom čovjeku, ocu troje djece, dok otežavajućih okolnosti na strani optuženog nije našao, pa je ove olakšavajuće okolnosti cijenio kao osobito olakšavajuće, te primjenom <ref href="/me/acts/2003/krivicni-zakonik#art_45">člana 45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46 Krivičnog zakonika Crne Gore</ref> optuženom G.D. ublažio kaznu ispod propisanog minimuma i izrekao mu kaznu zatvora u trajanju od 3 mjeseca nalazeći da je ova kazna srazmjerna konkretnoj težini predmetnog djela i optuženog kao izvršioca, i da će se njome postići svrha kažnjavanja iz <ref href="/me/acts/2003/krivicni-zakonik#art_32">člana 32 Krivičnog zakonika Crne Gore</ref> u okviru opšte svrhe izricanja krivičnih sankcija iz <ref href="/me/acts/2003/krivicni-zakonik#art_4">člana 4 stav 2 Krivičnog zakonika Crne Gore</ref>.</p>
+        <p>Na osnovu <ref href="/me/acts/2003/krivicni-zakonik#art_51">čl.51. st.1. Krivičnog Zakonika Crne Gore</ref> optuženom G.D. se u izrečenu kaznu zatvora uračunava vrijeme provedeno u pritvoru u periodu od 21.10.2009.godine do 12.11.2009.godine.</p>
+        <p>Osnovom <ref href="/me/acts/2003/krivicni-zakonik#art_75">člana 75. Krivičnog zakonika Crne Gore</ref>, od optuženog se oduzima novčanica od 50 € serijskog broja X09183481391, kao predmet upotrijebljen za izvršenje krivičnog djela.</p>
+        <p>Na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">člana 199 Zakonika o krivičnom postupku Crne Gore</ref>, dužan je optuženi platiti ovom sudu na ime troškova krivičnog postupka – paušala iznos od 100,00 € na žiro račun Višeg suda br.832-7113-04, a prednje u roku od 15 dana od dana pravosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+        <p>Na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">člana 199 stav 5 Zakonika o krivičnom postupku Crne Gore</ref> troškovi koji se odnose na tumačenje - prevodjenje u ukupnom iznosu od 510,00 € padaju na teret budžetskih sredstava suda.</p>
+        <p>Na osnovu svega izloženog odlučeno je kao u izreci presude.</p>
+        <p>VIŠI SUD U PODGORICI, dana 01.02.2010. godine.</p>
+        <p>ZAPISNIČAR: Sanja Radosavović</p>
+        <p>PREDSJEDNIK VIJEĆA - SUDIJA: Valentina Pavličić</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

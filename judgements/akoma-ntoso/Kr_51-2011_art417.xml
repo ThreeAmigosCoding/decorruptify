@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-05-17/Kr-51-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-05-17/Kr-51-2011"/>
+          <FRBRdate date="2011-05-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-05-17/Kr-51-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-05-17/Kr-51-2011/srp@"/>
+          <FRBRdate date="2011-05-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-05-17/Kr-51-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-05-17/Kr-51-2011/srp@/.xml"/>
+          <FRBRdate date="2011-05-17" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudKotor" href="/ontology/organization/me/OsnovniSudKotor" showAs="Osnovni sud u Kotoru"/>
+        <TLCOrganization eId="osnovniSudHercegNovi" href="/ontology/organization/me/OsnovniSudHercegNovi" showAs="Osnovni sud u Herceg Novom"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/MM" showAs="M. M."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr.br.51/11</docketNumber>
+      <neutralCitation>Kr.br.51/11</neutralCitation>
+      <docDate date="2011-05-17">17.05.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2">Stanka Vučinić</judge>
+      <judge refersTo="#judge3">Ivica Stanković</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Stojanović Petra, kao predsjednika vijeća, Vučinić Stanke i Stanković Ivice, kao članova vijeća, uz učešće namještenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv okrivljene M. M., zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_st_1">čl.417 st.1 Krivičnog zakonika</ref>, rješavajući o predlogu sudije pojedinca Osnovnog suda u Kotoru K.br.234/11 od 11.05.2011.godine, za prenošenje mjesne nadležnosti, u sjednici vijeća održanoj 17.05.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Sudija pojedinac Osnovnog suda u Kotoru, predlogom K.br.234/11 od 11.05.2011.godine, predložio je da Vrhovni sud Crne Gore, za vodjenje krivičnog postupka protiv okrivljene M. M., zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_st_1">čl.417 st.1 Krivičnog zakonika</ref>, odredi neki drugi stvarno nadležan sud.</p>
+        <p>Kao razloge navodi da je oštećeni kao tužilac R N, podigao optužnicu protiv okrivljene M. M., koja je sudija Osnovnog suda u Kotoru, zbog čega bi bilo opravdano uvažiti predlog, jer bi se tako otklonila svaka sumnja u nepristrasnost vodjenja postupka kod Osnovnog suda u Kotoru.</p>
+        <p>Po razmatranju spisa predmeta i predloga za prenošenje mjesne nadležnosti, ovaj sud je našao:</p>
+        <p>Predlog je osnovan.</p>
+        <p>Odredbom <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_34_st_1">čl.34 st.1 ZKP</ref>, je, pored ostalog predvidjeno da se za vodjenje krivičnog postupka može odrediti drugi stvarno nadležan sud, ako za to postoje drugi važni razlozi.</p>
+        <p>Imajući u vidu da je okrivljena M. M., sudija Osnovnog suda u Kotoru, to je da bi se izbjegla sumnja u eventualnu nepristrasnost vodjenja krivičnog postupka kod tog suda, bilo opravdano odrediti da u ovom predmetu umjesto Osnovnog suda u Kotoru, postupa Osnovni sud u Herceg Novom.</p>
+      </background>
+      <decision>
+        <p>Za vodjenje postupka u krivičnom predmetu protiv okrivljene M. M., zbog krivičnog djela nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_st_1">čl.417 st.1 Krivičnog zakonika</ref>, odredjuje se Osnovni sud u Herceg Novom.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_34_st_1">čl.34 st.1 ZKP</ref>, odlučeno kao u izreci ovog rješenja.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

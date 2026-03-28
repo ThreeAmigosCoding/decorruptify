@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2016-12-08/Kr-s.11-2016/main"/>
+          <FRBRuri value="/me/cgvs/2016-12-08/Kr-s.11-2016"/>
+          <FRBRdate date="2016-12-08" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2016-12-08/Kr-s.11-2016/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2016-12-08/Kr-s.11-2016/srp@"/>
+          <FRBRdate date="2016-12-08" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2016-12-08/Kr-s.11-2016/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2016-12-08/Kr-s.11-2016/srp@/.xml"/>
+          <FRBRdate date="2016-12-08" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="visiSudPodgorica" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="sdt" href="/ontology/organization/me/SpecijalnoDrzavnoTuzilastvo" showAs="Specijalno državno tužilaštvo u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/MirasRadovic" showAs="Miraš Radović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RadulKojovic" showAs="Radul Kojović"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/IndiraMuratovic" showAs="Indira Muratović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kr-s.br.11/16</docketNumber>
+      <neutralCitation>Kr-s.br.11/16</neutralCitation>
+      <docDate date="2016-12-08">08.12.2016.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednica vijeća">Stanka Vučinić</judge>
+      <judge refersTo="#judge2" role="član vijeća">Miraš Radović</judge>
+      <judge refersTo="#judge3" role="član vijeća">Radul Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stanke Vučinić</judge>, kao predsjednice vijeća, <judge refersTo="#judge2">Miraša Radovića</judge> i <judge refersTo="#judge3">Radula Kojovića</judge>, kao članova vijeća, uz učešće samostalnog referenta <judge refersTo="#recorder">Indire Muratović</judge>, kao zapisničara, u krivičnom predmetu protiv okrivljenih S. B., A. B., G. Lj., T. M., I. A. i N. A., zbog krivičnog djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_2">čl.401a st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_1">st.1 KZ CG</ref> i krivičnog djela davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">čl.424 st.1 KZ CG</ref>, Dj. C., zbog krivičnog djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_2">čl.401a st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_1">st.1 KZ CG</ref> i krivičnog djela iznude u pokušaju putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_250_par_3">čl.250 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_250_par_1">st.1 KZ CG</ref>, G. Lj., zbog krivičnog djela stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_2">čl.401a st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_1">st.1 KZ CG</ref> i krivičnog djela zelenaštvo putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_252_par_3">čl.252 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_252_par_1">st.1</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25 KZ CG</ref>, odlučujući o predlogu Specijalnog državnog tužilaštva u Podgorici Kti-S.br.13/16 od 08.12.2016.godine za produženje pritvora protiv okrivljenih, u sjednici vijeća održanoj dana 08.12.2016.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Naredbom o sprovodjenju istrage Specijalnog državnog tužilaštva u Podgorici Kti-s.br.13/16 od 16.09.2016.godine, odredjeno je sprovodjenje istrage protiv S. K., I. B., V. B., D. P., M. R., S. V., A. Dj., S. B., Dj. C., I. Dj., Z. S., A. B., N. A., I. A., T. M., I. D., G. Lj. i pravnog lica DOO "C. B." iz K., zbog osnovane sumnje da su okrivljeni S. K. i I. B. izvršili krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_1">čl.401a st.1 KZ CG</ref>, a okrivljeni V. B., D. P., M. R., S. V., A. Dj., S. B., Dj. C., I. Dj., Z. S., A. B., N. A., I. A., T. M., I. D., G. Lj. i pravno lice DOO "C. B." krivično djelo stvaranje kriminalne organizacije iz <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_2">čl.401a st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_401a_par_1">st.1 KZ CG</ref>, okrivljeni V. B., S. V., A. Dj. i D. P. krivično djelo iznuda u pokušaju iz <ref href="/me/acts/2003/krivicni-zakonik#art_250_par_3">čl.250 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_250_par_1">st.1 KZ CG</ref>, u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_23_par_2">čl.23 st.2</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_20">čl.20 KZ CG</ref>, a okrivljeni Dj. C. i krivično djelo iznuda u pokušaju putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_250_par_3">čl.250 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_250_par_1">st.1 KZ CG</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_20">čl.20</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25 KZ CG</ref>, okrivljeni V. B., S. V., A. Dj. i D. P. i krivično djelo teško djelo protiv opšte sigurnosti iz <ref href="/me/acts/2003/krivicni-zakonik#art_338_par_1">čl.338 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_327_par_1">čl.327 st.1 KZ CG</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_23">čl.23 KZ CG</ref> u sticaju sa krivičnim djelom nedozvoljeno držanje oružja i eksplozivnih materija iz <ref href="/me/acts/2003/krivicni-zakonik#art_403_par_2">čl.403 st.2 KZ CG</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_23">čl.23 KZ CG</ref>, okrivljeni I. A., N. A., T. M. i I. D. i krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">čl.424 st.1 KZ CG</ref>, okrivljeni S. B. i A. B., krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">čl.424 st.1 KZ CG</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_23">čl.23 KZ CG</ref>, a pravno lice DOO "C. B." i krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424_par_1">čl.424 st.1 KZ CG</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_23">čl.23 KZ CG</ref>, u vezi čl.5 Zakona o odgovornosti pravnih lica za krivična djela, okrivljeni S. K. i krivično djelo zelenaštvo iz <ref href="/me/acts/2003/krivicni-zakonik#art_252_par_3">čl.252 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_252_par_1">st.1 KZ CG</ref>, okrivljeni G. Lj. i krivično djelo zelenaštvo putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_252_par_3">čl.252 st.3</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_252_par_1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25 KZ CG</ref>, okrivljeni Z. S. i krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416_par_1">čl.416 st.1 KZ CG</ref>, okrivljeni I. Dj. i M. R. i krivično djelo omogućavanja uživanja opojnih droga iz <ref href="/me/acts/2003/krivicni-zakonik#art_301_par_2">čl.301 st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_301_par_1">st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_23">čl.23 KZ CG</ref>.</p>
+        <p>Prije isteka pritvora Specijalno državno tužilaštvo stavilo je ovom sudu predlog da se pritvor protiv okrivljenih S. B., Dj. C., A. B., G. Lj., T. M., I. A. i N. A. produži za još tri mjeseca po osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_par_1_tac_2">čl.175 st.1 tač.2 ZKP</ref>.</p>
+        <p>Po razmatranju spisa predmeta i ocjene navoda stavljenog predloga, Vrhovni sud Crne Gore je našao da je predlog osnovan.</p>
+        <p>Osnovana sumnja da su okrivljeni izvršili krivična djela stavljena im na teret naredbom Specijalnog državnog tužilaštva Kti-s.br.13/16 od 16.09.2016.godine proizilazi iz dokaza sadržanih u spisima predmeta - materijala prikupljenog mjerama tajnog nadzora, tj. transkripata presretnutih telefonskih razgovora izmedju okrivljenih iz izreke ovog rješenja i onih okrivljenih koji za sada nijesu dostupni, iskaza okrivljenog I. D. i drugih dokaza.</p>
+        <p>U daljem toku istrage potrebno je izvršiti vještačenje mobilnih telefona marke "Motorola" koji su oduzeti od okrivljenih T. M., I. A. i I. D., izvršiti analizu sadržaja mobilnih telefona koji su oduzeti od okrivljenih te analizu komunikacija izmedju okrivljenih sa drugim licima, identifikovati i saslušati lice iz državnog organa u Opštini K. zaduženog za registraciju i poresku evidenciju pravnih lica sa imenom V. i saslušati svjedoka B. S..</p>
+        <p>Imajući u vidu da su okrivljeni S. K., V. B., D. P., M. R., S. V. i A. Dj. nedostupni državnim organima i da je za istima raspisana potjernica, a da još uvijek nijesu saslušani, kao ni svjedok B. S., su okolnosti koje ukazuju na opravdanu bojazan da bi okrivljeni puštanjem na slobodu ometali dalji postupak uticajem na iste, zbog čega se pokazuje opravdanim produženje pritvora okrivljenim po osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_175_par_1_tac_2">čl.175 st.1 tač.2 ZKP</ref>, kako je to osnovano i predložilo Specijalno državno tužilaštvo.</p>
+        <p>Prilikom odlučivanja o daljem trajanju pritvora prema okrivljenima ovaj sud je imao u vidu da se okrivljeni S. B. nalazi u pritvoru od 11.09.2016.godine, a okrivljeni Dj. C., A. B., G. Lj., T. M., I. A. i N. A. od 12.09.2016.godine i da mogu biti osudjeni na relativno visoku kaznu zatvora, pa se pritvor u konkretnom slučaju pokazuje kao nužna i srazmjerna mjera za obezbjednje prisustva okrivljenih u postupku, jer se svrha zbog kojeg se pritvor produžava ne može postići nekom blažom mjerom.</p>
+      </background>
+      <decision>
+        <p>Pritvor protiv okrivljenih S. B., Dj. C., A. B., G. Lj., T. M., I. A. i N. A., odredjen rješenjem sudije za istragu Višeg suda u Podgorici Kri-s.br.51/16 od 14.09.2016.godine, a produžen rješenjem vijeća tog suda Kvs.br.123/16 od 11.10.2016.godine produžava se za još tri mjeseca, tako da isti po ovom rješenju može trajati, i to: okrivljenom S. B. do 11.03.2017.godine do 22 časa, okrivljenim Dj. C., A. B., G. Lj., T. M., I. A. i N. A. do 12.03.2016.godine, i to: okrivljenom Dj. C. i A. B. do 07,00 časova, okrivljenom N. A. do 06,10 časova, okrivljenom T. M. do 09,00 časova, okrivljenom G. Lj. do 09,30 časova i okrivljenom I. A. do 10,00 časova.</p>
+      </decision>
+      <conclusions>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_177_par_3">čl.177 st.3 ZKP</ref>, odlučeno je kao u izreci ovog rješenja.</p>
+        <p>VRHOVNI SUD CRNE GORE</p>
+        <p>Podgorica, 08.12.2016.godine</p>
+        <p>Zapisničar, <judge refersTo="#recorder">Indira Muratović</judge>, s.r.</p>
+        <p>Predsjednica vijeća-sudija, <judge refersTo="#judge1">Stanka Vučinić</judge>, s.r.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

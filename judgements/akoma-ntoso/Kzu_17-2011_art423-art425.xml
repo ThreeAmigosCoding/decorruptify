@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-04-12/Kzu-17-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-04-12/Kzu-17-2011"/>
+          <FRBRdate date="2011-04-12" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-04-12/Kzu-17-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-04-12/Kzu-17-2011/srp@"/>
+          <FRBRdate date="2011-04-12" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-04-12/Kzu-17-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-04-12/Kzu-17-2011/srp@/.xml"/>
+          <FRBRdate date="2011-04-12" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudCetinje" href="/ontology/organization/me/OsnovniSudCetinje" showAs="Osnovni sud u Cetinju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/SretenIvanovic" showAs="Sreten Ivanović"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="convicted" href="/ontology/person/me/SK" showAs="S. K."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.17/11</docketNumber>
+      <neutralCitation>Kzu.br.17/11</neutralCitation>
+      <docDate date="2011-04-12">12.04.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Sreten Ivanović</judge>
+      <judge refersTo="#judge3" role="članVijeća">Ivica Stanković</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VRHOVNI SUD CRNE GORE, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stojanović Petra</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Ivanović Sretena</judge> i <judge refersTo="#judge3">Stanković Ivice</judge>, kao članova vijeća, uz učešće namještenika suda <party refersTo="#clerk">Obradović Slađane</party>, kao zapisničara, u krivičnom predmetu osudjenog <party refersTo="#convicted">S. K.</party>, zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_177_st_4">čl.177 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_172_st_3">čl.172 st.3</ref> u vezi st.1 KZ RCG, rješavajući o zahtjevu za vanredno ublažavanje kazne izrečene pravosnažnom presudom Osnovnog suda u Cetinju K.br.328/09 od 08.11.2010.godine, koji je podnio branilac osudjenog, u sjednici vijeća održanoj dana 12.04.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Pravosnažnom presudom Osnovnog suda u Cetinju K.br.328/09 od 08.11.2010.godine, S. K. oglašen je krivim zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_177_st_4">čl.177 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_172_st_3">čl.172 st.3</ref> u vezi st.1 KZ RCG i osudjen na kaznu zatvora u trajanju od 2 (dvije) godine.</p>
+        <p>Branilac osudjenog advokat M. V. M., iz P., podnio je ovom sudu zahtjev za vanredno ublažavanje kazne u kojem navodi da nižestepeni sudovi prilikom izricanja presude nijesu cijenili kao olakšavajuće okolnosti osudjenom, da je tokom vodjenja krivičnog postupka zasnovao brak i da je otac dvoje djece starosne dobi od jedne i tri godine, da je zaposlen, o čemu je priložio potrebnu dokumentaciju, te da izdržava porodicu, kao i da ranije nije osudjivan za bilo koje krivično djelo.</p>
+        <p>Sa izloženog smatra da su ispunjeni zakonski uslovi da mu se izrečena kazna znatno ublaži.</p>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Cetinju i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_423">čl.423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Iz spisa predmeta - dokumentacije dostavljene uz zahtjev za vanredno ublažavanje kazne, se utvrdjuje da je osudjeni zaključio brak 24. marta 2007.godine, te da je u braku dobio djecu - sina S. F., rodjenog 18.05.2007.godine i kćerku S. K., rodjenu 18.12.2009.godine, kao i da je u stalnom radnom odnosu od 01.01.2008.godine.</p>
+        <p>Po ocjeni ovog suda, navedene okolnosti i činjenica da, kako se navodi u zahtjevu, sud nije cijenio njegovu neosudjivanost, nijesu takvog značaja da bi očigledno dovele do blaže osude i da je sud za njih znao i cijenio ih prilikom izricanja presude, a ovo imajući u vidu težinu izvršenog krivičnog djela i stepen krivice osudjenog.</p>
+      </background>
+      <decision>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_425_st_6">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

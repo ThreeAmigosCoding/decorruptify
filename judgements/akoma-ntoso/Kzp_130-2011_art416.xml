@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-09-19/Kzp-130-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-19/Kzp-130-2011"/>
+          <FRBRdate date="2011-09-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-09-19/Kzp-130-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-19/Kzp-130-2011/srp@"/>
+          <FRBRdate date="2011-09-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-09-19/Kzp-130-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-09-19/Kzp-130-2011/srp@/.xml"/>
+          <FRBRdate date="2011-09-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osnovniSudHN" href="/ontology/organization/me/OsnovniSudHercegNovi" showAs="Osnovni sud u Herceg Novom"/>
+        <TLCOrganization eId="visiSudPG" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant1" href="/ontology/person/me/NR" showAs="N.R."/>
+        <TLCPerson eId="defendant2" href="/ontology/person/me/SMA" showAs="S.M.A."/>
+        <TLCPerson eId="prosecutor" href="/ontology/person/me/JR" showAs="J.R."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzp.br.130/11</docketNumber>
+      <neutralCitation>Kzp.br.130/11</neutralCitation>
+      <docDate date="2011-09-19">19.09.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="članVijeća">Radule Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Stojanović Petra kao predsjednika vijeća, Stanković Ivice i Kojović Radula kao članova vijeća, uz učešće namještenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv okrivljene <party refersTo="#defendant1" as="#defendant">N.R.</party>, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1</ref> i okrivljene <party refersTo="#defendant2" as="#defendant">S.M.A.</party>, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1</ref> Krivičnog zakonika u sticaju sa krivičnim djelom falsifikovanje službene isprave iz <ref href="/me/acts/2003/krivicni-zakonik#art_412">čl.412 st.1</ref> Krivičnog zakonika, odlučujući o zahtjevu za ispitivanje zakonitosti pravosnažne presude, oštećenog kao tužioca <party refersTo="#prosecutor" as="#prosecutor">J. R.</party>, podignutog protiv rješenja Osnovnog suda u Herceg Novom Kv.br.80/11 od 18.04.2011.godine i rješenja Višeg suda u Podgorici Kž.br.931/11 od 26.05.2011.godine, u sjednici vijeća održanoj dana 19.09.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Rješenjem Osnovnog suda u Herceg Novom Kv.br.80/11 od 18.04.2011.godine, odbijen je kao neosnovan zahtjev za sprovodjenje istrage oštećenog kao tužioca <party refersTo="#prosecutor" as="#prosecutor">J.R.</party>, podnijet protiv osumnjičenih <party refersTo="#defendant1" as="#defendant">N.R.</party>, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1</ref> Krivičnog zakonika i osumnjičene <party refersTo="#defendant2" as="#defendant">S.M.A.</party>, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 st.1</ref> Krivičnog zakonika u sticaju sa krivičnim djelom falsifikovanje službene isprave iz <ref href="/me/acts/2003/krivicni-zakonik#art_412">čl.412 st.1</ref> Krivičnog zakonika.</p>
+        <p>Viši sud u Podgorici, kao drugostepeni, rješenjem Kž.br.931/11 od 26.05.2011.godine, odbio je kao neosnovanu žalbu oštećenog kao tužioca izjavljenu protiv rješenja Osnovnog suda u Herceg Novom Kv.br.80/11 od 18.04.2011.godine.</p>
+        <p>Protiv navedenih rješenja oštećeni kao tužilac podnio je zahtjev za ispitivanje zakonitosti pravosnažne presude s predlogom da ovaj sud zahtjev uvaži i nižestepena rješenja ukine.</p>
+      </background>
+      <decision>
+        <p>Zahtjev se odbacuje kao nedozvoljen.</p>
+      </decision>
+      <conclusions>
+        <p>Po razmatranju spisa predmeta, Vrhovni sud je našao da je zahtjev nedozvoljen.</p>
+        <p><ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_436">Članom 436 st.1 ZKP</ref> je propisano da okrivljeni koji je pravosnažno osudjen na bezuslovnu kaznu zatvora ili maloljetničkog zatvora, može podnijeti zahtjev za ispitivanje zakonitosti pravosnažne presude zbog povrede zakona u slučajevima predvidjenim ovim zakonikom.</p>
+        <p>Kako je zahtjev podnijet od strane oštećenog kao tužioca <party refersTo="#prosecutor" as="#prosecutor">J. R.</party>, koji nije ovlašćen za podnošenje zahtjeva za ispitivanje zakonitosti pravosnažne presude, to je isti valjalo odbaciti kao nedozvoljen, shodno <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_439">čl.439 st.3 ZKP</ref>.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>
