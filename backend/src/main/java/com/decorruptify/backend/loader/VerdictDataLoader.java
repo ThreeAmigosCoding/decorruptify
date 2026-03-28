@@ -89,29 +89,36 @@ public class VerdictDataLoader implements CommandLineRunner {
         }
     }
 
+    // CSV files have no header row — columns are in this fixed order
+    private static final String[] COLUMNS = {
+        "court", "verdictNumber", "date", "judgeName", "prosecutor",
+        "defendantName", "criminalOffense", "appliedProvisions", "verdict",
+        "officialPosition", "abuseOfAuthority", "organizedGroup", "materialGain",
+        "materialDamage", "briberyAmount", "previouslyConvicted", "numDefendants",
+        "voluntaryDisclosure", "damageToPublicInterest", "sentenceMonths"
+    };
+
+    private static Map<String, Integer> buildColumnIndex() {
+        Map<String, Integer> idx = new HashMap<>();
+        for (int i = 0; i < COLUMNS.length; i++) {
+            idx.put(COLUMNS[i], i);
+        }
+        return idx;
+    }
+
     private void loadCsv(Path file) throws Exception {
         log.info("Loading verdicts from {}", file.getFileName());
         List<Verdict> verdicts = new ArrayList<>();
+        Map<String, Integer> columnIndex = buildColumnIndex();
 
         try (BufferedReader reader = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-            String headerLine = reader.readLine();
-            if (headerLine == null) {
-                log.warn("Empty CSV file: {}", file.getFileName());
-                return;
-            }
-
-            String[] headers = headerLine.split(",");
-            Map<String, Integer> columnIndex = new HashMap<>();
-            for (int i = 0; i < headers.length; i++) {
-                columnIndex.put(headers[i].trim(), i);
-            }
-
             String line;
-            int lineNumber = 1;
+            int lineNumber = 0;
             while ((line = reader.readLine()) != null) {
                 lineNumber++;
                 try {
-                    Verdict verdict = parseRow(line.split(",", -1), columnIndex);
+                    String[] cols = parseCsvLine(line);
+                    Verdict verdict = parseRow(cols, columnIndex);
                     if (verdict != null) {
                         verdicts.add(verdict);
                     }
@@ -125,6 +132,40 @@ public class VerdictDataLoader implements CommandLineRunner {
             verdictRepository.saveAll(verdicts);
             log.info("Imported {} verdicts from {}", verdicts.size(), file.getFileName());
         }
+    }
+
+    /** Parses a CSV line respecting double-quoted fields that may contain commas. */
+    private String[] parseCsvLine(String line) {
+        List<String> fields = new ArrayList<>();
+        StringBuilder current = new StringBuilder();
+        boolean inQuotes = false;
+
+        for (int i = 0; i < line.length(); i++) {
+            char c = line.charAt(i);
+            if (inQuotes) {
+                if (c == '"') {
+                    if (i + 1 < line.length() && line.charAt(i + 1) == '"') {
+                        current.append('"');
+                        i++; // skip escaped quote
+                    } else {
+                        inQuotes = false;
+                    }
+                } else {
+                    current.append(c);
+                }
+            } else {
+                if (c == '"') {
+                    inQuotes = true;
+                } else if (c == ',') {
+                    fields.add(current.toString());
+                    current.setLength(0);
+                } else {
+                    current.append(c);
+                }
+            }
+        }
+        fields.add(current.toString());
+        return fields.toArray(new String[0]);
     }
 
     private Verdict parseRow(String[] cols, Map<String, Integer> idx) {
