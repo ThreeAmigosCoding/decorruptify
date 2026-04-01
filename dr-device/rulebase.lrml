@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lrml:LegalRuleML xmlns:lrml="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://docs.oasis-open.org/legalruleml/ns/v1.0/ xsd-compact/lrml-compact.xsd"
+                  xmlns:ruleml="http://ruleml.org/spec">
+    <lrml:Statements>
+
+        <!-- ============================================================ -->
+        <!-- Article 416 - Zloupotreba sluzbenog polozaja                 -->
+        <!-- (Abuse of official position)                                 -->
+        <!-- ============================================================ -->
+
+        <!-- ps1: Art. 416 basic form - official abuses authority (6mo-5yr) -->
+        <lrml:PrescriptiveStatement key="ps1">
+            <ruleml:Rule key=":rule1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:abuse_of_authority"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art416</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_basic</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps2: Art. 416 qualified - high material gain (1-10yr), defeats basic -->
+        <lrml:PrescriptiveStatement key="ps2">
+            <ruleml:Rule key=":rule2" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art416</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:high_gain"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_qualified_gain</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps2_neg: qualified gain defeats basic -->
+        <lrml:PrescriptiveStatement key="ps2_neg">
+            <ruleml:Rule key=":rule2_neg" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_qualified_gain</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_basic</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps3: Art. 416 organized group (2-12yr), defeats all lower forms -->
+        <lrml:PrescriptiveStatement key="ps3">
+            <ruleml:Rule key=":rule3" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art416</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:organized_group"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_organized</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps3_neg1: organized defeats basic -->
+        <lrml:PrescriptiveStatement key="ps3_neg1">
+            <ruleml:Rule key=":rule3_neg1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_organized</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_basic</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps3_neg2: organized defeats qualified gain -->
+        <lrml:PrescriptiveStatement key="ps3_neg2">
+            <ruleml:Rule key=":rule3_neg2" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_organized</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_qualified_gain</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 420 - Pronevjera (Embezzlement)                      -->
+        <!-- ============================================================ -->
+
+        <!-- ps4: Art. 420 basic form (1-8yr) -->
+        <lrml:PrescriptiveStatement key="ps4">
+            <ruleml:Rule key=":rule4" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:abuse_of_authority"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art420</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art420_basic</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps5: Art. 420 qualified - high gain (2-10yr) -->
+        <lrml:PrescriptiveStatement key="ps5">
+            <ruleml:Rule key=":rule5" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art420</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:high_gain"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art420_qualified</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps5_neg: qualified embezzlement defeats basic -->
+        <lrml:PrescriptiveStatement key="ps5_neg">
+            <ruleml:Rule key=":rule5_neg" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art420_qualified</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art420_basic</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 422 - Trgovina uticajem (Trading in influence)       -->
+        <!-- ============================================================ -->
+
+        <!-- ps6: Art. 422 basic form (6mo-5yr) -->
+        <lrml:PrescriptiveStatement key="ps6">
+            <ruleml:Rule key=":rule6" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art422</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art422_basic</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps7: Art. 422 organized group (1-8yr) -->
+        <lrml:PrescriptiveStatement key="ps7">
+            <ruleml:Rule key=":rule7" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art422</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:organized_group"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art422_organized</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps7_neg: organized defeats basic for art422 -->
+        <lrml:PrescriptiveStatement key="ps7_neg">
+            <ruleml:Rule key=":rule7_neg" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art422_organized</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art422_basic</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 423 - Primanje mita (Accepting bribes)               -->
+        <!-- ============================================================ -->
+
+        <!-- ps8: Art. 423 basic form - bribe accepted (1-8yr) -->
+        <lrml:PrescriptiveStatement key="ps8">
+            <ruleml:Rule key=":rule8" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribery_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art423</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art423_basic</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps9: Art. 423 qualified - high bribery amount (2-12yr) -->
+        <lrml:PrescriptiveStatement key="ps9">
+            <ruleml:Rule key=":rule9" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art423</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:high_bribery"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art423_qualified</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps9_neg: qualified bribery defeats basic -->
+        <lrml:PrescriptiveStatement key="ps9_neg">
+            <ruleml:Rule key=":rule9_neg" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art423_qualified</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art423_basic</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 424 - Davanje mita (Giving bribes)                   -->
+        <!-- ============================================================ -->
+
+        <!-- ps10: Art. 424 basic form - bribe given (6mo-5yr) -->
+        <!-- Note: voluntary disclosure / acquittal (Art. 424 §4) is handled in Java -->
+        <!-- before the engine runs, not as a LRML rule, to avoid class definition  -->
+        <!-- issues in DR-DEVICE when a derived class has no penalty reparations.    -->
+        <lrml:PrescriptiveStatement key="ps10">
+            <ruleml:Rule key=":rule10" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribery_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:crime_type"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">art424</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art424_basic</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Penalty Statements                                           -->
+        <!-- ============================================================ -->
+
+        <!-- Art. 416 basic: 1-5 years -->
+        <lrml:PenaltyStatement key="pen_416b_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_416b_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>5</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 416 qualified gain: 1-10 years -->
+        <lrml:PenaltyStatement key="pen_416qg_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_416qg_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>10</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 416 organized group: 2-12 years -->
+        <lrml:PenaltyStatement key="pen_416org_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>2</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_416org_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>12</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 420 basic: 1-8 years -->
+        <lrml:PenaltyStatement key="pen_420b_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_420b_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>8</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 420 qualified: 2-10 years -->
+        <lrml:PenaltyStatement key="pen_420q_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>2</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_420q_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>10</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 422 basic: 1-5 years -->
+        <lrml:PenaltyStatement key="pen_422b_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_422b_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>5</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 422 organized: 1-8 years -->
+        <lrml:PenaltyStatement key="pen_422org_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_422org_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>8</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 423 basic: 1-8 years -->
+        <lrml:PenaltyStatement key="pen_423b_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_423b_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>8</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 423 qualified: 2-12 years -->
+        <lrml:PenaltyStatement key="pen_423q_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>2</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_423q_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>12</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- Art. 424 basic: 1-5 years -->
+        <lrml:PenaltyStatement key="pen_424b_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+        <lrml:PenaltyStatement key="pen_424b_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>5</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <!-- ============================================================ -->
+        <!-- Reparation Statements (linking penalties to rules)           -->
+        <!-- ============================================================ -->
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_416b_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps1"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_416b_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps1"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_416qg_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps2"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_416qg_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps2"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_416org_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps3"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_416org_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps3"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_420b_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps4"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_420b_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps4"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_420q_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps5"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_420q_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps5"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_422b_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps6"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_422b_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps6"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_422org_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps7"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_422org_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps7"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_423b_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps8"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_423b_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps8"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_423q_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps9"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_423q_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps9"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_424b_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps10"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pen_424b_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps10"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+    </lrml:Statements>
+</lrml:LegalRuleML>

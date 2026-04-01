@@ -3,6 +3,7 @@ package com.decorruptify.backend.controller;
 import com.decorruptify.backend.dto.SimilarVerdict;
 import com.decorruptify.backend.model.Verdict;
 import com.decorruptify.backend.repository.VerdictRepository;
+import com.decorruptify.backend.service.DrDeviceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ReflectionUtils;
@@ -21,9 +22,11 @@ import java.util.Map;
 public class VerdictController {
 
     private final VerdictRepository verdictRepository;
+    private final DrDeviceService drDeviceService;
 
-    public VerdictController(VerdictRepository verdictRepository) {
+    public VerdictController(VerdictRepository verdictRepository, DrDeviceService drDeviceService) {
         this.verdictRepository = verdictRepository;
+        this.drDeviceService = drDeviceService;
     }
 
     @PostMapping
@@ -78,10 +81,9 @@ public class VerdictController {
 
     @GetMapping("/{id}/rule")
     public ResponseEntity<String> getRule(@PathVariable Long id) {
-        verdictRepository.findById(id)
+        Verdict verdict = verdictRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Verdict not found: " + id));
-        // TODO: Phase 4 — DR-DEVICE defeasible rule engine
-        return ResponseEntity.ok("Rule engine not yet implemented");
+        return ResponseEntity.ok(drDeviceService.decisionBasedOnLaw(verdict));
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
