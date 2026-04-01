@@ -1,0 +1,13 @@
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#case> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#name> "Case" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#defendant> "Š. E." .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#abuse_of_authority> "true" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#organized_group> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#high_gain> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#high_bribery> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#bribery_involved> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#previously_convicted> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#voluntary_disclosure> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#damage_to_public_interest> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#num_of_defendants> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#crime_type> "art416" .

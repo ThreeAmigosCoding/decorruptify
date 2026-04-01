@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:lc="http://informatika.ftn.uns.ac.rs/legal-case.rdf#">
+    <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case">
+        <lc:name>Case</lc:name>
+        <lc:defendant>Š. E.</lc:defendant>
+        <lc:abuse_of_authority>true</lc:abuse_of_authority>
+        <lc:organized_group>false</lc:organized_group>
+        <lc:high_gain>false</lc:high_gain>
+        <lc:high_bribery>false</lc:high_bribery>
+        <lc:bribery_involved>false</lc:bribery_involved>
+        <lc:previously_convicted>false</lc:previously_convicted>
+        <lc:voluntary_disclosure>false</lc:voluntary_disclosure>
+        <lc:damage_to_public_interest>false</lc:damage_to_public_interest>
+        <lc:num_of_defendants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</lc:num_of_defendants>
+        <lc:crime_type>art416</lc:crime_type>
+    </lc:case>
+</rdf:RDF>
