@@ -23,6 +23,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6'
 	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+	implementation('es.ucm.fdi.gaia:jCOLIBRI:3.2') {
+		exclude group: 'org.hibernate', module: 'hibernate-core'
+		exclude group: 'org.hibernate.javax.persistence'
+		exclude group: 'uk.ac.gate', module: 'gate-core'
+		exclude group: 'org.apache.logging.log4j'
+		exclude group: 'dom4j'
+		exclude group: 'antlr'
+		exclude group: 'org.javassist'
+		exclude group: 'org.jboss.spec.javax.transaction'
+	}
 
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'

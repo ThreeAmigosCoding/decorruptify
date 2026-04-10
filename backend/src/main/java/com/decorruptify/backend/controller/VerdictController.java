@@ -1,6 +1,7 @@
 package com.decorruptify.backend.controller;
 
 import com.decorruptify.backend.dto.SimilarVerdict;
+import com.decorruptify.backend.jcolibri.CbrApp;
 import com.decorruptify.backend.model.Verdict;
 import com.decorruptify.backend.repository.VerdictRepository;
 import com.decorruptify.backend.service.DrDeviceService;
@@ -23,10 +24,12 @@ public class VerdictController {
 
     private final VerdictRepository verdictRepository;
     private final DrDeviceService drDeviceService;
+    private final CbrApp cbrApp;
 
-    public VerdictController(VerdictRepository verdictRepository, DrDeviceService drDeviceService) {
+    public VerdictController(VerdictRepository verdictRepository, DrDeviceService drDeviceService, CbrApp cbrApp) {
         this.verdictRepository = verdictRepository;
         this.drDeviceService = drDeviceService;
+        this.cbrApp = cbrApp;
     }
 
     @PostMapping
@@ -73,10 +76,14 @@ public class VerdictController {
 
     @GetMapping("/{id}/similar")
     public ResponseEntity<List<SimilarVerdict>> getSimilar(@PathVariable Long id) {
-        verdictRepository.findById(id)
+        Verdict verdict = verdictRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Verdict not found: " + id));
-        // TODO: Phase 5 — CBR engine (jCOLIBRI)
-        return ResponseEntity.ok(List.of());
+
+        List<SimilarVerdict> similar = CbrApp.findSimilarVerdicts(verdict, cbrApp);
+        similar.removeIf(sv -> sv.getId().equals(id));
+        similar.sort((a, b) -> Double.compare(b.getSimilarity(), a.getSimilarity()));
+
+        return ResponseEntity.ok(similar);
     }
 
     @GetMapping("/{id}/rule")
