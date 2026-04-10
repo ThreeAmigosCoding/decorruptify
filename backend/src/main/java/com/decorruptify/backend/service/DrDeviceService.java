@@ -20,14 +20,6 @@ import java.util.regex.Pattern;
 public class DrDeviceService {
 
     public String decisionBasedOnLaw(Verdict verdict) {
-        // Art. 424 §4: voluntary disclosure before discovery → acquittal possible
-        // Handled here rather than as a LRML rule to avoid DR-DEVICE class definition
-        // issues when a derived class has no associated penalty reparations.
-        String crimeType = deriveCrimeType(verdict.getCriminalOffense());
-        if ("art424".equals(crimeType) && Boolean.TRUE.equals(verdict.getVoluntaryDisclosure())) {
-            return getSentenceDict().get("art424_acquittal");
-        }
-
         this.runScript("clean.bat");
         this.createFile(verdict);
         this.runScript("start.bat");
@@ -109,6 +101,9 @@ public class DrDeviceService {
         boolean previouslyConvicted = Boolean.TRUE.equals(verdict.getPreviouslyConvicted());
         boolean voluntaryDisclosure = Boolean.TRUE.equals(verdict.getVoluntaryDisclosure());
         boolean damageToPublicInterest = Boolean.TRUE.equals(verdict.getDamageToPublicInterest());
+        boolean embezzlement = Boolean.TRUE.equals(verdict.getEmbezzlement());
+        boolean tradingInfluence = Boolean.TRUE.equals(verdict.getTradingInfluence());
+        boolean bribeReceiver = Boolean.TRUE.equals(verdict.getBribeReceiver());
 
         boolean highGain = verdict.getMaterialGain() != null
                 && verdict.getMaterialGain().compareTo(new BigDecimal("10000")) > 0;
@@ -118,7 +113,6 @@ public class DrDeviceService {
                 && verdict.getBriberyAmount().compareTo(BigDecimal.ZERO) > 0;
 
         int numDefendants = verdict.getNumDefendants() != null ? verdict.getNumDefendants() : 1;
-        String crimeType = deriveCrimeType(verdict.getCriminalOffense());
 
         String text = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n"
                 + "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
@@ -136,27 +130,17 @@ public class DrDeviceService {
                 + "        <lc:previously_convicted>" + previouslyConvicted + "</lc:previously_convicted>\n"
                 + "        <lc:voluntary_disclosure>" + voluntaryDisclosure + "</lc:voluntary_disclosure>\n"
                 + "        <lc:damage_to_public_interest>" + damageToPublicInterest + "</lc:damage_to_public_interest>\n"
+                + "        <lc:embezzlement>" + embezzlement + "</lc:embezzlement>\n"
+                + "        <lc:trading_influence>" + tradingInfluence + "</lc:trading_influence>\n"
+                + "        <lc:bribe_receiver>" + bribeReceiver + "</lc:bribe_receiver>\n"
                 + "        <lc:num_of_defendants rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + numDefendants + "</lc:num_of_defendants>\n"
-                + "        <lc:crime_type>" + crimeType + "</lc:crime_type>\n"
                 + "    </lc:case>\n"
                 + "</rdf:RDF>";
 
         writeToFile(text);
         writeNTriplesFile(verdict.getDefendantName(), abuseOfAuthority, organizedGroup,
                 highGain, highBribery, briberyInvolved, previouslyConvicted, voluntaryDisclosure,
-                damageToPublicInterest, numDefendants, crimeType);
-    }
-
-    private String deriveCrimeType(String criminalOffense) {
-        if (criminalOffense == null) return "unknown";
-        String lower = criminalOffense.toLowerCase();
-        if (lower.contains("416") || lower.contains("zloupotreb")) return "art416";
-        if (lower.contains("420") || lower.contains("pronevjer")) return "art420";
-        if (lower.contains("421") || lower.contains("poslug")) return "art421";
-        if (lower.contains("422") || lower.contains("trgovin")) return "art422";
-        if (lower.contains("423") || lower.contains("primanj")) return "art423";
-        if (lower.contains("424") || lower.contains("davanj")) return "art424";
-        return "unknown";
+                damageToPublicInterest, embezzlement, tradingInfluence, bribeReceiver, numDefendants);
     }
 
     private String escapeXml(String value) {
@@ -183,7 +167,8 @@ public class DrDeviceService {
     private void writeNTriplesFile(String defendant, boolean abuseOfAuthority, boolean organizedGroup,
                                    boolean highGain, boolean highBribery, boolean briberyInvolved,
                                    boolean previouslyConvicted, boolean voluntaryDisclosure,
-                                   boolean damageToPublicInterest, int numDefendants, String crimeType) {
+                                   boolean damageToPublicInterest, boolean embezzlement,
+                                   boolean tradingInfluence, boolean bribeReceiver, int numDefendants) {
         String base = "http://informatika.ftn.uns.ac.rs/legal-case.rdf#";
         String s = "<" + base + "corruption_case>";
         String xsdInt = "^^<http://www.w3.org/2001/XMLSchema#integer>";
@@ -200,8 +185,10 @@ public class DrDeviceService {
         sb.append(s).append(" <").append(base).append("previously_convicted> \"").append(previouslyConvicted).append("\" .\n");
         sb.append(s).append(" <").append(base).append("voluntary_disclosure> \"").append(voluntaryDisclosure).append("\" .\n");
         sb.append(s).append(" <").append(base).append("damage_to_public_interest> \"").append(damageToPublicInterest).append("\" .\n");
+        sb.append(s).append(" <").append(base).append("embezzlement> \"").append(embezzlement).append("\" .\n");
+        sb.append(s).append(" <").append(base).append("trading_influence> \"").append(tradingInfluence).append("\" .\n");
+        sb.append(s).append(" <").append(base).append("bribe_receiver> \"").append(bribeReceiver).append("\" .\n");
         sb.append(s).append(" <").append(base).append("num_of_defendants> \"").append(numDefendants).append("\"").append(xsdInt).append(" .\n");
-        sb.append(s).append(" <").append(base).append("crime_type> \"").append(crimeType).append("\" .\n");
 
         try {
             Path path = Paths.get("./decorruptify/dr-device/facts.n3");
@@ -231,6 +218,7 @@ public class DrDeviceService {
         r.add("art423_basic");
         r.add("art423_qualified");
         r.add("art424_basic");
+        r.add("art424_acquittal");
         return r;
     }
 

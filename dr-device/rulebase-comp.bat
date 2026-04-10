@@ -2,4 +2,4 @@
 (import-rdf-files facts.rdf)
 (load-compiled-dr-device rulebase.clp)
 (go-dr-device)
-(dr-device_export_rdf rulebase.ruleml export.rdf proof.ruleml art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic min_imprisonment max_imprisonment)
+(dr-device_export_rdf rulebase.ruleml export.rdf proof.ruleml art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic art424_acquittal min_imprisonment max_imprisonment)

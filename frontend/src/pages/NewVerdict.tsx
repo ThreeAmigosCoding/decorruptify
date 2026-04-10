@@ -27,6 +27,7 @@ export default function NewVerdict() {
     numDefendants: "", materialGain: "", materialDamage: "", briberyAmount: "",
     abuseOfAuthority: false, organizedGroup: false, previouslyConvicted: false,
     voluntaryDisclosure: false, damageToPublicInterest: false,
+    embezzlement: false, tradingInfluence: false, bribeReceiver: false,
   });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
@@ -50,7 +51,7 @@ export default function NewVerdict() {
 
   const validateForm = () => {
     const errors: Record<string, string> = {};
-    ["court", "verdictNumber", "date", "judgeName", "prosecutor", "defendantName", "criminalOffense"].forEach((f) => {
+    ["court", "verdictNumber", "date", "judgeName", "prosecutor", "defendantName"].forEach((f) => {
       if (!(form as any)[f]?.trim()) errors[f] = "Required";
     });
     setFormErrors(errors);
@@ -144,8 +145,7 @@ export default function NewVerdict() {
             </Box>
 
             <TextField fullWidth label="Criminal Offense" name="criminalOffense" value={form.criminalOffense}
-              onChange={handleChange} error={!!formErrors.criminalOffense} helperText={formErrors.criminalOffense}
-              required sx={{ mt: 2 }} />
+              onChange={handleChange} sx={{ mt: 2 }} placeholder="Optional — system derives from facts" />
 
             <TextField fullWidth label="Official Position" name="officialPosition" value={form.officialPosition}
               onChange={handleChange} sx={{ mt: 2 }} placeholder="e.g. policijski službenik" />
@@ -168,6 +168,9 @@ export default function NewVerdict() {
                 ["previouslyConvicted", "Previously Convicted"],
                 ["voluntaryDisclosure", "Voluntary Disclosure"],
                 ["damageToPublicInterest", "Damage to Public Interest"],
+                ["embezzlement", "Embezzlement (Pronevjera)"],
+                ["tradingInfluence", "Trading in Influence (Trgovina uticajem)"],
+                ["bribeReceiver", "Bribe Receiver (Primalac mita)"],
               ].map(([name, label]) => (
                 <FormControlLabel key={name}
                   control={<Checkbox checked={(form as any)[name]} onChange={handleChange} name={name} />}
