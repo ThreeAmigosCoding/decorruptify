@@ -6,7 +6,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          proof="proof.ruleml"
          rdf_export="export.rdf"
-         rdf_export_classes="art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic min_imprisonment max_imprisonment"
+         rdf_export_classes="art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic art424_acquittal min_imprisonment max_imprisonment"
          rdf_import="&#34;facts.rdf&#34;">
    <Assert>
       <Implies ruletype="defeasiblerule">
@@ -14,34 +14,19 @@
             <Ind uri="rule1">rule1</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:abuse_of_authority"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art416</Data>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel uri="lc:case"/>
+               </op>
+               <slot>
+                  <Ind uri="lc:defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+               <slot>
+                  <Ind uri="lc:abuse_of_authority"/>
+                  <Data xsi:type="xs:string">true</Data>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Atom>
@@ -70,8 +55,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art416</Data>
+                     <Ind uri="lc:abuse_of_authority"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -106,17 +91,15 @@
             <Ind uri="rule2_neg">rule2_neg</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>art416_qualified_gain</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel>art416_qualified_gain</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Neg>
@@ -131,6 +114,9 @@
                </Atom>
             </Neg>
          </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
@@ -147,8 +133,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art416</Data>
+                     <Ind uri="lc:abuse_of_authority"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -183,17 +169,15 @@
             <Ind uri="rule3_neg1">rule3_neg1</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>art416_organized</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel>art416_organized</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Neg>
@@ -208,23 +192,24 @@
                </Atom>
             </Neg>
          </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
             <Ind uri="rule3_neg2">rule3_neg2</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>art416_organized</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel>art416_organized</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Neg>
@@ -239,40 +224,28 @@
                </Atom>
             </Neg>
          </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
             <Ind uri="rule4">rule4</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:abuse_of_authority"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art420</Data>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel uri="lc:case"/>
+               </op>
+               <slot>
+                  <Ind uri="lc:defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+               <slot>
+                  <Ind uri="lc:embezzlement"/>
+                  <Data xsi:type="xs:string">true</Data>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Atom>
@@ -301,8 +274,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art420</Data>
+                     <Ind uri="lc:embezzlement"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -337,17 +310,15 @@
             <Ind uri="rule5_neg">rule5_neg</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>art420_qualified</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel>art420_qualified</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Neg>
@@ -362,27 +333,124 @@
                </Atom>
             </Neg>
          </head>
+         <superior>
+            <Ind uri="rule4"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule4_neg_416b">rule4_neg_416b</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art420_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_basic</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule4_neg_416qg">rule4_neg_416qg</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art420_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_qualified_gain</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule4_neg_416org">rule4_neg_416org</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art420_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_organized</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
             <Ind uri="rule6">rule6</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art422</Data>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel uri="lc:case"/>
+               </op>
+               <slot>
+                  <Ind uri="lc:defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+               <slot>
+                  <Ind uri="lc:trading_influence"/>
+                  <Data xsi:type="xs:string">true</Data>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Atom>
@@ -411,8 +479,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art422</Data>
+                     <Ind uri="lc:trading_influence"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -447,17 +515,15 @@
             <Ind uri="rule7_neg">rule7_neg</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>art422_organized</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel>art422_organized</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Neg>
@@ -472,6 +538,105 @@
                </Atom>
             </Neg>
          </head>
+         <superior>
+            <Ind uri="rule6"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_neg_416b">rule6_neg_416b</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art422_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_basic</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_neg_416qg">rule6_neg_416qg</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art422_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_qualified_gain</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_neg_416org">rule6_neg_416org</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art422_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_organized</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
@@ -501,8 +666,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art423</Data>
+                     <Ind uri="lc:bribe_receiver"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
             </And>
@@ -534,8 +699,21 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art423</Data>
+                     <Ind uri="lc:bribery_involved"/>
+                     <Data xsi:type="xs:string">true</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:bribe_receiver"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -570,17 +748,15 @@
             <Ind uri="rule9_neg">rule9_neg</Ind>
          </oid>
          <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>art423_qualified</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
+            <Atom>
+               <op>
+                  <Rel>art423_qualified</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
          </body>
          <head>
             <Neg>
@@ -595,6 +771,105 @@
                </Atom>
             </Neg>
          </head>
+         <superior>
+            <Ind uri="rule8"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule8_neg_416b">rule8_neg_416b</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art423_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_basic</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule8_neg_416qg">rule8_neg_416qg</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art423_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_qualified_gain</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule8_neg_416org">rule8_neg_416org</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art423_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_organized</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
@@ -624,8 +899,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:crime_type"/>
-                     <Data xsi:type="xs:string">art424</Data>
+                     <Ind uri="lc:bribe_receiver"/>
+                     <Data xsi:type="xs:string">false</Data>
                   </slot>
                </Atom>
             </And>
@@ -641,6 +916,193 @@
                </slot>
             </Atom>
          </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule11">rule11</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:bribery_involved"/>
+                     <Data xsi:type="xs:string">true</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:bribe_receiver"/>
+                     <Data xsi:type="xs:string">false</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:voluntary_disclosure"/>
+                     <Data xsi:type="xs:string">true</Data>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>art424_acquittal</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule11_neg">rule11_neg</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art424_acquittal</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art424_basic</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule10"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule10_neg_416b">rule10_neg_416b</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art424_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_basic</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule10_neg_416qg">rule10_neg_416qg</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art424_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_qualified_gain</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule10_neg_416org">rule10_neg_416org</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art424_basic</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>art416_organized</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
@@ -1178,6 +1640,60 @@
                <slot>
                   <Ind uri="value"/>
                   <Data xsi:type="xs:integer">5</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pen_424a_min">pen_424a_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art424_acquittal</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>min_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">0</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pen_424a_max">pen_424a_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>art424_acquittal</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>max_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">0</Data>
                </slot>
             </Atom>
          </head>

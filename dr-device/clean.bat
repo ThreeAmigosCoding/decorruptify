@@ -15,4 +15,3 @@ del /f /q facts.n3
 del /f /q rulebase.clp
 del /f /q Clips
 del /f /q RuleML
-del /f /q rulebase.ruleml

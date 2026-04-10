@@ -83,6 +83,15 @@ public class Verdict {
     @Column(name = "damage_to_public_interest")
     private Boolean damageToPublicInterest;
 
+    @Column(name = "embezzlement")
+    private Boolean embezzlement;
+
+    @Column(name = "trading_influence")
+    private Boolean tradingInfluence;
+
+    @Column(name = "bribe_receiver")
+    private Boolean bribeReceiver;
+
     @Column(name = "sentence_months")
     private Integer sentenceMonths;
 }

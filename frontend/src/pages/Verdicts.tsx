@@ -180,6 +180,9 @@ export default function Verdicts() {
                   ["Previously Convicted", selected.previouslyConvicted],
                   ["Voluntary Disclosure", selected.voluntaryDisclosure],
                   ["Damage to Public Interest", selected.damageToPublicInterest],
+                  ["Embezzlement", selected.embezzlement],
+                  ["Trading in Influence", selected.tradingInfluence],
+                  ["Bribe Receiver", selected.bribeReceiver],
                 ].map(([label, val]) => (
                   <Chip
                     key={label as string}

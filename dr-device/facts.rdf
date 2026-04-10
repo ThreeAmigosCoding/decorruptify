@@ -5,7 +5,7 @@
         xmlns:lc="http://informatika.ftn.uns.ac.rs/legal-case.rdf#">
     <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#corruption_case">
         <lc:name>Case</lc:name>
-        <lc:defendant>Š. E.</lc:defendant>
+        <lc:defendant>T.N.</lc:defendant>
         <lc:abuse_of_authority>true</lc:abuse_of_authority>
         <lc:organized_group>false</lc:organized_group>
         <lc:high_gain>false</lc:high_gain>
@@ -13,8 +13,10 @@
         <lc:bribery_involved>false</lc:bribery_involved>
         <lc:previously_convicted>false</lc:previously_convicted>
         <lc:voluntary_disclosure>false</lc:voluntary_disclosure>
-        <lc:damage_to_public_interest>false</lc:damage_to_public_interest>
+        <lc:damage_to_public_interest>true</lc:damage_to_public_interest>
+        <lc:embezzlement>true</lc:embezzlement>
+        <lc:trading_influence>false</lc:trading_influence>
+        <lc:bribe_receiver>false</lc:bribe_receiver>
         <lc:num_of_defendants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</lc:num_of_defendants>
-        <lc:crime_type>art416</lc:crime_type>
     </lc:case>
 </rdf:RDF>

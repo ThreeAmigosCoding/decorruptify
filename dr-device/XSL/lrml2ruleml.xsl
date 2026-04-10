@@ -17,7 +17,7 @@
         <RuleML>
             <xsl:attribute name="proof">proof.ruleml</xsl:attribute>
             <xsl:attribute name="rdf_export">export.rdf</xsl:attribute>
-            <xsl:attribute name="rdf_export_classes">art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic min_imprisonment max_imprisonment</xsl:attribute>
+            <xsl:attribute name="rdf_export_classes">art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic art424_acquittal min_imprisonment max_imprisonment</xsl:attribute>
             <xsl:attribute name="rdf_import">&quot;facts.rdf&quot;</xsl:attribute>
             <xsl:apply-templates select="lrml:Statements"/>
         </RuleML>
@@ -64,10 +64,10 @@
             <xsl:apply-templates select="ruleml:Atom"/>
         </head>
     </xsl:template>
-    <xsl:template match="ruleml:then[ruleml:Negation]">
+    <xsl:template match="ruleml:then[ruleml:Neg]">
         <head>
             <Neg>
-                <xsl:apply-templates select="ruleml:Negation/ruleml:Atom"/>
+                <xsl:apply-templates select="ruleml:Neg/ruleml:Atom"/>
             </Neg>
         </head>
     </xsl:template>
@@ -158,6 +158,15 @@
                     <Data><xsl:value-of select="."/></Data>
                 </slot>
             </xsl:for-each>
+            <xsl:if test="ruleml:Data">
+                <slot>
+                    <Ind uri="value"/>
+                    <Data>
+                        <xsl:attribute name="xsi:type" select="ruleml:Data/@xsi:type"/>
+                        <xsl:value-of select="ruleml:Data"/>
+                    </Data>
+                </slot>
+            </xsl:if>
         </Atom>
     </xsl:template>
     
@@ -194,7 +203,14 @@
     </xsl:template>
     
     <!-- legal norms' sanction -->
-    
+
+    <!-- ReparationStatements with direct Rule children (penalty rules) -->
+    <xsl:template match="lrml:ReparationStatement[ruleml:Rule]">
+        <Implies ruletype="defeasiblerule">
+            <xsl:apply-templates select="ruleml:Rule"/>
+        </Implies>
+    </xsl:template>
+
     <xsl:template match="lrml:ReparationStatement">
         <xsl:apply-templates select="lrml:Reparation"/>
     </xsl:template>

@@ -21,6 +21,9 @@ export interface Verdict {
   numDefendants: number | null;
   voluntaryDisclosure: boolean | null;
   damageToPublicInterest: boolean | null;
+  embezzlement: boolean | null;
+  tradingInfluence: boolean | null;
+  bribeReceiver: boolean | null;
   sentenceMonths: number | null;
 }
 

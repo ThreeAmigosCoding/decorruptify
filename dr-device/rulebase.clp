@@ -1,5 +1,5 @@
 (import-rdf "facts.rdf")
-		(export-rdf export.rdf  art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic min_imprisonment max_imprisonment)
+		(export-rdf export.rdf  art416_basic art416_qualified_gain art416_organized art420_basic art420_qualified art422_basic art422_organized art423_basic art423_qualified art424_basic art424_acquittal min_imprisonment max_imprisonment)
 		(export-proof proof.ruleml)
 		
 (defeasiblerule rule1
@@ -10,13 +10,6 @@
 	
 		(
 		 lc:abuse_of_authority "true")
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:crime_type "art416")
 	) 
   => 
 	 
@@ -33,7 +26,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art416")
+		 lc:abuse_of_authority "true")
 	)  
 	(lc:case 
 		(
@@ -51,7 +44,7 @@
 ) 
 	
 (defeasiblerule rule2_neg
-		 
+		(declare (superior rule1 )) 
 	(art416_qualified_gain 
 		(
 		 defendant ?Defendant)
@@ -73,7 +66,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art416")
+		 lc:abuse_of_authority "true")
 	)  
 	(lc:case 
 		(
@@ -91,7 +84,7 @@
 ) 
 	
 (defeasiblerule rule3_neg1
-		 
+		(declare (superior rule1 )) 
 	(art416_organized 
 		(
 		 defendant ?Defendant)
@@ -107,7 +100,7 @@
 ) 
 	
 (defeasiblerule rule3_neg2
-		 
+		(declare (superior rule2 )) 
 	(art416_organized 
 		(
 		 defendant ?Defendant)
@@ -129,14 +122,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:abuse_of_authority "true")
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:crime_type "art420")
+		 lc:embezzlement "true")
 	) 
   => 
 	 
@@ -153,7 +139,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art420")
+		 lc:embezzlement "true")
 	)  
 	(lc:case 
 		(
@@ -171,7 +157,7 @@
 ) 
 	
 (defeasiblerule rule5_neg
-		 
+		(declare (superior rule4 )) 
 	(art420_qualified 
 		(
 		 defendant ?Defendant)
@@ -186,6 +172,54 @@
 	
 ) 
 	
+(defeasiblerule rule4_neg_416b
+		(declare (superior rule1 )) 
+	(art420_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule4_neg_416qg
+		(declare (superior rule2 )) 
+	(art420_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_qualified_gain 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule4_neg_416org
+		(declare (superior rule3 )) 
+	(art420_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_organized 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
 (defeasiblerule rule6
 		 
 	(lc:case 
@@ -193,7 +227,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art422")
+		 lc:trading_influence "true")
 	) 
   => 
 	 
@@ -210,7 +244,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art422")
+		 lc:trading_influence "true")
 	)  
 	(lc:case 
 		(
@@ -228,7 +262,7 @@
 ) 
 	
 (defeasiblerule rule7_neg
-		 
+		(declare (superior rule6 )) 
 	(art422_organized 
 		(
 		 defendant ?Defendant)
@@ -237,6 +271,54 @@
 	
 		(not  
 	(art422_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule6_neg_416b
+		(declare (superior rule1 )) 
+	(art422_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule6_neg_416qg
+		(declare (superior rule2 )) 
+	(art422_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_qualified_gain 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule6_neg_416org
+		(declare (superior rule3 )) 
+	(art422_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_organized 
 		(
 		 defendant ?Defendant)
 	) )
@@ -257,7 +339,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art423")
+		 lc:bribe_receiver "true")
 	) 
   => 
 	 
@@ -274,7 +356,14 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art423")
+		 lc:bribery_involved "true")
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:bribe_receiver "true")
 	)  
 	(lc:case 
 		(
@@ -292,7 +381,7 @@
 ) 
 	
 (defeasiblerule rule9_neg
-		 
+		(declare (superior rule8 )) 
 	(art423_qualified 
 		(
 		 defendant ?Defendant)
@@ -301,6 +390,54 @@
 	
 		(not  
 	(art423_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_neg_416b
+		(declare (superior rule1 )) 
+	(art423_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_neg_416qg
+		(declare (superior rule2 )) 
+	(art423_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_qualified_gain 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_neg_416org
+		(declare (superior rule3 )) 
+	(art423_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_organized 
 		(
 		 defendant ?Defendant)
 	) )
@@ -321,7 +458,7 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:crime_type "art424")
+		 lc:bribe_receiver "false")
 	) 
   => 
 	 
@@ -329,6 +466,101 @@
 		(
 		 defendant ?Defendant)
 	) 
+) 
+	
+(defeasiblerule rule11
+		 
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:bribery_involved "true")
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:bribe_receiver "false")
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:voluntary_disclosure "true")
+	) 
+  => 
+	 
+	(art424_acquittal 
+		(
+		 defendant ?Defendant)
+	) 
+) 
+	
+(defeasiblerule rule11_neg
+		(declare (superior rule10 )) 
+	(art424_acquittal 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art424_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_neg_416b
+		(declare (superior rule1 )) 
+	(art424_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_basic 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_neg_416qg
+		(declare (superior rule2 )) 
+	(art424_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_qualified_gain 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_neg_416org
+		(declare (superior rule3 )) 
+	(art424_basic 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(art416_organized 
+		(
+		 defendant ?Defendant)
+	) )
+	
 ) 
 	
 (defeasiblerule pen_416b_min
@@ -608,6 +840,34 @@
 	(max_imprisonment 
 		(
 		 value 5)
+	) 
+) 
+	
+(defeasiblerule pen_424a_min
+		 
+	(art424_acquittal 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 0)
+	) 
+) 
+	
+(defeasiblerule pen_424a_max
+		 
+	(art424_acquittal 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 0)
 	) 
 ) 
 	

@@ -8,5 +8,6 @@
 ( defclass art423_basic ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass art423_qualified ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass art424_basic ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass art424_acquittal ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass min_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
 ( defclass max_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )

@@ -95,7 +95,8 @@ public class VerdictDataLoader implements CommandLineRunner {
         "defendantName", "criminalOffense", "appliedProvisions", "verdict",
         "officialPosition", "abuseOfAuthority", "organizedGroup", "materialGain",
         "materialDamage", "briberyAmount", "previouslyConvicted", "numDefendants",
-        "voluntaryDisclosure", "damageToPublicInterest", "sentenceMonths"
+        "voluntaryDisclosure", "damageToPublicInterest",
+        "embezzlement", "tradingInfluence", "bribeReceiver", "sentenceMonths"
     };
 
     private static Map<String, Integer> buildColumnIndex() {
@@ -199,6 +200,9 @@ public class VerdictDataLoader implements CommandLineRunner {
         builder.previouslyConvicted(getBoolean(cols, idx, "previouslyConvicted"));
         builder.voluntaryDisclosure(getBoolean(cols, idx, "voluntaryDisclosure"));
         builder.damageToPublicInterest(getBoolean(cols, idx, "damageToPublicInterest"));
+        builder.embezzlement(getBoolean(cols, idx, "embezzlement"));
+        builder.tradingInfluence(getBoolean(cols, idx, "tradingInfluence"));
+        builder.bribeReceiver(getBoolean(cols, idx, "bribeReceiver"));
 
         builder.materialGain(getBigDecimal(cols, idx, "materialGain"));
         builder.materialDamage(getBigDecimal(cols, idx, "materialDamage"));
