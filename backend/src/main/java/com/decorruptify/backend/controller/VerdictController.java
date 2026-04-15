@@ -5,6 +5,8 @@ import com.decorruptify.backend.jcolibri.CbrApp;
 import com.decorruptify.backend.model.Verdict;
 import com.decorruptify.backend.repository.VerdictRepository;
 import com.decorruptify.backend.service.DrDeviceService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ReflectionUtils;
@@ -13,6 +15,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
@@ -25,11 +30,16 @@ public class VerdictController {
     private final VerdictRepository verdictRepository;
     private final DrDeviceService drDeviceService;
     private final CbrApp cbrApp;
+    private final String akomaNtosoDir;
 
-    public VerdictController(VerdictRepository verdictRepository, DrDeviceService drDeviceService, CbrApp cbrApp) {
+    public VerdictController(VerdictRepository verdictRepository,
+                             DrDeviceService drDeviceService,
+                             CbrApp cbrApp,
+                             @Value("${app.judgements.akoma-ntoso-dir}") String akomaNtosoDir) {
         this.verdictRepository = verdictRepository;
         this.drDeviceService = drDeviceService;
         this.cbrApp = cbrApp;
+        this.akomaNtosoDir = akomaNtosoDir;
     }
 
     @PostMapping
@@ -91,6 +101,37 @@ public class VerdictController {
         Verdict verdict = verdictRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Verdict not found: " + id));
         return ResponseEntity.ok(drDeviceService.decisionBasedOnLaw(verdict));
+    }
+
+    @GetMapping(value = "/{id}/akoma-ntoso", produces = "text/xml;charset=UTF-8")
+    public ResponseEntity<String> getAkomaNtoso(@PathVariable Long id) throws java.io.IOException {
+        Verdict verdict = verdictRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Verdict not found: " + id));
+
+        String filename = verdict.getAkomaNtosoPath();
+        if (filename == null || filename.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Akoma Ntoso XML for verdict: " + id);
+        }
+
+        // Security: reject path traversal attempts
+        if (filename.contains("/") || filename.contains("\\") || filename.contains("..")) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid filename");
+        }
+
+        Path baseDir = Paths.get(akomaNtosoDir).toAbsolutePath().normalize();
+        Path filePath = baseDir.resolve(filename).normalize();
+        if (!filePath.startsWith(baseDir)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid filename");
+        }
+
+        if (!Files.exists(filePath) || !Files.isRegularFile(filePath)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "XML file not found: " + filename);
+        }
+
+        String xmlContent = Files.readString(filePath, java.nio.charset.StandardCharsets.UTF_8);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + filename + "\"")
+                .body(xmlContent);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})

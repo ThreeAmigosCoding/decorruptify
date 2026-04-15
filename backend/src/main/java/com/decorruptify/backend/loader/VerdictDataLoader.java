@@ -45,11 +45,14 @@ public class VerdictDataLoader implements CommandLineRunner {
 
     private final VerdictRepository verdictRepository;
     private final String metadataDir;
+    private final String akomaNtosoDir;
 
     public VerdictDataLoader(VerdictRepository verdictRepository,
-                             @Value("${app.judgements.metadata-dir}") String metadataDir) {
+                             @Value("${app.judgements.metadata-dir}") String metadataDir,
+                             @Value("${app.judgements.akoma-ntoso-dir}") String akomaNtosoDir) {
         this.verdictRepository = verdictRepository;
         this.metadataDir = metadataDir;
+        this.akomaNtosoDir = akomaNtosoDir;
     }
 
     @Override
@@ -129,9 +132,18 @@ public class VerdictDataLoader implements CommandLineRunner {
             }
         }
 
+        // Derive matching XML filename (same basename, .xml extension)
+        String csvName = file.getFileName().toString();
+        String xmlFilename = csvName.substring(0, csvName.lastIndexOf('.')) + ".xml";
+        Path xmlPath = Paths.get(akomaNtosoDir, xmlFilename);
+        if (Files.exists(xmlPath)) {
+            final String path = xmlFilename;
+            verdicts.forEach(v -> v.setAkomaNtosoPath(path));
+        }
+
         if (!verdicts.isEmpty()) {
             verdictRepository.saveAll(verdicts);
-            log.info("Imported {} verdicts from {}", verdicts.size(), file.getFileName());
+            log.info("Imported {} verdicts from {} (xml: {})", verdicts.size(), file.getFileName(), Files.exists(xmlPath) ? xmlFilename : "none");
         }
     }
 

@@ -94,4 +94,7 @@ public class Verdict {
 
     @Column(name = "sentence_months")
     private Integer sentenceMonths;
+
+    @Column(name = "akoma_ntoso_path")
+    private String akomaNtosoPath;
 }
