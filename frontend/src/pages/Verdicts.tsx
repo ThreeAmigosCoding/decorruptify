@@ -7,6 +7,7 @@ import {
 import { Close } from "@mui/icons-material";
 import api from "../api/client";
 import type { Verdict, VerdictType, SimilarVerdict } from "../types";
+import AkomaNtosoRenderer from "../components/AkomaNtosoRenderer";
 
 const verdictColor: Record<VerdictType, "error" | "warning" | "success" | "info"> = {
   PRISON: "error",
@@ -35,6 +36,11 @@ export default function Verdicts() {
   const [rule, setRule] = useState("");
   const [loadingSimilar, setLoadingSimilar] = useState(false);
   const [loadingRule, setLoadingRule] = useState(false);
+
+  // Decision text
+  const [decisionXml, setDecisionXml] = useState<string | null>(null);
+  const [loadingXml, setLoadingXml] = useState(false);
+  const [xmlError, setXmlError] = useState(false);
 
   // Edit
   const [editOpen, setEditOpen] = useState(false);
@@ -158,6 +164,23 @@ export default function Verdicts() {
     setLoadingRule(false);
   };
 
+  const handleSelectVerdict = async (v: Verdict) => {
+    setSelected(v);
+    setSimilar([]);
+    setRule("");
+    setDecisionXml(null);
+    setXmlError(false);
+    setLoadingXml(true);
+    try {
+      const res = await api.get<string>(`/verdicts/${v.id}/akoma-ntoso`, { responseType: "text" });
+      setDecisionXml(res.data);
+    } catch (err: any) {
+      if (err?.response?.status !== 404) setXmlError(true);
+    } finally {
+      setLoadingXml(false);
+    }
+  };
+
   if (loading) return <Box sx={{ p: 4, textAlign: "center" }}><CircularProgress /></Box>;
 
   return (
@@ -183,7 +206,7 @@ export default function Verdicts() {
         {filtered.map((v) => (
           <Paper
             key={v.id}
-            onClick={() => { setSelected(v); setSimilar([]); setRule(""); }}
+            onClick={() => handleSelectVerdict(v)}
             elevation={0}
             sx={{
               p: 2, mx: 1, my: 0.5, cursor: "pointer", borderRadius: 1,
@@ -302,6 +325,18 @@ export default function Verdicts() {
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                   {selected.appliedProvisions.map((p) => <Chip key={p} label={p} size="small" variant="outlined" />)}
                 </Box>
+              </Paper>
+            )}
+
+            {/* Decision Text */}
+            {loadingXml && <LinearProgress sx={{ mb: 2 }} />}
+            {xmlError && <Alert severity="error" sx={{ mb: 2 }}>Failed to load decision text.</Alert>}
+            {decisionXml && !loadingXml && (
+              <Paper sx={{ p: 2, mb: 2, maxHeight: 500, overflowY: "auto" }}>
+                <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
+                  Tekst odluke
+                </Typography>
+                <AkomaNtosoRenderer xml={decisionXml} />
               </Paper>
             )}
 
