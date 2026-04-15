@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import {
   Box, Typography, TextField, MenuItem, Chip, Paper, CircularProgress, Alert,
   Button, Dialog, DialogTitle, DialogContent, DialogActions, Snackbar, Table,
-  TableBody, TableRow, TableCell, LinearProgress,
+  TableBody, TableRow, TableCell, LinearProgress, Checkbox, FormControlLabel,
 } from "@mui/material";
+import { Close } from "@mui/icons-material";
 import api from "../api/client";
 import type { Verdict, VerdictType, SimilarVerdict } from "../types";
 
@@ -34,6 +35,13 @@ export default function Verdicts() {
   const [rule, setRule] = useState("");
   const [loadingSimilar, setLoadingSimilar] = useState(false);
   const [loadingRule, setLoadingRule] = useState(false);
+
+  // Edit
+  const [editOpen, setEditOpen] = useState(false);
+  const [editForm, setEditForm] = useState<Record<string, any>>({});
+  const [editErrors, setEditErrors] = useState<Record<string, string>>({});
+  const [editProvisions, setEditProvisions] = useState<string[]>([]);
+  const [editProvisionInput, setEditProvisionInput] = useState("");
 
   useEffect(() => {
     api.get<Verdict[]>("/verdicts").then((r) => setVerdicts(r.data)).finally(() => setLoading(false));
@@ -71,6 +79,73 @@ export default function Verdicts() {
       setSimilar(res.data);
     } catch { /* empty */ }
     setLoadingSimilar(false);
+  };
+
+  const handleEditOpen = () => {
+    if (!selected) return;
+    setEditForm({
+      court: selected.court ?? "",
+      verdictNumber: selected.verdictNumber ?? "",
+      date: selected.date ?? "",
+      judgeName: selected.judgeName ?? "",
+      prosecutor: selected.prosecutor ?? "",
+      defendantName: selected.defendantName ?? "",
+      criminalOffense: selected.criminalOffense ?? "",
+      officialPosition: selected.officialPosition ?? "",
+      materialGain: selected.materialGain != null ? String(selected.materialGain) : "",
+      materialDamage: selected.materialDamage != null ? String(selected.materialDamage) : "",
+      briberyAmount: selected.briberyAmount != null ? String(selected.briberyAmount) : "",
+      numDefendants: selected.numDefendants != null ? String(selected.numDefendants) : "",
+      verdict: selected.verdict ?? "",
+      sentenceMonths: selected.sentenceMonths != null ? String(selected.sentenceMonths) : "",
+      abuseOfAuthority: selected.abuseOfAuthority ?? false,
+      organizedGroup: selected.organizedGroup ?? false,
+      previouslyConvicted: selected.previouslyConvicted ?? false,
+      voluntaryDisclosure: selected.voluntaryDisclosure ?? false,
+      damageToPublicInterest: selected.damageToPublicInterest ?? false,
+      embezzlement: selected.embezzlement ?? false,
+      tradingInfluence: selected.tradingInfluence ?? false,
+      bribeReceiver: selected.bribeReceiver ?? false,
+    });
+    setEditProvisions(selected.appliedProvisions ? [...selected.appliedProvisions] : []);
+    setEditErrors({});
+    setEditProvisionInput("");
+    setEditOpen(true);
+  };
+
+  const handleEditSave = async () => {
+    const errors: Record<string, string> = {};
+    ["court", "verdictNumber", "date", "judgeName", "prosecutor", "defendantName"].forEach((f) => {
+      if (!editForm[f]?.trim()) errors[f] = "Required";
+    });
+    if (!editForm.verdict) errors.verdict = "Required";
+    setEditErrors(errors);
+    if (Object.keys(errors).length > 0) return;
+
+    try {
+      const payload: any = { ...editForm, appliedProvisions: editProvisions };
+      ["materialGain", "materialDamage", "briberyAmount"].forEach((f) => {
+        if (payload[f]) payload[f] = Number(payload[f]);
+        else delete payload[f];
+      });
+      if (payload.numDefendants) payload.numDefendants = Number(payload.numDefendants);
+      else delete payload.numDefendants;
+      if (payload.sentenceMonths) payload.sentenceMonths = Number(payload.sentenceMonths);
+      else delete payload.sentenceMonths;
+      if (!payload.officialPosition) delete payload.officialPosition;
+      if (!payload.criminalOffense) delete payload.criminalOffense;
+
+      const res = await api.patch<Verdict>(`/verdicts/${selected!.id}`, payload);
+      const updated = res.data;
+      setVerdicts((prev) => prev.map((v) => (v.id === updated.id ? updated : v)));
+      setSelected(updated);
+      setSimilar([]);
+      setRule("");
+      setEditOpen(false);
+      setSnack("Verdict updated");
+    } catch {
+      setEditErrors((prev) => ({ ...prev, _global: "Failed to save changes" }));
+    }
   };
 
   const fetchRule = async (id: number) => {
@@ -238,6 +313,9 @@ export default function Verdicts() {
               <Button variant="outlined" onClick={() => fetchRule(selected.id)}>
                 Get Rule Recommendation
               </Button>
+              <Button variant="outlined" onClick={handleEditOpen}>
+                Edit
+              </Button>
               <Button variant="outlined" color="error" onClick={() => setDeleteId(selected.id)}>
                 Delete
               </Button>
@@ -281,6 +359,113 @@ export default function Verdicts() {
           </>
         )}
       </Box>
+
+      {/* Edit Dialog */}
+      <Dialog open={editOpen} onClose={() => setEditOpen(false)} maxWidth="md" fullWidth
+        PaperProps={{ sx: { maxHeight: "90vh" } }}>
+        <DialogTitle>Edit Verdict — {selected?.verdictNumber}</DialogTitle>
+        <DialogContent dividers>
+          {editErrors._global && <Alert severity="error" sx={{ mb: 2 }}>{editErrors._global}</Alert>}
+
+          <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
+            {[
+              ["court", "Court"],
+              ["verdictNumber", "Verdict Number"],
+              ["date", "Date"],
+              ["judgeName", "Judge Name"],
+              ["prosecutor", "Prosecutor"],
+              ["defendantName", "Defendant Name"],
+            ].map(([name, label]) => (
+              <TextField key={name} label={label} value={editForm[name] ?? ""}
+                type={name === "date" ? "date" : "text"}
+                InputLabelProps={name === "date" ? { shrink: true } : undefined}
+                onChange={(e) => { setEditForm((p) => ({ ...p, [name]: e.target.value })); setEditErrors((p) => ({ ...p, [name]: "" })); }}
+                error={!!editErrors[name]} helperText={editErrors[name]} required />
+            ))}
+          </Box>
+
+          <TextField fullWidth label="Criminal Offense" value={editForm.criminalOffense ?? ""}
+            onChange={(e) => setEditForm((p) => ({ ...p, criminalOffense: e.target.value }))}
+            sx={{ mt: 2 }} placeholder="Optional — system derives from facts" />
+
+          <TextField fullWidth label="Official Position" value={editForm.officialPosition ?? ""}
+            onChange={(e) => setEditForm((p) => ({ ...p, officialPosition: e.target.value }))}
+            sx={{ mt: 2 }} placeholder="e.g. policijski službenik" />
+
+          <Typography variant="subtitle2" sx={{ mt: 3, mb: 1 }}>Financial Amounts (EUR)</Typography>
+          <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 2 }}>
+            {[["materialGain", "Material Gain"], ["materialDamage", "Material Damage"], ["briberyAmount", "Bribery Amount"]].map(([name, label]) => (
+              <TextField key={name} label={label} type="number" value={editForm[name] ?? ""}
+                onChange={(e) => setEditForm((p) => ({ ...p, [name]: e.target.value }))} />
+            ))}
+          </Box>
+
+          <TextField label="Number of Defendants" type="number" value={editForm.numDefendants ?? ""}
+            onChange={(e) => setEditForm((p) => ({ ...p, numDefendants: e.target.value }))}
+            sx={{ mt: 2 }} inputProps={{ min: 1 }} />
+
+          <Typography variant="subtitle2" sx={{ mt: 3, mb: 1 }}>Verdict</Typography>
+          <TextField select fullWidth label="Verdict Type" value={editForm.verdict ?? ""}
+            onChange={(e) => { setEditForm((p) => ({ ...p, verdict: e.target.value })); setEditErrors((p) => ({ ...p, verdict: "" })); }}
+            error={!!editErrors.verdict} helperText={editErrors.verdict} required>
+            {(["PRISON", "SUSPENDED", "ACQUITTED", "FINE"] as VerdictType[]).map((t) => (
+              <MenuItem key={t} value={t}>{t}</MenuItem>
+            ))}
+          </TextField>
+
+          {(editForm.verdict === "PRISON" || editForm.verdict === "SUSPENDED") && (
+            <TextField fullWidth label="Sentence (months)" type="number" value={editForm.sentenceMonths ?? ""}
+              onChange={(e) => setEditForm((p) => ({ ...p, sentenceMonths: e.target.value }))}
+              sx={{ mt: 2 }} inputProps={{ min: 1 }} />
+          )}
+
+          <Typography variant="subtitle2" sx={{ mt: 3, mb: 1 }}>Applied Provisions</Typography>
+          <Box sx={{ display: "flex", gap: 1, mb: 1 }}>
+            <TextField fullWidth size="small" value={editProvisionInput}
+              onChange={(e) => setEditProvisionInput(e.target.value)}
+              placeholder='e.g. čl. 416 st. 3 KZ CG'
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  if (editProvisionInput.trim()) { setEditProvisions((p) => [...p, editProvisionInput.trim()]); setEditProvisionInput(""); }
+                }
+              }} />
+            <Button variant="outlined" onClick={() => {
+              if (editProvisionInput.trim()) { setEditProvisions((p) => [...p, editProvisionInput.trim()]); setEditProvisionInput(""); }
+            }}>Add</Button>
+          </Box>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 2 }}>
+            {editProvisions.map((p, i) => (
+              <Chip key={i} label={p}
+                onDelete={() => setEditProvisions((prev) => prev.filter((_, j) => j !== i))}
+                deleteIcon={<Close fontSize="small" />} />
+            ))}
+          </Box>
+
+          <Typography variant="subtitle2" sx={{ mt: 2, mb: 1 }}>Corruption Factors</Typography>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+            {[
+              ["abuseOfAuthority", "Abuse of Authority"],
+              ["organizedGroup", "Organized Group"],
+              ["previouslyConvicted", "Previously Convicted"],
+              ["voluntaryDisclosure", "Voluntary Disclosure"],
+              ["damageToPublicInterest", "Damage to Public Interest"],
+              ["embezzlement", "Embezzlement (Pronevjera)"],
+              ["tradingInfluence", "Trading in Influence (Trgovina uticajem)"],
+              ["bribeReceiver", "Bribe Receiver (Primalac mita)"],
+            ].map(([name, label]) => (
+              <FormControlLabel key={name}
+                control={<Checkbox checked={!!editForm[name]}
+                  onChange={(e) => setEditForm((p) => ({ ...p, [name]: e.target.checked }))} />}
+                label={label} />
+            ))}
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setEditOpen(false)}>Cancel</Button>
+          <Button variant="contained" onClick={handleEditSave}>Save</Button>
+        </DialogActions>
+      </Dialog>
 
       {/* Delete Dialog */}
       <Dialog open={!!deleteId} onClose={() => setDeleteId(null)}>
