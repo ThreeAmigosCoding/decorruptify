@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
 import { Box, Typography, CircularProgress, Alert } from "@mui/material";
 import api from "../api/client";
 import AkomaNtosoRenderer from "../components/AkomaNtosoRenderer";
@@ -7,6 +8,8 @@ export default function LawsXml() {
   const [xml, setXml] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [searchParams] = useSearchParams();
+  const articleParam = searchParams.get("article");
 
   useEffect(() => {
     api
@@ -15,6 +18,18 @@ export default function LawsXml() {
       .catch(() => setError("Failed to load legal text"))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!xml || !articleParam) return;
+    const timer = window.setTimeout(() => {
+      const el = document.getElementById(articleParam);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.classList.add("akn-highlight");
+      window.setTimeout(() => el.classList.remove("akn-highlight"), 1500);
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, [xml, articleParam]);
 
   if (loading) return <Box sx={{ p: 4, textAlign: "center" }}><CircularProgress /></Box>;
   if (error) return <Box sx={{ p: 4 }}><Alert severity="error">{error}</Alert></Box>;
