@@ -8,13 +8,30 @@ interface Props {
 const CRIMINAL_CODE_PREFIX = "/me/acts/2003/krivicni-zakonik";
 const HIGHLIGHT_CLASS = "akn-highlight";
 
+export function normalizeEId(raw: string): string {
+  let x = raw.replace(/_+/g, "_");
+  x = x.replace(/_par_(\d)/i, "_para_$1");
+  x = x.replace(/_st_(\d)/i, "_para_$1");
+  return x;
+}
+
+export function resolveTarget(raw: string): HTMLElement | null {
+  let el = document.getElementById(raw);
+  if (el) return el;
+  const norm = normalizeEId(raw);
+  el = document.getElementById(norm);
+  if (el) return el;
+  const articleRoot = norm.replace(/_para_\d+$/, "");
+  return document.getElementById(articleRoot);
+}
+
 function flashHighlight(el: HTMLElement) {
   el.classList.add(HIGHLIGHT_CLASS);
   window.setTimeout(() => el.classList.remove(HIGHLIGHT_CLASS), 1500);
 }
 
 function scrollToEId(eId: string) {
-  const el = document.getElementById(eId);
+  const el = resolveTarget(eId);
   if (!el) return;
   el.scrollIntoView({ behavior: "smooth", block: "start" });
   flashHighlight(el);
