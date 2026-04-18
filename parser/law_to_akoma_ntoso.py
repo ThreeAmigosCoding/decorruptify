@@ -70,13 +70,17 @@ AKOMA_NTOSO_EXAMPLE = """\
   </paragraph>
   <paragraph eId="art_1_para_2">
     <num>(2)</num>
-    <content><p>Tekst drugog stava.</p></content>
+    <content><p>Ako je usled djela iz <ref href="#art_1_para_1">stava 1 ovog člana</ref> pribavljena imovinska korist, učinilac će se kazniti.</p></content>
+  </paragraph>
+  <paragraph eId="art_1_para_3">
+    <num>(3)</num>
+    <content><p>Učinilac djela iz <ref href="#art_1_para_1">st. 1</ref> i <ref href="#art_1_para_2">2 ovog člana</ref> kazniće se zatvorom, a na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_362">čl. 362 ZKP</ref>.</p></content>
   </paragraph>
 </article>
 <article eId="art_2">
   <num>Član 2</num>
   <heading>Član bez stavova</heading>
-  <content><p>Tekst člana koji nema stavove.</p></content>
+  <content><p>Odredbe ovog člana primjenjuje <organization refersTo="#parliament">Skupština Crne Gore</organization>, počev od <date date="2003-11-28">28. novembra 2003. godine</date>.</p></content>
 </article>"""
 
 
@@ -94,7 +98,25 @@ def convert_to_akoma_ntoso(chapter_text: str) -> str:
         "- Za članove sa oznakom 'a' (npr. 421a), koristi eId='art_421a'\n"
         "- Brisani članovi se označavaju sa <content><p>(brisano)</p></content>\n"
         "- Meta sekcija treba sadržati FRBRWork sa country='me', publication info, "
-        "i references\n\n"
+        "i references\n"
+        "\n"
+        "Inline anotacije unutar teksta članova (OBAVEZNO):\n"
+        "- Svaku referencu na član ili stav ISTOG zakona obuči u "
+        "<ref href='#art_NNN' > ili <ref href='#art_NNN_para_K'>. "
+        "Primjeri: 'iz stava 1 ovog člana' -> <ref href='#art_XXX_para_1'>stava 1 ovog člana</ref> "
+        "(gdje je XXX broj tekućeg člana); 'djela iz st. 1 i 2 ovog člana' -> "
+        "<ref href='#art_XXX_para_1'>st. 1</ref> i <ref href='#art_XXX_para_2'>2 ovog člana</ref>; "
+        "'iz člana 422 ovog zakonika' -> <ref href='#art_422'>člana 422</ref>. "
+        "NIKAD ne ispuštaj ove reference — svako pominjanje stava ili člana mora biti anotirano.\n"
+        "- Reference na DRUGE zakone koristi puni FRBR path, npr. "
+        "<ref href='/me/acts/2009/zakonik-o-krivicnom-postupku#art_362'>čl. 362 ZKP</ref>.\n"
+        "- Datume u tekstu obuči u <date date='YYYY-MM-DD'>...</date>.\n"
+        "- Imena vlasti/organa (npr. 'Skupština Crne Gore') obuči u "
+        "<organization refersTo='#parliament'>...</organization>. "
+        "NE obmotavaj generičke termine poput 'službeno lice', 'državni organ', 'sud' — "
+        "samo prava vlastita imena organizacija.\n"
+        "- eId za ref NE mijenjaj — moraju odgovarati eId vrijednostima članova/stavova "
+        "(art_416, art_416_para_1, art_421a, art_421a_para_2, itd).\n\n"
         f"Primjer strukture članova:\n\n{AKOMA_NTOSO_EXAMPLE}\n\n"
         "Vrati isključivo validan XML dokument, ništa drugo.\n\n"
         "Konvertuj sljedeći tekst Glave 34 Krivičnog zakonika Crne Gore u "
@@ -106,6 +128,7 @@ def convert_to_akoma_ntoso(chapter_text: str) -> str:
         input=prompt,
         capture_output=True,
         text=True,
+        encoding="utf-8",
     )
 
     if result.returncode != 0:

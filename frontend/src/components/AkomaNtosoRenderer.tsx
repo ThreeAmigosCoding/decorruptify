@@ -1,20 +1,108 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Tooltip, Typography } from "@mui/material";
+import { useNavigate } from "react-router";
 
 interface Props {
   xml: string;
 }
 
+const CRIMINAL_CODE_PREFIX = "/me/acts/2003/krivicni-zakonik";
+const HIGHLIGHT_CLASS = "akn-highlight";
+
+function flashHighlight(el: HTMLElement) {
+  el.classList.add(HIGHLIGHT_CLASS);
+  window.setTimeout(() => el.classList.remove(HIGHLIGHT_CLASS), 1500);
+}
+
+function scrollToEId(eId: string) {
+  const el = document.getElementById(eId);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  flashHighlight(el);
+}
+
 export default function AkomaNtosoRenderer({ xml }: Props) {
+  const navigate = useNavigate();
   const parser = new DOMParser();
   const doc = parser.parseFromString(xml, "application/xml");
 
+  const renderRef = (node: Element, key: string, children: React.ReactNode): React.ReactNode => {
+    const href = node.getAttribute("href") || "";
+    const text = node.textContent || "";
+    const display = text || children;
+
+    const linkSx = {
+      color: "#1d4ed8",
+      textDecoration: "underline",
+      cursor: "pointer",
+      fontWeight: 500,
+    } as const;
+
+    if (href.startsWith("#")) {
+      const target = href.slice(1);
+      return (
+        <Link
+          key={key}
+          component="span"
+          sx={linkSx}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToEId(target);
+          }}
+        >
+          {display}
+        </Link>
+      );
+    }
+
+    if (href.startsWith(CRIMINAL_CODE_PREFIX)) {
+      const hashIdx = href.indexOf("#");
+      const target = hashIdx >= 0 ? href.slice(hashIdx + 1) : "";
+      return (
+        <Link
+          key={key}
+          component="span"
+          sx={linkSx}
+          onClick={(e) => {
+            e.preventDefault();
+            if (target) navigate(`/laws?article=${encodeURIComponent(target)}`);
+            else navigate("/laws");
+          }}
+        >
+          {display}
+        </Link>
+      );
+    }
+
+    return (
+      <Tooltip key={key} title="Referenca na spoljni zakon — nije dostupna u sistemu">
+        <Box
+          component="span"
+          sx={{ color: "text.secondary", textDecoration: "underline dotted", cursor: "help" }}
+        >
+          {display}
+        </Box>
+      </Tooltip>
+    );
+  };
+
   const renderNode = (node: Element): React.ReactNode => {
     const tag = node.localName;
-    const key = node.getAttribute("eId") || node.getAttribute("id") || Math.random().toString();
-    const children = Array.from(node.children).map(renderNode);
+    const eId = node.getAttribute("eId");
+    const key = eId || node.getAttribute("id") || Math.random().toString();
+
+    const childElements = Array.from(node.children);
+    const children = childElements.map(renderNode);
+    const hasElementChildren = childElements.length > 0;
     const text = node.childNodes.length === 1 && node.childNodes[0].nodeType === 3
       ? node.childNodes[0].textContent
       : null;
+
+    const renderMixed = (): React.ReactNode =>
+      Array.from(node.childNodes).map((child, idx) => {
+        if (child.nodeType === 3) return child.textContent;
+        if (child.nodeType === 1) return renderNode(child as Element);
+        return null;
+      });
 
     switch (tag) {
       case "akomaNtoso":
@@ -33,7 +121,18 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
 
       case "article":
         return (
-          <Box key={key} sx={{ mb: 2.5, pl: 2, borderLeft: "3px solid #1e40af" }}>
+          <Box
+            key={key}
+            id={eId || undefined}
+            sx={{
+              mb: 2.5,
+              pl: 2,
+              borderLeft: "3px solid #1e40af",
+              scrollMarginTop: 16,
+              transition: "background-color 0.4s ease",
+              [`&.${HIGHLIGHT_CLASS}`]: { backgroundColor: "#fef3c7" },
+            }}
+          >
             {children}
           </Box>
         );
@@ -56,7 +155,17 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
       case "point":
       case "indent":
         return (
-          <Box key={key} sx={{ pl: 2, mb: 0.5 }}>
+          <Box
+            key={key}
+            id={eId || undefined}
+            sx={{
+              pl: 2,
+              mb: 0.5,
+              scrollMarginTop: 16,
+              transition: "background-color 0.4s ease",
+              [`&.${HIGHLIGHT_CLASS}`]: { backgroundColor: "#fef3c7" },
+            }}
+          >
             {children}
           </Box>
         );
@@ -67,8 +176,25 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
       case "p":
         return (
           <Typography key={key} variant="body1" sx={{ mb: 0.5, lineHeight: 1.7 }}>
-            {text || children}
+            {hasElementChildren ? renderMixed() : text}
           </Typography>
+        );
+
+      case "ref":
+        return renderRef(node, key, hasElementChildren ? renderMixed() : text);
+
+      case "date":
+        return (
+          <Box key={key} component="span" sx={{ fontStyle: "italic" }}>
+            {hasElementChildren ? renderMixed() : text}
+          </Box>
+        );
+
+      case "organization":
+        return (
+          <Box key={key} component="span" sx={{ fontWeight: 500 }}>
+            {hasElementChildren ? renderMixed() : text}
+          </Box>
         );
 
       case "preface":
