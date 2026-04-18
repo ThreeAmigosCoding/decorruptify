@@ -53,7 +53,19 @@ export default function Verdicts() {
     api.get<Verdict[]>("/verdicts").then((r) => setVerdicts(r.data)).finally(() => setLoading(false));
   }, []);
 
-  const allArticles = [...new Set(verdicts.flatMap((v) => v.appliedProvisions || []))].sort();
+  const extractArticleNum = (s: string): string | null => {
+    const m = s.match(/(?:čl(?:an|\.)?|Član)\s*\.?\s*(\d+[a-z]?)/i);
+    return m ? m[1].toLowerCase() : null;
+  };
+
+  const allArticles = [
+    ...new Set(
+      verdicts
+        .flatMap((v) => v.appliedProvisions || [])
+        .map(extractArticleNum)
+        .filter((x): x is string => !!x)
+    ),
+  ].sort((a, b) => parseInt(a) - parseInt(b));
 
   const filtered = verdicts.filter((v) => {
     const q = search.toLowerCase();
@@ -64,7 +76,9 @@ export default function Verdicts() {
       v.verdictNumber?.toLowerCase().includes(q) ||
       v.criminalOffense?.toLowerCase().includes(q);
     const matchType = !typeFilter || v.verdict === typeFilter;
-    const matchArticle = !articleFilter || v.appliedProvisions?.includes(articleFilter);
+    const matchArticle =
+      !articleFilter ||
+      (v.appliedProvisions || []).some((p) => extractArticleNum(p) === articleFilter);
     return matchSearch && matchType && matchArticle;
   });
 
@@ -198,7 +212,7 @@ export default function Verdicts() {
             </TextField>
             <TextField size="small" select fullWidth value={articleFilter} onChange={(e) => setArticleFilter(e.target.value)} label="Article">
               <MenuItem value="">All</MenuItem>
-              {allArticles.map((a) => <MenuItem key={a} value={a}>{a}</MenuItem>)}
+              {allArticles.map((a) => <MenuItem key={a} value={a}>Član {a}</MenuItem>)}
             </TextField>
           </Box>
         </Box>

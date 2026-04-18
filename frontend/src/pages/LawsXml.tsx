@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { Box, Typography, CircularProgress, Alert } from "@mui/material";
 import api from "../api/client";
-import AkomaNtosoRenderer from "../components/AkomaNtosoRenderer";
+import AkomaNtosoRenderer, { resolveTarget } from "../components/AkomaNtosoRenderer";
 
 export default function LawsXml() {
   const [xml, setXml] = useState("");
@@ -22,7 +22,7 @@ export default function LawsXml() {
   useEffect(() => {
     if (!xml || !articleParam) return;
     const timer = window.setTimeout(() => {
-      const el = document.getElementById(articleParam);
+      const el = resolveTarget(articleParam);
       if (!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "start" });
       el.classList.add("akn-highlight");
