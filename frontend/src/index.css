@@ -1,4 +1,148 @@
-body {
+/* ==================================================================
+   DECORRUPTIFY — Design System (institutional, judicial)
+   ================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #0f1a2b;
+  --ink-2: #2a3648;
+  --ink-3: #5a6578;
+  --ink-4: #8a93a2;
+  --rule: #d9d3c4;
+  --rule-2: #ebe6d8;
+  --paper: #f5f2ea;
+  --paper-2: #efeadd;
+  --card: #fbf9f2;
+  --card-alt: #ffffff;
+
+  --seal: #9a7b3c;
+  --seal-2: #b8925a;
+  --seal-wash: #f1e8d2;
+
+  --prison: #7a1f1f;
+  --prison-wash: #efe2e2;
+  --suspended: #8a5a14;
+  --suspended-wash: #f3e7d0;
+  --acquitted: #2d5a3d;
+  --acquitted-wash: #e0ebe1;
+  --fine: #334a78;
+  --fine-wash: #e2e7f0;
+
+  --radius: 2px;
+  --radius-lg: 3px;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-feature-settings: 'ss01', 'kern', 'liga';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+#root { min-height: 100vh; }
+
+.dc-eyebrow {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.dc-ui { font-family: 'IBM Plex Sans', sans-serif; letter-spacing: 0.01em; }
+.dc-mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: -0.01em; }
+.dc-tabular { font-variant-numeric: tabular-nums lining-nums; }
+
+.dc-rule { height: 1px; background: var(--rule); border: 0; width: 100%; }
+.dc-rule-thick { height: 2px; background: var(--ink); border: 0; width: 60px; }
+
+.dc-panel {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+}
+.dc-panel-hd {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid var(--rule-2);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 600;
+}
+.dc-panel-bd { padding: 16px 20px 18px; }
+
+.dc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.dc-vbadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+}
+.dc-v-prison    { color: var(--prison);    background: var(--prison-wash);    border-color: rgba(122,31,31,0.25);}
+.dc-v-suspended { color: var(--suspended); background: var(--suspended-wash); border-color: rgba(138,90,20,0.25);}
+.dc-v-acquitted { color: var(--acquitted); background: var(--acquitted-wash); border-color: rgba(45,90,61,0.25);}
+.dc-v-fine      { color: var(--fine);      background: var(--fine-wash);      border-color: rgba(51,74,120,0.25);}
+
+.dc-brand-seal {
+  width: 26px; height: 26px;
+  border: 1.5px solid var(--seal);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+.dc-brand-seal::after {
+  content: '§';
+  position: absolute;
+  inset: 0;
+  display: grid; place-items: center;
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  color: var(--seal);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.dc-dropcap::first-letter {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 500;
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.9;
+  margin: 4px 8px 0 0;
+  color: var(--ink);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
