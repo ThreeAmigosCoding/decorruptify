@@ -1,25 +1,76 @@
 import { useEffect, useState } from "react";
 import {
-  Box, Typography, TextField, MenuItem, Chip, Paper, CircularProgress, Alert,
-  Button, Dialog, DialogTitle, DialogContent, DialogActions, Snackbar, Table,
-  TableBody, TableRow, TableCell, LinearProgress, Checkbox, FormControlLabel,
+  Box, Typography, TextField, MenuItem, CircularProgress, Alert,
+  Button, Dialog, DialogTitle, DialogContent, DialogActions, Snackbar,
+  LinearProgress, Checkbox, FormControlLabel,
 } from "@mui/material";
-import { Close } from "@mui/icons-material";
+import { Close, Edit as EditIcon, Delete as DeleteIcon, Search as SearchIcon, AutoAwesome, Visibility } from "@mui/icons-material";
 import api from "../api/client";
 import type { Verdict, VerdictType, SimilarVerdict, GenerateDecisionResponse } from "../types";
 import AkomaNtosoRenderer from "../components/AkomaNtosoRenderer";
+import { FONTS } from "../theme";
 
-const verdictColor: Record<VerdictType, "error" | "warning" | "success" | "info"> = {
-  PRISON: "error",
-  SUSPENDED: "warning",
-  ACQUITTED: "success",
-  FINE: "info",
+const verdictPalette: Record<VerdictType, { color: string; bg: string; border: string }> = {
+  PRISON:    { color: "#7a1f1f", bg: "#f4dcdc", border: "rgba(122,31,31,0.55)" },
+  SUSPENDED: { color: "#8a5a14", bg: "#f3e0bf", border: "rgba(138,90,20,0.55)" },
+  ACQUITTED: { color: "#2d5a3d", bg: "#d9e9dc", border: "rgba(45,90,61,0.55)" },
+  FINE:      { color: "#334a78", bg: "#dde4ef", border: "rgba(51,74,120,0.55)" },
 };
 
-const fmt = (v: number | null) => (v != null ? `€${v.toLocaleString("en", { minimumFractionDigits: 2 })}` : "—");
+const fmt = (v: number | null) =>
+  v != null ? `€${v.toLocaleString("en", { minimumFractionDigits: 2 })}` : "—";
 const bool = (v: boolean | null) => (v === true ? "Yes" : v === false ? "No" : "—");
 const fmtDate = (d: string | null) =>
   d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : "—";
+
+function VerdictBadge({ type, small }: { type: VerdictType | null; small?: boolean }) {
+  if (!type) return null;
+  const p = verdictPalette[type];
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        padding: small ? "2px 9px" : "4px 11px",
+        fontFamily: FONTS.SANS,
+        fontSize: small ? 10 : 10.5,
+        fontWeight: 600,
+        letterSpacing: "0.14em",
+        textTransform: "uppercase",
+        borderRadius: 2,
+        lineHeight: 1.3,
+        color: p.color,
+        background: p.bg,
+        border: `1px solid ${p.border}`,
+        whiteSpace: "nowrap",
+      }}
+    >
+      {type}
+    </span>
+  );
+}
+
+function Topbar({ crumb, title, meta, right }: { crumb: string; title: string; meta?: string; right?: React.ReactNode }) {
+  return (
+    <Box sx={{
+      display: "flex", alignItems: "center", justifyContent: "space-between",
+      py: 2.25, px: 4.5, borderBottom: "1px solid var(--rule)",
+      background: "var(--paper)", position: "sticky", top: 0, zIndex: 10,
+      backdropFilter: "blur(8px)",
+    }}>
+      <Box>
+        <Typography sx={{ fontFamily: FONTS.SANS, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)" }}>
+          {crumb}
+        </Typography>
+        <Box sx={{ display: "flex", alignItems: "baseline", gap: 1.75, mt: 0.25 }}>
+          <Typography sx={{ fontFamily: FONTS.SERIF, fontWeight: 400, fontSize: 22, letterSpacing: "-0.01em" }}>{title}</Typography>
+          {meta && <Typography sx={{ fontFamily: FONTS.SANS, color: "var(--ink-3)", fontSize: 12.5 }}>{meta}</Typography>}
+        </Box>
+      </Box>
+      <Box sx={{ display: "flex", gap: 1.25, alignItems: "center" }}>{right}</Box>
+    </Box>
+  );
+}
 
 export default function Verdicts() {
   const [verdicts, setVerdicts] = useState<Verdict[]>([]);
@@ -31,18 +82,15 @@ export default function Verdicts() {
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [snack, setSnack] = useState("");
 
-  // Reasoning
   const [similar, setSimilar] = useState<SimilarVerdict[]>([]);
   const [rule, setRule] = useState("");
   const [loadingSimilar, setLoadingSimilar] = useState(false);
   const [loadingRule, setLoadingRule] = useState(false);
 
-  // Decision text
   const [decisionXml, setDecisionXml] = useState<string | null>(null);
   const [loadingXml, setLoadingXml] = useState(false);
   const [xmlError, setXmlError] = useState(false);
 
-  // Generate Decision
   const [generatedXml, setGeneratedXml] = useState<string | null>(null);
   const [loadingGenerate, setLoadingGenerate] = useState(false);
   const [generateError, setGenerateError] = useState("");
@@ -51,7 +99,6 @@ export default function Verdicts() {
   const [editXml, setEditXml] = useState("");
   const [savingEdit, setSavingEdit] = useState(false);
 
-  // Edit
   const [editOpen, setEditOpen] = useState(false);
   const [editForm, setEditForm] = useState<Record<string, any>>({});
   const [editErrors, setEditErrors] = useState<Record<string, string>>({});
@@ -235,98 +282,212 @@ export default function Verdicts() {
     }
   };
 
-  if (loading) return <Box sx={{ p: 4, textAlign: "center" }}><CircularProgress /></Box>;
+  if (loading) return <Box sx={{ p: 6, textAlign: "center" }}><CircularProgress /></Box>;
 
   return (
-    <Box sx={{ display: "flex", height: "100vh" }}>
-      {/* LEFT: List */}
-      <Box sx={{ width: 380, borderRight: "1px solid #e2e8f0", overflow: "auto", flexShrink: 0 }}>
-        <Box sx={{ p: 2, position: "sticky", top: 0, bgcolor: "#f8fafc", zIndex: 1, borderBottom: "1px solid #e2e8f0" }}>
-          <TextField size="small" fullWidth placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} sx={{ mb: 1 }} />
-          <Box sx={{ display: "flex", gap: 1 }}>
-            <TextField size="small" select fullWidth value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} label="Type">
-              <MenuItem value="">All</MenuItem>
-              {(["PRISON", "SUSPENDED", "ACQUITTED", "FINE"] as VerdictType[]).map((t) => (
-                <MenuItem key={t} value={t}>{t}</MenuItem>
-              ))}
-            </TextField>
-            <TextField size="small" select fullWidth value={articleFilter} onChange={(e) => setArticleFilter(e.target.value)} label="Article">
-              <MenuItem value="">All</MenuItem>
-              {allArticles.map((a) => <MenuItem key={a} value={a}>Član {a}</MenuItem>)}
-            </TextField>
+    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      <Topbar
+        crumb="Caseload / Verdicts"
+        title="Verdicts"
+        meta={`${filtered.length} of ${verdicts.length} cases`}
+      />
+
+      <Box sx={{ display: "grid", gridTemplateColumns: "380px 1fr", flex: 1, minHeight: 0 }}>
+        {/* LEFT: list */}
+        <Box sx={{ borderRight: "1px solid var(--rule)", boxShadow: "1px 0 0 rgba(0,0,0,0.04), 2px 0 6px rgba(0,0,0,0.03)", display: "flex", flexDirection: "column", background: "var(--card)", minHeight: 0, overflow: "hidden" }}>
+          <Box sx={{ p: 2.75, borderBottom: "1px solid var(--rule)" }}>
+            <Box sx={{ position: "relative", mb: 1.5 }}>
+              <SearchIcon sx={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", fontSize: 16, color: "var(--ink-3)", pointerEvents: "none" }} />
+              <TextField
+                fullWidth
+                placeholder="Search cases, defendants, offences…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                sx={{ "& .MuiOutlinedInput-input": { pl: 4, fontSize: 13 } }}
+              />
+            </Box>
+            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1 }}>
+              <TextField select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} label="Verdict">
+                <MenuItem value="">All verdicts</MenuItem>
+                {(["PRISON", "SUSPENDED", "ACQUITTED", "FINE"] as VerdictType[]).map((t) => (
+                  <MenuItem key={t} value={t}>{t}</MenuItem>
+                ))}
+              </TextField>
+              <TextField select value={articleFilter} onChange={(e) => setArticleFilter(e.target.value)} label="Article">
+                <MenuItem value="">All articles</MenuItem>
+                {allArticles.map((a) => <MenuItem key={a} value={a}>Član {a}</MenuItem>)}
+              </TextField>
+            </Box>
+          </Box>
+
+          <Box sx={{ overflowY: "auto", flex: 1 }}>
+            {filtered.map((v) => {
+              const active = selected?.id === v.id;
+              return (
+                <Box
+                  key={v.id}
+                  onClick={() => handleSelectVerdict(v)}
+                  sx={{
+                    p: "14px 22px 14px 22px",
+                    borderBottom: "1px solid rgba(0,0,0,0.12)",
+                    cursor: "pointer",
+                    position: "relative",
+                    transition: "background 120ms ease",
+                    background: active ? "#ede3c9" : "transparent",
+                    "&:hover": { background: active ? "#ede3c9" : "rgba(0,0,0,0.03)" },
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      left: 0, top: 0, bottom: 0,
+                      width: 4,
+                      background: active ? "var(--seal)" : "transparent",
+                    },
+                  }}
+                >
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 1.25, mb: 0.5 }}>
+                    <Typography className="dc-mono" sx={{ fontSize: 12, color: "var(--ink)", fontWeight: 500 }}>{v.verdictNumber}</Typography>
+                    <VerdictBadge type={v.verdict} small />
+                  </Box>
+                  <Typography className="dc-ui" sx={{ fontSize: 12, color: "var(--ink-3)", mb: 0.25 }}>{v.court}</Typography>
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                    <Typography className="dc-ui" sx={{ fontSize: 12.5, color: "var(--ink-2)", fontStyle: "italic" }}>{v.defendantName}</Typography>
+                    <Typography className="dc-mono" sx={{ fontSize: 10.5, color: "var(--ink-4)" }}>{v.date ? new Date(v.date).getFullYear() : ""}</Typography>
+                  </Box>
+                </Box>
+              );
+            })}
+            {filtered.length === 0 && (
+              <Typography sx={{ p: 4, textAlign: "center", color: "var(--ink-3)", fontFamily: FONTS.SANS, fontSize: 13 }}>
+                No verdicts match the filters.
+              </Typography>
+            )}
           </Box>
         </Box>
 
-        {filtered.map((v) => (
-          <Paper
-            key={v.id}
-            onClick={() => handleSelectVerdict(v)}
-            elevation={0}
-            sx={{
-              p: 2, mx: 1, my: 0.5, cursor: "pointer", borderRadius: 1,
-              bgcolor: selected?.id === v.id ? "#e0e7ff" : "white",
-              "&:hover": { bgcolor: selected?.id === v.id ? "#e0e7ff" : "#f1f5f9" },
-              borderLeft: v.verdict ? `4px solid` : "4px solid #94a3b8",
-              borderLeftColor: v.verdict ? `${verdictColor[v.verdict]}.main` : undefined,
-            }}
-          >
-            <Typography fontWeight={600} variant="body2">{v.verdictNumber}</Typography>
-            <Typography variant="caption" color="text.secondary">{v.court}</Typography>
-            <Box sx={{ display: "flex", justifyContent: "space-between", mt: 0.5 }}>
-              <Typography variant="caption">{v.defendantName}</Typography>
-              {v.verdict && <Chip label={v.verdict} size="small" color={verdictColor[v.verdict]} />}
+        {/* RIGHT: detail */}
+        <Box sx={{ overflowY: "auto", p: "32px 48px 64px", minHeight: 0 }}>
+          {!selected ? (
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
+              <Typography sx={{ fontFamily: FONTS.SANS, color: "var(--ink-3)" }}>Select a verdict to view details</Typography>
             </Box>
-          </Paper>
-        ))}
-        {filtered.length === 0 && (
-          <Typography sx={{ p: 3, textAlign: "center" }} color="text.secondary">No verdicts found</Typography>
-        )}
-      </Box>
-
-      {/* RIGHT: Detail */}
-      <Box sx={{ flex: 1, overflow: "auto", p: 3 }}>
-        {!selected ? (
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
-            <Typography color="text.secondary">Select a verdict to view details</Typography>
-          </Box>
-        ) : (
-          <>
-            {/* Header */}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
-              <Box sx={{ flex: 1 }}>
-                <Typography variant="h5" fontWeight={700}>{selected.verdictNumber}</Typography>
-                <Typography color="text.secondary">{selected.court} — {fmtDate(selected.date)}</Typography>
+          ) : (
+            <Box component="article" sx={{ maxWidth: 1040, mx: "auto" }}>
+              {/* Masthead */}
+              <Box
+                component="header"
+                sx={{
+                  borderTop: "2px solid var(--ink)",
+                  border: "1px solid var(--rule)",
+                  borderTopWidth: "2px",
+                  borderTopColor: "var(--ink)",
+                  background: "var(--card)",
+                  p: 3,
+                  mb: 3,
+                }}
+              >
+                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "stretch", gap: 3, flexWrap: "wrap" }}>
+                  <Box sx={{ flex: "1 1 420px", minWidth: 0 }}>
+                    <Typography className="dc-eyebrow" sx={{ mb: 1.25 }}>
+                      Decision · {selected.court}
+                    </Typography>
+                    <Typography className="dc-mono" sx={{ fontSize: 18, color: "var(--ink-3)", mb: 0.5, letterSpacing: 0 }}>
+                      {selected.verdictNumber}
+                    </Typography>
+                    <Typography component="h1" sx={{
+                      fontFamily: FONTS.SERIF, fontSize: "clamp(26px, 3.6vw, 40px)", fontWeight: 400,
+                      letterSpacing: "-0.02em", fontVariationSettings: "'opsz' 40", lineHeight: 1.1,
+                      mb: 1.25, wordBreak: "break-word", overflowWrap: "anywhere",
+                    }}>
+                      <em style={{ fontStyle: "italic", color: "var(--seal)", fontWeight: 300 }}>
+                        {selected.criminalOffense || "—"}
+                      </em>
+                    </Typography>
+                    <Box sx={{ display: "flex", gap: 3, alignItems: "baseline", fontFamily: FONTS.SANS, fontSize: 13, color: "var(--ink-3)", flexWrap: "wrap" }}>
+                      <span>
+                        <span style={{ color: "var(--ink-4)" }}>Defendant</span>&nbsp;
+                        <span style={{ color: "var(--ink)", fontStyle: "italic", fontFamily: FONTS.SERIF, fontSize: 14.5 }}>{selected.defendantName}</span>
+                      </span>
+                      <span>
+                        <span style={{ color: "var(--ink-4)" }}>Filed</span>&nbsp; {fmtDate(selected.date)}
+                      </span>
+                    </Box>
+                  </Box>
+                  <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-end", flexShrink: 0, justifyContent: "space-between", gap: 2 }}>
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: 1, alignItems: "flex-end" }}>
+                      <VerdictBadge type={selected.verdict} />
+                      {selected.sentenceMonths != null && (
+                        <Typography className="dc-mono dc-tabular" sx={{ fontSize: 12, color: "var(--ink-2)" }}>
+                          {selected.sentenceMonths} months
+                        </Typography>
+                      )}
+                    </Box>
+                    <Box sx={{ display: "flex", gap: 1 }}>
+                      <Button variant="outlined" size="small" startIcon={<EditIcon sx={{ fontSize: 14 }} />} onClick={handleEditOpen}>
+                        Edit
+                      </Button>
+                      <Button
+                        variant="outlined" size="small" startIcon={<DeleteIcon sx={{ fontSize: 14 }} />}
+                        sx={{ color: "var(--prison)", borderColor: "rgba(122,31,31,0.35)", "&:hover": { background: "var(--prison-wash)", borderColor: "var(--prison)" } }}
+                        onClick={() => setDeleteId(selected.id)}
+                      >
+                        Delete
+                      </Button>
+                    </Box>
+                  </Box>
+                </Box>
               </Box>
-              {selected.verdict && <Chip label={selected.verdict} color={verdictColor[selected.verdict]} />}
-            </Box>
 
-            {/* Case Info */}
-            <Paper sx={{ p: 2, mb: 2 }}>
-              <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>Case Information</Typography>
-              <Table size="small">
-                <TableBody>
-                  {[
-                    ["Judge", selected.judgeName],
-                    ["Prosecutor", selected.prosecutor],
-                    ["Defendant", selected.defendantName],
-                    ["Criminal Offense", selected.criminalOffense],
-                    ["Official Position", selected.officialPosition || "—"],
-                    ["Defendants", selected.numDefendants ?? "—"],
-                  ].map(([label, val]) => (
-                    <TableRow key={label as string}>
-                      <TableCell sx={{ fontWeight: 600, width: 180, border: 0 }}>{label}</TableCell>
-                      <TableCell sx={{ border: 0 }}>{val}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Paper>
+              {generateError && <Alert severity="error" sx={{ mb: 2 }}>{generateError}</Alert>}
 
-            {/* Corruption Factors */}
-            <Paper sx={{ p: 2, mb: 2 }}>
-              <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>Corruption Factors</Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                {[
+              {/* Case Info + Financial */}
+              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1.4fr 1fr" }, gap: 3, mb: 3 }}>
+                <section className="dc-panel">
+                  <div className="dc-panel-hd">
+                    <span>I. Case Information</span>
+                    <span className="dc-mono" style={{ fontSize: 10.5, color: "var(--ink-4)", textTransform: "none", letterSpacing: 0 }}>§ 416 — 425</span>
+                  </div>
+                  <div className="dc-panel-bd">
+                    <Box component="dl" sx={{ display: "grid", gridTemplateColumns: "170px 1fr", gap: "12px 20px", fontFamily: FONTS.SANS, fontSize: 13.5, m: 0 }}>
+                      {[
+                        ["Court", selected.court],
+                        ["Judge", selected.judgeName, true],
+                        ["Prosecutor", selected.prosecutor],
+                        ["Defendant", selected.defendantName, true],
+                        ["Criminal offence", selected.criminalOffense || "—"],
+                        ["Official position", selected.officialPosition || "—"],
+                        ["Defendants", selected.numDefendants ?? "—"],
+                      ].map(([k, val, em]) => (
+                        <Box key={k as string} sx={{ display: "contents" }}>
+                          <Box component="dt" sx={{ color: "var(--ink-3)", letterSpacing: "0.02em", pt: "1px", m: 0 }}>{k as string}</Box>
+                          <Box component="dd" sx={em ? { m: 0, fontFamily: FONTS.SERIF, fontStyle: "italic", fontSize: 15, color: "var(--ink)" } : { m: 0, color: "var(--ink)", fontWeight: 500 }}>
+                            {val as any}
+                          </Box>
+                        </Box>
+                      ))}
+                    </Box>
+                  </div>
+                </section>
+
+                <section className="dc-panel">
+                  <div className="dc-panel-hd">
+                    <span>II. Financial</span>
+                    <span className="dc-mono" style={{ fontSize: 10.5, color: "var(--ink-4)", textTransform: "none" }}>EUR</span>
+                  </div>
+                  <div className="dc-panel-bd">
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: 1.75 }}>
+                      <FinRow k="Material gain" v={fmt(selected.materialGain)} />
+                      <FinRow k="Material damage" v={fmt(selected.materialDamage)} highlight />
+                      <FinRow k="Bribery amount" v={fmt(selected.briberyAmount)} />
+                      <div className="dc-rule" />
+                      <FinRow k="Sentence" v={selected.sentenceMonths != null ? `${selected.sentenceMonths} months` : "—"} text />
+                    </Box>
+                  </div>
+                </section>
+              </Box>
+
+              {/* Corruption Factors */}
+              {(() => {
+                const factors: [string, boolean | null][] = [
                   ["Abuse of Authority", selected.abuseOfAuthority],
                   ["Organized Group", selected.organizedGroup],
                   ["Previously Convicted", selected.previouslyConvicted],
@@ -335,129 +496,157 @@ export default function Verdicts() {
                   ["Embezzlement", selected.embezzlement],
                   ["Trading in Influence", selected.tradingInfluence],
                   ["Bribe Receiver", selected.bribeReceiver],
-                ].map(([label, val]) => (
-                  <Chip
-                    key={label as string}
-                    label={`${label}: ${bool(val as boolean | null)}`}
-                    size="small"
-                    color={val === true ? "success" : "default"}
-                    variant={val === true ? "filled" : "outlined"}
-                  />
-                ))}
-              </Box>
-            </Paper>
+                ];
+                const yesCount = factors.filter(([, v]) => v === true).length;
+                return (
+                  <section className="dc-panel" style={{ marginBottom: 24 }}>
+                    <div className="dc-panel-hd">
+                      <span>III. Corruption Factors</span>
+                      <span className="dc-mono" style={{ fontSize: 10.5, color: "var(--ink-4)", textTransform: "none" }}>{yesCount} / 8 present</span>
+                    </div>
+                    <div className="dc-panel-bd">
+                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                        {factors.map(([label, val]) => {
+                          const on = val === true;
+                          return (
+                            <Box key={label} sx={{
+                              display: "inline-flex", alignItems: "center", gap: 1,
+                              padding: "5px 10px", fontFamily: FONTS.SANS, fontSize: 11.5,
+                              border: "1px solid " + (on ? "rgba(154,123,60,0.35)" : "var(--rule)"),
+                              background: on ? "var(--seal-wash)" : "var(--card)",
+                              borderRadius: "2px", color: on ? "var(--ink)" : "var(--ink-2)",
+                            }}>
+                              <span style={{ color: "var(--ink-3)" }}>{label}</span>
+                              <span style={{
+                                fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase",
+                                fontSize: 10.5, color: on ? "var(--seal)" : "var(--ink-4)",
+                              }}>{bool(val)}</span>
+                            </Box>
+                          );
+                        })}
+                      </Box>
+                    </div>
+                  </section>
+                );
+              })()}
 
-            {/* Financial */}
-            <Paper sx={{ p: 2, mb: 2 }}>
-              <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>Financial Details</Typography>
-              <Box sx={{ display: "flex", gap: 4 }}>
-                {[
-                  ["Material Gain", selected.materialGain],
-                  ["Material Damage", selected.materialDamage],
-                  ["Bribery Amount", selected.briberyAmount],
-                ].map(([label, val]) => (
-                  <Box key={label as string}>
-                    <Typography variant="caption" color="text.secondary">{label}</Typography>
-                    <Typography fontWeight={600}>{fmt(val as number | null)}</Typography>
-                  </Box>
-                ))}
-              </Box>
-            </Paper>
-
-            {/* Sentence */}
-            <Paper sx={{ p: 2, mb: 2 }}>
-              <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>Sentence</Typography>
-              <Typography fontWeight={600}>
-                {selected.verdict || "—"}{selected.sentenceMonths != null ? ` — ${selected.sentenceMonths} months` : ""}
-              </Typography>
-            </Paper>
-
-            {/* Applied Provisions */}
-            {selected.appliedProvisions?.length > 0 && (
-              <Paper sx={{ p: 2, mb: 2 }}>
-                <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>Applied Provisions</Typography>
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                  {selected.appliedProvisions.map((p) => <Chip key={p} label={p} size="small" variant="outlined" />)}
-                </Box>
-              </Paper>
-            )}
-
-            {/* Decision Text */}
-            {loadingXml && <LinearProgress sx={{ mb: 2 }} />}
-            {xmlError && <Alert severity="error" sx={{ mb: 2 }}>Failed to load decision text.</Alert>}
-            {decisionXml && !loadingXml && (
-              <Paper sx={{ p: 2, mb: 2, maxHeight: 500, overflowY: "auto" }}>
-                <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-                  Tekst odluke
-                </Typography>
-                <AkomaNtosoRenderer xml={decisionXml} />
-              </Paper>
-            )}
-
-            {/* Actions */}
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 2 }}>
-              <Button variant="outlined" onClick={() => fetchSimilar(selected.id)}>
-                View Similar Cases
-              </Button>
-              <Button variant="outlined" onClick={() => fetchRule(selected.id)}>
-                Get Rule Recommendation
-              </Button>
-              <Button variant="contained" onClick={handleGenerateDecision} disabled={loadingGenerate}>
-                {loadingGenerate
-                  ? <><CircularProgress size={16} sx={{ mr: 1 }} />Generating...</>
-                  : "Generate Decision"}
-              </Button>
-              {generatedXml && !loadingGenerate && (
-                <Button variant="outlined" onClick={() => setGenerateDialogOpen(true)}>
-                  View Generated Decision
-                </Button>
+              {/* Applied Provisions */}
+              {selected.appliedProvisions?.length > 0 && (
+                <section className="dc-panel" style={{ marginBottom: 24 }}>
+                  <div className="dc-panel-hd"><span>IV. Applied Provisions</span></div>
+                  <div className="dc-panel-bd">
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                      {selected.appliedProvisions.map((p) => (
+                        <span key={p} className="dc-chip" style={{ fontFamily: FONTS.MONO, fontSize: 11.5, padding: "5px 11px" }}>
+                          <span style={{ color: "var(--seal)", marginRight: 6 }}>§</span>{p}
+                        </span>
+                      ))}
+                    </Box>
+                  </div>
+                </section>
               )}
-              <Button variant="outlined" onClick={handleEditOpen}>
-                Edit
-              </Button>
-              <Button variant="outlined" color="error" onClick={() => setDeleteId(selected.id)}>
-                Delete
-              </Button>
-            </Box>
-            {generateError && <Alert severity="error" sx={{ mb: 2 }}>{generateError}</Alert>}
 
-            {/* Similar Cases */}
-            {loadingSimilar && <LinearProgress sx={{ mb: 2 }} />}
-            {similar.length > 0 && (
-              <Paper sx={{ p: 2, mb: 2 }}>
-                <Typography variant="subtitle2" sx={{ mb: 1 }}>Similar Cases (CBR)</Typography>
-                <Table size="small">
-                  <TableBody>
-                    {similar.map((s) => (
-                      <TableRow key={s.id}>
-                        <TableCell>{s.verdictNumber}</TableCell>
-                        <TableCell>{s.court}</TableCell>
-                        <TableCell>{s.defendantName}</TableCell>
-                        <TableCell><Chip label={s.verdict} size="small" color={verdictColor[s.verdict]} /></TableCell>
-                        <TableCell>{s.sentenceMonths}mo</TableCell>
-                        <TableCell>
-                          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                            <LinearProgress variant="determinate" value={s.similarity * 100} sx={{ flex: 1 }} />
-                            <Typography variant="caption">{(s.similarity * 100).toFixed(1)}%</Typography>
+              {/* Reasoning actions */}
+              <Box sx={{
+                display: "flex", gap: 1, mb: 3, alignItems: "center", flexWrap: "wrap",
+                p: 1.5,
+                border: "1px solid var(--rule)",
+                background: "var(--card)",
+                borderRadius: "3px",
+              }}>
+                <Button variant="outlined" size="small" startIcon={<Visibility sx={{ fontSize: 14 }} />} onClick={() => fetchSimilar(selected.id)}>
+                  Similar Cases
+                </Button>
+                <Button variant="outlined" size="small" startIcon={<AutoAwesome sx={{ fontSize: 14 }} />} onClick={() => fetchRule(selected.id)}>
+                  Rule Recommendation
+                </Button>
+                {generatedXml && !loadingGenerate && (
+                  <Button variant="outlined" size="small" onClick={() => setGenerateDialogOpen(true)}>
+                    View Generated Decision
+                  </Button>
+                )}
+              </Box>
+
+              {/* Similar Cases + Rule reasoning */}
+              {(similar.length > 0 || rule || loadingSimilar || loadingRule) && (
+                <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1.3fr 1fr" }, gap: 3, mb: 3 }}>
+                  <section className="dc-panel">
+                    <div className="dc-panel-hd">
+                      <span>V. Similar Cases — CBR</span>
+                      <span className="dc-mono" style={{ fontSize: 10.5, color: "var(--ink-4)", textTransform: "none" }}>case-based reasoning</span>
+                    </div>
+                    <div className="dc-panel-bd" style={{ padding: "4px 6px 12px" }}>
+                      {loadingSimilar && <LinearProgress sx={{ mt: 1, mb: 1, mx: 1 }} />}
+                      {similar.length > 0 && (
+                        <Box component="table" sx={{ width: "100%", fontFamily: FONTS.SANS, fontSize: 13, borderCollapse: "collapse" }}>
+                          <Box component="thead">
+                            <tr>
+                              {["Case", "Verdict", "Sentence", "Similarity"].map((h) => (
+                                <Box key={h} component="th" sx={{ textAlign: "left", fontSize: 10.5, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", fontWeight: 600, p: "8px 14px", borderBottom: "1px solid var(--rule)" }}>{h}</Box>
+                              ))}
+                            </tr>
                           </Box>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Paper>
-            )}
+                          <tbody>
+                            {similar.map((s) => (
+                              <Box key={s.id} component="tr" sx={{ "&:hover td": { background: "rgba(0,0,0,0.015)" } }}>
+                                <Box component="td" sx={{ p: "12px 14px", borderBottom: "1px solid var(--rule-2)", fontFamily: FONTS.MONO, fontSize: 12, color: "var(--ink)" }}>{s.verdictNumber}</Box>
+                                <Box component="td" sx={{ p: "12px 14px", borderBottom: "1px solid var(--rule-2)" }}><VerdictBadge type={s.verdict} small /></Box>
+                                <Box component="td" sx={{ p: "12px 14px", borderBottom: "1px solid var(--rule-2)", fontVariantNumeric: "tabular-nums", color: "var(--ink-2)" }}>{s.sentenceMonths ? `${s.sentenceMonths} mo` : "—"}</Box>
+                                <Box component="td" sx={{ p: "12px 14px", borderBottom: "1px solid var(--rule-2)", width: 160 }}>
+                                  <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, minWidth: 120, width: "100%" }}>
+                                    <Box sx={{ flex: 1, height: 3, background: "var(--rule-2)", position: "relative" }}>
+                                      <Box sx={{ position: "absolute", left: 0, top: 0, bottom: 0, background: "var(--seal)", width: `${s.similarity * 100}%` }} />
+                                    </Box>
+                                    <span className="dc-mono dc-tabular" style={{ fontSize: 11, color: "var(--ink-2)" }}>{(s.similarity * 100).toFixed(1)}%</span>
+                                  </Box>
+                                </Box>
+                              </Box>
+                            ))}
+                          </tbody>
+                        </Box>
+                      )}
+                    </div>
+                  </section>
 
-            {/* Rule Recommendation */}
-            {loadingRule && <LinearProgress sx={{ mb: 2 }} />}
-            {rule && (
-              <Paper sx={{ p: 2, mb: 2, bgcolor: "#f0f0ff", border: "1px solid #c7c7ff" }}>
-                <Typography variant="subtitle2" sx={{ mb: 1 }}>Rule-Based Recommendation (DR-DEVICE)</Typography>
-                <Typography sx={{ fontStyle: "italic" }}>{rule}</Typography>
-              </Paper>
-            )}
-          </>
-        )}
+                  <section className="dc-panel" style={{ background: "var(--seal-wash)", borderColor: "rgba(154,123,60,0.35)" }}>
+                    <div className="dc-panel-hd" style={{ borderColor: "rgba(154,123,60,0.35)" }}>
+                      <span style={{ color: "var(--seal)" }}>VI. Rule-Based Recommendation</span>
+                      <span className="dc-mono" style={{ fontSize: 10.5, color: "var(--seal)", textTransform: "none" }}>DR-DEVICE</span>
+                    </div>
+                    <div className="dc-panel-bd">
+                      {loadingRule && <LinearProgress sx={{ mb: 1 }} />}
+                      {rule && (
+                        <Typography
+                          className="dc-dropcap"
+                          sx={{ fontFamily: FONTS.SERIF, fontSize: 15, lineHeight: 1.65, fontStyle: "italic", color: "var(--ink-2)", textAlign: "justify", hyphens: "auto" }}
+                        >
+                          {rule}
+                        </Typography>
+                      )}
+                    </div>
+                  </section>
+                </Box>
+              )}
+
+              {/* Tekst odluke */}
+              {loadingXml && <LinearProgress sx={{ mb: 2 }} />}
+              {xmlError && <Alert severity="error" sx={{ mb: 2 }}>Failed to load decision text.</Alert>}
+              {decisionXml && !loadingXml && (
+                <section className="dc-panel">
+                  <div className="dc-panel-hd">
+                    <span>VII. Tekst odluke</span>
+                    <span className="dc-mono" style={{ fontSize: 10.5, color: "var(--ink-4)", textTransform: "none" }}>Akoma Ntoso · XML</span>
+                  </div>
+                  <div className="dc-panel-bd">
+                    <Box sx={{ fontFamily: FONTS.SERIF, fontSize: 14.5, lineHeight: 1.7, color: "var(--ink-2)" }}>
+                      <AkomaNtosoRenderer xml={decisionXml} />
+                    </Box>
+                  </div>
+                </section>
+              )}
+            </Box>
+          )}
+        </Box>
       </Box>
 
       {/* Generate Decision Dialog */}
@@ -469,12 +658,8 @@ export default function Verdicts() {
         </DialogTitle>
         <DialogContent dividers sx={{ overflowY: "auto", p: editMode ? 1 : 2 }}>
           {editMode ? (
-            <TextField
-              multiline fullWidth value={editXml}
-              onChange={(e) => setEditXml(e.target.value)}
-              inputProps={{ style: { fontFamily: "monospace", fontSize: 12 } }}
-              minRows={20}
-            />
+            <TextField multiline fullWidth value={editXml} onChange={(e) => setEditXml(e.target.value)}
+              inputProps={{ style: { fontFamily: "monospace", fontSize: 12 } }} minRows={20} />
           ) : (
             generatedXml && <AkomaNtosoRenderer xml={generatedXml} />
           )}
@@ -492,11 +677,7 @@ export default function Verdicts() {
                   });
                   setGeneratedXml(editXml);
                   setEditMode(false);
-                } catch {
-                  /* error silently — user can retry */
-                } finally {
-                  setSavingEdit(false);
-                }
+                } catch { /* silent */ } finally { setSavingEdit(false); }
               }}>
                 {savingEdit ? <CircularProgress size={16} sx={{ mr: 1 }} /> : null}
                 Save Changes
@@ -504,9 +685,7 @@ export default function Verdicts() {
             </>
           ) : (
             <>
-              <Button onClick={() => { setEditXml(generatedXml ?? ""); setEditMode(true); }}>
-                Edit
-              </Button>
+              <Button onClick={() => { setEditXml(generatedXml ?? ""); setEditMode(true); }}>Edit</Button>
               <Button onClick={() => { setGenerateDialogOpen(false); setEditMode(false); }}>Close</Button>
             </>
           )}
@@ -514,8 +693,7 @@ export default function Verdicts() {
       </Dialog>
 
       {/* Edit Dialog */}
-      <Dialog open={editOpen} onClose={() => setEditOpen(false)} maxWidth="md" fullWidth
-        PaperProps={{ sx: { maxHeight: "90vh" } }}>
+      <Dialog open={editOpen} onClose={() => setEditOpen(false)} maxWidth="md" fullWidth PaperProps={{ sx: { maxHeight: "90vh" } }}>
         <DialogTitle>Edit Verdict — {selected?.verdictNumber}</DialogTitle>
         <DialogContent dividers>
           {editErrors._global && <Alert severity="error" sx={{ mb: 2 }}>{editErrors._global}</Alert>}
@@ -587,11 +765,17 @@ export default function Verdicts() {
               if (editProvisionInput.trim()) { setEditProvisions((p) => [...p, editProvisionInput.trim()]); setEditProvisionInput(""); }
             }}>Add</Button>
           </Box>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 2 }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75, mb: 2 }}>
             {editProvisions.map((p, i) => (
-              <Chip key={i} label={p}
-                onDelete={() => setEditProvisions((prev) => prev.filter((_, j) => j !== i))}
-                deleteIcon={<Close fontSize="small" />} />
+              <span key={i} className="dc-chip" style={{ fontFamily: FONTS.MONO, fontSize: 11.5, padding: "5px 11px", gap: 8 }}>
+                <span style={{ color: "var(--seal)" }}>§</span>{p}
+                <button
+                  onClick={() => setEditProvisions((prev) => prev.filter((_, j) => j !== i))}
+                  style={{ background: "none", border: 0, cursor: "pointer", color: "var(--ink-3)", padding: 0, display: "grid", placeItems: "center" }}
+                >
+                  <Close sx={{ fontSize: 12 }} />
+                </button>
+              </span>
             ))}
           </Box>
 
@@ -620,7 +804,6 @@ export default function Verdicts() {
         </DialogActions>
       </Dialog>
 
-      {/* Delete Dialog */}
       <Dialog open={!!deleteId} onClose={() => setDeleteId(null)}>
         <DialogTitle>Delete Verdict?</DialogTitle>
         <DialogContent>This action cannot be undone.</DialogContent>
@@ -631,6 +814,26 @@ export default function Verdicts() {
       </Dialog>
 
       <Snackbar open={!!snack} autoHideDuration={3000} onClose={() => setSnack("")} message={snack} />
+    </Box>
+  );
+}
+
+function FinRow({ k, v, highlight, text }: { k: string; v: string; highlight?: boolean; text?: boolean }) {
+  return (
+    <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 1.75 }}>
+      <Typography className="dc-ui" sx={{ fontSize: 12.5, color: "var(--ink-3)", letterSpacing: "0.02em" }}>{k}</Typography>
+      <Typography
+        className="dc-tabular"
+        sx={{
+          fontFamily: text ? FONTS.SANS : FONTS.MONO,
+          fontSize: highlight ? 18 : 14,
+          fontWeight: highlight ? 500 : 400,
+          color: v === "—" ? "var(--ink-4)" : "var(--ink)",
+          letterSpacing: text ? "0.02em" : "-0.01em",
+        }}
+      >
+        {v}
+      </Typography>
     </Box>
   );
 }

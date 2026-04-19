@@ -48,8 +48,9 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
     const display = text || children;
 
     const linkSx = {
-      color: "#1d4ed8",
-      textDecoration: "underline",
+      color: "var(--seal)",
+      textDecoration: "none",
+      borderBottom: "1px dotted var(--seal)",
       cursor: "pointer",
       fontWeight: 500,
     } as const;
@@ -115,7 +116,7 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
       : null;
 
     const renderMixed = (): React.ReactNode =>
-      Array.from(node.childNodes).map((child, idx) => {
+      Array.from(node.childNodes).map((child) => {
         if (child.nodeType === 3) return child.textContent;
         if (child.nodeType === 1) return renderNode(child as Element);
         return null;
@@ -144,10 +145,10 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
             sx={{
               mb: 2.5,
               pl: 2,
-              borderLeft: "3px solid #1e40af",
+              borderLeft: "2px solid var(--seal)",
               scrollMarginTop: 16,
               transition: "background-color 0.4s ease",
-              [`&.${HIGHLIGHT_CLASS}`]: { backgroundColor: "#fef3c7" },
+              [`&.${HIGHLIGHT_CLASS}`]: { backgroundColor: "var(--seal-wash)" },
             }}
           >
             {children}
@@ -156,7 +157,7 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
 
       case "heading":
         return (
-          <Typography key={key} variant="h6" fontWeight={600} sx={{ mb: 0.5, color: "#1e40af" }}>
+          <Typography key={key} variant="h6" fontWeight={500} sx={{ mb: 0.5, color: "var(--ink)", fontStyle: "italic" }}>
             {text || children}
           </Typography>
         );
@@ -180,7 +181,7 @@ export default function AkomaNtosoRenderer({ xml }: Props) {
               mb: 0.5,
               scrollMarginTop: 16,
               transition: "background-color 0.4s ease",
-              [`&.${HIGHLIGHT_CLASS}`]: { backgroundColor: "#fef3c7" },
+              [`&.${HIGHLIGHT_CLASS}`]: { backgroundColor: "var(--seal-wash)" },
             }}
           >
             {children}
