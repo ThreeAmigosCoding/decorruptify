@@ -31,42 +31,72 @@ public class DrDeviceService {
         if (content.isBlank()) {
             return "Nije moguće odrediti pravnu kvalifikaciju za zadati predmet.";
         }
-        String finalResult = addCrime(content);
-        if (finalResult.isBlank()) {
+        ArrayList<String> firedCrimes = collectFiredCrimes(content);
+        if (firedCrimes.isEmpty()) {
             return "Nije moguće odrediti pravnu kvalifikaciju za zadati predmet.";
         }
-        finalResult = addPenalty(finalResult, content);
-        return finalResult;
+        String crimeSentence = composeCrimeSentence(firedCrimes);
+        String penaltySentence = composePenaltySentence(content);
+        return crimeSentence + " " + penaltySentence;
     }
 
-    private String addCrime(String input) {
-        String finalResult = "";
-        ArrayList<String> possibleCrimes = getPossibleMatches();
-        HashMap<String, String> dict = getSentenceDict();
-        for (String match : possibleCrimes) {
+    private ArrayList<String> collectFiredCrimes(String input) {
+        ArrayList<String> fired = new ArrayList<>();
+        for (String match : getPossibleMatches()) {
             String fullRegex = "(?s)export:" + match + " rdf:about.*defeasibly-proven-positive.*export:" + match + ">";
-            Pattern pattern = Pattern.compile(fullRegex);
-            Matcher matcher = pattern.matcher(input);
-            if (matcher.find()) {
-                finalResult += dict.get(match);
+            if (Pattern.compile(fullRegex).matcher(input).find()) {
+                fired.add(match);
             }
         }
-        return finalResult;
+        return fired;
     }
 
-    private String addPenalty(String finalResult, String input) {
-        ArrayList<String> possiblePenalties = getPossiblePenalties();
-        HashMap<String, String> dict = getSentenceDict();
-        for (String match : possiblePenalties) {
-            String fullRegex = "<export:" + match + " rdf:about='&export;" + match + "(\\d+)'>\\s*<export:value>(\\d+)</export:value>\\s*<defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>\\s*<defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof(\\d+)</defeasible:proof>\\s*</export:" + match + ">";
-            Pattern pattern = Pattern.compile(fullRegex);
-            Matcher matcher = pattern.matcher(input);
-            while (matcher.find()) {
-                if (match.equals("min_imprisonment")) finalResult += dict.get(match) + matcher.group(2);
-                else if (match.equals("max_imprisonment")) finalResult += dict.get(match) + matcher.group(2) + " godina. ";
-            }
+    private String composeCrimeSentence(ArrayList<String> firedCrimes) {
+        HashMap<String, String> labels = getCrimeLabels();
+        ArrayList<String> phrases = new ArrayList<>();
+        for (String key : firedCrimes) {
+            String label = labels.get(key);
+            if (label != null) phrases.add(label);
         }
-        return finalResult;
+        if (phrases.isEmpty()) return "";
+
+        String joined;
+        if (phrases.size() == 1) {
+            joined = phrases.get(0);
+        } else if (phrases.size() == 2) {
+            joined = phrases.get(0) + " i " + phrases.get(1);
+        } else {
+            joined = String.join(", ", phrases.subList(0, phrases.size() - 1))
+                    + " i " + phrases.get(phrases.size() - 1);
+        }
+
+        String prefix = phrases.size() == 1
+                ? "Okrivljeni je počinio krivično djelo "
+                : "Okrivljeni je počinio, u sticaju, krivična djela ";
+        return prefix + joined + ".";
+    }
+
+    private String composePenaltySentence(String input) {
+        Integer overallMin = extractGlobalBound(input, "min_imprisonment", true);
+        Integer overallMax = extractGlobalBound(input, "max_imprisonment", false);
+        if (overallMin == null || overallMax == null) return "";
+        if (overallMax == 0) {
+            return "Sud preporučuje oslobađanje od kazne u skladu sa pomenutim propisima.";
+        }
+        return "Te ga sud primjenom pomenutih propisa preporučuje zatvorsku kaznu u trajanju od najmanje "
+                + overallMin + ", a najviše " + overallMax + " godina.";
+    }
+
+    private Integer extractGlobalBound(String input, String predicate, boolean takeMin) {
+        String regex = "<export:" + predicate + " rdf:about='&export;" + predicate + "(\\d+)'>\\s*<export:value>(\\d+)</export:value>\\s*<defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>\\s*<defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof(\\d+)</defeasible:proof>\\s*</export:" + predicate + ">";
+        Matcher m = Pattern.compile(regex).matcher(input);
+        Integer chosen = null;
+        while (m.find()) {
+            int value = Integer.parseInt(m.group(2));
+            if (chosen == null) chosen = value;
+            else chosen = takeMin ? Math.min(chosen, value) : Math.max(chosen, value);
+        }
+        return chosen;
     }
 
     private String readExport(String filePath) {
@@ -222,42 +252,30 @@ public class DrDeviceService {
         return r;
     }
 
-    private ArrayList<String> getPossiblePenalties() {
-        ArrayList<String> r = new ArrayList<>();
-        r.add("min_imprisonment");
-        r.add("max_imprisonment");
-        return r;
-    }
-
-    private HashMap<String, String> getSentenceDict() {
+    private HashMap<String, String> getCrimeLabels() {
         HashMap<String, String> r = new HashMap<>();
-
         r.put("art416_basic",
-                "Okrivljeni je počinio krivično djelo zloupotrebe službenog položaja (čl. 416 st. 1 KZ CG). ");
+                "zloupotrebe službenog položaja (čl. 416 st. 1 KZ CG)");
         r.put("art416_qualified_gain",
-                "Okrivljeni je počinio krivično djelo zloupotrebe službenog položaja sa pribavljenom imovinskom korišću koja prelazi 10.000 EUR (čl. 416 st. 2 KZ CG). ");
+                "zloupotrebe službenog položaja sa pribavljenom imovinskom korišću koja prelazi 10.000 EUR (čl. 416 st. 2 KZ CG)");
         r.put("art416_organized",
-                "Okrivljeni je počinio krivično djelo zloupotrebe službenog položaja u okviru organizovane kriminalne grupe (čl. 416 st. 3 KZ CG). ");
+                "zloupotrebe službenog položaja u okviru organizovane kriminalne grupe (čl. 416 st. 3 KZ CG)");
         r.put("art420_basic",
-                "Okrivljeni je počinio krivično djelo pronevjere (čl. 420 st. 1 KZ CG). ");
+                "pronevjere (čl. 420 st. 1 KZ CG)");
         r.put("art420_qualified",
-                "Okrivljeni je počinio krivično djelo pronevjere u velikim razmjerama (čl. 420 st. 2 KZ CG). ");
+                "pronevjere u velikim razmjerama (čl. 420 st. 2 KZ CG)");
         r.put("art422_basic",
-                "Okrivljeni je počinio krivično djelo trgovine uticajem (čl. 422 st. 1 KZ CG). ");
+                "trgovine uticajem (čl. 422 st. 1 KZ CG)");
         r.put("art422_organized",
-                "Okrivljeni je počinio krivično djelo trgovine uticajem u okviru organizovane kriminalne grupe (čl. 422 st. 3 KZ CG). ");
+                "trgovine uticajem u okviru organizovane kriminalne grupe (čl. 422 st. 3 KZ CG)");
         r.put("art423_basic",
-                "Okrivljeni je počinio krivično djelo primanja mita (čl. 423 st. 1 KZ CG). ");
+                "primanja mita (čl. 423 st. 1 KZ CG)");
         r.put("art423_qualified",
-                "Okrivljeni je počinio krivično djelo primanja mita u značajnom iznosu (čl. 423 st. 2 KZ CG). ");
+                "primanja mita u značajnom iznosu (čl. 423 st. 2 KZ CG)");
         r.put("art424_basic",
-                "Okrivljeni je počinio krivično djelo davanja mita (čl. 424 st. 1 KZ CG). ");
+                "davanja mita (čl. 424 st. 1 KZ CG)");
         r.put("art424_acquittal",
-                "Okrivljeni je prijavio mito prije otkrivanja krivičnog djela – moguće oslobađanje od kazne (čl. 424 st. 4 KZ CG). ");
-
-        r.put("min_imprisonment", "Te ga sud primjenom pomenutih propisa preporučuje zatvorsku kaznu u trajanju od najmanje ");
-        r.put("max_imprisonment", ", a najviše ");
-
+                "davanja mita uz dobrovoljnu prijavu prije otkrivanja djela – moguće oslobađanje od kazne (čl. 424 st. 4 KZ CG)");
         return r;
     }
 }
