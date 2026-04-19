@@ -92,20 +92,30 @@ def build_prompt(data: dict, style_samples: str) -> str:
         "Ti si sistem za generisanje nacrta sudskih presuda crnogorskih sudova za krivična "
         "djela protiv službene dužnosti (korupcija, čl. 416–425 Krivičnog zakonika Crne Gore).\n\n"
         f"PRIMJER Akoma Ntoso 3.0 dokumenta:\n{EXAMPLE_JUDGMENT}\n\n"
-        f"STILSKI UZORCI (stvarne presude crnogorskih sudova — koristi ovaj stil pisanja):\n{style_samples}\n\n"
+        f"STILSKI UZORCI (stvarne presude — koristi ovaj stil i jezički registar):\n{style_samples}\n\n"
         f"PODACI O PREDMETU:\n{verdict_context}\n\n"
-        "ZADATAK:\n"
-        "Na osnovu gore navedenih podataka o predmetu i stilskih uzoraka, generiši nacrt sudske "
-        "presude kao validan Akoma Ntoso 3.0 XML dokument na srpskom jeziku.\n\n"
-        "Pravila:\n"
-        "- Vrati SAMO validan XML dokument, bez ikakvog dodatnog teksta ili markdown oznaka.\n"
-        "- Koristi namespace: xmlns=\"http://docs.oasis-open.org/legaldocml/ns/akn/3.0\"\n"
-        "- Koristi <ref href=\"/me/acts/2003/krivicni-zakonik#art_NNN\"> za sve pomene članova zakona.\n"
-        "- Popuni meta/identification sa tačnim podacima predmeta (sud, datum, broj predmeta).\n"
-        "- Struktura: header (sud, broj, datum, sudija) + judgmentBody (introduction, background, decision, conclusions).\n"
-        "- Prati jezik i ton stvarnih presuda iz stilskih uzoraka.\n"
-        "- U decision sekciji jasno navedi vrstu presude i kaznu.\n"
-        "- Navedi 'NACRT PRESUDE' u zaglavlju dokumenta.\n"
+        "ZADATAK: Generiši nacrt presude kao validan Akoma Ntoso 3.0 XML na srpskom jeziku.\n\n"
+        "KRITIČNA PRAVILA — OBAVEZNO POŠTOVATI:\n"
+        "1. ZABRANJENA IZMIŠLJOTINA: Strogo je zabranjeno izmišljati bilo šta što nije eksplicitno "
+        "navedeno u podacima o predmetu. Ne smije se izmišljati: iskazi optuženog, svjedočenja svjedoka, "
+        "detalji toka događaja, datumi konkretnih radnji, iznosi koji nisu navedeni, "
+        "imena koja nisu navedena, ili bilo kakva narativna priča.\n"
+        "2. SAMO IZ PODATAKA: Svaka rečenica mora biti direktno izvedena iz strukturiranih podataka "
+        "(gore navedenih). Ako određeni podatak ne postoji, taj dio se izostavlja ili se formuliše "
+        "kao opšta pravna konstatacija (npr. 'Sud je utvrdio da su ispunjeni zakonski uslovi...').\n"
+        "3. FAKTIČKI OPIS: U sekcijama introduction i background navesti samo ono što je poznato "
+        "iz podataka — sud, broj predmeta, optuženi, krivično djelo, primjenjene odredbe, "
+        "i okolnosti koje su označene kao tačne (True). Ne navoditi okolnosti označene kao False.\n"
+        "4. ODLUKA I KAZNA: U sekciji decision jasno navesti vrstu presude i kaznu iz podataka, "
+        "pozivajući se na primjenjene zakonske odredbe.\n"
+        "5. PRAVNE ODREDBE: Sve pomene članova zakona formatirati kao "
+        "<ref href=\"/me/acts/2003/krivicni-zakonik#art_NNN\">čl. NNN KZ CG</ref>.\n\n"
+        "TEHNIČKE SPECIFIKACIJE:\n"
+        "- Vrati SAMO validan XML, bez markdown oznaka ili bilo kakvog teksta van XML-a.\n"
+        "- Namespace: xmlns=\"http://docs.oasis-open.org/legaldocml/ns/akn/3.0\"\n"
+        "- Popuni meta/identification sa podacima predmeta (sud, datum, broj).\n"
+        "- Struktura: header + judgmentBody (introduction, background, decision, conclusions).\n"
+        "- Navedi 'NACRT PRESUDE' u header sekciji.\n"
     )
 
 
@@ -121,12 +131,17 @@ def main():
     style_samples = load_style_samples()
     prompt = build_prompt(data, style_samples)
 
-    result = subprocess.run(
-        ["claude", "--print", "--output-format", "text"],
-        input=prompt,
-        capture_output=True,
-        text=True,
-    )
+    try:
+        result = subprocess.run(
+            ["claude", "--print", "--output-format", "text"],
+            input=prompt,
+            capture_output=True,
+            text=True,
+            timeout=300,  # 5 minutes
+        )
+    except subprocess.TimeoutExpired:
+        print("Claude CLI timed out after 300 seconds", file=sys.stderr)
+        sys.exit(1)
 
     if result.returncode != 0:
         print(f"Claude CLI error: {result.stderr}", file=sys.stderr)

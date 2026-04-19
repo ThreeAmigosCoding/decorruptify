@@ -50,6 +50,9 @@ export default function NewVerdict() {
   const [loadingGenerate, setLoadingGenerate] = useState(false);
   const [generateError, setGenerateError] = useState("");
   const [generateDialogOpen, setGenerateDialogOpen] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [editXml, setEditXml] = useState("");
+  const [savingEdit, setSavingEdit] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -308,15 +311,15 @@ export default function NewVerdict() {
           </Box>
 
           <Box sx={{ mt: 3, mb: 2 }}>
-            <Typography variant="subtitle2" sx={{ mb: 1 }}>Opciono: Generiši nacrt odluke</Typography>
+            <Typography variant="subtitle2" sx={{ mb: 1 }}>Optional: Generate decision draft</Typography>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
               <Button variant="outlined" onClick={handleGenerateDecision} disabled={loadingGenerate}>
                 {loadingGenerate
-                  ? <><CircularProgress size={16} sx={{ mr: 1 }} />Generišem...</>
-                  : "Generiši Nacrt Odluke"}
+                  ? <><CircularProgress size={16} sx={{ mr: 1 }} />Generating...</>
+                  : "Generate Decision Draft"}
               </Button>
               {generatedXml && !loadingGenerate && (
-                <Button variant="text" onClick={() => setGenerateDialogOpen(true)}>Prikaži</Button>
+                <Button variant="text" onClick={() => setGenerateDialogOpen(true)}>View</Button>
               )}
             </Box>
             {generateError && <Alert severity="error" sx={{ mt: 1 }}>{generateError}</Alert>}
@@ -329,27 +332,55 @@ export default function NewVerdict() {
       )}
 
       {/* Generate Decision Dialog */}
-      <Dialog open={generateDialogOpen} onClose={() => setGenerateDialogOpen(false)}
+      <Dialog open={generateDialogOpen} onClose={() => { setGenerateDialogOpen(false); setEditMode(false); }}
         maxWidth="md" fullWidth PaperProps={{ sx: { maxHeight: "90vh" } }}>
         <DialogTitle>
-          Generisana Odluka
-          <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>(nacrt)</Typography>
+          Generated Decision
+          <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>(draft)</Typography>
         </DialogTitle>
-        <DialogContent dividers sx={{ overflowY: "auto" }}>
-          {generatedXml && <AkomaNtosoRenderer xml={generatedXml} />}
+        <DialogContent dividers sx={{ overflowY: "auto", p: editMode ? 1 : 2 }}>
+          {editMode ? (
+            <TextField
+              multiline fullWidth value={editXml}
+              onChange={(e) => setEditXml(e.target.value)}
+              inputProps={{ style: { fontFamily: "monospace", fontSize: 12 } }}
+              minRows={20}
+            />
+          ) : (
+            generatedXml && <AkomaNtosoRenderer xml={generatedXml} />
+          )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => {
-            if (!generatedXml) return;
-            const blob = new Blob([generatedXml], { type: "text/xml" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = `generated-decision-${createdId}.xml`;
-            a.click();
-            URL.revokeObjectURL(url);
-          }}>Preuzmi XML</Button>
-          <Button onClick={() => setGenerateDialogOpen(false)}>Zatvori</Button>
+          {editMode ? (
+            <>
+              <Button onClick={() => setEditMode(false)} disabled={savingEdit}>Cancel</Button>
+              <Button variant="contained" disabled={savingEdit} onClick={async () => {
+                if (!createdId) return;
+                setSavingEdit(true);
+                try {
+                  await api.put(`/verdicts/${createdId}/generated-decision`, editXml, {
+                    headers: { "Content-Type": "text/xml;charset=UTF-8" },
+                  });
+                  setGeneratedXml(editXml);
+                  setEditMode(false);
+                } catch {
+                  /* error silently — user can retry */
+                } finally {
+                  setSavingEdit(false);
+                }
+              }}>
+                {savingEdit ? <CircularProgress size={16} sx={{ mr: 1 }} /> : null}
+                Save Changes
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button onClick={() => { setEditXml(generatedXml ?? ""); setEditMode(true); }}>
+                Edit
+              </Button>
+              <Button onClick={() => { setGenerateDialogOpen(false); setEditMode(false); }}>Close</Button>
+            </>
+          )}
         </DialogActions>
       </Dialog>
 

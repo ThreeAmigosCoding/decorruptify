@@ -118,6 +118,12 @@ public class VerdictController {
         return ResponseEntity.ok(generateDecisionService.getGenerated(id));
     }
 
+    @PutMapping(value = "/{id}/generated-decision", consumes = "text/xml;charset=UTF-8")
+    public ResponseEntity<GenerateDecisionResponse> saveGeneratedDecision(
+            @PathVariable Long id, @RequestBody String xmlContent) {
+        return ResponseEntity.ok(generateDecisionService.saveGenerated(id, xmlContent));
+    }
+
     @GetMapping(value = "/{id}/akoma-ntoso", produces = "text/xml;charset=UTF-8")
     public ResponseEntity<String> getAkomaNtoso(@PathVariable Long id) throws java.io.IOException {
         Verdict verdict = verdictRepository.findById(id)
