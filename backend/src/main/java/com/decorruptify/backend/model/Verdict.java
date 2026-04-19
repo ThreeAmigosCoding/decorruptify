@@ -97,4 +97,7 @@ public class Verdict {
 
     @Column(name = "akoma_ntoso_path")
     private String akomaNtosoPath;
+
+    @Column(name = "generated_decision_path")
+    private String generatedDecisionPath;
 }

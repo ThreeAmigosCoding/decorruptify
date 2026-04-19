@@ -1,10 +1,12 @@
 package com.decorruptify.backend.controller;
 
+import com.decorruptify.backend.dto.GenerateDecisionResponse;
 import com.decorruptify.backend.dto.SimilarVerdict;
 import com.decorruptify.backend.jcolibri.CbrApp;
 import com.decorruptify.backend.model.Verdict;
 import com.decorruptify.backend.repository.VerdictRepository;
 import com.decorruptify.backend.service.DrDeviceService;
+import com.decorruptify.backend.service.GenerateDecisionService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -30,15 +32,18 @@ public class VerdictController {
     private final VerdictRepository verdictRepository;
     private final DrDeviceService drDeviceService;
     private final CbrApp cbrApp;
+    private final GenerateDecisionService generateDecisionService;
     private final String akomaNtosoDir;
 
     public VerdictController(VerdictRepository verdictRepository,
                              DrDeviceService drDeviceService,
                              CbrApp cbrApp,
+                             GenerateDecisionService generateDecisionService,
                              @Value("${app.judgements.akoma-ntoso-dir}") String akomaNtosoDir) {
         this.verdictRepository = verdictRepository;
         this.drDeviceService = drDeviceService;
         this.cbrApp = cbrApp;
+        this.generateDecisionService = generateDecisionService;
         this.akomaNtosoDir = akomaNtosoDir;
     }
 
@@ -101,6 +106,16 @@ public class VerdictController {
         Verdict verdict = verdictRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Verdict not found: " + id));
         return ResponseEntity.ok(drDeviceService.decisionBasedOnLaw(verdict));
+    }
+
+    @PostMapping("/{id}/generate-decision")
+    public ResponseEntity<GenerateDecisionResponse> generateDecision(@PathVariable Long id) {
+        return ResponseEntity.ok(generateDecisionService.generate(id));
+    }
+
+    @GetMapping("/{id}/generated-decision")
+    public ResponseEntity<GenerateDecisionResponse> getGeneratedDecision(@PathVariable Long id) {
+        return ResponseEntity.ok(generateDecisionService.getGenerated(id));
     }
 
     @GetMapping(value = "/{id}/akoma-ntoso", produces = "text/xml;charset=UTF-8")

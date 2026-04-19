@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import api from "../api/client";
-import type { Verdict, VerdictType, SimilarVerdict } from "../types";
+import type { Verdict, VerdictType, SimilarVerdict, GenerateDecisionResponse } from "../types";
 import AkomaNtosoRenderer from "../components/AkomaNtosoRenderer";
 
 const verdictColor: Record<VerdictType, "error" | "warning" | "success" | "info"> = {
@@ -41,6 +41,12 @@ export default function Verdicts() {
   const [decisionXml, setDecisionXml] = useState<string | null>(null);
   const [loadingXml, setLoadingXml] = useState(false);
   const [xmlError, setXmlError] = useState(false);
+
+  // Generate Decision
+  const [generatedXml, setGeneratedXml] = useState<string | null>(null);
+  const [loadingGenerate, setLoadingGenerate] = useState(false);
+  const [generateError, setGenerateError] = useState("");
+  const [generateDialogOpen, setGenerateDialogOpen] = useState(false);
 
   // Edit
   const [editOpen, setEditOpen] = useState(false);
@@ -184,6 +190,8 @@ export default function Verdicts() {
     setRule("");
     setDecisionXml(null);
     setXmlError(false);
+    setGeneratedXml(null);
+    setGenerateError("");
     setLoadingXml(true);
     try {
       const res = await api.get<string>(`/verdicts/${v.id}/akoma-ntoso`, { responseType: "text" });
@@ -192,6 +200,35 @@ export default function Verdicts() {
       if (err?.response?.status !== 404) setXmlError(true);
     } finally {
       setLoadingXml(false);
+    }
+    if (v.generatedDecisionPath) {
+      try {
+        const r = await api.get<GenerateDecisionResponse>(`/verdicts/${v.id}/generated-decision`);
+        setGeneratedXml(r.data.xmlContent);
+      } catch { /* silently ignore */ }
+    }
+  };
+
+  const handleGenerateDecision = async () => {
+    if (!selected) return;
+    setLoadingGenerate(true);
+    setGenerateError("");
+    try {
+      const res = await api.post<GenerateDecisionResponse>(
+        `/verdicts/${selected.id}/generate-decision`,
+        {},
+        { timeout: 120000 }
+      );
+      setGeneratedXml(res.data.xmlContent);
+      setVerdicts((prev) => prev.map((v) =>
+        v.id === selected.id ? { ...v, generatedDecisionPath: res.data.xmlPath } : v
+      ));
+      setSelected((prev) => prev ? { ...prev, generatedDecisionPath: res.data.xmlPath } : prev);
+      setGenerateDialogOpen(true);
+    } catch {
+      setGenerateError("Generisanje odluke nije uspjelo. Pokušajte ponovo.");
+    } finally {
+      setLoadingGenerate(false);
     }
   };
 
@@ -355,13 +392,23 @@ export default function Verdicts() {
             )}
 
             {/* Actions */}
-            <Box sx={{ display: "flex", gap: 1, mb: 2 }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 2 }}>
               <Button variant="outlined" onClick={() => fetchSimilar(selected.id)}>
                 View Similar Cases
               </Button>
               <Button variant="outlined" onClick={() => fetchRule(selected.id)}>
                 Get Rule Recommendation
               </Button>
+              <Button variant="contained" onClick={handleGenerateDecision} disabled={loadingGenerate}>
+                {loadingGenerate
+                  ? <><CircularProgress size={16} sx={{ mr: 1 }} />Generišem...</>
+                  : "Generiši Odluku"}
+              </Button>
+              {generatedXml && !loadingGenerate && (
+                <Button variant="outlined" onClick={() => setGenerateDialogOpen(true)}>
+                  Prikaži Generisanu Odluku
+                </Button>
+              )}
               <Button variant="outlined" onClick={handleEditOpen}>
                 Edit
               </Button>
@@ -369,6 +416,7 @@ export default function Verdicts() {
                 Delete
               </Button>
             </Box>
+            {generateError && <Alert severity="error" sx={{ mb: 2 }}>{generateError}</Alert>}
 
             {/* Similar Cases */}
             {loadingSimilar && <LinearProgress sx={{ mb: 2 }} />}
@@ -408,6 +456,31 @@ export default function Verdicts() {
           </>
         )}
       </Box>
+
+      {/* Generate Decision Dialog */}
+      <Dialog open={generateDialogOpen} onClose={() => setGenerateDialogOpen(false)}
+        maxWidth="md" fullWidth PaperProps={{ sx: { maxHeight: "90vh" } }}>
+        <DialogTitle>
+          Generisana Odluka — {selected?.verdictNumber}
+          <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>(nacrt)</Typography>
+        </DialogTitle>
+        <DialogContent dividers sx={{ overflowY: "auto" }}>
+          {generatedXml && <AkomaNtosoRenderer xml={generatedXml} />}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => {
+            if (!generatedXml) return;
+            const blob = new Blob([generatedXml], { type: "text/xml" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `generated-decision-${selected?.id}.xml`;
+            a.click();
+            URL.revokeObjectURL(url);
+          }}>Preuzmi XML</Button>
+          <Button onClick={() => setGenerateDialogOpen(false)}>Zatvori</Button>
+        </DialogActions>
+      </Dialog>
 
       {/* Edit Dialog */}
       <Dialog open={editOpen} onClose={() => setEditOpen(false)} maxWidth="md" fullWidth

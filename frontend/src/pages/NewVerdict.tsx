@@ -2,12 +2,14 @@ import { useState } from "react";
 import {
   Box, TextField, Button, Typography, Paper, Checkbox, FormControlLabel,
   MenuItem, Chip, IconButton, Alert, LinearProgress, Table, TableBody,
-  TableRow, TableCell, Snackbar,
+  TableRow, TableCell, Snackbar, CircularProgress, Dialog, DialogTitle,
+  DialogContent, DialogActions,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { useNavigate } from "react-router";
 import api from "../api/client";
-import type { Verdict, VerdictType, SimilarVerdict } from "../types";
+import type { Verdict, VerdictType, SimilarVerdict, GenerateDecisionResponse } from "../types";
+import AkomaNtosoRenderer from "../components/AkomaNtosoRenderer";
 
 const verdictColor: Record<VerdictType, "error" | "warning" | "success" | "info"> = {
   PRISON: "error", SUSPENDED: "warning", ACQUITTED: "success", FINE: "info",
@@ -42,6 +44,12 @@ export default function NewVerdict() {
   const [provisions, setProvisions] = useState<string[]>([]);
   const [newProvision, setNewProvision] = useState("");
   const [patchErrors, setPatchErrors] = useState<Record<string, string>>({});
+
+  // Generate Decision
+  const [generatedXml, setGeneratedXml] = useState<string | null>(null);
+  const [loadingGenerate, setLoadingGenerate] = useState(false);
+  const [generateError, setGenerateError] = useState("");
+  const [generateDialogOpen, setGenerateDialogOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -87,6 +95,25 @@ export default function NewVerdict() {
       setLoadingReasoning(false);
     } catch {
       setError("Failed to create verdict");
+    }
+  };
+
+  const handleGenerateDecision = async () => {
+    if (!createdId) return;
+    setLoadingGenerate(true);
+    setGenerateError("");
+    try {
+      const res = await api.post<GenerateDecisionResponse>(
+        `/verdicts/${createdId}/generate-decision`,
+        {},
+        { timeout: 120000 }
+      );
+      setGeneratedXml(res.data.xmlContent);
+      setGenerateDialogOpen(true);
+    } catch {
+      setGenerateError("Generisanje nije uspjelo. Pokušajte ponovo.");
+    } finally {
+      setLoadingGenerate(false);
     }
   };
 
@@ -280,11 +307,51 @@ export default function NewVerdict() {
             ))}
           </Box>
 
+          <Box sx={{ mt: 3, mb: 2 }}>
+            <Typography variant="subtitle2" sx={{ mb: 1 }}>Opciono: Generiši nacrt odluke</Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
+              <Button variant="outlined" onClick={handleGenerateDecision} disabled={loadingGenerate}>
+                {loadingGenerate
+                  ? <><CircularProgress size={16} sx={{ mr: 1 }} />Generišem...</>
+                  : "Generiši Nacrt Odluke"}
+              </Button>
+              {generatedXml && !loadingGenerate && (
+                <Button variant="text" onClick={() => setGenerateDialogOpen(true)}>Prikaži</Button>
+              )}
+            </Box>
+            {generateError && <Alert severity="error" sx={{ mt: 1 }}>{generateError}</Alert>}
+          </Box>
+
           <Button variant="contained" color="success" size="large" onClick={handleFinalize}>
             Finalize Verdict
           </Button>
         </Paper>
       )}
+
+      {/* Generate Decision Dialog */}
+      <Dialog open={generateDialogOpen} onClose={() => setGenerateDialogOpen(false)}
+        maxWidth="md" fullWidth PaperProps={{ sx: { maxHeight: "90vh" } }}>
+        <DialogTitle>
+          Generisana Odluka
+          <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>(nacrt)</Typography>
+        </DialogTitle>
+        <DialogContent dividers sx={{ overflowY: "auto" }}>
+          {generatedXml && <AkomaNtosoRenderer xml={generatedXml} />}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => {
+            if (!generatedXml) return;
+            const blob = new Blob([generatedXml], { type: "text/xml" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `generated-decision-${createdId}.xml`;
+            a.click();
+            URL.revokeObjectURL(url);
+          }}>Preuzmi XML</Button>
+          <Button onClick={() => setGenerateDialogOpen(false)}>Zatvori</Button>
+        </DialogActions>
+      </Dialog>
 
       <Snackbar open={!!snack} autoHideDuration={3000} onClose={() => setSnack("")} message={snack} />
     </Box>
