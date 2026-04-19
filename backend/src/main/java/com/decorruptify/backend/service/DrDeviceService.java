@@ -112,6 +112,11 @@ public class DrDeviceService {
     }
 
     private void runScript(String scriptPath) {
+        String os = System.getProperty("os.name", "").toLowerCase();
+        if (!os.contains("win")) {
+            System.out.println("[DR-DEVICE] Skipping " + scriptPath + " (non-Windows platform: " + os + ")");
+            return;
+        }
         ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", scriptPath);
         processBuilder.directory(new File("decorruptify/dr-device"));
         try {
@@ -121,7 +126,7 @@ public class DrDeviceService {
             int exitCode = process.waitFor();
             System.out.println("Script exited with code: " + exitCode + " [" + scriptPath + "]");
         } catch (InterruptedException | IOException e) {
-            e.printStackTrace();
+            System.err.println("[DR-DEVICE] Failed to run " + scriptPath + ": " + e.getMessage());
         }
     }
 

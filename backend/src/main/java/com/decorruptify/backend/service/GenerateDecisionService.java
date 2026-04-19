@@ -14,6 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.concurrent.TimeUnit;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -54,7 +55,12 @@ public class GenerateDecisionService {
         List<SimilarVerdict> similar = CbrApp.findSimilarVerdicts(verdict, cbrApp);
         similar.removeIf(sv -> sv.getId().equals(verdictId));
 
-        String ruleOutput = drDeviceService.decisionBasedOnLaw(verdict);
+        String ruleOutput = "";
+        try {
+            ruleOutput = drDeviceService.decisionBasedOnLaw(verdict);
+        } catch (Exception e) {
+            System.err.println("DR-DEVICE unavailable, proceeding without rule output: " + e.getMessage());
+        }
 
         Path generatedDir = Paths.get(akomaNtosoDir).toAbsolutePath().normalize()
                 .resolve("generated");
@@ -74,6 +80,33 @@ public class GenerateDecisionService {
         verdictRepository.save(verdict);
 
         return new GenerateDecisionResponse(relativePath, xmlContent);
+    }
+
+    public GenerateDecisionResponse saveGenerated(Long verdictId, String xmlContent) {
+        Verdict verdict = verdictRepository.findById(verdictId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Verdict not found: " + verdictId));
+
+        String path = verdict.getGeneratedDecisionPath();
+        if (path == null || path.isBlank() || !path.matches("generated/\\d+\\.xml")) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "No generated decision to update for verdict: " + verdictId);
+        }
+
+        Path baseDir = Paths.get(akomaNtosoDir).toAbsolutePath().normalize();
+        Path filePath = baseDir.resolve(path).normalize();
+        if (!filePath.startsWith(baseDir)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid path");
+        }
+
+        try {
+            Files.writeString(filePath, xmlContent, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Failed to save edited decision");
+        }
+
+        return new GenerateDecisionResponse(path, xmlContent);
     }
 
     public GenerateDecisionResponse getGenerated(Long verdictId) {
@@ -143,7 +176,14 @@ public class GenerateDecisionService {
             // Read stdout BEFORE waitFor() to prevent deadlock on large output
             String output = new String(process.getInputStream().readAllBytes(),
                     StandardCharsets.UTF_8).strip();
-            int exitCode = process.waitFor();
+
+            boolean finished = process.waitFor(320, TimeUnit.SECONDS);
+            if (!finished) {
+                process.destroyForcibly();
+                throw new ResponseStatusException(HttpStatus.GATEWAY_TIMEOUT,
+                        "Decision generation timed out");
+            }
+            int exitCode = process.exitValue();
 
             if (exitCode != 0) {
                 throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
