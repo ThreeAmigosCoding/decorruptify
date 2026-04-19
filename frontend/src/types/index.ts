@@ -25,6 +25,13 @@ export interface Verdict {
   tradingInfluence: boolean | null;
   bribeReceiver: boolean | null;
   sentenceMonths: number | null;
+  akomaNtosoPath: string | null;
+  generatedDecisionPath: string | null;
+}
+
+export interface GenerateDecisionResponse {
+  xmlPath: string;
+  xmlContent: string;
 }
 
 export interface SimilarVerdict {
