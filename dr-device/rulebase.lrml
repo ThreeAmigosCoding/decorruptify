@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lrml:LegalRuleML xmlns:lrml="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://docs.oasis-open.org/legalruleml/ns/v1.0/ xsd-compact/lrml-compact.xsd"
+                  xmlns:ruleml="http://ruleml.org/spec">
+    <lrml:Statements>
+
+        <!-- ============================================================ -->
+        <!-- Article 416 - Zloupotreba sluzbenog polozaja                 -->
+        <!-- (Abuse of official position)                                 -->
+        <!-- Rules derive article from factual attributes only.           -->
+        <!-- No pre-assigned crime_type — DR-DEVICE determines the        -->
+        <!-- applicable article through defeasible reasoning.             -->
+        <!-- ============================================================ -->
+
+        <!-- ps1: Art. 416 basic — official abuses authority (1-5yr) -->
+        <lrml:PrescriptiveStatement key="ps1">
+            <ruleml:Rule key=":rule1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri="lc:abuse_of_authority"/>
+                        <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                        <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                    </ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_basic</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps2: Art. 416 qualified gain — abuse + gain >10k EUR (1-10yr) -->
+        <lrml:PrescriptiveStatement key="ps2">
+            <ruleml:Rule key=":rule2" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:abuse_of_authority"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:high_gain"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_qualified_gain</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps2_neg: qualified gain defeats basic -->
+        <lrml:PrescriptiveStatement key="ps2_neg">
+            <ruleml:Rule key=":rule2_neg" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_qualified_gain</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Neg>
+                        <ruleml:Atom>
+                            <ruleml:Rel>art416_basic</ruleml:Rel>
+                            <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Neg>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps3: Art. 416 organized — abuse + organized group (2-12yr) -->
+        <lrml:PrescriptiveStatement key="ps3">
+            <ruleml:Rule key=":rule3" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:abuse_of_authority"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:organized_group"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art416_organized</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps3_neg1/2: organized defeats basic and qualified_gain -->
+        <lrml:PrescriptiveStatement key="ps3_neg1">
+            <ruleml:Rule key=":rule3_neg1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps3_neg2">
+            <ruleml:Rule key=":rule3_neg2" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 420 - Pronevjera (Embezzlement)                      -->
+        <!-- Lex specialis: embezzlement defeats general abuse (art416)   -->
+        <!-- ============================================================ -->
+
+        <!-- ps4: Art. 420 basic — embezzlement (1-8yr) -->
+        <lrml:PrescriptiveStatement key="ps4">
+            <ruleml:Rule key=":rule4" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri="lc:embezzlement"/>
+                        <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                        <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                    </ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art420_basic</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps5: Art. 420 qualified — embezzlement + high gain (2-10yr) -->
+        <lrml:PrescriptiveStatement key="ps5">
+            <ruleml:Rule key=":rule5" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:embezzlement"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:high_gain"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art420_qualified</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps5_neg: qualified defeats basic within art420 -->
+        <lrml:PrescriptiveStatement key="ps5_neg">
+            <ruleml:Rule key=":rule5_neg" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom><ruleml:Rel>art420_qualified</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Neg><ruleml:Atom><ruleml:Rel>art420_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- Cross-article: art420 defeats all art416 forms (lex specialis) -->
+        <lrml:PrescriptiveStatement key="ps4_neg_416b">
+            <ruleml:Rule key=":rule4_neg_416b" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps4_neg_416qg">
+            <ruleml:Rule key=":rule4_neg_416qg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps4_neg_416org">
+            <ruleml:Rule key=":rule4_neg_416org" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 422 - Trgovina uticajem (Trading in Influence)       -->
+        <!-- ============================================================ -->
+
+        <!-- ps6: Art. 422 basic — trading influence (1-5yr) -->
+        <lrml:PrescriptiveStatement key="ps6">
+            <ruleml:Rule key=":rule6" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri="lc:trading_influence"/>
+                        <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                        <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                    </ruleml:Atom>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art422_basic</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps7: Art. 422 organized — trading influence + organized group (1-8yr) -->
+        <lrml:PrescriptiveStatement key="ps7">
+            <ruleml:Rule key=":rule7" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:trading_influence"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:organized_group"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art422_organized</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps7_neg: organized defeats basic within art422 -->
+        <lrml:PrescriptiveStatement key="ps7_neg">
+            <ruleml:Rule key=":rule7_neg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art422_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- Cross-article: art422 defeats all art416 forms -->
+        <lrml:PrescriptiveStatement key="ps6_neg_416b">
+            <ruleml:Rule key=":rule6_neg_416b" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps6_neg_416qg">
+            <ruleml:Rule key=":rule6_neg_416qg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps6_neg_416org">
+            <ruleml:Rule key=":rule6_neg_416org" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 423 - Primanje mita (Receiving Bribes)               -->
+        <!-- ============================================================ -->
+
+        <!-- ps8: Art. 423 basic — bribery + receiver (1-8yr) -->
+        <lrml:PrescriptiveStatement key="ps8">
+            <ruleml:Rule key=":rule8" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribery_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribe_receiver"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art423_basic</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps9: Art. 423 qualified — bribery + receiver + high bribery (2-12yr) -->
+        <lrml:PrescriptiveStatement key="ps9">
+            <ruleml:Rule key=":rule9" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribery_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribe_receiver"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:high_bribery"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art423_qualified</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps9_neg: qualified defeats basic within art423 -->
+        <lrml:PrescriptiveStatement key="ps9_neg">
+            <ruleml:Rule key=":rule9_neg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_qualified</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art423_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- Cross-article: art423 defeats all art416 forms -->
+        <lrml:PrescriptiveStatement key="ps8_neg_416b">
+            <ruleml:Rule key=":rule8_neg_416b" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps8_neg_416qg">
+            <ruleml:Rule key=":rule8_neg_416qg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps8_neg_416org">
+            <ruleml:Rule key=":rule8_neg_416org" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- Article 424 - Davanje mita (Giving Bribes)                   -->
+        <!-- ============================================================ -->
+
+        <!-- ps10: Art. 424 basic — bribery + NOT receiver (1-5yr) -->
+        <lrml:PrescriptiveStatement key="ps10">
+            <ruleml:Rule key=":rule10" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribery_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribe_receiver"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art424_basic</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps11: Art. 424 acquittal — voluntary disclosure (Art. 424 §4) -->
+        <lrml:PrescriptiveStatement key="ps11">
+            <ruleml:Rule key=":rule11" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribery_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:bribe_receiver"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+                        </ruleml:Atom>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:voluntary_disclosure"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>art424_acquittal</ruleml:Rel>
+                        <ruleml:Var type="defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ps11_neg: acquittal defeats basic within art424 -->
+        <lrml:PrescriptiveStatement key="ps11_neg">
+            <ruleml:Rule key=":rule11_neg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_acquittal</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art424_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- Cross-article: art424 defeats all art416 forms -->
+        <lrml:PrescriptiveStatement key="ps10_neg_416b">
+            <ruleml:Rule key=":rule10_neg_416b" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps10_neg_416qg">
+            <ruleml:Rule key=":rule10_neg_416qg" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <lrml:PrescriptiveStatement key="ps10_neg_416org">
+            <ruleml:Rule key=":rule10_neg_416org" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Neg><ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:Neg></ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+        <!-- ============================================================ -->
+        <!-- PENALTY RULES — Imprisonment ranges per KZ CG                -->
+        <!-- ============================================================ -->
+
+        <!-- Penalties are defined as Reparation statements linked to     -->
+        <!-- their corresponding prescriptive statements via association. -->
+
+        <!-- Art 416 basic: 1-5yr -->
+        <lrml:ReparationStatement key="rep_416b_min">
+            <ruleml:Rule key=":pen_416b_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_416b_max">
+            <ruleml:Rule key=":pen_416b_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art416_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">5</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 416 qualified gain: 1-10yr -->
+        <lrml:ReparationStatement key="rep_416qg_min">
+            <ruleml:Rule key=":pen_416qg_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_416qg_max">
+            <ruleml:Rule key=":pen_416qg_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art416_qualified_gain</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">10</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 416 organized: 2-12yr -->
+        <lrml:ReparationStatement key="rep_416org_min">
+            <ruleml:Rule key=":pen_416org_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">2</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_416org_max">
+            <ruleml:Rule key=":pen_416org_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art416_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">12</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 420 basic: 1-8yr -->
+        <lrml:ReparationStatement key="rep_420b_min">
+            <ruleml:Rule key=":pen_420b_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_420b_max">
+            <ruleml:Rule key=":pen_420b_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">8</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 420 qualified: 2-10yr -->
+        <lrml:ReparationStatement key="rep_420q_min">
+            <ruleml:Rule key=":pen_420q_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_qualified</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">2</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_420q_max">
+            <ruleml:Rule key=":pen_420q_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art420_qualified</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">10</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 422 basic: 1-5yr -->
+        <lrml:ReparationStatement key="rep_422b_min">
+            <ruleml:Rule key=":pen_422b_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_422b_max">
+            <ruleml:Rule key=":pen_422b_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">5</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 422 organized: 1-8yr -->
+        <lrml:ReparationStatement key="rep_422org_min">
+            <ruleml:Rule key=":pen_422org_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_422org_max">
+            <ruleml:Rule key=":pen_422org_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art422_organized</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">8</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 423 basic: 1-8yr -->
+        <lrml:ReparationStatement key="rep_423b_min">
+            <ruleml:Rule key=":pen_423b_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_423b_max">
+            <ruleml:Rule key=":pen_423b_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">8</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 423 qualified: 2-12yr -->
+        <lrml:ReparationStatement key="rep_423q_min">
+            <ruleml:Rule key=":pen_423q_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_qualified</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">2</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_423q_max">
+            <ruleml:Rule key=":pen_423q_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art423_qualified</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">12</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 424 basic: 1-5yr -->
+        <lrml:ReparationStatement key="rep_424b_min">
+            <ruleml:Rule key=":pen_424b_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">1</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_424b_max">
+            <ruleml:Rule key=":pen_424b_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_basic</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">5</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+        <!-- Art 424 acquittal: 0-0yr (possible acquittal per Art. 424 §4 KZ CG) -->
+        <lrml:ReparationStatement key="rep_424a_min">
+            <ruleml:Rule key=":pen_424a_min" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_acquittal</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>min_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">0</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+        <lrml:ReparationStatement key="rep_424a_max">
+            <ruleml:Rule key=":pen_424a_max" closure="universal" strength="defeasible">
+                <ruleml:if><ruleml:Atom><ruleml:Rel>art424_acquittal</ruleml:Rel><ruleml:Var type="defendant">Defendant</ruleml:Var></ruleml:Atom></ruleml:if>
+                <ruleml:then><ruleml:Atom><ruleml:Rel>max_imprisonment</ruleml:Rel><ruleml:Data xsi:type="xs:integer">0</ruleml:Data></ruleml:Atom></ruleml:then>
+            </ruleml:Rule>
+        </lrml:ReparationStatement>
+
+    </lrml:Statements>
+
+    <!-- ============================================================ -->
+    <!-- OVERRIDES — Superiority relations for defeasible reasoning   -->
+    <!-- ============================================================ -->
+
+    <!-- Intra-article: qualified/organized defeats basic -->
+    <lrml:Override over="#ps2_neg" under="#ps1"/>
+    <lrml:Override over="#ps3_neg1" under="#ps1"/>
+    <lrml:Override over="#ps3_neg2" under="#ps2"/>
+    <lrml:Override over="#ps5_neg" under="#ps4"/>
+    <lrml:Override over="#ps7_neg" under="#ps6"/>
+    <lrml:Override over="#ps9_neg" under="#ps8"/>
+    <lrml:Override over="#ps11_neg" under="#ps10"/>
+
+    <!-- Cross-article: art420 (embezzlement) defeats all art416 forms -->
+    <lrml:Override over="#ps4_neg_416b" under="#ps1"/>
+    <lrml:Override over="#ps4_neg_416qg" under="#ps2"/>
+    <lrml:Override over="#ps4_neg_416org" under="#ps3"/>
+
+    <!-- Cross-article: art422 (trading influence) defeats all art416 forms -->
+    <lrml:Override over="#ps6_neg_416b" under="#ps1"/>
+    <lrml:Override over="#ps6_neg_416qg" under="#ps2"/>
+    <lrml:Override over="#ps6_neg_416org" under="#ps3"/>
+
+    <!-- Cross-article: art423 (receiving bribes) defeats all art416 forms -->
+    <lrml:Override over="#ps8_neg_416b" under="#ps1"/>
+    <lrml:Override over="#ps8_neg_416qg" under="#ps2"/>
+    <lrml:Override over="#ps8_neg_416org" under="#ps3"/>
+
+    <!-- Cross-article: art424 (giving bribes) defeats all art416 forms -->
+    <lrml:Override over="#ps10_neg_416b" under="#ps1"/>
+    <lrml:Override over="#ps10_neg_416qg" under="#ps2"/>
+    <lrml:Override over="#ps10_neg_416org" under="#ps3"/>
+
+    <!-- ============================================================ -->
+    <!-- ASSOCIATIONS — Link reparations to prescriptive statements   -->
+    <!-- ============================================================ -->
+
+    <lrml:Associations>
+        <lrml:Association><lrml:Applier keyref="#ps1"/><lrml:Target keyref="#rep_416b_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps1"/><lrml:Target keyref="#rep_416b_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps2"/><lrml:Target keyref="#rep_416qg_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps2"/><lrml:Target keyref="#rep_416qg_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps3"/><lrml:Target keyref="#rep_416org_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps3"/><lrml:Target keyref="#rep_416org_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps4"/><lrml:Target keyref="#rep_420b_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps4"/><lrml:Target keyref="#rep_420b_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps5"/><lrml:Target keyref="#rep_420q_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps5"/><lrml:Target keyref="#rep_420q_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps6"/><lrml:Target keyref="#rep_422b_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps6"/><lrml:Target keyref="#rep_422b_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps7"/><lrml:Target keyref="#rep_422org_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps7"/><lrml:Target keyref="#rep_422org_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps8"/><lrml:Target keyref="#rep_423b_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps8"/><lrml:Target keyref="#rep_423b_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps9"/><lrml:Target keyref="#rep_423q_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps9"/><lrml:Target keyref="#rep_423q_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps10"/><lrml:Target keyref="#rep_424b_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps10"/><lrml:Target keyref="#rep_424b_max"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps11"/><lrml:Target keyref="#rep_424a_min"/></lrml:Association>
+        <lrml:Association><lrml:Applier keyref="#ps11"/><lrml:Target keyref="#rep_424a_max"/></lrml:Association>
+    </lrml:Associations>
+
+</lrml:LegalRuleML>

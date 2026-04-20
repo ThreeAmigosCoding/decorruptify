@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-04-18/Kzu-16-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-04-18/Kzu-16-2011"/>
+          <FRBRdate date="2011-04-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-04-18/Kzu-16-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-04-18/Kzu-16-2011/srp@"/>
+          <FRBRdate date="2011-04-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-04-18/Kzu-16-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-04-18/Kzu-16-2011/srp@/.xml"/>
+          <FRBRdate date="2011-04-18" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="visiSudPodgorica" href="/ontology/organization/me/VisiSudUPodgorici" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="apelacioniSud" href="/ontology/organization/me/ApelacioniSudCrneGore" showAs="Apelacioni sud Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/SretenIvanovic" showAs="Sreten Ivanović"/>
+        <TLCPerson eId="judge4" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge5" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/SF" showAs="Š. F."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.16/11</docketNumber>
+      <neutralCitation>Kzu.br.16/11</neutralCitation>
+      <docDate date="2011-04-18">18.04.2011. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Radule Kojović</judge>
+      <judge refersTo="#judge2">Stanka Vučinić</judge>
+      <judge refersTo="#judge3">Sreten Ivanović</judge>
+      <judge refersTo="#judge4">Ivica Stanković</judge>
+      <judge refersTo="#judge5">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Kojović Radula</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Vučinić Stanke</judge>, <judge refersTo="#judge3">Ivanović Sretena</judge>, <judge refersTo="#judge4">Stanković Ivice</judge> i <judge refersTo="#judge5">Stojanović Petra</judge>, kao članova vijeća, uz učešće službenika suda <party refersTo="#clerk" as="#zapisničar">Obradović Slađane</party>, kao zapisničara, u krivičnom predmetu protiv osudjenog <party refersTo="#defendant" as="#optuženi">Š. F.</party>, zbog krivičnog djela razbojništvo putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_242">čl.242 st. 1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika, odlučujući o zahtjevu osudjenog za vanredno ublažavanje kazne izrečene pravosnažnom presudom Apelacionog suda Crne Gore Kž.br.549/10 od 13.10.2010.godine, u sjednici vijeća održanoj dana 18.04.2011. godine donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Višeg suda u Podgorici K.br.64/09 od 22.04.2010.godine Š. F. oglašen je krivim, zbog krivičnog djela razbojništvo putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_242">čl.242 st.4 u vezi st.1</ref> a u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika i osudjen na kaznu zatvora u trajanju od 5 (pet) godina, u koju mu je uračunato vrijeme provedeno u pritvoru od 05.12.2008.godine pa nadalje.</p>
+        <p>Apelacioni sud Crne Gore, kao drugostepeni, presudom Kž.br.549/10 od 13.10.2010.godine uvažio je žalbu branioca optuženog i preinačio presudu Višeg suda u Podgorici K.br.64/09 od 22.04.2010.godine u pogledu pravne ocjene djela i odluke o kazni, tako što je optuženog Š. F., zbog krivičnog djela razbojništvo putem pomaganja iz <ref href="/me/acts/2003/krivicni-zakonik#art_242">čl.242 st.1</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_25">čl.25</ref> Krivičnog zakonika, osudio na kaznu zatvora u trajanju od 4 (četiri) godine, u koju mu se uračunava vrijeme provedeno u pritvoru od 05.12.2008.godine pa nadalje.</p>
+        <p>Osudjeni je podnio zahtjev za vanredno ublažavanje kazne u kojem navodi da je otac dvoje maloljetne djece, od kojih se starije školuje, da mu je supruga nezaposlena, nalaze se u teškoj materijalnoj situaciji, bez socijalne pomoći, da mu je zdravstvstveno stanje narušeno, da obavlja životnu funkciju bez jednog bubrega, da ima srčane probleme, te da je zbog kamena u žuči potreban hitni operativni zahvat žučne kese.</p>
+        <p>Predložio je da mu se izrečena kazna ublaži.</p>
+      </background>
+      <decision>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nakon razmatranja zahtjeva, predloga Višeg suda u Podgorici i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Lične prilike osudjenog, da je oženjen, otac dvoje maloljetne djece, koje je dužan da izdržava, da je nezaposlen i lošeg imovnog stanja, cijenjene su prilikom izricanja presude kao olakšavajuće okolnosti, tako da iste ne mogu biti osnov za vanredno ublažavanje kazne, u smislu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">čl.423 ZKP</ref>.</p>
+        <p>Imajući u vidu raniju osudjivanost Š. F., pored ostalog za djelo iste vrste kao i novo djelo, okolnost koju sada ističe o njegovom zdravstvenom stanju, po ocjeni ovog suda, jeste nova okolnost koja se pojavila po pravosnažnosti presude, ali ista nije takvog značaja da bi očigledno dovela do blaže osude, s obzirom na težinu izvršenog krivičnog djela i stepen krivice osudjenog.</p>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_425__para_6">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

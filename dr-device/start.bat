@@ -1,0 +1,1 @@
+@".\CLIPSDOS\CLIPSDOS.exe" -f2 .\start.clp

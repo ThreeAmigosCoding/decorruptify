@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-02-21/Kzu-10-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-02-21/Kzu-10-2011"/>
+          <FRBRdate date="2011-02-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-02-21/Kzu-10-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-02-21/Kzu-10-2011/srp@"/>
+          <FRBRdate date="2011-02-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-02-21/Kzu-10-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-02-21/Kzu-10-2011/srp@/.xml"/>
+          <FRBRdate date="2011-02-21" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/CedomirBogicevic" showAs="dr Čedomir Bogićević"/>
+        <TLCPerson eId="judge4" href="/ontology/person/me/SretenIvanovic" showAs="Sreten Ivanović"/>
+        <TLCPerson eId="judge5" href="/ontology/person/me/RaduleKojovic" showAs="Radule Kojović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.10/11</docketNumber>
+      <neutralCitation>Kzu.br.10/11</neutralCitation>
+      <docDate date="2011-02-21">21.02.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2">Ivica Stanković</judge>
+      <judge refersTo="#judge3">dr Čedomir Bogićević</judge>
+      <judge refersTo="#judge4">Sreten Ivanović</judge>
+      <judge refersTo="#judge5">Radule Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Stojanović Petra, kao predsjednika vijeća, Stanković Ivice, Bogićević dr Čedomira, Ivanović Sretena i Kojović Radula, kao članova vijeća, uz učešće službenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv osudjenog D. H., zbog krivičnog djela razbojništvo iz <ref href="/me/acts/2003/krivicni-zakonik#art_242">čl.242 st.2 Krivičnog zakonika</ref>, rješavajući o zahtjevu osudjenog za vanredno ublažavanje kazne izrečene pravosnažnom presudom Vrhovnog suda Srbije Kž.I.2204/09 od 23.09.2009.godine, u sjednici vijeća održanoj dana 21.02.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Okružnog suda u Novom Pazaru K.br.65/08 od 09.02.2009.godine oglašen je krivim D. H., zbog krivičnog djela razbojništva iz čl.206 st.3 u vezi st.1 KZ Srbije i osudjen na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci.</p>
+        <p>Vrhovni sud Srbije, kao drugostepeni, svojom presudom Kž.I.2204/09 od 23.09.2009.godine uvažio je žalbu branioca optuženog i preinačio presudu Okružnog suda u Novom Pazaru K.br.65/08 od 09.02.2009.godine u pogledu pravne kvalifikacije krivičnog djela, tako što je optuženog D. H. oglasio krivim zbog krivičnog djela razbojništva iz čl.168 s.1 KZ RS u vezi čl.22 KZ SRJ i osudio na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci.</p>
+        <p>Presudom Višeg suda u Bijelom Polju Kv.br.109/10 od 29.03.2010.godine dozvoljeno je priznanje i izvršenje pravosnažne presude Okružnog suda u Novom Pazaru K.br.65/08 od 09.02.2009.godine, pa je osudjeni D. H., zbog krivičnog djela razbojništvo iz <ref href="/me/acts/2003/krivicni-zakonik#art_242">čl.242 st.2 Krivičnog zakonika</ref>, osudjen na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci.</p>
+        <p>Osudjeni je podnio ovom sudu zahtjev za vanredno ublažavanje kazne u kom navodi da je teškog zdravstvenog stanja, otac četvoro djece, da živi u domaćinstvu sa bratom koji je slijepo lice i ima četvoro djece, o čemu je priložio potrebnu dokumentaciju, da mu je supruga oboljela od šećerne bolesti, žive od naknade materijalnog obezbjedjenja u iznosu od 72,00 eura, te da nije u stanju da izdrži kaznu. Predložio je da se zahtjev uvaži i izrečena kazna ublaži.</p>
+      </background>
+      <decision>
+        <p>RJEŠENJE</p>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nakon razmatranja zahtjeva, predloga Višeg suda u Bijelom Polju i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Okolnosti koje se navode u zahtjevu za vanredno ublažavanje kazne, cijenjene su prilikom odmjeravanja kazne osudjenom, tako da iste ne mogu biti osnov za vanredno ublažavanje kazne, u smislu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">čl.423 ZKP</ref>.</p>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

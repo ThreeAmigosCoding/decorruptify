@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-05-19/Kzu-24-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-05-19/Kzu-24-2011"/>
+          <FRBRdate date="2011-05-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-05-19/Kzu-24-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-05-19/Kzu-24-2011/srp@"/>
+          <FRBRdate date="2011-05-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-05-19/Kzu-24-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-05-19/Kzu-24-2011/srp@/.xml"/>
+          <FRBRdate date="2011-05-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="court_os_ulcinj" href="/ontology/organization/me/OsnovniSudUlcinj" showAs="Osnovni sud u Ulcinju"/>
+        <TLCOrganization eId="court_vs_podgorica" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SladjanaObradovic" showAs="Slađana Obradović"/>
+        <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="osudjeni"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.24/11</docketNumber>
+      <neutralCitation>Kzu.br.24/11</neutralCitation>
+      <docDate date="2011-05-19">19.05.2011. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge2">Stanka Vučinić</judge>
+      <judge refersTo="#judge3">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stanković Ivice</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Vučinić Stanke</judge> i <judge refersTo="#judge3">Stojanović Petra</judge>, kao članova vijeća, uz učešće namještenika suda <party refersTo="#clerk">Obradović Slađane</party>, kao zapisničara, u krivičnom predmetu protiv osudjenog D. R., zbog krivičnog djela falsifikovanje isprave iz <ref href="/me/acts/2003/krivicni-zakonik#art_207">čl.207 st.3 u vezi st.1 KZ RCG</ref>, odlučujući o zahtjevu brata osudjenog - Duraković Ružda za vanredno ublažavanje kazne, izrečene pravosnažnom presudom Višeg suda u Podgorici Kž.br.809/10 od 13.09.2010. godine, u sjednici vijeća održanoj dana 19.05.2011. godine donio je</p>
+        <p>U IME NARODA</p>
+        <p>PRESUDU</p>
+      </introduction>
+      <background>
+        <p>Presudom Osnovnog suda u Ulcinju K.br.188/04 od 30.11.2009. godine D. R. oglašen je krivim, zbog krivičnog djela falsifikovanje isprave iz <ref href="/me/acts/2003/krivicni-zakonik#art_207">čl.207 st.3 u vezi st.1 KZ RCG</ref>, za koje djelo mu je izrečena uslovna osuda kojom mu je utvrdjena kazna zatvora u trajanju od 3 (tri) mjeseca i istovremeno odredjeno da se ista neće izvršiti, ukoliko optuženi u roku od 1 (jedne) godine po pravosnažnosti presude ne učinio novo krivično djelo.</p>
+        <p>Viši sud u Podgorici, kao drugostepeni, presudom Kž.br.809/10 od 13.09.2010. godine uvažio je žalbu Osnovnog državnog tužilaštva iz Ulcinja i preinačio presudu Osnovnog suda u Ulcinju K.br.188/04 od 30.11.2009. godine u pogledu odluke o krivičnoj sankciji, tako što je optuženog D. R., zbog tog krivičnog djela, osudio na kaznu zatvora u trajanju od 45 (četrdesetpet) dana.</p>
+        <p>Brat osudjenog - D. R., podnio je zahtjev za vanredno ublažavanje kazne u kome navodi da je osudjeni teško obolio od karcinoma grkljana i da se već duže vremena nalazi na bolničkom liječenju u Vojnomedicinskoj akademiji u Beogradu, o čemu je priložio medicinsku dokumentaciju, koju okolnost sud nije cijenio prilikom odmjeravanja kazne.</p>
+        <p>Predložio je da se izrečena kazna ublaži.</p>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Ulcinju i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev je osnovan.</p>
+        <p>Iz izvještaja Vojnomedicinske akademije - Onkološki konzilijum za oboljenja glave i vrata VMA od 10.01.2011. godine utvrdjuje se da je kod osudjenog klinički verifikovano oboljenje karcinoma grkljana, zbog čega su članovi konzilijuma mišljenja da liječenje treba nastaviti zračnom terapijom u nadležnom onkološkom centru.</p>
+        <p>Ova okolnost, po nalaženju ovog suda, jeste nova okolnost, koja nije cijenjena prilikom odmjeravanja kazne osudjenom, a ista je od takvog značaja, da očigledno opravdava izricanje uslovne osude.</p>
+      </background>
+      <decision>
+        <p>Usvaja se zahtjev za vanredno ublažavanje kazne brata osudjenog - D. R., pa se pravosnažna presuda Višeg suda u Podgorici Kž.br.809/10 od 13.09.2010. godine, preinačava u pogledu odluke o kazni, i osudjenom D. R., zbog krivičnog djela falsifikovanje isprave iz <ref href="/me/acts/2003/krivicni-zakonik#art_207">čl.207 st.3 u vezi st.1 KZ RCG</ref>, primjenom <ref href="/me/acts/2003/krivicni-zakonik#art_53">čl.53</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_54">54 Krivičnog zakonika</ref>, izriče uslovna osuda, s tim što mu se izrečena kazna zatvora u trajanju od 45 (četrdesetpet) dana smatra utvrdjenom i istovremeno odredjuje da se ista neće izvršiti, ako osudjeni za vrijeme od jedne godine od dana donošenja ove presude, ne učini novo krivično djelo.</p>
+      </decision>
+      <conclusions>
+        <p>Sa izloženog, ovaj sud je usvojio zahtjev za vanredno ublažavanje kazne i na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, odlučio kao u izreci ove presude.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

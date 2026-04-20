@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rjesenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-09-19/Kz-I-51-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-19/Kz-I-51-2011"/>
+          <FRBRdate date="2011-09-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-09-19/Kz-I-51-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-09-19/Kz-I-51-2011/srp@"/>
+          <FRBRdate date="2011-09-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-09-19/Kz-I-51-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-09-19/Kz-I-51-2011/srp@/.xml"/>
+          <FRBRdate date="2011-09-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCOrganization eId="osbp" href="/ontology/organization/me/OsnovniSudBijelomPolju" showAs="Osnovni sud u Bijelom Polju"/>
+        <TLCOrganization eId="vsbp" href="/ontology/organization/me/VisiSudBijelomPolju" showAs="Viši sud u Bijelom Polju"/>
+        <TLCOrganization eId="odtbp" href="/ontology/organization/me/OsnovnoDrzavnoTuzilastvoUBijelomPolju" showAs="Osnovno državno tužilaštvo u Bijelom Polju"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/RadojkaNikolic" showAs="Radojka Nikolić"/>
+        <TLCPerson eId="judge4" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge5" href="/ontology/person/me/RaduleKojovic" showAs="Radul Kojović"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/IndiraMuratovic" showAs="Indira Muratović"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/KV" showAs="K. V."/>
+        <TLCPerson eId="defense" href="/ontology/person/me/DK" showAs="D. K."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kž.I.br.51/11</docketNumber>
+      <neutralCitation>Kž.I.br.51/11</neutralCitation>
+      <docDate date="2011-09-19">19.09.2011.godine</docDate>
+      <judge refersTo="#judge1" role="presjednikVijeća">Petar Stojanović</judge>
+      <judge refersTo="#judge2" role="članVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge3" role="članVijeća">Radojka Nikolić</judge>
+      <judge refersTo="#judge4" role="članVijeća">Stanka Vučinić</judge>
+      <judge refersTo="#judge5" role="članVijeća">Radul Kojović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija <judge refersTo="#judge1">Stojanović Petra</judge>, kao predsjednika vijeća, <judge refersTo="#judge2">Stanković Ivice</judge>, <judge refersTo="#judge3">Nikolić Radojke</judge>, <judge refersTo="#judge4">Vučinić Stanke</judge> i <judge refersTo="#judge5">Kojović Radula</judge>, kao članova vijeća, uz učešće namještenika suda <party refersTo="#clerk">Muratović Indire</party>, kao zapisničara, u krivičnom predmetu protiv optuženog <party as="#defendant" refersTo="#defendant">K. V.</party>, iz Bijelog Polja, zbog krivičnog djela pronevjera iz <ref href="/me/acts/2003/krivicni-zakonik#art_420_st_2">čl.420 st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_420_st_1">st.1</ref> Krivičnog zakonika, odlučujući o žalbi Osnovnog državnog tužilaštva u Bijelom Polju izjavljenoj protiv presude Višeg suda u Bijelom Polju Kž.br.74/11 od 18.05.2011.godine, u sjednici vijeća održanoj dana 19.09.2011.godine, donio je</p>
+      </introduction>
+      <background>
+        <p>Presudom Osnovnog suda u Bijelom Polju K.br.537/2010 od 10.12.2010.godine optuženi <party refersTo="#defendant">K. V.</party> je, na osnovu čl.363 tač.3 ZKP, oslobodjen od optužbe zbog krivičnog djela pronevjera iz <ref href="/me/acts/2003/krivicni-zakonik#art_420_st_2">čl.420 st.2</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_420_st_1">st.1</ref> Krivičnog zakonika, jer nije dokazano da je optuženi izvršio krivično djelo za koje je optužen.</p>
+        <p>Istom presudom je odlučeno da troškovi krivičnog postupka padaju na teret budžetskih sredstava suda.</p>
+        <p>Protiv ove presude žalbu je blagovremeno izjavilo Osnovno državno tužilaštvo u Bijelom Polju zbog bitne povrede odredaba krivičnog postupka i pogrešno i nepotpuno utvrdjenog činjeničnog stanja, s predlogom da se pobijana presuda ukine i predmet vrati prvostepenom sudu na ponovno sudjenje, ili pak da drugostepeni sud otvori pretres pred tim sudom i donese presudu kojom će optuženog oglasiti krivim za djelo za koje je optužen i osudi po zakonu.</p>
+        <p>Branilac optuženog, advokat <party refersTo="#defense">D. K.</party> iz Bijelog Polja, izjavio je odgovor na žalbu u kojem negira navode te žalbe i predlaže da se ista odbije kao neosnovana a prvostepena presuda potvrdi.</p>
+        <p>Odlučujući po žalbi, Viši sud u Bijelom Polju, kao drugostepeni, je u sjednici vijeća odlučio da otvori pretres pred tim sudom zbog nepotpuno utvrdjenog činjeničnog stanja.</p>
+        <p>Nakon održanog pretresa drugostepeni sud je odbio žalbu Osnovnog državnog tužilaštva kao neosnovanu i potvrdio presudu Osnovnog suda u Bijelom Polju K.br.537/2010 od 10.12.2010.godine.</p>
+        <p>Protiv ove presude žalbu je izjavilo Osnovno državno tužilaštvo u Bijelom Polju zbog bitne povrede odredaba krivičnog postupka i pogrešno i nepotpuno utvrdjenog činjeničnog stanja s predlogom da se pobijana presuda ukine i predmet vrati tom sudu na ponovni postupak i odlučivanje.</p>
+        <p>Branilac optuženog <party refersTo="#defense">D. K.</party> izjavio je odgovor na žalbu u kojem navodi da drugostepeni sud na osnovu održanog pretresa nije utvrdio činjenično stanje drukčije nego prvostepeni sud, pa je predložio da se žalba odbaci kao nedozvoljena.</p>
+      </background>
+      <decision>
+        <p>RJEŠENJE</p>
+        <p>Žalba se odbacuje kao nedozvoljena.</p>
+      </decision>
+      <conclusions>
+        <p>Po razmatranju pobijane presude, žalbe, odgovora na žalbu i svih spisa ovog predmeta, pazeći po službenoj dužnosti na odredbe čl.398 ZKP, Vrhovni sud je našao da je žalba nedozvoljena.</p>
+        <p>Članom 413 st.1 tač.2 ZKP je propisano da je protiv presude drugostepenog suda dozvoljena žalba sudu koji odlučuje u trećem stepenu, ako je drugostepeni sud na osnovu održanog pretresa utvrdio činjenično stanje drukčije nego prvostepeni sud i na takvo utvrdjenom činjeničnom stanju zasnovao svoju presudu.</p>
+        <p>Iz spisa predmeta proizilazi da je drugostepeni sud na osnovu dokaza izvedenih na pretresu utvrdio isto činjenično stanje kao i prvostepeni sud da nije dokazano da je optuženi učinio krivično djelo za koje je optužen, pa je sledstveno takvom utvrdjenju odbio žalbu osnovnog državnog tužilaštva kao neosnovanu i potvrdio presudu Osnovnog suda u Bijelom Polju.</p>
+        <p>Imajući u vidu da drugostepeni sud nakon održanog pretresa nije utvrdio drukčije činjenično stanje od onog koje je utvrdio prvostepeni sud, to žalba osnovnog državnog tužilaštva u konkretnom slučaju nije dozvoljena, pa je istu kao takvu valjalo odbaciti shodno <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_413_st_2">člana 413 st.2</ref> u vezi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_404">čl.404 ZKP-a</ref>.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

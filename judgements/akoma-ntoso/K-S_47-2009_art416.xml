@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/vsp/2010-11-29/Ks-47-2009/main"/>
+          <FRBRuri value="/me/vsp/2010-11-29/Ks-47-2009"/>
+          <FRBRdate date="2010-11-29" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/vsp/2010-11-29/Ks-47-2009/srp@/main"/>
+          <FRBRuri value="/me/vsp/2010-11-29/Ks-47-2009/srp@"/>
+          <FRBRdate date="2010-11-29" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/vsp/2010-11-29/Ks-47-2009/srp@/main.xml"/>
+          <FRBRuri value="/me/vsp/2010-11-29/Ks-47-2009/srp@/.xml"/>
+          <FRBRdate date="2010-11-29" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/CupicRatko" showAs="Ćupić Ratko"/>
+        <TLCPerson eId="clerk1" href="/ontology/person/me/AlibalicEmina" showAs="Alibalić Emina"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Viši sud u Podgorici</courtType>
+      <docketNumber>Ks.br. 47/09</docketNumber>
+      <neutralCitation>Ks.br. 47/09</neutralCitation>
+      <docDate date="2010-11-29">29.11.2010. godine</docDate>
+      <judge refersTo="#judge1">Ćupić Ratko</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VIŠI SUD U PODGORICI, kao prvostepeni krivični, po sudiji Ćupić Ratku kao sudiji pojedincu, uz učešće namještenika Alibalić Emine kao zapisničara, u krivičnom predmetu protiv optuženog Ć.DJ. iz Herceg Novog zbog krivičnog djela zloupotreba službenog položaja u pokušaju iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416</ref> st.4 u vezi st.2 i st.1 u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_20">čl.20</ref> KZ-a, koga brani I. I. advokat iz Podgorice, po optužnici Osnovnog državnog tužioca iz Herceg Novog, koju je na glavnom pretresu zastupala Samardžić Mira zamjenik specijalnog tužioca iz Podgorice, nakon održanog glavnog javnog pretresa dana 12.11.2010. godine u prisustvu zastupnika optužnice, optuženog i njegovog branioca, donio je, a dana 29.11.2010. godine, javno objavio</p>
+        <p>U IME CRNE GORE</p>
+        <p>PRESUDU</p>
+      </introduction>
+      <background>
+        <p>Optuženi Ć. DJ., rodjen u R. - opština H. N., sa prebivalištem u I., ul. S. I., državljanin Crne Gore, diplomirani ekonomista, oženjen, otac dvoje djece, sada nezaposlen, vojsku služio 1974. godine u Danilovgradu, vlasnik porodične kuće u I. i vozila, neosudjivan,</p>
+        <p>Kriv je</p>
+        <p>Zato što je:</p>
+        <p>Dana 25. jula 2002. godine u Herceg Novom, kao službeno lice – predsjednik Opštine Herceg Novi, protivpravno iskoristio svoj službeni položaj i prekoračio granicu svog službenog ovlašćenja u namjeri da drugom pribavi korist, tako što je kao zastupnik Opštine Herceg Novi, suprotno čl.38 tač.7 Statuta zaključio ugovor o poslovnoj saradnji sa Ć. D., advokatom iz Kotora, zaveden kod Opštine Herceg Novi pod brojem 01 – 2 – 456/2, kojim ugovorom je angažovao adv. Ć. da u ime Opštine Herceg Novi utužuje vlasnike stanova zbog neplaćenih naknada za investiciono održavanje zgrada na teritoriji Opštine Herceg Novi, iako je Opština imala pravnu službu koja je bila stručna i sposobna za ove poslove i što je ugovorom obavezao Opštinu Herceg Novi da advokatu Ć. isplati advokatske troškove u iznosu od 75% AT za svakog procesuiranog dužnika po naplati duga, iako je tu naknadu mogao ugovoriti 50% AT, za šta je imao osnovu u važećoj AT, imajući u vidu broj gradjana koje je trebalo utužiti, da se radilo o tipskim podnescima i da je ugovorom bilo predvidjeno da svu dokumentaciju potrebnu za utuženje prikupe nadležne službe Opštine i dostave ih advokatu kao i da mu dostavljaju dvaput mjesečno izvještaje o izvršenim uplatama, te što je članom 13 obavezao Opštinu da ukoliko Opština ne dostavi ili advokatu Ć. prestane dostavljati svakog 1 i 15 u mjesecu kompletnu dokumentaciju vezanu za promjenu finansijskih stanja dužnika, ugovor se smatra jednostrano raskinutim od strane Opštine i Opština obavezuje da advokatu isplati iznos od 75% od AT tarife za sve do tada pokrenute predmete pred nadležnim sudom, bez obzira da li su naplaćena potraživanja od dužnika, čime je stavio u nepovoljan položaj Opštinu Herceg Novi, pa nakon što je adv. Ć. podnio predloge za izvršenje protiv 3.926 lica i time zasnovao potraživanje prema Opštini u velikom iznosu, dana 28.01.2004. godine, prekoračivši svoja službena ovlašćenja kao predsjednika SO, koja su propisana čl.45 Statuta Opštine Herceg Novi, a u namjeri da adv. Ć. pribavi imovinsku korist koja prelazi iznos od 30.000 eura, bez saglasnosti SO postupajući suprotno čl.38 tač.7 Statuta, sa njim zaključio vansudsko poravnanje, kojim je advokatu Ć. priznao dug Opštine za pokretanje postupka za 3.926 dužnika u iznosu od 147.225 eura i obavezao Opštinu da na ime tog duga mjesečno, počev od 01.02.2003. godine fiksno najkasnije do petog u mjesecu uplaćuje neto iznos od 1.650 eura uvećan za troškove PDV, što bi ukupno iznosilo 99.000 eura i 16.830 eura na ime PDV, a ukoliko prekorači rok za uplatu mjesečnih iznosa, advokatu isplati cjelokupan iznos od 147.225 eura, na koji način je nanio štetu Opštini u iznosu preko 30.000 eura, jer je direktno opteretio budžet Opštine, iako je znao da je neznatan broj utuženih dužnika uplatio dugovanje, da je angažovao advokata za pravne poslove koje je mogla obaviti pravna služba Opštine i što je ugovorio nesrazmjernu naknadu za rad advokata u iznosu 75% AT,</p>
+        <p>- čime je izvršio krivično djelo zloupotreba službenog položaja u pokušaju iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416</ref> st.3 u vezi st.1 u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_20">čl.20</ref> KZ,</p>
+        <p>pa ga sud primjenom citiranih zakonskih propisa <ref href="/me/acts/2003/krivicni-zakonik#art_4">čl.4</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_32">32</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_36">36</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_45">45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46</ref> KZ, čl.226, 229 i 374 ZKP-a,</p>
+      </background>
+      <decision>
+        <p>OSUDJUJE</p>
+        <p>Na kaznu zatvora u trajanju od 6 (šest) mjeseci, koju će izdržati po pravosnažnosti presude.</p>
+        <p>Optuženi je dužan da ovom sudu plati troškove krivičnog postupka - paušal u iznosu od 100,00 eura, u roku od 15 dana od dana pravosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+      </decision>
+      <conclusions>
+        <p>Obrazloženje</p>
+        <p>Optužnicom Osnovnog državnog tužioca Herceg Novi Kt.br.128/04 od 31.01.2007. godine, koju je njen zastupnik na glavnom pretresu izmijenio i pri tako izmijenjenoj optužnici ostao, stavljeno je na teret optuženom Ć. Dj. iz Herceg Novog da je izvršio krivično djelo zloupotreba službenog položaja u pokušaju iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416</ref> st.3 u vezi st.1 u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_20">čl.20</ref> KZ, koje je činjenično bliže opisano u izreci presude.</p>
+        <p>Optuženi Ć. Dj., u svojoj odbrani koju je iznio pred istražnim sudijom Osnovnog suda u Herceg Novom, naveo je da je u periodu od 30.06.2000. do 21.06.2004. godine bio predsjednik Opštine Herceg Novi, te da je imao kadrovskih problema da "ekipira" organe lokalne samouprave i pojedine službe. Objasnio je da nije imao potpunu dominaciju nad kadrovskom politikom, jer je imao partijske predloge, koji su mu ponekad bili nametnuti i nijesu bili saglasni sa profesionalnim kriterijumima, odnosno ti predlozi nijesu zadovoljavali profesionalne reference. Budžet se teško punio i u opštini su imali problema sa isplatom plata i finansiranjem funkcija javnih preduzeća. Naplatu zakonske obaveze - naknada za investiciono održavanje zgrada trebalo je da vrši Javno komunalno stambeno preduzeće i njegova pravna služba, koje se većim dijelom finansira iz budžeta opštine. Ali pravna služba tog preduzeća nije bila kadrovski osposobljena za tu vrstu utuženja imajući u vidu veliki broj gradjana opštine Herceg Novi, koje je trebalo utužiti. Radilo se o 4.000 obveznika te naknade, a iznos njihovih dugova se kretao oko 500.000 eura što je tada predstavljalo oko 1/6 budžeta opštine. Medjutim ni pravna služba opštine Herceg Novi nije bila kadrovski ni brojno osposobljena za tako obiman posao utuženja, jer je imala samo jednog pravnog zastupnika, a uz to opština je imala oko 300 imovinskih i drugih sudskih sporova. Pošto ta potraživanja zastarijevaju za jednu godinu, imao je obavezu i odgovornost da nadje hitno rješenje da se naplati ta vrsta opštinskih prihoda.</p>
+        <p>Sud je na pretresu proveo dokaze: na saglasan predlog stranaka pročitao iskaze ranije iskaze svjedoka, i to: M. B., L. J., Ć. D. i ovlašćenog predstavnika Opštine Herceg Novi L. Z., te pročitao ugovor o poslovnoj saradnji zaključen dana 25.07.2002. godine izmedju opštine Herceg Novi i Ć. D. advokata iz Kotora, vansudsko poravnanje zaključeno izmedju opštine Herceg Novi i advokata D. Ć. dana 28.01.2004. godine, Statut Opštine Herceg Novi i ostale pisane dokaze.</p>
+        <p>Nakon sprovedenog postupka, cijeneći navode optužbe, odbranu optuženog i rezultat izvedenih dokaza sud je utvrdio da je optuženi izvršio krivično djelo koje mu se stavlja na teret.</p>
+        <p>Naime, nesporna je činjenica da je optuženi Ć. Dj. dana 25. jula 2002. godine u Herceg Novom, kao službeno lice - predsjednik Opštine Herceg Novi, sa adv. Ć. D. iz Kotora zaključio Ugovor o poslovnoj saradnji, koji je kod Opštine Herceg Novi zaveden pod br.01-2-456/2. Navedenim ugovorom optuženi je adv. Ć. angažovao da u ime Opštine Herceg Novi utužuje vlasnike stanova zbog neplaćenih naknada za investiciono održavanje zgrada, na teritoriji Opštine Herceg Novi.</p>
+        <p>Zaključujući navedeni Ugovor o poslovnoj saradnji, a potom i Vansudsko poravnanje, optuženi je kao službeno lice - predsjednik Opštine Herceg Novi protivpravno iskoristio svoj službeni položaj i prekoračio granicu svog službenog ovlašćenja propisanog u čl.45 Statuta Opštine, sve u namjeri da drugom tj. adv. Ć., a na štetu Opštine Herceg Novi pribavi imovinsku korist koja prelazi iznos od 30.000 eura.</p>
+        <p>U njegovim radnjama ostvarena su sva bitna obilježja bića krivičnog djela zloupotreba službenog položaja u pokušaju iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416</ref> st.3 u vezi st.1 u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_20">čl.20</ref> KZ. U vrijeme izvršenja, djelo je bilo ostalo u pokušaju, s obzirom da angažovanom adv. Ć. po osnovu zaključenog Vansudskog poravnanja optuženi nije bio pribavio korist, pošto je od strane Opštine Herceg Novi bio pokrenut postupak radi poništaja predmetnog Ugovora i Poravnanja.</p>
+        <p>Prilikom odmjeravanja kazne sud je u odsustvu otežavajućih okolnosti kao olakšavajuće na strani optuženog cijenio to da isti do sada nije osudjivan, da je porodična osoba, da se oštećena Opština Herceg Novi nije pridružila krivičnom gonjenju. Ove okolnosti po ocjeni suda u svojoj ukupnosti mogu se smatrati naročito olakšavajućim, te da zato u smislu <ref href="/me/acts/2003/krivicni-zakonik#art_45">čl.45</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_46">46</ref> KZ ima mjesta ublažavanju kazne, pa je sud optuženom izrekao kaznu zatvora ispod minimuma zakonom zaprijećene kazne za ovu vrstu krivičnih djela, smatrajući da se i sa tako ublaženom kaznom može postići svrha kažnjavanja iz <ref href="/me/acts/2003/krivicni-zakonik#art_32">čl.32</ref> KZ, a u okviru opšte svrhe propisivanja i izricanja krivičnih sankcija iz <ref href="/me/acts/2003/krivicni-zakonik#art_4">čl.4</ref> st.2 KZ.</p>
+        <p>Na osnovu svega izloženog, a primjenom čl.374 ZKP-a, odlučeno je kao u izreci presude.</p>
+        <p>PRAVNA POUKA: Protiv ove presude može se izjaviti žalba Apelacionom sudu CG u roku od 15 dana prijema preko ovog suda.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/ospl/2010-11-29/K-188-10/main"/>
+          <FRBRuri value="/me/ospl/2010-11-29/K-188-10"/>
+          <FRBRdate date="2010-11-29" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/ospl/2010-11-29/K-188-10/srp@/main"/>
+          <FRBRuri value="/me/ospl/2010-11-29/K-188-10/srp@"/>
+          <FRBRdate date="2010-11-29" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/ospl/2010-11-29/K-188-10/srp@/main.xml"/>
+          <FRBRuri value="/me/ospl/2010-11-29/K-188-10/srp@/.xml"/>
+          <FRBRdate date="2010-11-29" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/OsnovniSudPljevlja" showAs="Osnovni sud u Pljevljima"/>
+        <TLCOrganization eId="prosecution" href="/ontology/organization/me/ODTPljevlja" showAs="Osnovno državno tužilaštvo Pljevlja"/>
+        <TLCOrganization eId="victim" href="/ontology/organization/me/NLBMontenegrobanka" showAs="NLB Montenegrobanka A.D. Podgorica"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/BrankoPejovic" showAs="Branko Pejović"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/TerzicSlobodan" showAs="Terzić Slobodan"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/BrajkovicBranibor" showAs="Brajković Branibor"/>
+        <TLCPerson eId="clerk" href="/ontology/person/me/SestovicMilanka" showAs="Šestović Milanka"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/BN" showAs="B.N."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Osnovni sud u Pljevljima</courtType>
+      <docketNumber>K.br. 188/10</docketNumber>
+      <neutralCitation>K.br. 188/10</neutralCitation>
+      <docDate date="2010-11-29">29.11.2010. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Branko Pejović</judge>
+      <judge refersTo="#judge2" role="sudija porotnik">Terzić Slobodan</judge>
+      <judge refersTo="#judge3" role="sudija porotnik">Brajković Branibor</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Osnovni sud u Pljevljima, kao prvostepeni krivični sud, u vijeću sastavljenom od sudije Branka Pejovića kao predsjednika vijeća i sudija porotnika Terzić Slobodana i Brajković Branibora kao članova vijeća, uz sudjelovanje zapisničara Šestović Milanke, protiv okrivljene B.N. iz P., koju brane advokati G.M. iz P. i R.O. iz B., zbog krivičnog djela pronevjera iz <ref href="/me/acts/2003/krivicni-zakonik#art_420">čl. 420 st. 3 u vezi st. 1 KZ CG</ref>, po optužnici ODT Pljevlja Kt.br. 165/10 od 11.08.2010. godine, nakon održanog glavnog i javnog pretresa u prisustvu zamjenika ODT Pljevlja, okrivljene, njenih branilaca kao i zastupnika oštećene NLB Montenegrobanke A.D. P., dana 29.11.2010. godine donio a istoga dana i objavio</p>
+        <p>P R E S U D U</p>
+        <p>Okrivljena B.N. zvana N., JMBG ..., od oca D. i majke M. rodj. V., rodjena u P. dana ... godine gdje i živi, državljanka CG, zaposlena, udata, majka jednog djeteta, pismena, završila gimnaziju, živi od zarade, ranije neosudjivana.</p>
+      </introduction>
+      <background>
+        <p>K r i v a  j e</p>
+        <p>Što je:</p>
+        <p>U periodu od januara mjeseca 2010. godine pa do 15.05.2010. godine u P., radeći kao blagajnik - komercijalista u NLB Montenegrobanci A.D. P. - Filijala u P., u namjeri da sebi pribavi protivpravnu imovinsku korist, prisvojila novac koji joj je povjeren u službi, u ukupnom iznosu od 593.965,79 € i 6.600,00 $, na način što je suprotno opštim aktima Montenegrobanke - procedurama šalterskog poslovanja sa gradjanima, uzimala ključeve od lokalnog trezora, iako sa istim nije bila zadužena, te je otključavajući trezor, u isti više puta ulazila sama, bez evidentiranja ulazaka na posebnom obrazcu evidencije ulazaka u lokalni trezor i tom prilikom oduzimala i prisvajala novac iz lokalnog trezora Filijale P. u ukupnom iznosu od 578.343,10 €, a iz priručne blagajne br. 197, u iznosu od 15.622,69 € i 6.600,00 $, oštetivši na taj način NLB Montenegrobanku A.D. P. za naznačeni novac.</p>
+        <p>Čime je izvršila krivično djelo pronevjera iz <ref href="/me/acts/2003/krivicni-zakonik#art_420">čl. 420 st. 3 u vezi st. 1 KZ CG</ref>.</p>
+      </background>
+      <decision>
+        <p>Pa je sud primjenom <ref href="/me/acts/2003/krivicni-zakonik#art_4">članova 4</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_5">5</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_13">13</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_15">15</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_32">32</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_33">33</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_36">36</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_42">42</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_51">51 KZ CG</ref> te <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">članova 199</ref>, <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_202">202</ref> i <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_212">212 ZKP CG</ref></p>
+        <p>O S U DJ U J E</p>
+        <p>Na kaznu zatvora u trajanju od 6 godina (šest godina), u koju kaznu joj se ima uračunati vrijeme provedeno u pritvoru počev od dana 19.05.2010. godine pa do pravnosnažnosti presude.</p>
+        <p>Okrivljena se obavezuje da na ime troškova vodjenja krivičnog postupka plati ovom sudu iznos od 864,21 € a na ime paušala iznos od 150,00 €.</p>
+        <p>Shodno <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_212">čl. 212 ZKP CG</ref> okrivljena se obavezuje da oštećenoj NLB Montenegrobanci A.D. P. na ime imovinsko pravnog zahtjeva isplati iznos od 593.965,79 € i 6.600,00 $.</p>
+        <p>Troškove krivičnog postupka, i paušal sudu, kao i štetu oštećenoj NLB Montenegrobanci A.D. P. okrivljena je dužna platiti u roku od 15 dana po pravnosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+      </decision>
+      <conclusions>
+        <p>O b r a z l o ž e nj e</p>
+        <p>Osnovno državno tužilaštvo iz Pljevalja optužnicom Kt.br. 165/10 od 11.08.2010. godine optužilo je okrivljenu B.N. iz P. zbog krivičnog djela pronevjera iz <ref href="/me/acts/2003/krivicni-zakonik#art_420">čl. 420 st. 3 u vezi st. 1 KZ CG</ref> navodeći da je okrivljena krivično djelo izvršila na način mjesto i vrijeme kako je to bliže opisano u izreci ove presude.</p>
+        <p>Okrivljena B.N. u svoju odbranu je istakla da je sve što je uradila uradila pod pritiskom od nepoznatih pozivaoca koji su joj prijetili da će joj oteti dijete. Istakla je da je od prvog radnog dana radila kao izvršilac trezora, isplate, uplate, otvaranje deviznih računa. Sredinom januara 2010. godine na njen mobilni telefon dobila je poziv sa nepoznatog broja sa prijetnjama da iznese 150.000,00 € pod prijetnjom da će joj dijete patiti na njene oči. Od straha je uzela ključeve od sefa i sama ušla u prostorije lokalnog trezora gdje je uzela 150.000,00 € koje je ostavila na naznačenom mjestu. Dalje je istakla da su je nepoznati ljudi fizički napadali i nastavili da joj šalju prijeteće poruke te da je nastavila da iznosi novac i predaje ga po instrukcijama putem raznih posrednika.</p>
+        <p>U dokaznom postupku sud je saslušao svjedoke T.M., K.S., P.M., D.P., Ć.E., R.S., R.D., L.N., H.K., pročitao iskaz svjedoka B.M., saslušao vještaka ekonomsko-finansijske struke D.Ć. iz B.P.</p>
+        <p>Iz iskaza svjedokinje T.M. sud je zaključio da je ista bila vodja Filijale te da je od oktobra 2009. godine bila na porodiljskom bolovanju. Dana 13.05.2010. godine pozvao ju je kolega Ć.E. i rekao da u Filijali postoje problemi. U prostorijama trezora zatekla je otvorenu priručnu kasu okrivljene u kojoj se stanje zatečenog novca nije poklapalo sa knjigovodstvenim stanjem.</p>
+        <p>Svjedokinja K.S. je istakla da su od 14. januara 2010. godine ona i okrivljena bile zadužene šifrom ulaska u prostorije trezora, dok su ključevima od sefa bili zaduženi D.P. i P.M. Za manjak u lokalnom trezoru saznala je kada je došao Ć. i kada je otvorio trezor. Istakla je da ne zna odakle kod okrivljene oba ključa od sefa.</p>
+        <p>Iz iskaza svjedoka P.M. sud je zaključio da je zaposlen bio kao komercijalista te da je mijenjao vodju Filijale. Od 14. januara 2010. godine po kartonu sa ključevima bili su zaduženi on i D.P. ali on nikada ključ nije zadužio odnosno koristio. Dana 05.05.2010. godine formirao je komisiju za popis trezora, a članovi su sačinili zapisnik u kojem piše da nije bilo nepravilnosti. Naknadno je saznao da popis nije uradjen kako treba jer nije prebrojan sav novac u trezoru.</p>
+        <p>Svjedok D.P. je istakao da su od kada je počeo da radi svi ključevi od trezora bili kod okrivljene. Vidio je da okrivljena sama ulazi u trezorske prostorije. Dana 05.05.2010. godine on i okrivljena su izbrojali novac iz njene priručne kase ali nisu otvarali sef jer im je okrivljena rekla da je u trezoru sve u redu.</p>
+        <p>Svjedoci R.S. i R.D. su potvrdili da je nakon vanrednog popisa dana 14.05.2010. godine konstatovan značajan manjak u Filijali, te da je okrivljena u knjigu amaneta upisala da je centrali prebacila 500.000,00 € iako je bila prebacila samo 250.000,00 €.</p>
+        <p>Svjedok B.M. je potvrdio da je vanrednim popisom od 15.05.2010. godine utvrđen manjak u lokalnom trezoru od 578.343,10 €, u blagajni manjak od 15.622,69 € i 6.600 $, te višak od 1.200,00 dinara.</p>
+        <p>Svjedokinja L.N. je istakla da je okrivljena kod nje bar 5-6 puta ostavljala koverte sa novcem na kojima je pisalo "G.S." te da su razna lica dolazila po te koverte, među kojima i H.K.</p>
+        <p>Svjedok H.K. je istakao da je po instrukcijama okrivljene u više navrata prenosio koverte sa novcem izvjesnom G. iz S.</p>
+        <p>Vještak ekonomske struke D.Ć. je utvrdio da je manjak u trezoru Filijale u iznosu od 578.343,10 €, u priručnoj blagajni manjak od 15.622,69 € i 6.600 $, te da ukupna šteta za NLB Montenegrobanku iznosi 593.965,79 € i 6.600 $.</p>
+        <p>Što se tiče odbrane okrivljene da je novac prisvajala isključivo zbog prijetnji od strane nepoznatih osoba sud je taj dio odbrane okrivljene odbacio kao neosnovan, a ovo iz razloga što nema nikakve logike da okrivljena tokom čitavih 5 mjeseci nije ispričala o prijetnjama ni suprugu, ni ocu, ni sestri, ni bilo kome drugom.</p>
+        <p>Prilikom odmjeravanja kazne sud je imao u vidu da je okrivljena prisvojila veliku količinu novca na štetu oštećene NLB Montenegrobanke, da nije obeštetila oštećenu, pa je sud mišljenja da je izrečena kazna od 6 godina zatvora adekvatna i primjerena težini učinjenog djela kao i nastalim posledicama te da će se istom ostvariti svrha kažnjavanja predviđena u <ref href="/me/acts/2003/krivicni-zakonik#art_32">članu 32 KZ CG</ref>. Shodno <ref href="/me/acts/2003/krivicni-zakonik#art_51">članu 51 KZ CG</ref> sud je odlučio da okrivljenoj u izrečenu kaznu zatvora uračuna vrijeme provedeno u pritvoru.</p>
+        <p>Shodno <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">članu 199</ref> i <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_202">202 ZKP CG</ref> sud je obavezao okrivljenu da plati troškove krivičnog postupka u iznosu od 864,21 €. Shodno <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_212">članu 212 ZKP CG</ref> sud je obavezao okrivljenu da oštećenoj NLB Montenegrobanci isplati 593.965,79 € i 6.600 $.</p>
+        <p>Sa iznijetih razloga odlučeno je kao u izreci presude.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

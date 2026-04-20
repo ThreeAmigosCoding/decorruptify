@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/vspg/2010-03-26/Ks-20-2009/main"/>
+          <FRBRuri value="/me/vspg/2010-03-26/Ks-20-2009"/>
+          <FRBRdate date="2010-03-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/vspg/2010-03-26/Ks-20-2009/srp@/main"/>
+          <FRBRuri value="/me/vspg/2010-03-26/Ks-20-2009/srp@"/>
+          <FRBRdate date="2010-03-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/vspg/2010-03-26/Ks-20-2009/srp@/main.xml"/>
+          <FRBRuri value="/me/vspg/2010-03-26/Ks-20-2009/srp@/.xml"/>
+          <FRBRdate date="2010-03-26" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="prosecution" href="/ontology/organization/me/ODTPodgorica" showAs="Osnovno državno tužilaštvo u Podgorici"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/MilenkaZizic" showAs="Milenka Žižić"/>
+        <TLCPerson eId="juror1" href="/ontology/person/me/VelimirJovovic" showAs="Velimir Jovović"/>
+        <TLCPerson eId="juror2" href="/ontology/person/me/JuroKomsic" showAs="Juro Komšić"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/MarukaUjkic" showAs="Maruka Ujkić"/>
+        <TLCPerson eId="prosecutor" href="/ontology/person/me/LidijaVukcevic" showAs="Lidija Vukčević"/>
+        <TLCPerson eId="defendant1" href="/ontology/person/me/MP" showAs="M.P."/>
+        <TLCPerson eId="defendant2" href="/ontology/person/me/BB" showAs="B.B."/>
+        <TLCPerson eId="lawyer1" href="/ontology/person/me/DaniloMicovic" showAs="Danilo Mićović"/>
+        <TLCPerson eId="lawyer2" href="/ontology/person/me/ZdravkoBegovic" showAs="Zdravko Begović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Viši sud u Podgorici – Specijalizovano odjeljenje za krivična dijela organizovanog kriminala, korupcije, terorizma i ratnih zločina</courtType>
+      <docketNumber>Ks.br. 20/09</docketNumber>
+      <neutralCitation>Ks.br. 20/09</neutralCitation>
+      <docDate date="2010-03-26">26.03.2010. godine</docDate>
+      <judge refersTo="#judge1" role="predsjednik vijeća">Milenka Žižić</judge>
+      <judge refersTo="#juror1" role="sudija porotnik">Velimir Jovović</judge>
+      <judge refersTo="#juror2" role="sudija porotnik">Juro Komšić</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VIŠI SUD U PODGORICI - Specijalizovano odjeljenje za krivična dijela organizovanog kriminala, korupcije, terorizma i ratnih zločina u vijeću sastavljenom od sudije <judge refersTo="#judge1">Žižić Milenke</judge>, kao predsjednika vijeća, sudija porotnika <judge refersTo="#juror1">Jovović Velimira</judge> i <judge refersTo="#juror2">Komšić Jura</judge> kao članova vijeća, sa zapisničarom <judge refersTo="#recorder">Ujkić Marukom</judge>, u krivičnom predmetu protiv <party refersTo="#defendant1" as="#defendant">M.P.</party> zbog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_423">člana 423. st.1. KZ</ref> i optuženog <party refersTo="#defendant2" as="#defendant">B.B.</party> zbog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">čl. 424. st.1. KZ</ref> po optužnici ODT Podgorica Kt.br. 552/2001 od 01.06.2005. godine, nakon završenog glavnog, javnog pretresa, dana 19.03.2010. godine, u prisustvu zamjenika Specijalnog tužioca <judge refersTo="#prosecutor">Lidije Vukčević</judge>, optuženog M.P. i njegovog branioca <lawyer refersTo="#lawyer1">Danila Mićovića</lawyer> adv. iz Podgorice, optuženog B.B. i njegovog branioca adv. <lawyer refersTo="#lawyer2">Zdravka Begovića</lawyer> iz Podgorice, nakon tajnog vijećanja i glasanja donio je a dana 26.03.2010. godine, javno objavio</p>
+      </introduction>
+      <background>
+        <p>Optuženi <party refersTo="#defendant1" as="#defendant">M.P.</party>, rođen u B.L., sa prebivalištem u B. – S. naselje G., državljanin R. Srbije, građevinski inspektor u SO B., oženjen, otac jednog djeteta, pismen, završio građevinski fakultet, vojsku služio, ranije neosuđivan.</p>
+        <p>Optuženi <party refersTo="#defendant2" as="#defendant">B.B.</party>, rođen u B. sa prebivalištem u mjestu rođenja – T.B., državljanin Crne Gore, nezaposlen, oženjen, otac dvoje djece, pismen, završio bravarski zanat, vojsku služio, ranije neosuđivan.</p>
+        <p>Što su: U vremenu od 26.09. do 03.12.2001. godine u Baru, okrivljeni M.P., kao službeno lice – građevinski inspektor SO B., zahtjevao poklon i primio novac, da u okviru svog službenog ovlašćenja ne izvrši službenu radnju koju bi morao izvršiti, a okrivljeni B.B. okrivljenom M.P. obećao poklon i dao novac, da u okviru svog službenog ovlašćenja ne izvrši službenu radnju, koju bi morao izvršiti, na način što je okrivljeni M.P., u restoranu »G.«, od okrivljenog B.B. zahtijevao da mu kupi kompjuter, da bi mu ovaj za uzvrat omogućio dalju gradnju objekta bez građevinske dozvole, i pri tom od okrivljenog B. zahtijevao iznos od 100 DM, koji iznos novca mu je okrivljeni B. dao, da bi se nakon toga po dogovoru našli u restoranu »M.«, gdje je okrivljeni Marković od okrivljenog Babačića ponovo zahtijevao da mu kupi kompjuter, nakon čega su otišli u prodavnicu »M.1«, gdje je okrivljeni Marković izabrao kompjuter čija je cijena 3.200 DM, a kada su izašli iz prodavnice od okrivljenog B. zahtijevao iznos od 80 DM, koji iznos novca mu je ovaj dao, zatim su se ponovo susreli u restoranu »M.« gdje je okrivljeni M. od okrivljenog B., za izradu novog zapisnika, zahtijevao iznos od 150 DM, koji iznos novca mu je okrivljeni B. dao, a kada je građevinski inspektor A.V. okrivljenom B. uručila Rješenje o rušenju objekta a ovaj o tom rješenju upoznao okrivljenog M.P., isti je od njega zahtijevao da mu kupi kompjuter ili će mu porušiti objekat, kojom prilikom je okrivljeni B. obećao okrivljenom M. da će mu kupiti kompjuter pod uslovom da mu ne sruši objekat.</p>
+        <p>Čime je optuženi M.P. izvršio krivično djelo primanje mita iz <ref href="/me/acts/1993/krivicni-zakon-rcg#art_220">čl. 220. st.1. Krivičnog zakonika RCG</ref> a optuženi B.B. krivično djelo davanje mita iz <ref href="/me/acts/1993/krivicni-zakon-rcg#art_221">čl. 221. st.1. Krivičnog zakonika RCG</ref>.</p>
+      </background>
+      <decision>
+        <p>OSUĐUJE</p>
+        <p><party refersTo="#defendant1" as="#defendant">M.P.</party> na kaznu zatvora u trajanju od 5 (pet) mjeseci a <party refersTo="#defendant2" as="#defendant">B.B.</party> na kaznu zatvora u trajanju od 2 (dva) mjeseca koju kaznu su dužni izdržati po prijemu pravosnažne presude.</p>
+        <p>Obavezuju se optuženi da na ime paušala kao dijela troškova krivičnog postupka plate iznos od po 100,00 € u roku od 15 dana po pravosnažnosti presude pod prijetnjom prinudnog izvršenja.</p>
+        <p>Na osnovu <ref href="/me/acts/1993/krivicni-zakon-rcg#art_220">čl. 220. st.5. Krivičnog zakona Republike Crne Gore</ref> i čl. 542. Zakonika o krivičnom postupku, od optuženog M.P. se oduzima imovinska korist pribavljena izvršenjem krivičnog djela i to iznos od 330,00 DM u protivvrijednosti u eurima na dan isplate.</p>
+      </decision>
+      <conclusions>
+        <p>Osnovni Državni Tužilac u Podgorici Optužnicom Kt.br. 552/01 od 01.06.2005. godine stavio je na teret M.P. izvršenje krivičnog djela primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423">čl. 423. st.1. KZ</ref> a okrivljenom B.B. izvršenje krivičnog djela davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">čl. 424. st.1. KZ</ref>.</p>
+        <p>Optuženi M.P., u svojoj odbrani u bitnom navodi da je radio kao Republički građevinski inspektor u vrijeme kada je protiv B.B. u Ministarstvu za uređenje prostora i zaštitu životne sredine u okviru koje posluje Republička građevinska inspekcija dana 26.09.2001. godine protiv B. zbog bespravne gradnje u naselju Dobra voda pokrenut postupak. Sa B.B. se nije sastajao u restoranu »G« niti je sa njim išao u M.1 kako bi on izabrao kompjuter. Sve što mu se stavlja na teret je neistina.</p>
+        <p>Optuženi B.B., u svojoj odbrani na zapisniku pred istražnim sudijom u bitnom navodi da je počeo da gradi poslovni objekat u naselju Dobre Vode a da nije imao građevinsku dozvolu. Od strane M. uručen mu je zapisnik o zabrani dalje gradnje do pribavljanja građevinske dozvole. M. mu je rekao da ukoliko mu kupi kompjuter da će mu on završiti da bez dozvole potpuno legalno podigne objekat. Skupa su pošli u M.1. gdje je M. izabrao kompjuter koji je koštao 3.200 DM. U više navrata mu je davao novac: 100 DM, 150 DM, 80 DM i 50 DM.</p>
+        <p>U dokaznom postupku na glavnom pretresu pročitani su iskazi svjedoka P.D., S.J. i S.O., pročitani su zapisnici o inspekcijskim kontrolama, rješenja Ministarstva uređenja prostora, zaključak o dozvoli izvršenja i izvodi iz kaznene evidencije za optužene.</p>
+        <p>Nakon savjesne ocjene svih provedenih dokaza pojedinačno i u njihovoj međusobnoj vezi sud je na nesumnjiv način utvrdio da su optuženi počinili predmetna krivična djela i oglasio ih je krivim. Utvrđeno je da je M.P. kao službeno lice – građevinski inspektor SO Bar, zahtjevao poklon i primio novac, da u okviru svog službenog ovlašćenja ne izvrši službenu radnju koju bi morao izvršiti, a okrivljeni B.B. okrivljenom M.P. obećao poklon i dao novac, da u okviru svog službenog ovlašćenja ne izvrši službenu radnju, koju bi morao izvršiti.</p>
+        <p>Optužnicom je radnja optuženog M.P. pravno kvalifikovana kao krivično djelo primanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_423">čl. 423. st.1. KZ</ref> a optuženog B.B. kao krivično djelo davanje mita iz <ref href="/me/acts/2003/krivicni-zakonik#art_424">čl. 424. st.1. KZ</ref>. S obzirom da je u <ref href="/me/acts/2003/krivicni-zakonik#art_133">čl. 133. st.1. i st.3. KZ</ref> propisano da će se primijeniti zakon koji je najblaži za učinioca, a da je u vrijeme izvršenja krivičnog djela (2001. godine) bio na snazi Krivični zakon Republike Crne Gore (Sl. list 42/93), Sud je radnje optuženih pravno kvalifikovao kao krivična djela po zakonu koji je važio u vrijeme izvršenja: M.P. – primanje mita iz <ref href="/me/acts/1993/krivicni-zakon-rcg#art_220">čl. 220. st.1. KZ RCG</ref>, B.B. – davanje mita iz <ref href="/me/acts/1993/krivicni-zakon-rcg#art_221">čl. 221. st.1. KZ RCG</ref>.</p>
+        <p>Prilikom odmjeravanja kazne sud je optuženim kao olakšavajuće okolnosti cijenio da se radi o licima koja su ranije neosuđivana, njihove porodične i materijalne prilike, te protek vremena od izvršenja krivičnog djela do presuđenja, pa je optuženim ublažio kaznu ispod zakonom propisanog minimuma.</p>
+        <p>Sa svega izloženog a primjenom čl. 365. ZKP-a odlučeno je kao u izreci.</p>
+        <p>PRAVNA POUKA: Protiv ove presude dozvoljena je žalba u roku od 15 dana od dana prijema pismenog otpravka, preko ovog suda Apelacionom sudu CG.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

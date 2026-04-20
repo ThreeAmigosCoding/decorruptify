@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/osp/2011-03-23/K-305-2010/main"/>
+          <FRBRuri value="/me/osp/2011-03-23/K-305-2010"/>
+          <FRBRdate date="2011-03-23" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/osp/2011-03-23/K-305-2010/srp@/main"/>
+          <FRBRuri value="/me/osp/2011-03-23/K-305-2010/srp@"/>
+          <FRBRdate date="2011-03-23" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/osp/2011-03-23/K-305-2010/srp@/main.xml"/>
+          <FRBRuri value="/me/osp/2011-03-23/K-305-2010/srp@/.xml"/>
+          <FRBRdate date="2011-03-23" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/OsnovniSudPljevlja" showAs="Osnovni sud u Pljevljima"/>
+        <TLCOrganization eId="prosecution" href="/ontology/organization/me/ODTPljevlja" showAs="Osnovno državno tužilaštvo u Pljevljima"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/LjiljanaPopovic" showAs="Ljiljana Popović"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/ZoraLekovic" showAs="Zora Leković"/>
+        <TLCPerson eId="prosecutor" href="/ontology/person/me/GacevicBozidarka" showAs="Gačević Božidarka"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/SA" showAs="Š. A."/>
+        <TLCPerson eId="victim" href="/ontology/person/me/ALj" showAs="A. Lj."/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Osnovni sud u Pljevljima</courtType>
+      <docketNumber>K.br.305/10</docketNumber>
+      <neutralCitation>K.br.305/10</neutralCitation>
+      <docDate date="2011-03-23">23.03.2011.godine</docDate>
+      <judge refersTo="#judge1">Ljiljana Popović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Osnovni sud u Pljevljima, kao prvostepeni krivični sud, po sudiji Ljiljani Popović, uz sudjelovanje zapisničara Zore Leković, u krivičnom predmetu protiv optuženog Š. A. iz P., zbog krivičnog djela lažno prijavljivanje iz <ref href="/me/acts/2003/krivicni-zakonik#art_388_st_1">čl.388 st.1 Krivičnog Zakonika CG</ref>, a po optužnom predlogu ODT Pljevlja Kt.br.318/10 od 16.12.2010. godine, nakon održanog glavnog i javnog pretresa u prisustvu zamjenika ODT Pljevlja Gačević Božidarke, oštećene A. Lj. i njenog punomoćnika advokata N. Z. i optuženog Š. A., dana 23.03.2011.godine, donio je i javno objavio</p>
+        <p>P R E S U D U</p>
+      </introduction>
+      <background>
+        <p>Optuženi Š. A., JMBG ........., od oca A. i majke H. rodjene D., rodjen u P., sa prebivalištem u P., državljanin CG, neoženjen, radio i TV mehaničar, pismen, završio III stepen stručne spreme, vojsku služio 1967/68 u Osijeku, nevodi se u VE, lošeg imovnog stanja, osudjivan presudom Okružnog suda u Bijelom Polju K.br.19/74 zbog krivičnog djela iz <ref href="/me/acts/2003/krivicni-zakonik#art_322_st_2">čl.322 st.2 KZ</ref>.</p>
+        <p>Da je: Maja mjeseca 2010.godine prijavio - podnio krivičnu prijavu UP PJ Pljevlja protiv oštećene A. Lj. iz P. da je učinila krivična djela za koja se goni po službenoj dužnosti i to krivično djelo prevare iz <ref href="/me/acts/2003/krivicni-zakonik#art_244">čl.244 KZ CG</ref>, krivično djelo nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_st_1">čl.417 st.1 KZ CG</ref> i krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 KZ CG</ref> a znao je da oštećena nije učinila navedena krivična djela iako ga je Osnovni državni tužilac u Pljevljima rješenjem od 25.12.2009.godine obavijestio da je odbacio njegovu krivičnu prijavu koju je Osnovnom državnom tužiocu u Pljevljima aktom dostavio Vrhovni državni tužilac iz Podgorice od 26.10.2009.godine protiv prijavljene A. Lj. za ista krivična djela, sa istovjetnim činjeničnim opisom te da ima pravom da u roku od 8.dana preuzme krivično gonjenje a što okrivljeni nije učinio,</p>
+        <p>čime bi izvršio krivično djelo lažno prijavljivanje iz <ref href="/me/acts/2003/krivicni-zakonik#art_388_st_1">čl.388 st.1 Krivičnog Zakonika CG</ref>,</p>
+        <p>jer u postupku nije dokazano da je optuženi izvršio krivično djelo koje mu se stavlja na teret.</p>
+      </background>
+      <decision>
+        <p>Na osnovu <ref href="/me/acts/2003/zkp#art_363_st_1_t_3">čl. 363 st.1 tačka 3 ZKP-a</ref></p>
+        <p>OSLOBADJA SE OD OPTUŽBE</p>
+        <p>Troškovi krivičnog postupka padaju na teret budžetskih sredstava ovog suda.</p>
+        <p>Oštećena A. Lj. radi ostvarivanja imovinsko pravnog zahtjeva upućuje se na parnicu.</p>
+      </decision>
+      <conclusions>
+        <p>Kako sud na pouzdan način nije mogao utvrditi da je optuženi Š. A. počinio krivično djelo lažno prijavljivanje iz <ref href="/me/acts/2003/krivicni-zakonik#art_388_st_1">čl.388 st.1 Krivičnog Zakonika CG</ref> to je sud optuženog Š. A. u nedostatku dokaza i oslobodio od optužbe a na osnovu <ref href="/me/acts/2003/zkp#art_363_st_1_t_3">čl.363 st.1 tačka 3 ZKP-a</ref>.</p>
+        <p>Za postojanje krivičnog djela lažno prijavljivanje iz <ref href="/me/acts/2003/krivicni-zakonik#art_388_st_1">čl.388 st.1 Krivičnog Zakonika CG</ref> potreban je umišljaj na strani izvršioca krivičnog djela koji obuhvata svijest da se protiv odredjenog lica podnosi lažna prijava o izvršenju krivičnog djela. Iz izvedenih dokaza i odbrane optuženog Š. A. sud nije mogao na pouzdan način utvrditi da je optuženi Š. bio svjestan da oštećena A. Lj. nije počinila krivična djela za koja je prijavio, a naime krivično djelo prevare iz <ref href="/me/acts/2003/krivicni-zakonik#art_244">čl.244 KZ CG</ref>, krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">čl.416 KZ CG</ref> i krivično djelo nesavjestan rad u službi iz <ref href="/me/acts/2003/krivicni-zakonik#art_417_st_1">čl.417 st.1 KZ CG</ref>, i da je uprkos tome podnio krivične prijave protiv nje.</p>
+        <p>Shodno <ref href="/me/acts/2003/zkp#art_203_st_2">čl.203 st.2 ZKP-a</ref> odlučeno je da troškovi krivičnog postupka padaju na teret budžetskih sredstava ovog suda.</p>
+        <p>Oštećena A. Lj. je postavila imovinsko pravni zahtjev prema optuženom te je sud oštećenu u smislu <ref href="/me/acts/2003/zkp#art_212">čl.212 ZKP-a</ref> radi ostvarivanja imovinsko pravnog zahtjeva uputio na parnicu.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

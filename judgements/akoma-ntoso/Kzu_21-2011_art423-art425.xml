@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="rješenje">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/cgvs/2011-05-19/Kzu-21-2011/main"/>
+          <FRBRuri value="/me/cgvs/2011-05-19/Kzu-21-2011"/>
+          <FRBRdate date="2011-05-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/cgvs/2011-05-19/Kzu-21-2011/srp@/main"/>
+          <FRBRuri value="/me/cgvs/2011-05-19/Kzu-21-2011/srp@"/>
+          <FRBRdate date="2011-05-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/cgvs/2011-05-19/Kzu-21-2011/srp@/main.xml"/>
+          <FRBRuri value="/me/cgvs/2011-05-19/Kzu-21-2011/srp@/.xml"/>
+          <FRBRdate date="2011-05-19" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VrhovniSudCrneGore" showAs="Vrhovni sud Crne Gore"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/IvicaStankovic" showAs="Ivica Stanković"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/StankaVucinic" showAs="Stanka Vučinić"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/PetarStojanovic" showAs="Petar Stojanović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Vrhovni sud Crne Gore</courtType>
+      <docketNumber>Kzu.br.21/11</docketNumber>
+      <neutralCitation>Kzu.br.21/11</neutralCitation>
+      <docDate date="2011-05-19">19.05.2011.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Ivica Stanković</judge>
+      <judge refersTo="#judge2">Stanka Vučinić</judge>
+      <judge refersTo="#judge3">Petar Stojanović</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>Vrhovni sud Crne Gore, u vijeću sastavljenom od sudija Stanković Ivice, kao predsjednika vijeća, Vučinić Stanke i Stojanović Petra, kao članova vijeća, uz učešće namještenika suda Obradović Slađane, kao zapisničara, u krivičnom predmetu protiv osudjenog B.B., zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_348">čl.348 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_339">čl.339 st.3 u vezi st.1</ref> Krivičnog zakonika, odlučujući o zahtjevu branioca osudjenog za vanredno ublažavanje kazne izrečene pravosnažnom presudom Osnovnog suda u Kolašinu K.br.354/08 od 29.12.2009.godine, u sjednici vijeća održanoj dana 19.05.2011. godine donio je</p>
+      </introduction>
+      <background>
+        <p>Pravosnažnom presudom Osnovnog suda u Kolašinu K.br.354/08 od 29.12.2009.godine, B.B. oglašen je krivim zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_348">čl.348 st.4</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_339">čl.339 st.3 u vezi st.1</ref> Krivičnog zakonika i osudjen na kaznu zatvora u trajanju od 10 (deset) mjeseci.</p>
+        <p>Branilac osudjenog, advokat S. J. D. iz R., podnio je zahtjev za vanredno ublažavanje kazne u kome navodi da prvostepeni i drugostepeni sud, nijesu znali za okolnost, iako je postojala, da je supruga osudjenog oboljela od teške bolesti u fazi metastaze - maligni melanom ispod lopatice lijevo, da je do sada imala osam operacija, posljednju 28.03.2011.godine, o čemu je priložio medicinsku dokumentaciju. Predložio je da ovaj sud uvaži zahtjev i preinači pravosnažnu presudu, tako što će osudjenom izreći blažu osudu.</p>
+        <p>Nakon razmatranja zahtjeva, predloga Osnovnog suda u Kolašinu i Vrhovnog državnog tužioca Crne Gore, te svih spisa ovog predmeta, Vrhovni sud Crne Gore je našao:</p>
+        <p>Zahtjev nije osnovan.</p>
+        <p>Prema odredbi <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_423">člana 423 ZKP</ref>, ublažavanje pravosnažno izrečene kazne koja nije izvršena, odnosno izdržana, dozvoljeno je kad se po pravosnažnosti presude pojave okolnosti kojih nije bilo kad se izricala presuda ili sud za njih nije znao iako su postojale, a one bi očigledno dovele do blaže osude.</p>
+        <p>Slabo zdravstveno stanje supruge osudjenog, o čemu je priložena odgovarajuća medicinska dokumentacija, je okolnost koja nije cijenjena prilikom odmjeravanja kazne osudjenom, ali ista nije od takvog značaja da bi očigledno dovela do blaže osude, a ovo imajući u vidu težinu izvršenog krivičnog djela i stepen krivice osudjenog.</p>
+      </background>
+      <decision>
+        <p>Zahtjev se odbija kao neosnovan.</p>
+      </decision>
+      <conclusions>
+        <p>Nalazeći da nijesu ispunjeni uslovi za vanredno ublažavanje kazne, ovaj sud je na osnovu <ref href="/me/acts/2009/zakonik-o-krivicnom-postupku#art_425">čl.425 st.6 ZKP</ref>, zahtjev odbio kao neosnovan.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>
+```
+
+Napomena: Ova presuda se ne odnosi na krivična djela protiv službene dužnosti (čl.416-425 KZ), već na teško djelo protiv bezbjednosti javnog saobraćaja (čl.348/339 KZ). Reference na čl.423 i čl.425 u tekstu su iz **Zakonika o krivičnom postupku (ZKP)** — procesne odredbe o vanrednom ublažavanju kazne — a ne iz Krivičnog zakonika. Shodno tome, `<ref>` linkovi za te članove koriste `/me/acts/2009/zakonik-o-krivicnom-postupku#art_NNN`.

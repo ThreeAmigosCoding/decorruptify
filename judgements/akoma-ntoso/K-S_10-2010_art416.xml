@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <judgment name="presuda">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/me/vspg/2010-09-15/Ks-10-2010/main"/>
+          <FRBRuri value="/me/vspg/2010-09-15/Ks-10-2010"/>
+          <FRBRdate date="2010-09-15" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRcountry value="me"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/me/vspg/2010-09-15/Ks-10-2010/srp@/main"/>
+          <FRBRuri value="/me/vspg/2010-09-15/Ks-10-2010/srp@"/>
+          <FRBRdate date="2010-09-15" name="decision"/>
+          <FRBRauthor href="#court"/>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/me/vspg/2010-09-15/Ks-10-2010/srp@/main.xml"/>
+          <FRBRuri value="/me/vspg/2010-09-15/Ks-10-2010/srp@/.xml"/>
+          <FRBRdate date="2010-09-15" name="decision"/>
+          <FRBRauthor href="#court"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="court" href="/ontology/organization/me/VisiSudPodgorica" showAs="Viši sud u Podgorici"/>
+        <TLCOrganization eId="prosecution" href="/ontology/organization/me/OsnovnoDrzavnoTuzilastvoBar" showAs="Osnovno državno tužilaštvo u Baru - Odjeljenje za suzbijanje organizovanog kriminala"/>
+        <TLCPerson eId="judge1" href="/ontology/person/me/DragisaRakocevic" showAs="Dragiša Rakočević"/>
+        <TLCPerson eId="judge2" href="/ontology/person/me/MilenkoBoskovic" showAs="Milenko Bošković"/>
+        <TLCPerson eId="judge3" href="/ontology/person/me/SpasojeCicmil" showAs="Spasoje Cicmil"/>
+        <TLCPerson eId="recorder" href="/ontology/person/me/BorkaJelenkovic" showAs="Borka Jelenković"/>
+        <TLCPerson eId="prosecutor" href="/ontology/person/me/DrazenBuric" showAs="Dražen Burić"/>
+        <TLCPerson eId="defendant" href="/ontology/person/me/LM" showAs="L. M."/>
+        <TLCPerson eId="defense" href="/ontology/person/me/SlavomirBozovic" showAs="Slavomir Božović"/>
+      </references>
+    </meta>
+    <header>
+      <courtType>Viši sud u Podgorici</courtType>
+      <docketNumber>Ks.br.10/2010</docketNumber>
+      <neutralCitation>Ks.br.10/2010</neutralCitation>
+      <docDate date="2010-09-15">15.09.2010.godine</docDate>
+      <judge refersTo="#judge1" role="predsjednikVijeća">Dragiša Rakočević</judge>
+      <judge refersTo="#judge2" role="sudijaPorotnik">Milenko Bošković</judge>
+      <judge refersTo="#judge3" role="sudijaPorotnik">Spasoje Cicmil</judge>
+    </header>
+    <judgmentBody>
+      <introduction>
+        <p>VIŠI SUD U PODGORICI, kao prvostepeni krivični, u vijeću sastavljenom od sudije Dragiše Rakočevića, kao predsjednika vijeća, sudija porotnika Milenka Boškovića i Spasoja Cicmila, kao članova vijeća, uz učešće Borke Jelenković kao zapisničara, u krivičnom predmetu protiv optuženog L. M., koga u postupku brani Slavomir Božović, advokat iz Nikšića, zbog krivičnog djela zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">člana 416 stav 4 u vezi stava 1 Krivičnog zakonika</ref>, odlučujući po optužnici Osnovnog državnog tužilaštva u Baru - Odjeljenje za suzbijanje organizovanog kriminala Kt.br.623/05 od 26.12.2007.godine, koju je na glavnom pretresu zastupao zamjenik Specijalnog tužioca u Podgorici Dražen Burić, nakon održanog glavnog i javnog pretresa, dana 15.09.2010.godine, a nakon tajnog vijećanja i glasanja donio je i u prisustvu stranaka dana 15.09.2010.godine javno objavio</p>
+        <p>U IME NARODA</p>
+        <p>PRESUDU</p>
+      </introduction>
+      <background>
+        <p>Optuženi:</p>
+        <p>L. M., rođen u C.- N., sa prebivalištem u S.- R. bb, po zanimanju profesor, oženjen, pismen, sa završenom VSS, služio vojsku, srednjeg imovnog stanja.</p>
+        <p>KRIV JE</p>
+        <p>Zato što je:</p>
+        <p>Kao službeno lice, direktor Osnovne škole "A. Đ." iz B., u periodu juna 2002. godine do kraja juna 2003. godine, protivpravnim iskorišćavanjem svog službenog položaja, prekoračenjem granica svoga službenog ovlašćenja, na štetu Republike Crne Gore, pribavio imovinsku korist D.O.O. "T." iz Bara, na način što je suprotno odredbama <ref href="/me/acts/2002/opsti-zakon-o-obrazovanju-i-vaspitanju#art_82">člana 82 stav 2 Opšteg zakona o obrazovanju i vaspitanju</ref> (Sl.list RCG 64/02), nije obavijestio i dobio saglasnost školskog Odbora kao Organa upravljanja školom za zaključenje ugovora o zakupu, već je neposrednom pogodbom sa D.O.O. "T." iz Bara, dana 24.05.2002. godine, zaključio ugovor o zakupu škole za period od 20.06. do 20.08.2002. godine, za iznos od 2.000 eura, sa rokom plaćanja 01.07.2002. godine, a potom na isti način i sa istim pravnim licem, zaključio ugovor o zakupu škole dana 29.06.2003. godine, za period od 29.06. do 20.08.2003. godine, za iznos od 1.000 eura, a koji ugovori nijesu evidentirani u djelovodnik škole, pri čemu zakupac po oba ugovora nije platio troškove struje i vode za period zakupa i to: u periodu od 20.06.2002. godine do 20.08.2002. godine u iznosu od 1.182,48 eura, te za period od 20.06.2003. godine do 20.08.2003. godine u iznosu od 2.932,31 euro, i pri tome nije kao službeno lice preduzeo nijednu radnju u cilju naplate potraživanja, čime je D.O.O. "T.", pribavio imovinsku korist u navedenim iznosima, na štetu Ministarstva prosvjete i nauke, koje je račune izmirilo iz budžetskih sredstava,</p>
+        <p>- čime je izvršio produženo krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">člana 416 stav 1 KZ</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">člana 49 KZ</ref></p>
+      </background>
+      <decision>
+        <p>Pa sud optuženom, primjenom citiranih zakonskih odredbi, te <ref href="/me/acts/2003/krivicni-zakonik#art_2">članova 2</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_4">4</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_5">5</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_32">32</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_36">36</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_42">42</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_52">52</ref>, <ref href="/me/acts/2003/krivicni-zakonik#art_53">53</ref> i <ref href="/me/acts/2003/krivicni-zakonik#art_54">54 Krivičnog zakonika</ref>, te primjenom <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_199">članova 199</ref>, <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_202">202</ref> i <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_364">364 Zakonika o krivičnom postupku</ref> izriče</p>
+        <p>USLOVNU OSUDU</p>
+        <p>Kojom mu prethodno utvrđuje kaznu zatvora u trajanju od 1 (jedne) godine i istovremeno mu određuje da se ista neće izvršiti ako optuženi za vrijeme od 3 (tri) godine, od dana pravosnažnosti presude ne počini novo krivično djelo.</p>
+        <p>Dužan je optuženi na osnovu troškova krivičnog postupka plati ovom sudu novčani iznos od 49,50 eura, a na ime sudskog paušala iznos od 50 eura, sve prednje u roku od 15 dana od dana pravosnažnosti presude, pod prijetnjom prinudnog izvršenja.</p>
+      </decision>
+      <conclusions>
+        <p>Sud je na nesumnjiv način utvrdio da je optuženi izvršio produženo krivično djelo zloupotreba službenog položaja iz <ref href="/me/acts/2003/krivicni-zakonik#art_416">člana 416 stav 1 KZ</ref> u vezi <ref href="/me/acts/2003/krivicni-zakonik#art_49">člana 49 KZ</ref>, jer je optuženi protivpravnim iskorišćavanjem svog službenog položaja i prekoračenjem granica svog službenog ovlašćenja drugom pribavio korist, a na štetu države RCG.</p>
+        <p>Prilikom izbora krivične sankcije za optuženog, sud je cijenio sve olakšavajuće i otežavajuće okolnosti, pa je od olakšavajućih okolnosti cijenio njegove lične prilike, da je starije životne dobi, porodičan, ranije neporočnog vladanja, neosuđivan, dok otežavajućih okolnosti na strani optuženog sud nije našao, pa je optuženom izrekao uslovnu osudu, prethodno utvrdivši mu kaznu zatvora od 1 godine, koja se neće izvršiti ako optuženi u roku od 3 godine ne izvrši novo krivično djelo.</p>
+        <p>Sa iznijetih razloga, a na osnovu <ref href="/me/acts/2003/zakonik-o-krivicnom-postupku#art_364">člana 364 Zakonika o krivičnom postupku</ref>, odlučeno je kao u izreci presude.</p>
+        <p>PRAVNA POUKA: Protiv ove presude dozvoljena je žalba Apelacionom sudu Crne Gore, u roku od 15 dana, od dana prijema pismenog otpravka presude, a preko Višeg suda u Podgorici.</p>
+      </conclusions>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>
