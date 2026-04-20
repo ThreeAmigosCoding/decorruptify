@@ -1,0 +1,60 @@
+<article eId='art_2'>
+<num>Član 2</num>
+<heading>Nema kazne bez krivice</heading>
+<content><p>Kazna ili druga krivična sankcija može se izreći samo za djelo koje je, prije nego što je učinjeno, bilo zakonom određeno kao krivično djelo i za koje je bila zakonom propisana kazna.</p></content>
+</article>
+
+<article eId='art_4'>
+<num>Član 4</num>
+<heading>Krivične sankcije</heading>
+<paragraph eId='art_4_para_1'>
+<num>(1)</num>
+<content><p>Krivične sankcije su: kazne, mjere upozorenja, mjere bezbjednosti i vaspitne mjere.</p></content>
+</paragraph>
+<paragraph eId='art_4_para_2'>
+<num>(2)</num>
+<content><p>Opšta svrha propisivanja i izricanja krivičnih sankcija je suzbijanje djela kojima se povređuju ili ugrožavaju vrijednosti zaštićene krivičnim zakonodavstvom.</p></content>
+</paragraph>
+</article>
+
+<article eId='art_5'>
+<num>Član 5</num>
+<heading>Način izvršenja krivičnog djela</heading>
+<content><p>Krivično djelo je djelo koje je zakonom određeno kao krivično djelo, koje je protivpravno i koje je skrivljeno.</p></content>
+</article>
+
+<article eId='art_13'>
+<num>Član 13</num>
+<heading>Uračunljivost</heading>
+<paragraph eId='art_13_para_1'>
+<num>(1)</num>
+<content><p>Kriv je za krivično djelo učinilac koji je uračunljiv i koji je postupao sa umišljajem, a bio je svjestan ili je bio dužan i mogao biti svjestan da je njegovo djelo zabranjeno.</p></content>
+</paragraph>
+<paragraph eId='art_13_para_2'>
+<num>(2)</num>
+<content><p>Za krivično djelo učinjeno iz nehata učinilac može biti kriv samo kad to zakon određuje.</p></content>
+</paragraph>
+</article>
+
+<article eId='art_15'>
+<num>Član 15</num>
+<heading>Nehat</heading>
+<content><p>Krivično djelo je učinjeno sa umišljajem kad je učinilac bio svjestan svog djela i htio njegovo izvršenje ili kad je učinilac bio svjestan da može učiniti djelo pa je na to pristao.</p></content>
+</article>
+
+<article eId='art_20'>
+<num>Član 20</num>
+<heading>Nepodoban pokušaj</heading>
+<paragraph eId='art_20_para_1'>
+<num>(1)</num>
+<content><p>Ko sa umišljajem započne izvršenje krivičnog djela, ali ga ne dovrši, kazniće se za pokušaj krivičnog djela za koje se po zakonu može izreći kazna zatvora od pet godina ili teža kazna, a za pokušaj drugog krivičnog djela samo kad zakon izričito propisuje kažnjavanje i za pokušaj.</p></content>
+</paragraph>
+<paragraph eId='art_20_para_2'>
+<num>(2)</num>
+<content><p>Kao započinjanje izvršenja krivičnog djela smatra se i upotreba određenog sredstva ili primjena određenog načina izvršenja, ako su oni zakonom određeni kao obilježja krivičnog djela.</p></content>
+</paragraph>
+<paragraph eId='art_20_para_3'>
+<num>(3)</num>
+<content><p>Učinilac će se za pokušaj kazniti kaznom propisanom za krivično djelo, a može se i blaže kazniti.</p></content>
+</paragraph>
+</article>

@@ -32,7 +32,7 @@ public class LawController {
      * Serve legal text files.
      *
      * Supported combinations:
-     *   lawType=criminal_code   + fileType=xml → Akoma Ntoso XML of Chapter 34 (Articles 416-425)
+     *   lawType=criminal_code   + fileType=xml → Akoma Ntoso XML of Chapter 34 + all articles referenced by verdicts
      *   lawType=articles_416_425 + fileType=xml → same XML file
      *   lawType=criminal_code   + fileType=pdf → full Criminal Code PDF
      *
@@ -59,7 +59,7 @@ public class LawController {
             case "criminal_code", "articles_416_425" -> {
                 if (fileType.equalsIgnoreCase("xml")) {
                     baseDir = akomaNtosoDir;
-                    filename = "glava_34_krivicna_djela_protiv_sluzbene_duznosti.xml";
+                    filename = "krivicni_zakonik_referenced.xml";
                 } else {
                     baseDir = pdfDir;
                     filename = "krivicni_zakonik.pdf";
